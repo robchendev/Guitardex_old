@@ -22,5 +22,11 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  }, {
+    resolve: '@chakra-ui/gatsby-plugin',
+    options: {
+      resetCSS: true,
+      isUsingColorMode: true,
+    }
   }]
 };
