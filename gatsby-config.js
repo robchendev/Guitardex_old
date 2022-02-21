@@ -6,7 +6,7 @@ module.exports = {
   plugins: ["gatsby-plugin-emotion", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
-      "trackingId": "G-MXYW5V2L63"
+      "trackingId": "G-1H3X77R5H1"
     }
   }, "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
