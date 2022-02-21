@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-      title: `Fingerstyle Archive`,
-    siteUrl: `https://www.yourdomain.tld`
+      title: `Fingerstyle Central`,
+    siteUrl: `https://www.fingerstylecentral.com`
   },
   plugins: ["gatsby-plugin-emotion", {
     resolve: 'gatsby-plugin-google-analytics',
