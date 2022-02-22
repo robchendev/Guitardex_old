@@ -27,6 +27,7 @@
     "gatsby-plugin-google-analytics": "^4.7.0",
     "gatsby-plugin-image": "^2.7.0",
     "gatsby-plugin-mdx": "^3.7.1",
+    "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-sharp": "^4.7.0",
     "gatsby-plugin-sitemap": "^5.7.0",
     "gatsby-source-filesystem": "^4.7.0",
