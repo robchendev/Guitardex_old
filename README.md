@@ -1,0 +1,1 @@
+You can read the parts of the [project charter](https://github.com/chendumpling/FingerstyleCentral/blob/master/CHARTER.pdf) that are currently available.
