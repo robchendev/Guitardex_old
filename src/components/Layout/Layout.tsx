@@ -19,6 +19,8 @@ const Layout = (props) => {
         <GlobalStyle />
         <Helmet>
           <title>{props.title}</title>
+          <link type="text/css" rel="stylesheet" href="styles.tsx" />
+          <link type="text/css" rel="stylesheet" href="../Sidebar/styles.tsx" />
           <FontLoad />
         </Helmet>
         <SLayout>
