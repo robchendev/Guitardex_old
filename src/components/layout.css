@@ -1,9 +1,0 @@
-@import "../styles/typography.css";
-body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: "Poppins";
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-}
-/*Old file can delete*/

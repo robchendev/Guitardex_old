@@ -10,6 +10,10 @@ export const v =  {
   borderRadius: `6px`,
 }
 
+export const m = {
+  menuToggleSize: `24px`,
+}
+
 export const btnReset = css`
   font-family: inherit;
   outline: none;

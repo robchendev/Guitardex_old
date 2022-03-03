@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react"
+import Layout from "../components/Layout/Layout"
 
 const GearCareQoL = () => {
   return (
-    <div>gear care qol</div>
+    <Layout title="GearCareQoL">
+      <h1>GearCareQoL</h1>
+    </Layout>
   )
 }
 
