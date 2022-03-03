@@ -5,30 +5,26 @@ import { Helmet } from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import FontLoad from "../../assets/fonts"
 import { GlobalStyle } from "../../styles/globalStyles"
-import { darkTheme, lightTheme } from "../../styles/theme"
+import { lightTheme } from "../../styles/theme"
 
 // This can also be exported from somewhere else for Sidebar.tsx
 export const ThemeContext = React.createContext(null)
 
 const Layout = (props) => {
-  const [theme, setTheme] = useState("light")
-  const themeStyle = theme === 'light' ? lightTheme : darkTheme
   return (
-    <ThemeContext.Provider value={{ setTheme, theme }}>
-      <ThemeProvider theme={themeStyle}>
-        <GlobalStyle />
-        <Helmet>
-          <title>{props.title}</title>
-          <link type="text/css" rel="stylesheet" href="styles.tsx" />
-          <link type="text/css" rel="stylesheet" href="../Sidebar/styles.tsx" />
-          <FontLoad />
-        </Helmet>
-        <SLayout>
-          <Sidebar />
-          <SMain>{props.children}</SMain>
-        </SLayout>
-      </ThemeProvider>
-    </ThemeContext.Provider>
+
+    <ThemeProvider theme={lightTheme}>
+      <GlobalStyle />
+      <Helmet>
+        <title>{props.title}</title>
+        <FontLoad />
+      </Helmet>
+      <SLayout>
+        <Sidebar />
+        <SMain>{props.children}</SMain>
+      </SLayout>
+    </ThemeProvider>
+
   )
 }
 

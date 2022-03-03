@@ -1,10 +1,9 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { btnReset, v } from "../../styles/variables"
+import { v } from "../../styles/variables"
  
 export const SLayout = styled.div`
   display: flex;
-
 `
 
 export const SMain = styled.main`
@@ -42,6 +41,15 @@ export const SLink = styled(Link)`
   padding: calc(${v.smSpacing} - 2px) 0;
 `
 
+export const SLinkA = styled.a`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  padding: calc(${v.smSpacing} - 2px) 0;
+`
+
 export const SLinkIcon = styled.div`
   padding: ${v.smSpacing} ${v.mdSpacing};
   display: flex;
@@ -65,39 +73,4 @@ export const SLinkNotification = styled.div`
   color: #fff;
 
   margin-right: ${v.mdSpacing};
-`
-
-export const STheme = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-`
-
-export const SThemeLabel = styled.span`
-  display: block;
-  flex: 1;
-`
-
-export const SThemeToggler = styled.button`
-  ${btnReset};
-  margin: 0 auto;
-  cursor: pointer;
-  width: 36px;
-  height: 20px;
-  border-radius: 10px;
-  background: ${({ theme, isActive }) => (!isActive ? theme.bg3 : theme.primary)};
-
-  position: relative;
-`
-
-export const SToggleThumb = styled.div`
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  top: 2px;
-  bottom: 2px;
-  transition: .2s ease right;
-  right: calc(100% - 16px - 2px);
-  border-radius: 50%;
-  background: ${({ theme }) => theme.bg};
 `

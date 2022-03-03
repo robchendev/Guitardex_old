@@ -1,62 +1,35 @@
-import React, { useContext, useRef, useState, useEffect } from 'react'
-import { SLogo, SSearch, SSidebar, SSearchIcon, SSidebarButton } from './styles'
+import React, { useRef, useState } from 'react'
+import { SLogo, SSearch, SSidebar, SSearchIcon } from './styles'
 import { logoSVG } from "../../assets"
-import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
-import Cookies from 'universal-cookie';
+import { SDivider, SLink, SLinkA, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification } from '../Layout/styles'
 
 //Change these to what fits
-import { MdOutlineAnalytics, MdSave } from "react-icons/md"
+import { MdOutlineAnalytics } from "react-icons/md"
 import { BsPeople } from "react-icons/bs"
-import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineLeft, AiOutlineSearch, AiOutlineSetting, AiOutlineTool } from "react-icons/ai"
+import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineSearch, AiOutlineTool } from "react-icons/ai"
+import { FaDiscord, FaYoutube } from "react-icons/fa"
 
-import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router"
 
 const Sidebar = () => {
-  const cookies = new Cookies()
   const searchRef = useRef(null)
-  const {setTheme, theme} = useContext(ThemeContext)
-  const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(true)
   const location = useLocation().pathname
-  const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
   const searchClickHandler = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true)
       searchRef.current.focus()
-      cookies.set("sidebarOpen", !sidebarOpen, expiry)
     } else {
       // search functionality
     }
   }
 
-  // Set Cookies
-  useEffect(() => {
-    setTheme(cookies.get("theme"))
-    setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
-  }, [])
-
-  
   return (
-    <SSidebar isOpen={sidebarOpen}>
-      <>
-        <SSidebarButton 
-          isOpen={sidebarOpen} 
-          onClick={
-            () => {
-              setSidebarOpen((p) => !p)
-              console.log(`set ${!sidebarOpen}`)
-              cookies.set("sidebarOpen", !sidebarOpen, expiry)
-            }
-          }
-        >
-          <AiOutlineLeft />
-        </SSidebarButton>
-      </>
+    <SSidebar>
       <SLogo>
         <img src={logoSVG} alt="logo" />
       </SLogo>
-      <SSearch onClick={searchClickHandler} style={fitContent}>
+      <SSearch onClick={searchClickHandler}>
         <SSearchIcon>
           <AiOutlineSearch />
         </SSearchIcon>
@@ -69,47 +42,26 @@ const Sidebar = () => {
       <SDivider />
       {linksArray.map(({label, icon, link, notification}) => (
         <SLinkContainer key={label} isActive={location === link}>
-          <SLink to={link} style={fitContent}>
+          <SLink to={link}>
             <SLinkIcon>{icon}</SLinkIcon>
-            {sidebarOpen && (
-              <>
-                <SLinkLabel>{label}</SLinkLabel>
-                {/* when notifications are 0 or null, don't show */}
-                {
-                  !!notification && 
-                  (<SLinkNotification>{notification}</SLinkNotification>
-                )}
-              </>
-            )}
+              <SLinkLabel>{label}</SLinkLabel>
+              {/* when notifications are 0 or null, don't show */}
+              {
+                !!notification && 
+                (<SLinkNotification>{notification}</SLinkNotification>
+              )}
           </SLink>
         </SLinkContainer>
       ))}
       <SDivider />
-      {secondaryLinksArray.map(({label, icon}) => (
+      {secondaryLinksArray.map(({label, icon, link}) => (
         <SLinkContainer key={label}>
-          <SLink to="/" style={fitContent}>
+          <SLinkA href={link} target="_blank" rel="noopener noreferrer">
             <SLinkIcon>{icon}</SLinkIcon>
-            {sidebarOpen && <SLinkLabel>{label}</SLinkLabel>}           
-          </SLink>
+            <SLinkLabel>{label}</SLinkLabel>         
+          </SLinkA>
         </SLinkContainer>
       ))}
-      <SDivider />
-      <STheme>
-        {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
-        <SThemeToggler 
-          isActive={theme === "dark"}
-          onClick={
-            () => {
-              setTheme((p) => p === "light" ? "dark" : "light" )
-              cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
-            }
-          }
-        >
-          <SToggleThumb 
-            style={theme === "dark" ? { right: "2px" } : {}}
-          />
-        </SThemeToggler>
-      </STheme>
     </SSidebar>
   )
 }
@@ -125,10 +77,10 @@ const linksArray = [
     label: "Techniques",
     icon: <MdOutlineAnalytics />,
     link: "/techniques",
-    notification: 3,
+    notification: "NEW",
   },
   {
-    label: "GearCareQoL",
+    label: "GearCare",
     icon: <BsPeople />,
     link: "/gearcareqol",
     notification: 0,
@@ -137,24 +89,26 @@ const linksArray = [
     label: "Tools",
     icon: <AiOutlineTool />,
     link: "/tools",
-    notification: 1,
+    notification: 0,
   },
   {
     label: "About",
     icon: <AiFillQuestionCircle />,
     link: "/about",
-    notification: 5,
+    notification: 0,
   },
 ]
 
 const secondaryLinksArray = [
   {
-    label: "Settings",
-    icon: <AiOutlineSetting />
+    label: "Discord",
+    icon: <FaDiscord />,
+    link: "https://discord.com/"
   },
   {
-    label: "Saved",
-    icon: <MdSave />
+    label: "YouTube",
+    icon: <FaYoutube />,
+    link: "https://www.youtube.com/"
   },
 ]
 

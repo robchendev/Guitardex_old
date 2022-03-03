@@ -2,39 +2,12 @@ import styled from "styled-components"
 import { btnReset, v, m } from "../../styles/variables" 
 
 export const SSidebar = styled.div`
-  width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
+  width: ${v.sidebarWidth};
   background: ${({ theme }) => theme.bg};
   height: 100vh;
   padding: ${v.lgSpacing};
 
   position: relative;
-`
-
-export const SSidebarButton = styled.button`
-  ${btnReset};
-  position: absolute;
-
-  top: ${v.xxlSpacing};
-  right: ${({ isOpen }) => (!isOpen ? `-20px` : `20px`)};
-  font-size: ${m.menuToggleSize};
-
-  display: flex;
-  width: 40px;
-  height: 40px;
-  border-radius: ${v.borderRadius};
-  background: ${({ theme }) => theme.bg};
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  transition: transform 0.8s;
-  transform: ${({ isOpen }) => !isOpen ? `rotateY(180deg)` : `initial`};
-
-  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};
-
-  
 `
 
 export const SLogo = styled.div`
