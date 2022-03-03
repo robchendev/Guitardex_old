@@ -12,12 +12,12 @@ import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineLeft, AiOutlineSearch, A
 import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router"
 
-const cookies = new Cookies()
+////const cookies = new Cookies()
 
 const Sidebar = () => {
   const searchRef = useRef(null)
   const {setTheme, theme} = useContext(ThemeContext)
-  const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
+  ////const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const location = useLocation().pathname
   const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
@@ -25,17 +25,17 @@ const Sidebar = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true)
       searchRef.current.focus()
-      cookies.set("sidebarOpen", !sidebarOpen, expiry)
+      ////cookies.set("sidebarOpen", !sidebarOpen, expiry)
     } else {
       // search functionality
     }
   }
 
-  // Set Cookies
-  useEffect(() => {
-    setTheme(cookies.get("theme"))
-    setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
-  }, [])
+  //// Set Cookies
+  // useEffect(() => {
+  //   setTheme(cookies.get("theme"))
+  //   setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
+  // }, [])
 
   
   return (
@@ -47,7 +47,7 @@ const Sidebar = () => {
             () => {
               setSidebarOpen((p) => !p)
               console.log(`set ${!sidebarOpen}`)
-              cookies.set("sidebarOpen", !sidebarOpen, expiry)
+              ////cookies.set("sidebarOpen", !sidebarOpen, expiry)
             }
           }
         >
@@ -102,7 +102,7 @@ const Sidebar = () => {
           onClick={
             () => {
               setTheme((p) => p === "light" ? "dark" : "light" )
-              cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
+              ////cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
             }
           }
         >
