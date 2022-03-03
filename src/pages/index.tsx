@@ -28,7 +28,7 @@ const listStyles = {
   marginBottom: 96,
   paddingLeft: 0,
 }
-const listItemStyles = {
+const list_itemstyles = {
   fontWeight: 300,
   fontSize: 24,
   maxWidth: 560,
