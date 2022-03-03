@@ -8,10 +8,12 @@ const TechniqueDetails = () => {
       <div>
         <h2>title</h2>
         <h3>prereqs</h3>
-        <div dangerouslySetInnerHTML={} />
+        
       </div>
     </Layout>
   )
 }
+
+//<div dangerouslySetInnerHTML={} />
 
 export default TechniqueDetails
