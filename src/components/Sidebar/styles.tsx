@@ -29,7 +29,7 @@ export const SSidebarButton = styled.button`
   justify-content: center;
   cursor: pointer;
 
-  transition: transform 0.8s;
+  //transition: transform 0.8s;
   transform: ${({ isOpen }) => !isOpen ? `rotateY(180deg)` : `initial`};
 
   box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};

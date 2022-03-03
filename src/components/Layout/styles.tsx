@@ -96,7 +96,7 @@ export const SToggleThumb = styled.div`
   position: absolute;
   top: 2px;
   bottom: 2px;
-  transition: .2s ease right;
+  //transition: .2s ease right;
   right: calc(100% - 16px - 2px);
   border-radius: 50%;
   background: ${({ theme }) => theme.bg};
