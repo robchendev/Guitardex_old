@@ -32,13 +32,16 @@
     "gatsby-plugin-sharp": "^4.7.0",
     "gatsby-plugin-sitemap": "^5.7.0",
     "gatsby-plugin-styled-components": "^5.9.0",
+    "gatsby-plugin-typography": "^4.9.0",
     "gatsby-source-filesystem": "^4.7.0",
     "gatsby-transformer-sharp": "^4.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-typography": "^0.16.20",
     "styled-components": "^5.3.3",
+    "typography": "^0.16.21",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
