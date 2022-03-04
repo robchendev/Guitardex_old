@@ -14,20 +14,14 @@ const MagicScriptTag = () => {
   root.style.setProperty(
     '--color-text',
     colorMode === 'light'
-      ? 'black'
-      : 'white'
-  );
-  root.style.setProperty(
-    '--color-background',
-    colorMode === 'light'
       ? 'white'
       : 'black'
   );
   root.style.setProperty(
-    '--color-primary',
+    '--color-background',
     colorMode === 'light'
-      ? 'orange'
-      : 'blue'
+      ? 'black'
+      : 'white'
   );
   root.style.setProperty('--initial-color-mode', colorMode);
 })()`;
