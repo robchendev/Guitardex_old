@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef, useState, useEffect } from 'react'
 import { SLogo, SSearch, SSidebar, SSearchIcon, SSidebarButton } from './styles'
 import { logoSVG } from "../../assets"
 import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
@@ -11,11 +11,14 @@ import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineLeft, AiOutlineSearch, A
 import { ThemeContext } from "../Layout/Layout"
 
 import { useLocation } from "@reach/router";
+import Cookies from "universal-cookie"
 
 // import createPersistedState from "use-persisted-state"
 // const useTheme = createPersistedState('colorScheme');
 
 const Sidebar = () => {
+  const cookies = new Cookies()
+  const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const searchRef = useRef(null)
   const {setTheme, theme} = useContext(ThemeContext)
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -25,17 +28,30 @@ const Sidebar = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true)
       searchRef.current.focus()
+      cookies.set("sidebarOpen", !sidebarOpen, expiry)
     } else {
       // search functionality
     }
   }
+
+  // Set Cookies
+  useEffect(() => {
+    setTheme(cookies.get("theme"))
+    setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
+  }, [])
 
   return (
     <SSidebar isOpen={sidebarOpen}>
       <>
         <SSidebarButton 
           isOpen={sidebarOpen} 
-          onClick={() => setSidebarOpen((p) => !p)}
+          onClick={
+            () => {
+              setSidebarOpen((p) => !p)
+              console.log(`set ${!sidebarOpen}`)
+              cookies.set("sidebarOpen", !sidebarOpen, expiry)
+            }
+          }
         >
           <AiOutlineLeft />
         </SSidebarButton>
@@ -85,9 +101,16 @@ const Sidebar = () => {
         {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
         <SThemeToggler 
           isActive={theme === "dark"}
-          onClick={() => setTheme(p => p === "light" ? "dark" : "light")}
+          onClick={
+            () => {
+              setTheme((p) => p === "light" ? "dark" : "light" )
+              cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
+            }
+          }
         >
-          <SToggleThumb style={theme === "dark" ? { right: "2px" } : {}}/>
+          <SToggleThumb 
+            style={theme === "dark" ? { right: "2px" } : {}}
+          />
         </SThemeToggler>
       </STheme>
     </SSidebar>
