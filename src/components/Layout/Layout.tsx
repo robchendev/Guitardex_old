@@ -15,7 +15,7 @@ const Layout = (props) => {
   const themeStyle = theme === 'light' ? lightTheme : darkTheme
   return (
     <ThemeContext.Provider value={{ setTheme, theme }}>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={themeStyle}>
         <GlobalStyle />
         <Helmet>
           <title>{props.title}</title>
