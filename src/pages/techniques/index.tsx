@@ -28,23 +28,15 @@ export const query = graphql`
   query TechniquesPage {
     techniques: allMarkdownRemark(sort: {fields: frontmatter___title, order: ASC}) {
       nodes {
-        html
-        frontmatter { 
-          slug
+        frontmatter {
           title
           prereqs
-          category
+          slug
         }
         id
       }
     }
-    url: site {
-      siteMetadata {
-        siteUrl
-      }
-    }
   }
-
 `
 
 export default Techniques

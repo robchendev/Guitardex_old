@@ -21,17 +21,16 @@
     "@mdx-js/react": "^1.6.22",
     "@types/react-helmet": "^6.1.5",
     "babel-plugin-styled-components": "^2.0.6",
-    "eslint": "^7.32.0",
     "framer-motion": "^6.2.6",
     "gatsby": "^4.7.2",
     "gatsby-plugin-emotion": "^7.7.0",
     "gatsby-plugin-google-analytics": "^4.7.0",
     "gatsby-plugin-image": "^2.7.0",
-    "gatsby-plugin-mdx": "^3.7.1",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-sharp": "^4.9.0",
     "gatsby-plugin-sitemap": "^5.7.0",
     "gatsby-plugin-styled-components": "^5.9.0",
+    "gatsby-remark-embed-video": "^3.1.1",
     "gatsby-remark-images": "^6.9.0",
     "gatsby-source-filesystem": "^4.9.0",
     "gatsby-transformer-remark": "^5.9.0",
@@ -41,10 +40,5 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "styled-components": "^5.3.3"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "@typescript-eslint/parser": "^5.12.0",
-    "eslint-plugin-react": "^7.28.0"
   }
 }
