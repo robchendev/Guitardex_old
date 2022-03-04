@@ -12,12 +12,12 @@ const cookies = new Cookies()
 
 
 function getInitialColorMode() {
-  const persistedColorPreference = cookies.get('theme');
+  const persistedColorPreference = 'dark';
   const hasPersistedPreference = typeof persistedColorPreference === 'string';
   if (hasPersistedPreference) {
     return persistedColorPreference;
   }
-  return 'light';
+  return 'dark';
 }
 
 // createContext should not have any params

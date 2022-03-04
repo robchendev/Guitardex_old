@@ -1,28 +1,21 @@
 const MagicScriptTag = () => {
   const codeToRunOnClient = `
-(function() {
-  function getInitialColorMode() {
-    const persistedColorPreference = cookies.get('theme');
-    const hasPersistedPreference = typeof persistedColorPreference === 'string';
-    if (hasPersistedPreference) {
-      return persistedColorPreference;
+  (function() {
+    function getInitialColorMode() {
+      const persistedColorPreference = 'light';
+      const hasPersistedPreference = typeof persistedColorPreference === 'string';
+      if (hasPersistedPreference) {
+        return persistedColorPreference;
+      }
+      return 'light';
     }
-    return 'light';
-  }
-  const colorMode = getInitialColorMode();
-  const root = document.documentElement;
-  root.style.setProperty(
-    '--color-text',
-    colorMode === 'light'
-      ? 'white'
-      : 'black'
-  );
-  root.style.setProperty(
-    '--color-background',
-    'black'
-  );
-  root.style.setProperty('--initial-color-mode', colorMode);
-})()`;
+    const colorMode = getInitialColorMode();
+    const root = document.documentElement;
+    root.style.setProperty('--color-background','#000');
+  })()
+  
+  
+`;
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };

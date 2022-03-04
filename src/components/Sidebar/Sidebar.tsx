@@ -17,10 +17,10 @@ import Cookies from "universal-cookie"
 // const useTheme = createPersistedState('colorScheme');
 
 const Sidebar = () => {
-  const cookies = new Cookies()
+  // const cookies = new Cookies()
   const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const searchRef = useRef(null)
-  const {rawSetColorMode, theme} = useContext(ThemeContext)
+  //const {rawSetColorMode, theme} = useContext(ThemeContext)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
   const location = useLocation().pathname
@@ -28,7 +28,7 @@ const Sidebar = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true)
       searchRef.current.focus()
-      cookies.set("sidebarOpen", !sidebarOpen, expiry)
+      //cookies.set("sidebarOpen", !sidebarOpen, expiry)
     } else {
       // search functionality
     }
@@ -36,8 +36,8 @@ const Sidebar = () => {
 
   // Set Cookies
   useEffect(() => {
-    rawSetColorMode(cookies.get("theme"))
-    setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
+    //rawSetColorMode(cookies.get("theme"))
+    //setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
   }, [])
 
   return (
@@ -49,7 +49,7 @@ const Sidebar = () => {
             () => {
               setSidebarOpen((p) => !p)
               console.log(`set ${!sidebarOpen}`)
-              cookies.set("sidebarOpen", !sidebarOpen, expiry)
+              //cookies.set("sidebarOpen", !sidebarOpen, expiry)
             }
           }
         >
@@ -100,16 +100,16 @@ const Sidebar = () => {
       <STheme>
         {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
         <SThemeToggler 
-          isActive={theme === "dark"}
+          
           onClick={
             () => {
               rawSetColorMode((p) => p === "light" ? "dark" : "light" )
-              cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
+              //cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
             }
           }
         >
           <SToggleThumb 
-            style={theme === "dark" ? { right: "2px" } : {}}
+            
           />
         </SThemeToggler>
       </STheme>
