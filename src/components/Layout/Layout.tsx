@@ -6,16 +6,37 @@ import { ThemeProvider } from "styled-components"
 import FontLoad from "../../assets/fonts"
 import { GlobalStyle } from "../../styles/globalStyles"
 import { darkTheme, lightTheme } from "../../styles/theme"
+import Cookies from "universal-cookie"
+const cookies = new Cookies() 
 
-// This can also be exported from somewhere else for Sidebar.tsx
+
+
+function getInitialColorMode() {
+  const persistedColorPreference = cookies.get('theme');
+  const hasPersistedPreference = typeof persistedColorPreference === 'string';
+  if (hasPersistedPreference) {
+    return persistedColorPreference;
+  }
+  return 'light';
+}
+
+// createContext should not have any params
+// but that only works in js
 export const ThemeContext = React.createContext(null)
 
 const Layout = (props) => {
-  const [theme, setTheme] = useState("light")
+  const [theme, rawSetColorMode] = useState(getInitialColorMode)
+
+  const setColorMode = (value) => {
+    rawSetColorMode(value);
+    // Persist it on update
+    cookies.set('theme', value);
+  };
+
   const themeStyle = theme === 'light' ? lightTheme : darkTheme
   return (
-    <ThemeContext.Provider value={{ setTheme, theme }}>
-      <ThemeProvider theme={themeStyle}>
+    <ThemeContext.Provider value={{ rawSetColorMode, theme }}>
+      {/* <ThemeProvider theme={themeStyle}> */}
         <GlobalStyle />
         <Helmet>
           <title>{props.title}</title>
@@ -25,7 +46,7 @@ const Layout = (props) => {
           <Sidebar />
           <SMain>{props.children}</SMain>
         </SLayout>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </ThemeContext.Provider>
   )
 }

@@ -20,7 +20,7 @@ const Sidebar = () => {
   const cookies = new Cookies()
   const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const searchRef = useRef(null)
-  const {setTheme, theme} = useContext(ThemeContext)
+  const {rawSetColorMode, theme} = useContext(ThemeContext)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
   const location = useLocation().pathname
@@ -36,7 +36,7 @@ const Sidebar = () => {
 
   // Set Cookies
   useEffect(() => {
-    setTheme(cookies.get("theme"))
+    rawSetColorMode(cookies.get("theme"))
     setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
   }, [])
 
@@ -103,7 +103,7 @@ const Sidebar = () => {
           isActive={theme === "dark"}
           onClick={
             () => {
-              setTheme((p) => p === "light" ? "dark" : "light" )
+              rawSetColorMode((p) => p === "light" ? "dark" : "light" )
               cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
             }
           }
