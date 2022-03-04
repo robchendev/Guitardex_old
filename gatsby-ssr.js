@@ -19,9 +19,7 @@ const MagicScriptTag = () => {
   );
   root.style.setProperty(
     '--color-background',
-    colorMode === 'light'
-      ? 'black'
-      : 'white'
+    'black'
   );
   root.style.setProperty('--initial-color-mode', colorMode);
 })()`;
