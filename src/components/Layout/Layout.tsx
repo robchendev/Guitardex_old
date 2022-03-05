@@ -28,9 +28,6 @@ const Layout = (props) => {
     // Because colors matter so much for the initial page view, we're
     // doing a lot of the work in gatsby-ssr. That way it can happen before
     // the React component tree mounts.
-    console.log("INITIAL_COLOR_MODE_CSS_PROP: " + root.style.getPropertyValue(
-      INITIAL_COLOR_MODE_CSS_PROP
-    ))
     const initialColorValue = root.style.getPropertyValue(
       INITIAL_COLOR_MODE_CSS_PROP
     );// this isnt updating correctly, and its really weird, depends on localstorage i guess

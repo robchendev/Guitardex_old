@@ -1,13 +1,16 @@
 import { COLORS } from '/src/styles/theme';
-import Cookies from 'universal-cookie';
 
 const MagicScriptTag = () => {
 
+  // localstorage isnt changing with each new page, only on hard refresh
   const codeToRunOnClient = `
   (function() {
     function getInitialColorMode() {
+
       const persistedColorPreference = window.localStorage.getItem('color-mode');
       const hasPersistedPreference = typeof persistedColorPreference === 'string';
+      // If the user has explicitly chosen light or dark,
+      // let's use it. Otherwise, this value will be null.
       if (hasPersistedPreference) {
         return persistedColorPreference;
       }
