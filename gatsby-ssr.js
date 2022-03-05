@@ -6,7 +6,7 @@ const MagicScriptTag = () => {
   const codeToRunOnClient = `
   (function() {
     function getInitialColorMode() {
-      const persistedColorPreference = cookies.get('color-mode');
+      const persistedColorPreference = window.localStorage.getItem('color-mode');
       const hasPersistedPreference = typeof persistedColorPreference === 'string';
       if (hasPersistedPreference) {
         return persistedColorPreference;

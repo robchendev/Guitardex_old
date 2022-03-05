@@ -4,7 +4,6 @@ import { btnReset, v } from "../../styles/variables"
  
 export const SLayout = styled.div`
   display: flex;
-
 `
 
 export const SMain = styled.main`
@@ -85,7 +84,7 @@ export const SThemeToggler = styled.button`
   width: 36px;
   height: 20px;
   border-radius: 10px;
-  background: var(--color-toggle); // this doesnt work
+  background: var(--color-toggle); 
 
   position: relative;
 `
@@ -99,5 +98,5 @@ export const SToggleThumb = styled.div`
   transition: .2s ease right;
   right: calc(100% - 16px - 2px);
   border-radius: 50%;
-  background: var(--color-bg); // this doesnt work
+  background: var(--color-bg);
 `

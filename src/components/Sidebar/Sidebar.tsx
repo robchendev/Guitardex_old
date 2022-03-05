@@ -30,7 +30,7 @@ const Sidebar = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true)
       searchRef.current.focus()
-      cookies.set("sidebarOpen", !sidebarOpen, expiry)
+      localStorage.setItem("sidebarOpen", !sidebarOpen ? "open" : "closed")
     } else {
       // search functionality
     }
@@ -38,9 +38,8 @@ const Sidebar = () => {
 
   // Set Cookies
   useEffect(() => {
-    setColorMode(cookies.get('color-mode'))
-    console.log('inside useEffect: ' + colorMode)
-    setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
+    setColorMode(localStorage.getItem('color-mode'))
+    setSidebarOpen(localStorage.getItem("sidebarOpen") === "open" ? true : false)
   }, [])
 
   return (
@@ -52,7 +51,7 @@ const Sidebar = () => {
             () => {
               setSidebarOpen((p) => !p)
               // console.log(`set ${!sidebarOpen}`)
-              cookies.set("sidebarOpen", !sidebarOpen, expiry)
+              localStorage.setItem("sidebarOpen", !sidebarOpen ? "open" : "closed")
             }
           }
         >
@@ -109,7 +108,7 @@ const Sidebar = () => {
             () => {
               //console.log('before change: ' + colorMode)
               setColorMode(colorMode === "light" ? 'dark' : 'light');
-              cookies.set('color-mode', colorMode === "light" ? 'dark' : 'light', expiry)
+              localStorage.setItem('color-mode', colorMode === "light" ? 'dark' : 'light')
             }
           }
         >

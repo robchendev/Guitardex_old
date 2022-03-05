@@ -28,30 +28,29 @@ const Layout = (props) => {
     // Because colors matter so much for the initial page view, we're
     // doing a lot of the work in gatsby-ssr. That way it can happen before
     // the React component tree mounts.
-
-    console.log("Initial Color Mode: " + root.style.getPropertyValue(
+    console.log("INITIAL_COLOR_MODE_CSS_PROP: " + root.style.getPropertyValue(
       INITIAL_COLOR_MODE_CSS_PROP
     ))
     const initialColorValue = root.style.getPropertyValue(
       INITIAL_COLOR_MODE_CSS_PROP
-    );
+    );// this isnt updating correctly, and its really weird, depends on localstorage i guess
+    //getInitialColorMode() in gatsby-ssr.js is returning wrong values sometimes
 
-    rawSetColorMode(initialColorValue);
-    console.log("layout: " + colorMode)
+    console.log("initialColorValue: " + initialColorValue)
+    rawSetColorMode(initialColorValue); 
+    //console.log("layout: " + colorMode)
   }, []);
 
   const contextValue = React.useMemo(() => {
     function setColorMode(newValue) {
       // setColorMode('light')
-      console.log("inside setColorMode")
       const root = window.document.documentElement;
-      cookies.set(COLOR_MODE_KEY, newValue);
+      localStorage.setItem(COLOR_MODE_KEY, newValue);
       Object.entries(COLORS).forEach(([name, colorByTheme]) => {
         const cssVarName = `--color-${name}`;
         root.style.setProperty(cssVarName, colorByTheme[newValue]);
       })
       rawSetColorMode(newValue);
-      console.log("colorMode: " + colorMode)
     }
     return {
       colorMode,
