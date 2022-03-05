@@ -1,8 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import {
-  COLORS,
-  SIDEBAR,
-} from "../styles/theme"
+import { COLORS } from "../styles/theme"
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {

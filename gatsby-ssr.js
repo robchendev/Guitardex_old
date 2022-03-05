@@ -1,9 +1,4 @@
-import { 
-  COLORS, 
-  SIDEBAR,
-  INITIAL_COLOR_MODE_CSS_PROP,
-  INITIAL_SIDEBAR_MODE_CSS_PROP, 
-} from '/src/styles/theme';
+import { COLORS } from '/src/styles/theme';
 
 const MagicScriptTag = () => {
 
@@ -18,16 +13,7 @@ const MagicScriptTag = () => {
       }
       return 'light';
     }
-    function getInitialSidebarMode() {
-      const persistedSidebarPreference = window.localStorage.getItem('sidebar-mode');
-      const hasPersistedPreference = typeof persistedSidebarPreference === 'string';
-      if (hasPersistedPreference) {
-        return persistedSidebarPreference;
-      }
-      return 'open';
-    }
     const colorMode = getInitialColorMode();
-    const sidebarMode = getInitialSidebarMode();
     const root = document.documentElement;
     root.style.setProperty(
       '--color-text',
@@ -71,14 +57,7 @@ const MagicScriptTag = () => {
         ? '${COLORS.toggle.light}'
         : '${COLORS.toggle.dark}'
     );
-    root.style.setProperty(
-      '--sidebar-width',
-      sidebarMode === 'open'
-        ? '${SIDEBAR.width.open}'
-        : '${SIDEBAR.width.closed}'
-    );
     root.style.setProperty('--initial-color-mode', colorMode);
-    root.style.setProperty('--initial-sidebar-mode', sidebarMode);
   })()
 `;
   // eslint-disable-next-line react/no-danger

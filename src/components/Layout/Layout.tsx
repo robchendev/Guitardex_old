@@ -24,7 +24,6 @@ export const ThemeContext = React.createContext(null)
 
 const Layout = (props) => {
   const [colorMode, rawSetColorMode] = React.useState(undefined);
-  const [sidebarMode, rawSetSidebarMode] = React.useState(undefined);
 
   React.useEffect(() => {
     const root = window.document.documentElement;
@@ -35,13 +34,10 @@ const Layout = (props) => {
     const initialColorValue = root.style.getPropertyValue(
       INITIAL_COLOR_MODE_CSS_PROP
     );
-    const initialSidebarValue = root.style.getPropertyValue(
-      INITIAL_SIDEBAR_MODE_CSS_PROP
-    );// this isnt updating correctly, and its really weird, depends on localstorage i guess
+    // this isnt updating correctly, and its really weird, depends on localstorage i guess
     //getInitialColorMode() in gatsby-ssr.js is returning wrong values sometimes
 
-    rawSetColorMode(initialColorValue); 
-    rawSetSidebarMode(initialSidebarValue); 
+    rawSetColorMode(initialColorValue);
   }, []);
 
   const contextValue = React.useMemo(() => {
@@ -54,22 +50,11 @@ const Layout = (props) => {
       })
       rawSetColorMode(newValue);
     }
-    function setSidebarMode(newValue) {
-      const root = window.document.documentElement;
-      localStorage.setItem(SIDEBAR_MODE_KEY, newValue);
-      Object.entries(SIDEBAR).forEach(([name, sidebarByTheme]) => {
-        const cssVarName = `--sidebar-${name}`;
-        root.style.setProperty(cssVarName, sidebarByTheme[newValue]);
-      })
-      rawSetSidebarMode(newValue);
-    }
     return {
       colorMode, ////////////// CAN RETURN SIDEBAR HERE OR NO???
       setColorMode,
-      sidebarMode,
-      setSidebarMode
     };
-  }, [colorMode, rawSetColorMode, sidebarMode, rawSetSidebarMode]);
+  }, [colorMode, rawSetColorMode]);
 
   return (
     <ThemeContext.Provider value={contextValue}>

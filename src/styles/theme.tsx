@@ -1,6 +1,6 @@
 export const lightTheme = {
   bg: "rgb(255,255,255)",
-  bgAlpha: "rgba(250,250,250,.3)",
+  bgAlpha: "rgba(250,250,250,.4)",
   bg2: "rgb(245,245,245)",
   bg3: "rgb(230,230,230)",
   text: "rgb(45,45,45)",
@@ -8,7 +8,7 @@ export const lightTheme = {
 }
 export const darkTheme = {
   bg: "rgb(25,25,25)",
-  bgAlpha: "rgba(0,0,0,.3)",
+  bgAlpha: "rgba(0,0,0,.4)",
   bg2: "rgb(40,40,40)",
   bg3: "rgb(60,60,60)",
   text: "rgb(210,210,210)",
@@ -33,7 +33,7 @@ export const COLORS = {
     dark: 'rgb(40,40,40)',
   },
   bg3: {
-    light: 'rgb(230,230,230)',
+    light: 'rgb(220,220,220)',
     dark: 'rgb(60,60,60)',
   },
   bgAlpha: {
@@ -41,19 +41,10 @@ export const COLORS = {
     dark: 'rgba(0,0,0,.3)',
   },
   toggle: {
-    light: 'rgb(230,230,230)',
+    light: 'rgb(220,220,220)',
     dark: '#D43552'
   },
 };
 
-export const SIDEBAR = {
-  width: {
-    open: '280px',
-    closed: 'auto',
-  }
-}
-
 export const COLOR_MODE_KEY = 'color-mode';
-export const SIDEBAR_MODE_KEY = 'sidebar-mode';
 export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
-export const INITIAL_SIDEBAR_MODE_CSS_PROP = '--initial-sidebar-mode';
