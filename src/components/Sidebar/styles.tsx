@@ -3,7 +3,7 @@ import { btnReset, v, m } from "../../styles/variables"
 
 export const SSidebar = styled.div`
   width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
-  background: ${({ theme }) => theme.bg};
+  background: var(--color-bg);
   height: 100vh;
   padding: ${v.lgSpacing};
 
@@ -22,7 +22,7 @@ export const SSidebarButton = styled.button`
   width: 40px;
   height: 40px;
   border-radius: ${v.borderRadius};
-  background: ${({ theme }) => theme.bg};
+  background: var(--color-bg);
 
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@ export const SSidebarButton = styled.button`
   transition: transform 0.8s;
   transform: ${({ isOpen }) => !isOpen ? `rotateY(180deg)` : `initial`};
 
-  box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};
+  box-shadow: inset 0 0 0 1px var(--color-bg3);
 
   
 `
@@ -50,8 +50,8 @@ export const SLogo = styled.div`
 `
 
 export const SSearch = styled.div`
-  background: ${({ theme }) => theme.bgAlpha};
-  border: 1px solid ${({ theme }) => theme.bg3};
+  background: var(--color-bgAlpha);
+  border: 1px solid var(--color-bg3);
   border-radius: ${v.borderRadius};
   input {
     padding: 0 ${v.smSpacing};
