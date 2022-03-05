@@ -1,10 +1,13 @@
 import { COLORS } from '/src/styles/theme';
+import Cookies from 'universal-cookie';
 
 const MagicScriptTag = () => {
   const codeToRunOnClient = `
   (function() {
+    const cookies = new Cookies();
+    alert(cookies);
     function getInitialColorMode() {
-      const persistedColorPreference = COOKIESTHHASJDAJSDHASDGAHSDASD;
+      const persistedColorPreference = cookies.get('color-mode');
       const hasPersistedPreference = typeof persistedColorPreference === 'string';
       if (hasPersistedPreference) {
         return persistedColorPreference;
@@ -49,6 +52,14 @@ const MagicScriptTag = () => {
         ? '${COLORS.primary.light}'
         : '${COLORS.primary.dark}'
     );
+    root.style.setProperty(
+      '--color-toggle',
+      colorMode === 'light'
+        ? '${COLORS.toggle.light}'
+        : '${COLORS.toggle.dark}'
+    );
+    
+    root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;
   // eslint-disable-next-line react/no-danger

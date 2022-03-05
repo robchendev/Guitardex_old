@@ -39,6 +39,7 @@ const Sidebar = () => {
   // Set Cookies
   useEffect(() => {
     setColorMode(cookies.get('color-mode'))
+    console.log('inside useEffect: ' + colorMode)
     setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
   }, [])
 
@@ -50,7 +51,7 @@ const Sidebar = () => {
           onClick={
             () => {
               setSidebarOpen((p) => !p)
-              console.log(`set ${!sidebarOpen}`)
+              // console.log(`set ${!sidebarOpen}`)
               cookies.set("sidebarOpen", !sidebarOpen, expiry)
             }
           }
@@ -106,12 +107,14 @@ const Sidebar = () => {
         <SThemeToggler 
           onClick={
             () => {
-            setColorMode(colorMode === "light" ? 'dark' : 'light');
-            cookies.set('color-mode', colorMode === "light" ? 'dark' : 'light', expiry)
-          }}
+              //console.log('before change: ' + colorMode)
+              setColorMode(colorMode === "light" ? 'dark' : 'light');
+              cookies.set('color-mode', colorMode === "light" ? 'dark' : 'light', expiry)
+            }
+          }
         >
           <SToggleThumb 
-            
+            style={colorMode === "dark" ? { right: "2px" } : {}}
           />
         </SThemeToggler>
       </STheme>

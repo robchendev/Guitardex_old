@@ -28,22 +28,30 @@ const Layout = (props) => {
     // Because colors matter so much for the initial page view, we're
     // doing a lot of the work in gatsby-ssr. That way it can happen before
     // the React component tree mounts.
+
+    console.log("Initial Color Mode: " + root.style.getPropertyValue(
+      INITIAL_COLOR_MODE_CSS_PROP
+    ))
     const initialColorValue = root.style.getPropertyValue(
-      '--initial-color-mode'
+      INITIAL_COLOR_MODE_CSS_PROP
     );
 
     rawSetColorMode(initialColorValue);
+    console.log("layout: " + colorMode)
   }, []);
 
   const contextValue = React.useMemo(() => {
     function setColorMode(newValue) {
+      // setColorMode('light')
+      console.log("inside setColorMode")
       const root = window.document.documentElement;
-      cookies.set('color-mode', newValue);
+      cookies.set(COLOR_MODE_KEY, newValue);
       Object.entries(COLORS).forEach(([name, colorByTheme]) => {
         const cssVarName = `--color-${name}`;
         root.style.setProperty(cssVarName, colorByTheme[newValue]);
       })
       rawSetColorMode(newValue);
+      console.log("colorMode: " + colorMode)
     }
     return {
       colorMode,
@@ -60,6 +68,7 @@ const Layout = (props) => {
           <FontLoad />
         </Helmet>
         <SLayout>
+          
           <Sidebar />
           <SMain>{props.children}</SMain>
         </SLayout>

@@ -40,6 +40,10 @@ export const COLORS = {
     light: 'rgba(250,250,250,.3)',
     dark: 'rgba(0,0,0,.3)',
   },
+  toggle: {
+    light: 'rgb(230,230,230)',
+    dark: '#D43552'
+  },
 };
 
 export const COLOR_MODE_KEY = 'color-mode';
