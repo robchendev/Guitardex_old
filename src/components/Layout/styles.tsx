@@ -1,6 +1,10 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { btnReset, v } from "../../styles/variables"
+import {
+  COLORS,
+  SIDEBAR,
+} from "../../styles/theme"
  
 export const SLayout = styled.div`
   display: flex;
@@ -17,18 +21,18 @@ export const SMain = styled.main`
 export const SDivider = styled.div`
   height: 1px;
   width: 100%;
-  background: var(--color-bg3);
+  background: var(--color-bg3, ${COLORS.bg3.light});
   margin: ${v.lgSpacing} 0;
 `
 
 export const SLinkContainer = styled.div`
-  background: var(--color-bg); 
-  color: var(--color-text); 
+  background: var(--color-bg, ${COLORS.bg.light}); 
+  color: var(--color-text, ${COLORS.text.light}); 
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
   :hover {
-    box-shadow: inset 0 0 0 1px var(--color-bg3);
+    box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
   }
 `
 
@@ -60,7 +64,7 @@ export const SLinkNotification = styled.div`
   font-size: 14px;
   padding: calc(${v.smSpacing} / 2) ${v.smSpacing};
   border-radius: calc(${v.borderRadius} / 2);
-  background: var(--color-primary);
+  background: var(--color-primary, ${COLORS.primary.light});
   color: #fff;
 
   margin-right: ${v.mdSpacing};
@@ -84,7 +88,7 @@ export const SThemeToggler = styled.button`
   width: 36px;
   height: 20px;
   border-radius: 10px;
-  background: var(--color-toggle); 
+  background: var(--color-toggle, ${COLORS.toggle.light}); 
 
   position: relative;
 `
@@ -98,5 +102,5 @@ export const SToggleThumb = styled.div`
   transition: .2s ease right;
   right: calc(100% - 16px - 2px);
   border-radius: 50%;
-  background: var(--color-bg);
+  background: var(--color-bg, ${COLORS.bg.light});
 `

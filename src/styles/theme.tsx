@@ -46,5 +46,14 @@ export const COLORS = {
   },
 };
 
+export const SIDEBAR = {
+  width: {
+    open: '280px',
+    closed: 'auto',
+  }
+}
+
 export const COLOR_MODE_KEY = 'color-mode';
+export const SIDEBAR_MODE_KEY = 'sidebar-mode';
 export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
+export const INITIAL_SIDEBAR_MODE_CSS_PROP = '--initial-sidebar-mode';
