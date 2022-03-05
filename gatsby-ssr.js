@@ -1,4 +1,4 @@
-import { lightTheme, darkTheme } from "./src/styles/theme";
+import { COLORS } from '/src/styles/theme';
 
 const MagicScriptTag = () => {
   const codeToRunOnClient = `
@@ -16,42 +16,40 @@ const MagicScriptTag = () => {
     root.style.setProperty(
       '--color-text',
       colorMode === 'light'
-        ? '${lightTheme.text}'
-        : '${darkTheme.text}'
+        ? '${COLORS.text.light}'
+        : '${COLORS.text.dark}'
     );
     root.style.setProperty(
       '--color-bg',
       colorMode === 'light'
-        ? '${lightTheme.bg}'
-        : '${darkTheme.bg}'
+        ? '${COLORS.bg.light}'
+        : '${COLORS.bg.dark}'
     );
     root.style.setProperty(
       '--color-bgAlpha',
       colorMode === 'light'
-        ? '${lightTheme.bgAlpha}'
-        : '${darkTheme.bgAlpha}'
+        ? '${COLORS.bgAlpha.light}'
+        : '${COLORS.bgAlpha.dark}'
     );
     root.style.setProperty(
       '--color-bg2',
       colorMode === 'light'
-        ? '${lightTheme.bg2}'
-        : '${darkTheme.bg2}'
+        ? '${COLORS.bg2.light}'
+        : '${COLORS.bg2.dark}'
     );
     root.style.setProperty(
       '--color-bg3',
       colorMode === 'light'
-        ? '${lightTheme.bg3}'
-        : '${darkTheme.bg3}'
+        ? '${COLORS.bg3.light}'
+        : '${COLORS.bg3.dark}'
     );
     root.style.setProperty(
       '--color-primary',
       colorMode === 'light'
-        ? '${lightTheme.primary}'
-        : '${darkTheme.primary}'
+        ? '${COLORS.primary.light}'
+        : '${COLORS.primary.dark}'
     );
   })()
-  
-  I'll
 `;
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;

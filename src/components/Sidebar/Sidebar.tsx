@@ -12,7 +12,7 @@ import { ThemeContext } from "../Layout/Layout"
 
 import { useLocation } from "@reach/router";
 import Cookies from "universal-cookie"
-import DarkToggle from '../DarkToggle';
+//import DarkToggle from '../DarkToggle';
 
 // import createPersistedState from "use-persisted-state"
 // const useTheme = createPersistedState('colorScheme');
@@ -21,7 +21,8 @@ const Sidebar = () => {
   const cookies = new Cookies()
   const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const searchRef = useRef(null)
-  const {rawSetColorMode, theme} = useContext(ThemeContext)
+  //const {rawSetColorMode, theme} = useContext(ThemeContext)//
+  const { colorMode, setColorMode } = useContext(ThemeContext);
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
   const location = useLocation().pathname
@@ -37,13 +38,12 @@ const Sidebar = () => {
 
   // Set Cookies
   useEffect(() => {
-    //rawSetColorMode(cookies.get('color-mode'))
+    setColorMode(cookies.get('color-mode'))
     setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
   }, [])
 
   return (
     <SSidebar isOpen={sidebarOpen}>
-      <DarkToggle />
       <>
         <SSidebarButton 
           isOpen={sidebarOpen} 
@@ -104,13 +104,11 @@ const Sidebar = () => {
         {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
         
         <SThemeToggler 
-          
           onClick={
             () => {
-              //rawSetColorMode((p) => p === "light" ? "dark" : "light" )
-              cookies.set('color-mode', theme === "dark" ? "light" : "dark", expiry)
-            }
-          }
+            setColorMode(colorMode === "light" ? 'dark' : 'light');
+            cookies.set('color-mode', colorMode === "light" ? 'dark' : 'light', expiry)
+          }}
         >
           <SToggleThumb 
             

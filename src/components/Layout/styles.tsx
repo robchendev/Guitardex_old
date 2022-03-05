@@ -23,7 +23,7 @@ export const SDivider = styled.div`
 `
 
 export const SLinkContainer = styled.div`
-  background: var(--color-text); 
+  background: var(--color-bg); 
   color: var(--color-text); 
   border-radius: ${v.borderRadius};
   margin: 8px 0;

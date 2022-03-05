@@ -5,7 +5,9 @@ import { ThemeContext } from './Layout/Layout';
 const DarkToggle = () => {
   const { colorMode, setColorMode } = React.useContext(ThemeContext);
 
-  
+  // if (!colorMode) {
+  //   return null;
+  // }
 
   return (
     <>
@@ -14,7 +16,7 @@ const DarkToggle = () => {
         <input
           type="checkbox"
           checked={colorMode === 'dark'}
-          onChange={ev => {
+          onClick={ev => {
             setColorMode(ev.target.checked ? 'dark' : 'light');
           }}
         />{' '}
@@ -23,5 +25,7 @@ const DarkToggle = () => {
     </>
   );
 };
+
+// can be deleted
 
 export default DarkToggle;

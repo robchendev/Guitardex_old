@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet"
 import { ThemeProvider } from "styled-components"
 import FontLoad from "../../assets/fonts"
 import { GlobalStyle } from "../../styles/globalStyles"
-import { darkTheme, lightTheme } from "../../styles/theme"
 import Cookies from "universal-cookie"
 import {
   COLORS,
