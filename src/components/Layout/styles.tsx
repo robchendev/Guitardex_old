@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { btnReset, v } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
- 
+
 export const SLayout = styled.div`
   display: flex;
 `

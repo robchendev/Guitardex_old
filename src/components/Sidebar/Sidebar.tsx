@@ -1,12 +1,13 @@
 import React, { useContext, useRef, useEffect } from 'react'
 import { SLogo, SSearch, SSidebar, SSearchIcon } from './styles'
-import { logoSVG } from "../../assets"
+import { logoPNG } from "../../assets"
 import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
 
 //Change these to what fits
 import { MdOutlineAnalytics, MdSave } from "react-icons/md"
 import { BsPeople } from "react-icons/bs"
-import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineSearch, AiOutlineSetting, AiOutlineTool } from "react-icons/ai"
+import { AiFillQuestionCircle,  AiFillHome, AiOutlineSearch, AiFillSetting, AiOutlineTool, AiFillStar, AiFillSave, AiFillYoutube } from "react-icons/ai"
+import { FaDiscord } from "react-icons/fa"
 
 import { ThemeContext } from "../Layout/Layout"
 
@@ -36,7 +37,7 @@ const Sidebar = () => {
   return (
     <SSidebar>
       <SLogo>
-        <img src={logoSVG} alt="logo" />
+        <img src={logoPNG} alt="logo" />
       </SLogo>
       <SSearch onClick={searchClickHandler}>
         <SSearchIcon>
@@ -92,44 +93,38 @@ const Sidebar = () => {
 const linksArray = [
   {
     label: "Home",
-    icon: <AiOutlineHome />,
+    icon: <AiFillHome />,
     link: "/",
-    notification: 0,
+    notification: "NEW",
   },
   {
     label: "Techniques",
-    icon: <MdOutlineAnalytics />,
+    icon: <AiFillStar />,
     link: "/techniques",
-    notification: 3,
-  },
-  {
-    label: "GearCareQoL",
-    icon: <BsPeople />,
-    link: "/gearcareqol",
     notification: 0,
   },
   {
-    label: "Tools",
-    icon: <AiOutlineTool />,
-    link: "/tools",
-    notification: 1,
+    label: "YouTube",
+    icon: <AiFillYoutube />,
+    link: "https://www.youtube.com/channel/UCvgSO-_LP2L9nTga7qbUhcw",
+    notification: 0,
   },
   {
-    label: "About",
-    icon: <AiFillQuestionCircle />,
-    link: "/about",
-    notification: 5,
+    label: "Discord",
+    icon: <FaDiscord />,
+    link: "https://discord.gg/wgyqBZK",
+    notification: 0,
   },
 ]
 
 const secondaryLinksArray = [
   {
     label: "Settings",
-    icon: <AiOutlineSetting />
+    icon: <AiFillSetting />
   },
   {
     label: "Saved",
-    icon: <MdSave />
+    icon: <AiFillSave />
   },
 ]
 

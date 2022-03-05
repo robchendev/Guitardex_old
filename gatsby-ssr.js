@@ -57,6 +57,12 @@ const MagicScriptTag = () => {
         ? '${COLORS.toggle.light}'
         : '${COLORS.toggle.dark}'
     );
+    root.style.setProperty(
+      '--color-tabimg',
+      colorMode === 'light'
+        ? '${COLORS.tabimg.light}'
+        : '${COLORS.tabimg.dark}'
+    );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;

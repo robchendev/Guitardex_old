@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
+import "./technique-styling.css"
 
 function TechniqueDetails({ data }) {
   const { html } = data.markdownRemark;

@@ -42,8 +42,12 @@ export const COLORS = {
   },
   toggle: {
     light: 'rgb(220,220,220)',
-    dark: '#D43552'
+    dark: '#D43552',
   },
+  tabimg: {
+    light: 'invert(0)',
+    dark: 'invert(0.87)',
+  }
 };
 
 export const COLOR_MODE_KEY = 'color-mode';
