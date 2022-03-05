@@ -1,9 +1,13 @@
 import styled from "styled-components"
 import { btnReset, v, m } from "../../styles/variables" 
+import {
+  COLORS,
+  SIDEBAR,
+} from "../../styles/theme"
 
 export const SSidebar = styled.div`
-  width: ${({ isOpen }) => (!isOpen ? `auto` : v.sidebarWidth)};
-  background: var(--color-bg);
+  width: var(--sidebar-width, ${SIDEBAR.width.open});
+  background: var(--color-bg, ${COLORS.bg.light});
   height: 100vh;
   padding: ${v.lgSpacing};
 
@@ -22,7 +26,7 @@ export const SSidebarButton = styled.button`
   width: 40px;
   height: 40px;
   border-radius: ${v.borderRadius};
-  background: var(--color-bg);
+  background: var(--color-bg, ${COLORS.bg.light});
 
   display: flex;
   align-items: center;
@@ -32,7 +36,7 @@ export const SSidebarButton = styled.button`
   transition: transform 0.8s;
   transform: ${({ isOpen }) => !isOpen ? `rotateY(180deg)` : `initial`};
 
-  box-shadow: inset 0 0 0 1px var(--color-bg3);
+  box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
 
   
 `
@@ -50,8 +54,8 @@ export const SLogo = styled.div`
 `
 
 export const SSearch = styled.div`
-  background: var(--color-bgAlpha);
-  border: 1px solid var(--color-bg3);
+  background: var(--color-bgAlpha, ${COLORS.bgAlpha.light});
+  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   border-radius: ${v.borderRadius};
   input {
     padding: 0 ${v.smSpacing};

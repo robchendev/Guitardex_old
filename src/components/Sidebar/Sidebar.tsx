@@ -17,7 +17,9 @@ import Cookies from "universal-cookie"
 import {
   COLORS,
   COLOR_MODE_KEY,
+  SIDEBAR_MODE_KEY,
   INITIAL_COLOR_MODE_CSS_PROP,
+  INITIAL_SIDEBAR_MODE_CSS_PROP,
 } from '../../styles/theme';
 
 // import createPersistedState from "use-persisted-state"
@@ -27,16 +29,15 @@ const Sidebar = () => {
   const cookies = new Cookies()
   const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const searchRef = useRef(null)
-  //const {rawSetColorMode, theme} = useContext(ThemeContext)//
   const { colorMode, setColorMode } = useContext(ThemeContext);
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
+  const { sidebarMode, setSidebarMode } = useContext(ThemeContext);
+  const fitContent = sidebarMode === "closed" ? { width: `fit-content` } : {}
   const location = useLocation().pathname
   const searchClickHandler = () => {
-    if (!sidebarOpen) {
-      setSidebarOpen(true)
+    if (sidebarMode === "closed") {
+      setSidebarMode("open")
       searchRef.current.focus()
-      localStorage.setItem("sidebarOpen", !sidebarOpen ? "open" : "closed")
+      localStorage.setItem(SIDEBAR_MODE_KEY, sidebarMode === "closed" ? "open" : "closed")
     } else {
       // search functionality
     }
@@ -44,20 +45,25 @@ const Sidebar = () => {
 
   // Set Cookies
   useEffect(() => {
-    setColorMode(localStorage.getItem(COLOR_MODE_KEY))
-    setSidebarOpen(localStorage.getItem("sidebarOpen") === "open" ? true : false)
+    if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string'){
+      setColorMode(localStorage.getItem(COLOR_MODE_KEY))
+    }
+    if (typeof localStorage.getItem(SIDEBAR_MODE_KEY) === 'string'){
+      setSidebarMode(localStorage.getItem(SIDEBAR_MODE_KEY) === "open" ? 'open' : 'closed')
+    }
   }, [])
 
   return (
-    <SSidebar isOpen={sidebarOpen}>
+    <SSidebar isOpen={sidebarMode === "open"}> {/** might need to remove */}
       <>
         <SSidebarButton 
-          isOpen={sidebarOpen} 
+          isOpen={sidebarMode === "open"} 
           onClick={
             () => {
-              setSidebarOpen((p) => !p)
-              // console.log(`set ${!sidebarOpen}`)
-              localStorage.setItem("sidebarOpen", !sidebarOpen ? "open" : "closed")
+              setSidebarMode(sidebarMode === "open" ? "closed" : "open")
+              // console.log(`set ${!sidebarMode}`)
+              localStorage.setItem(SIDEBAR_MODE_KEY, sidebarMode === "open" ? "closed" : "open")
+              document.documentElement.style.setProperty(INITIAL_SIDEBAR_MODE_CSS_PROP, sidebarMode === "open" ? "closed" : "open");
             }
           }
         >
@@ -74,7 +80,7 @@ const Sidebar = () => {
         <input 
           ref={searchRef}
           placeholder="Search" 
-          style={!sidebarOpen ? {width: 0, padding: 0} : {}}
+          style={sidebarMode === "closed" ? {width: 0, padding: 0} : {}}
         />
       </SSearch>
       <SDivider />
@@ -82,7 +88,7 @@ const Sidebar = () => {
         <SLinkContainer key={label} isActive={location === link}>
           <SLink to={link} style={fitContent}>
             <SLinkIcon>{icon}</SLinkIcon>
-            {sidebarOpen && (
+            {sidebarMode === "open" && (
               <>
                 <SLinkLabel>{label}</SLinkLabel>
                 {/* when notifications are 0 or null, don't show */}
@@ -100,14 +106,14 @@ const Sidebar = () => {
         <SLinkContainer key={label}>
           <SLink to="/" style={fitContent}>
             <SLinkIcon>{icon}</SLinkIcon>
-            {sidebarOpen && <SLinkLabel>{label}</SLinkLabel>}           
+            {sidebarMode === "open" && <SLinkLabel>{label}</SLinkLabel>}           
           </SLink>
         </SLinkContainer>
       ))}
       <SDivider />
       
       <STheme>
-        {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
+        {sidebarMode === "open" && <SThemeLabel>Dark Mode</SThemeLabel>}
         
         <SThemeToggler 
           onClick={

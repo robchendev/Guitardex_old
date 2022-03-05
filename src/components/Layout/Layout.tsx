@@ -9,7 +9,10 @@ import Cookies from "universal-cookie"
 import {
   COLORS,
   COLOR_MODE_KEY,
+  SIDEBAR_MODE_KEY,
   INITIAL_COLOR_MODE_CSS_PROP,
+  INITIAL_SIDEBAR_MODE_CSS_PROP,
+  SIDEBAR,
 } from '../../styles/theme';
 
 const cookies = new Cookies() 
@@ -21,6 +24,7 @@ export const ThemeContext = React.createContext(null)
 
 const Layout = (props) => {
   const [colorMode, rawSetColorMode] = React.useState(undefined);
+  const [sidebarMode, rawSetSidebarMode] = React.useState(undefined);
 
   React.useEffect(() => {
     const root = window.document.documentElement;
@@ -30,17 +34,18 @@ const Layout = (props) => {
     // the React component tree mounts.
     const initialColorValue = root.style.getPropertyValue(
       INITIAL_COLOR_MODE_CSS_PROP
+    );
+    const initialSidebarValue = root.style.getPropertyValue(
+      INITIAL_SIDEBAR_MODE_CSS_PROP
     );// this isnt updating correctly, and its really weird, depends on localstorage i guess
     //getInitialColorMode() in gatsby-ssr.js is returning wrong values sometimes
 
-    console.log("initialColorValue: " + initialColorValue)
     rawSetColorMode(initialColorValue); 
-    //console.log("layout: " + colorMode)
+    rawSetSidebarMode(initialSidebarValue); 
   }, []);
 
   const contextValue = React.useMemo(() => {
     function setColorMode(newValue) {
-      // setColorMode('light')
       const root = window.document.documentElement;
       localStorage.setItem(COLOR_MODE_KEY, newValue);
       Object.entries(COLORS).forEach(([name, colorByTheme]) => {
@@ -49,11 +54,22 @@ const Layout = (props) => {
       })
       rawSetColorMode(newValue);
     }
+    function setSidebarMode(newValue) {
+      const root = window.document.documentElement;
+      localStorage.setItem(SIDEBAR_MODE_KEY, newValue);
+      Object.entries(SIDEBAR).forEach(([name, sidebarByTheme]) => {
+        const cssVarName = `--sidebar-${name}`;
+        root.style.setProperty(cssVarName, sidebarByTheme[newValue]);
+      })
+      rawSetSidebarMode(newValue);
+    }
     return {
-      colorMode,
+      colorMode, ////////////// CAN RETURN SIDEBAR HERE OR NO???
       setColorMode,
+      sidebarMode,
+      setSidebarMode
     };
-  }, [colorMode, rawSetColorMode]);
+  }, [colorMode, rawSetColorMode, sidebarMode, rawSetSidebarMode]);
 
   return (
     <ThemeContext.Provider value={contextValue}>
