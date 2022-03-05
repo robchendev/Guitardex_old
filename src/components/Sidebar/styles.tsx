@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import { btnReset, v, m } from "../../styles/variables" 
+import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
   width: ${v.sidebarWidth};
-  background: ${({ theme }) => theme.bg};
+  background: var(--color-bg, ${COLORS.bg.light});
   height: 100vh;
   padding: ${v.lgSpacing};
 
@@ -23,12 +24,13 @@ export const SLogo = styled.div`
 `
 
 export const SSearch = styled.div`
-  background: ${({ theme }) => theme.bgAlpha};
-  border: 1px solid ${({ theme }) => theme.bg3};
+  background: var(--color-bgAlpha, ${COLORS.bgAlpha.light});
+  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   border-radius: ${v.borderRadius};
   input {
     padding: 0 ${v.smSpacing};
     font-family: inherit;
+    letter-spacing: inherit;
     font-size: 16px;
     width: 100%;
     outline: none;

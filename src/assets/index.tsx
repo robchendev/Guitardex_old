@@ -1,3 +1,3 @@
-import logo from './logo.svg'
+import logo from './fc3.png'
 
-export const logoSVG = logo
+export const logoPNG = logo

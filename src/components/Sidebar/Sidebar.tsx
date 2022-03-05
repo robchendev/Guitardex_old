@@ -1,43 +1,49 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import { SLogo, SSearch, SSidebar, SSearchIcon } from './styles'
-import { logoSVG } from "../../assets"
-import { SDivider, SLink, SLinkA, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification } from '../Layout/styles'
+import { logoPNG } from "../../assets"
+import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
 
 //Change these to what fits
-import { MdOutlineAnalytics } from "react-icons/md"
+import { MdOutlineAnalytics, MdSave } from "react-icons/md"
 import { BsPeople } from "react-icons/bs"
-import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineSearch, AiOutlineTool } from "react-icons/ai"
-import { FaDiscord, FaYoutube } from "react-icons/fa"
+import { AiFillQuestionCircle,  AiFillHome, AiOutlineSearch, AiFillSetting, AiOutlineTool, AiFillStar, AiFillSave, AiFillYoutube } from "react-icons/ai"
+import { FaDiscord } from "react-icons/fa"
 
-import { useLocation } from "@reach/router"
+import { ThemeContext } from "../Layout/Layout"
+
+import { useLocation } from "@reach/router";
+//import Cookies from "universal-cookie";
+
+import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/theme';
 
 const Sidebar = () => {
+  // if I ever need cookie functionality:
+  // const cookies = new Cookies()
+  // const expiry = {path: '/', expires: new Date(Date.now()+(30*24*60*60*1000))}
   const searchRef = useRef(null)
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const { colorMode, setColorMode } = useContext(ThemeContext);
   const location = useLocation().pathname
   const searchClickHandler = () => {
-    if (!sidebarOpen) {
-      setSidebarOpen(true)
-      searchRef.current.focus()
-    } else {
-      // search functionality
-    }
+    // search functionality
   }
+
+  // Set Cookies
+  useEffect(() => {
+    if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string'){
+      setColorMode(localStorage.getItem(COLOR_MODE_KEY))
+    }
+  }, [])
 
   return (
     <SSidebar>
       <SLogo>
-        <img src={logoSVG} alt="logo" />
+        <img src={logoPNG} alt="logo" />
       </SLogo>
       <SSearch onClick={searchClickHandler}>
         <SSearchIcon>
           <AiOutlineSearch />
         </SSearchIcon>
-        <input 
-          ref={searchRef}
-          placeholder="Search" 
-          style={!sidebarOpen ? {width: 0, padding: 0} : {}}
-        />
+        <input ref={searchRef} placeholder="Search"/>
       </SSearch>
       <SDivider />
       {linksArray.map(({label, icon, link, notification}) => (
@@ -54,14 +60,32 @@ const Sidebar = () => {
         </SLinkContainer>
       ))}
       <SDivider />
-      {secondaryLinksArray.map(({label, icon, link}) => (
+      {secondaryLinksArray.map(({label, icon}) => (
         <SLinkContainer key={label}>
-          <SLinkA href={link} target="_blank" rel="noopener noreferrer">
+          <SLink to="/">
             <SLinkIcon>{icon}</SLinkIcon>
-            <SLinkLabel>{label}</SLinkLabel>         
-          </SLinkA>
+            <SLinkLabel>{label}</SLinkLabel>           
+          </SLink>
         </SLinkContainer>
       ))}
+      <SDivider />
+      
+      <STheme>
+        <SThemeLabel>Dark Mode</SThemeLabel>
+        
+        <SThemeToggler 
+          onClick={
+            () => {
+              setColorMode(colorMode === "light" ? 'dark' : 'light');
+              localStorage.setItem(COLOR_MODE_KEY, colorMode === "light" ? 'dark' : 'light')
+              // this needs to be here otherwise we get that "wrong initial state" bug
+              document.documentElement.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode === "light" ? 'dark' : 'light');
+            }
+          }
+        >
+          <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}}/>
+        </SThemeToggler>
+      </STheme>
     </SSidebar>
   )
 }
@@ -69,46 +93,38 @@ const Sidebar = () => {
 const linksArray = [
   {
     label: "Home",
-    icon: <AiOutlineHome />,
+    icon: <AiFillHome />,
     link: "/",
-    notification: 0,
-  },
-  {
-    label: "Techniques",
-    icon: <MdOutlineAnalytics />,
-    link: "/techniques",
     notification: "NEW",
   },
   {
-    label: "GearCare",
-    icon: <BsPeople />,
-    link: "/gearcareqol",
+    label: "Techniques",
+    icon: <AiFillStar />,
+    link: "/techniques",
     notification: 0,
   },
   {
-    label: "Tools",
-    icon: <AiOutlineTool />,
-    link: "/tools",
+    label: "YouTube",
+    icon: <AiFillYoutube />,
+    link: "https://www.youtube.com/channel/UCvgSO-_LP2L9nTga7qbUhcw",
     notification: 0,
   },
   {
-    label: "About",
-    icon: <AiFillQuestionCircle />,
-    link: "/about",
+    label: "Discord",
+    icon: <FaDiscord />,
+    link: "https://discord.gg/wgyqBZK",
     notification: 0,
   },
 ]
 
 const secondaryLinksArray = [
   {
-    label: "Discord",
-    icon: <FaDiscord />,
-    link: "https://discord.com/"
+    label: "Settings",
+    icon: <AiFillSetting />
   },
   {
-    label: "YouTube",
-    icon: <FaYoutube />,
-    link: "https://www.youtube.com/"
+    label: "Saved",
+    icon: <AiFillSave />
   },
 ]
 

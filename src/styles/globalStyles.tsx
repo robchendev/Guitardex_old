@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { COLORS } from "../styles/theme"
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -6,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: ${({ theme }) => theme.bg2};
-    color: ${({ theme }) => theme.text};
+    background: var(--color-bg2, ${COLORS.bg2.light});
+    color: var(--color-text, ${COLORS.text.light});
     font-family: 'Roboto', sans-serif;
     letter-spacing: .6px;
   }
