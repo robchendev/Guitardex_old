@@ -1,10 +1,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { btnReset, v } from "../../styles/variables"
-import {
-  COLORS,
-  SIDEBAR,
-} from "../../styles/theme"
+import { COLORS } from "../../styles/theme"
  
 export const SLayout = styled.div`
   display: flex;
@@ -28,6 +25,7 @@ export const SDivider = styled.div`
 export const SLinkContainer = styled.div`
   background: var(--color-bg, ${COLORS.bg.light}); 
   color: var(--color-text, ${COLORS.text.light}); 
+  border-bottom: 3px solid ${({ isActive }) => (!isActive ? `transparent` : COLORS.primary.light)};  
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
@@ -99,7 +97,6 @@ export const SToggleThumb = styled.div`
   position: absolute;
   top: 2px;
   bottom: 2px;
-  transition: .2s ease right;
   right: calc(100% - 16px - 2px);
   border-radius: 50%;
   background: var(--color-bg, ${COLORS.bg.light});

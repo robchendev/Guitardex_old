@@ -1,44 +1,14 @@
 import styled from "styled-components"
 import { btnReset, v, m } from "../../styles/variables" 
-import {
-  COLORS,
-  SIDEBAR,
-} from "../../styles/theme"
+import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
-  width: var(--sidebar-width, ${SIDEBAR.width.open});
+  width: ${v.sidebarWidth};
   background: var(--color-bg, ${COLORS.bg.light});
   height: 100vh;
   padding: ${v.lgSpacing};
 
   position: relative;
-`
-
-export const SSidebarButton = styled.button`
-  ${btnReset};
-  position: absolute;
-
-  top: ${v.xxlSpacing};
-  right: ${({ isOpen }) => (!isOpen ? `-20px` : `20px`)};
-  font-size: ${m.menuToggleSize};
-
-  display: flex;
-  width: 40px;
-  height: 40px;
-  border-radius: ${v.borderRadius};
-  background: var(--color-bg, ${COLORS.bg.light});
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  transition: transform 0.8s;
-  transform: ${({ isOpen }) => !isOpen ? `rotateY(180deg)` : `initial`};
-
-  box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
-
-  
 `
 
 export const SLogo = styled.div`
@@ -60,6 +30,7 @@ export const SSearch = styled.div`
   input {
     padding: 0 ${v.smSpacing};
     font-family: inherit;
+    letter-spacing: inherit;
     font-size: 16px;
     width: 100%;
     outline: none;
