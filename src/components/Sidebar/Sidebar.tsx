@@ -12,15 +12,23 @@ import { ThemeContext } from "../Layout/Layout"
 
 import { useLocation } from "@reach/router";
 import Cookies from "universal-cookie"
+//import DarkToggle from '../DarkToggle';
+
+import {
+  COLORS,
+  COLOR_MODE_KEY,
+  INITIAL_COLOR_MODE_CSS_PROP,
+} from '../../styles/theme';
 
 // import createPersistedState from "use-persisted-state"
 // const useTheme = createPersistedState('colorScheme');
 
 const Sidebar = () => {
-  // const cookies = new Cookies()
+  const cookies = new Cookies()
   const expiry = {path: '/', expires: new Date(Date.now()+(20*24*60*60*1000))}
   const searchRef = useRef(null)
-  //const {rawSetColorMode, theme} = useContext(ThemeContext)
+  //const {rawSetColorMode, theme} = useContext(ThemeContext)//
+  const { colorMode, setColorMode } = useContext(ThemeContext);
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const fitContent = !sidebarOpen ? { width: `fit-content` } : {}
   const location = useLocation().pathname
@@ -28,7 +36,7 @@ const Sidebar = () => {
     if (!sidebarOpen) {
       setSidebarOpen(true)
       searchRef.current.focus()
-      //cookies.set("sidebarOpen", !sidebarOpen, expiry)
+      localStorage.setItem("sidebarOpen", !sidebarOpen ? "open" : "closed")
     } else {
       // search functionality
     }
@@ -36,8 +44,8 @@ const Sidebar = () => {
 
   // Set Cookies
   useEffect(() => {
-    //rawSetColorMode(cookies.get("theme"))
-    //setSidebarOpen(cookies.get("sidebarOpen") === "true" ? true : false)
+    setColorMode(localStorage.getItem(COLOR_MODE_KEY))
+    setSidebarOpen(localStorage.getItem("sidebarOpen") === "open" ? true : false)
   }, [])
 
   return (
@@ -48,8 +56,8 @@ const Sidebar = () => {
           onClick={
             () => {
               setSidebarOpen((p) => !p)
-              console.log(`set ${!sidebarOpen}`)
-              //cookies.set("sidebarOpen", !sidebarOpen, expiry)
+              // console.log(`set ${!sidebarOpen}`)
+              localStorage.setItem("sidebarOpen", !sidebarOpen ? "open" : "closed")
             }
           }
         >
@@ -97,19 +105,23 @@ const Sidebar = () => {
         </SLinkContainer>
       ))}
       <SDivider />
+      
       <STheme>
         {sidebarOpen && <SThemeLabel>Dark Mode</SThemeLabel>}
+        
         <SThemeToggler 
-          
           onClick={
             () => {
-              rawSetColorMode((p) => p === "light" ? "dark" : "light" )
-              //cookies.set("theme", theme === "dark" ? "light" : "dark", expiry)
+              //console.log('before change: ' + colorMode)
+              setColorMode(colorMode === "light" ? 'dark' : 'light');
+              localStorage.setItem(COLOR_MODE_KEY, colorMode === "light" ? 'dark' : 'light')
+              // this needs to be here otherwise we get that "wrong initial state" bug
+              document.documentElement.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode === "light" ? 'dark' : 'light');
             }
           }
         >
           <SToggleThumb 
-            
+            style={colorMode === "dark" ? { right: "2px" } : {}}
           />
         </SThemeToggler>
       </STheme>

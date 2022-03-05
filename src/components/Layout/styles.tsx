@@ -4,7 +4,6 @@ import { btnReset, v } from "../../styles/variables"
  
 export const SLayout = styled.div`
   display: flex;
-
 `
 
 export const SMain = styled.main`
@@ -18,18 +17,18 @@ export const SMain = styled.main`
 export const SDivider = styled.div`
   height: 1px;
   width: 100%;
-  background: ${({ theme }) => theme.bg3};
+  background: var(--color-bg3);
   margin: ${v.lgSpacing} 0;
 `
 
 export const SLinkContainer = styled.div`
-  background: ${({ theme, isActive }) => (!isActive ? `transparent` : theme.primary)};
-  color: ${({ theme, isActive }) => (!isActive ? theme.text : `#fff`)};
+  background: var(--color-bg); 
+  color: var(--color-text); 
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
   :hover {
-    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.bg3};
+    box-shadow: inset 0 0 0 1px var(--color-bg3);
   }
 `
 
@@ -61,7 +60,7 @@ export const SLinkNotification = styled.div`
   font-size: 14px;
   padding: calc(${v.smSpacing} / 2) ${v.smSpacing};
   border-radius: calc(${v.borderRadius} / 2);
-  background: ${({ theme }) => theme.primary};
+  background: var(--color-primary);
   color: #fff;
 
   margin-right: ${v.mdSpacing};
@@ -85,7 +84,7 @@ export const SThemeToggler = styled.button`
   width: 36px;
   height: 20px;
   border-radius: 10px;
-  background: ${({ theme, isActive }) => (!isActive ? theme.bg3 : theme.primary)};
+  background: var(--color-toggle); 
 
   position: relative;
 `
@@ -99,5 +98,5 @@ export const SToggleThumb = styled.div`
   transition: .2s ease right;
   right: calc(100% - 16px - 2px);
   border-radius: 50%;
-  background: ${({ theme }) => theme.bg};
+  background: var(--color-bg);
 `
