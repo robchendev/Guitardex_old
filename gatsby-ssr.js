@@ -2,10 +2,9 @@ import { COLORS } from '/src/styles/theme';
 import Cookies from 'universal-cookie';
 
 const MagicScriptTag = () => {
+
   const codeToRunOnClient = `
   (function() {
-    const cookies = new Cookies();
-    alert(cookies);
     function getInitialColorMode() {
       const persistedColorPreference = cookies.get('color-mode');
       const hasPersistedPreference = typeof persistedColorPreference === 'string';
