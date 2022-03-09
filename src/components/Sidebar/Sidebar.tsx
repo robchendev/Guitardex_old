@@ -26,6 +26,8 @@ const Sidebar = () => {
   const searchClickHandler = () => {
     // search functionality
   }
+  const parentLocation = "/" + location.split('/')[1]
+  console.log(parentLocation)
 
   // Set Cookies
   useEffect(() => {
@@ -47,7 +49,7 @@ const Sidebar = () => {
       </SSearch>
       <SDivider />
       {linksArray.map(({label, icon, link, notification}) => (
-        <SLinkContainer key={label} isActive={location === link}>
+        <SLinkContainer key={label} isActive={parentLocation === link}>
           <SLink to={link}>
             <SLinkIcon>{icon}</SLinkIcon>
               <SLinkLabel>{label}</SLinkLabel>

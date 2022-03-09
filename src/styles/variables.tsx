@@ -1,7 +1,7 @@
 import { css } from "styled-components"
 
 export const v =  {
-  sidebarWidth: `280px`,
+  sidebarWidth: `270px`,
   smSpacing: `8px`,
   mdSpacing: `16px`,
   lgSpacing: `24px`,

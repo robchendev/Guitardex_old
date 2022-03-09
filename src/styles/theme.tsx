@@ -25,8 +25,8 @@ export const COLORS = {
     dark: 'rgb(25,25,25)', 
   },
   primary: {
-    light: '#D43552',
-    dark: '#D43552', 
+    light: '#B92742',
+    dark: '#B92742', 
   },
   bg2: {
     light: 'rgb(245,245,245)',
@@ -42,12 +42,30 @@ export const COLORS = {
   },
   toggle: {
     light: 'rgb(220,220,220)',
-    dark: '#D43552',
+    dark: '#B92742',
   },
   tabimg: {
     light: 'invert(0)',
     dark: 'invert(0.87)',
-  }
+  },
+  sectionGreen: {
+    light: '',
+    lightBorder: '',
+    dark: 'rgba(202, 255, 191, 0.2)',
+    darkBorder: 'rgba(202, 255, 191, 0.5)',
+  },
+  sectionPurple: {
+    light: '',
+    lightBorder: '',
+    dark: 'rgba(189, 178, 255, 0.2)',
+    darkBorder: 'rgba(189, 178, 255, 0.5)',
+  },
+  sectionOrange: {
+    light: '',
+    lightBorder: '',
+    dark: 'rgba(255, 214, 165, 0.2)',
+    darkBorder: 'rgba(255, 214, 165, 0.5)',
+  },
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

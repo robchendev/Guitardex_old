@@ -3,6 +3,7 @@ import { btnReset, v, m } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
+  min-width: ${v.sidebarWidth};
   width: ${v.sidebarWidth};
   background: var(--color-bg, ${COLORS.bg.light});
   height: 100vh;

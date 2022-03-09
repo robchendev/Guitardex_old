@@ -23,9 +23,8 @@ export const SDivider = styled.div`
 `
 
 export const SLinkContainer = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light}); 
-  color: var(--color-text, ${COLORS.text.light}); 
-  border-bottom: 3px solid ${({ isActive }) => (!isActive ? `transparent` : COLORS.primary.light)};  
+  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)` )};
+  color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
