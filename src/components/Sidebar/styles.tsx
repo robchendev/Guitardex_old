@@ -6,10 +6,13 @@ export const SSidebar = styled.div`
   min-width: ${v.sidebarWidth};
   width: ${v.sidebarWidth};
   background: var(--color-bg, ${COLORS.bg.light});
-  height: 100vh;
+  border-radius: calc(${v.borderRadius} * 4);
+  box-shadow: 0 0 10px ${COLORS.bgAlpha.dark};
   padding: ${v.lgSpacing};
   font-family: 'Fredoka', sans-serif;
   position: relative;
+  width: 25%;
+  pointer-events: auto;
 `
 
 export const SLogo = styled.div`

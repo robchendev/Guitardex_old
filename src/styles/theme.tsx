@@ -21,11 +21,11 @@ export const COLORS = {
     dark: 'rgb(210,210,210)',
   },
   bg: {
-    light: '#e6e2d6', 
+    light: 'rgb(241,242,245)', 
     dark: 'rgb(25,25,25)', 
   },
   primary: {
-    light: '#b36263',
+    light: '#B92742',
     dark: '#B92742', 
   },
   bg2: {
@@ -33,15 +33,23 @@ export const COLORS = {
     dark: 'rgb(40,40,40)',
   },
   bg3: {
-    light: 'rgb(219, 184, 185)',
+    light: 'rgb(219, 184, 185)', // please change to some white
     dark: 'rgb(60,60,60)',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',
     dark: 'rgba(0,0,0,.3)',
   },
+  link: {
+    light: '#B92742',
+    dark: '#fcdc97',
+  },
+  linkHover: {
+    light: '#fff',
+    dark: 'rgb(45,45,45)',
+  },
   toggle: {
-    light: '#b36263',
+    light: '#B92742',
     dark: '#B92742',
   },
   tabimg: {

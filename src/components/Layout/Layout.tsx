@@ -1,8 +1,7 @@
 import Sidebar from "../Sidebar/Sidebar"
-import { SLayout, SMain } from "./styles"
+import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SLayout, SMain } from "./styles"
 import React, { useState } from "react"
 import { Helmet } from "react-helmet"
-import FontLoad from "../../assets/fonts"
 import { globalStyle } from "../../styles/globalStyles"
 import Cookies from "universal-cookie"
 import {
@@ -62,8 +61,14 @@ const Layout = (props) => {
           <title>{props.title}</title>
         </Helmet>
         <SLayout>
-          <Sidebar />
-          <SMain>{props.children}</SMain>
+          <SContainer>
+            <SidebarContainer>    
+              <Sidebar />
+            </SidebarContainer>
+            <MainContainer>
+              <SMain>{props.children}</SMain>
+            </MainContainer>
+          </SContainer>
         </SLayout>
       {/* </ThemeProvider> */}
     </ThemeContext.Provider>

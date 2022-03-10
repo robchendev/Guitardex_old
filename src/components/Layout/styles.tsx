@@ -5,12 +5,42 @@ import { COLORS } from "../../styles/theme"
 
 export const SLayout = styled.div`
   display: flex;
-`
-
-export const SMain = styled.main`
-  padding: calc(${v.smSpacing} * 2);
-  max-width: 1200px;
   
+`
+export const SContainer = styled.div`
+  width: 90%;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+` 
+export const SidebarContainer = styled.div`
+  position: fixed;
+  top: 2em;
+  max-width: 1200px;
+  width: 100%;
+  pointer-events: none;
+`
+export const MainContainer = styled.div`
+  padding-left: 26%;
+`
+export const SMain = styled.main`  
+  padding: 2em;
+
+  a {
+    //color: var(--color-link, ${COLORS.link.light});
+    //text-decoration: none;
+    border: 0;
+    padding: 0px 2px 2px 2px;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--color-link, ${COLORS.link.light});
+  }
+  a:hover {
+    border-top: 2px solid var(--color-link, ${COLORS.link.light});
+    outline-width: 0;
+    color: var(--color-linkHover, ${COLORS.linkHover.light});
+    background-color: var(--color-link, ${COLORS.link.light});
+  }
 `
 
 export const SDivider = styled.div`

@@ -1,21 +1,31 @@
-import styled from "styled-components"
+import styled from "@emotion/styled"
+import { COLORS } from "../styles/theme"
 
+export const TechList = styled.div`
+  // resetting styling
+  a {
+    border: none;
+    padding: 0;
+    color: var(--color-text, ${COLORS.text.light});
+  }
+  a:hover {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text, ${COLORS.text.light});
+  }
+`
 
-export const Description = styled.div`
-  border: 3px solid rgba(202, 255, 191, 0.5);
+export const DarkBackground = styled.div`
   padding: 2em;
   border-radius: 12px;
-  background: rgba(202, 255, 191, 0.3);
+  background: var(--color-bg, ${COLORS.bg.light});
+  p {
+    margin: 0;
+  }
 `
 export const Explanation = styled.div`
 
   padding: 2em;
   border-radius: 12px;
 
-`
-export const Exercises = styled.div`
-  border: 3px solid rgba(189, 178, 255, 0.5);
-  padding: 2em;
-  border-radius: 12px;
-  background: rgba(189, 178, 255, 0.3);
 `

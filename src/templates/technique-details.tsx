@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { Description, Explanation, Exercises } from "./technique-styling"
+import { Description, Explanation, Exercises, DarkBackground } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 
 const extractVideoURL = (demo) => {
@@ -36,23 +36,23 @@ function TechniqueDetails({ data }) {
         
 
         {/* This section will be a color */}
-        <Description>
-        <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} />
+        <DarkBackground>
+          <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} />
+          { description ? <br /> : <></>}
           <p>{description}</p>
-        </Description>
+        </DarkBackground>
 
         {/* This section will not have a color */}
         <Explanation>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </Explanation>
 
-        <Exercises>
+        <DarkBackground>
+        <h2>Exercises</h2>
           {exercises.map(({text,link,slce}) => (
-            <div>
-              {text}: <a href={link} target="_blank">Tab</a> <a href={slce} target="_blank">SoundSlice</a>
-            </div>
+              <p>{text}: <a href={link} target="_blank">Tablature</a><a href={slce} target="_blank">SoundSlice</a></p>
           ))}
-        </Exercises>
+        </DarkBackground>
         
       </div>
     </Layout>

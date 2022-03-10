@@ -1,8 +1,7 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../../components/Layout/Layout"
-import { TechList } from "../../styles/styles"
-import { TabImg } from "../../components/Layout/styles"
+import { TechList } from "../../templates/technique-styling"
 
 const Techniques = ({ data }) => {
   console.log(data)
@@ -12,16 +11,16 @@ const Techniques = ({ data }) => {
       <h1>Techniques</h1>
       <div>
         {techniques.map(technique => (
-          <>
+          <TechList>
             <Link to={"/techniques/" + technique.frontmatter.slug} key={technique.id}>
-              <TechList>
+              
                 <h3>{technique.frontmatter.title}</h3>
-              </TechList>
+              
             </Link>
             <div>
               <p>Pre-reqs: {technique.frontmatter.prereqs}</p>
             </div>
-          </>
+          </TechList>
         ))}
       </div>
     </Layout>
