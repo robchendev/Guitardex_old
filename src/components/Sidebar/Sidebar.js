@@ -1,20 +1,13 @@
-import React, { useContext, useRef, useEffect } from 'react'
+import React, { useContext, useRef, useEffect, useState } from 'react'
 import { SLogo, SSearch, SSidebar, SSearchIcon } from './styles'
 import { logoPNG } from "../../assets"
-import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
-
-//Change these to what fits
-import { MdOutlineAnalytics, MdSave } from "react-icons/md"
-import { BsPeople } from "react-icons/bs"
-import { AiFillQuestionCircle,  AiFillHome, AiOutlineSearch, AiFillSetting, AiOutlineTool, AiFillStar, AiFillSave, AiFillYoutube } from "react-icons/ai"
+import { SDivider, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
+import { AiFillHome, AiOutlineSearch, AiFillSetting, AiOutlineTool, AiFillStar, AiFillSave, AiFillYoutube } from "react-icons/ai"
 import { FaDiscord } from "react-icons/fa"
-
 import { ThemeContext } from "../Layout/Layout"
-
 import { useLocation } from "@reach/router";
-//import Cookies from "universal-cookie";
-
 import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/theme';
+import { InternalLinks, ExternalLinks, UtilityLinks } from '../SidebarLinks'
 
 const Sidebar = () => {
   // if I ever need cookie functionality:
@@ -29,7 +22,7 @@ const Sidebar = () => {
   const parentLocation = "/" + location.split('/')[1]
   console.log(parentLocation)
 
-  // Set Cookies
+  // Set Cookies / LocalStorage
   useEffect(() => {
     if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string'){
       setColorMode(localStorage.getItem(COLOR_MODE_KEY))
@@ -48,33 +41,26 @@ const Sidebar = () => {
         <input ref={searchRef} placeholder="Search"/>
       </SSearch>
       <SDivider />
-      {linksArray.map(({label, icon, link, notification}) => (
-        <SLinkContainer key={label} isActive={parentLocation === link}>
-          <SLink to={link}>
-            <SLinkIcon>{icon}</SLinkIcon>
-              <SLinkLabel>{label}</SLinkLabel>
-              {/* when notifications are 0 or null, don't show */}
-              {
-                !!notification && 
-                (<SLinkNotification>{notification}</SLinkNotification>
-              )}
-          </SLink>
-        </SLinkContainer>
+      {internalLinks.map(({label, icon, link, notification}) => (
+        <InternalLinks
+          label={label}
+          icon={icon}
+          link={link}
+          notification={notification}
+          isActive={parentLocation === link}
+        />
       ))}
       <SDivider />
-      {secondaryLinksArray.map(({label, icon}) => (
-        <SLinkContainer key={label}>
-          <SLink to="/">
-            <SLinkIcon>{icon}</SLinkIcon>
-            <SLinkLabel>{label}</SLinkLabel>           
-          </SLink>
-        </SLinkContainer>
+      {externalLinks.map(({label, icon, link}) => (
+        <ExternalLinks label={label} icon={icon} link={link}/>
       ))}
       <SDivider />
-      
+      {utilityLinks.map(({label, icon}) => (
+        <UtilityLinks label={label} icon={icon}/>
+      ))}
+      <SDivider />
       <STheme>
         <SThemeLabel>Dark Mode</SThemeLabel>
-        
         <SThemeToggler 
           onClick={
             () => {
@@ -92,7 +78,7 @@ const Sidebar = () => {
   )
 }
 
-const linksArray = [
+const internalLinks = [
   {
     label: "Home",
     icon: <AiFillHome />,
@@ -105,21 +91,22 @@ const linksArray = [
     link: "/techniques",
     notification: 0,
   },
+]
+
+const externalLinks = [
   {
     label: "YouTube",
     icon: <AiFillYoutube />,
     link: "https://www.youtube.com/channel/UCvgSO-_LP2L9nTga7qbUhcw",
-    notification: 0,
   },
   {
     label: "Discord",
     icon: <FaDiscord />,
     link: "https://discord.gg/wgyqBZK",
-    notification: 0,
   },
 ]
 
-const secondaryLinksArray = [
+const utilityLinks = [
   {
     label: "Settings",
     icon: <AiFillSetting />

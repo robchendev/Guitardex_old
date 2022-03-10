@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { btnReset, v, m } from "../../styles/variables" 
 import { COLORS } from "../../styles/theme"
 
@@ -8,7 +8,7 @@ export const SSidebar = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   height: 100vh;
   padding: ${v.lgSpacing};
-
+  font-family: 'Fredoka', sans-serif;
   position: relative;
 `
 

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { btnReset, v } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
@@ -9,10 +9,8 @@ export const SLayout = styled.div`
 
 export const SMain = styled.main`
   padding: calc(${v.smSpacing} * 2);
-
-  h1 {
-    font-size: 14px;
-  }
+  max-width: 1200px;
+  
 `
 
 export const SDivider = styled.div`

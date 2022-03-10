@@ -21,27 +21,27 @@ export const COLORS = {
     dark: 'rgb(210,210,210)',
   },
   bg: {
-    light: 'rgb(255,255,255)', 
+    light: '#e6e2d6', 
     dark: 'rgb(25,25,25)', 
   },
   primary: {
-    light: '#B92742',
+    light: '#b36263',
     dark: '#B92742', 
   },
   bg2: {
-    light: 'rgb(245,245,245)',
+    light: 'rgb(255,255,255)',
     dark: 'rgb(40,40,40)',
   },
   bg3: {
-    light: 'rgb(220,220,220)',
+    light: 'rgb(219, 184, 185)',
     dark: 'rgb(60,60,60)',
   },
   bgAlpha: {
-    light: 'rgba(250,250,250,.3)',
+    light: 'rgba(255,255,255,.4)',
     dark: 'rgba(0,0,0,.3)',
   },
   toggle: {
-    light: 'rgb(220,220,220)',
+    light: '#b36263',
     dark: '#B92742',
   },
   tabimg: {

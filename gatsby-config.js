@@ -34,17 +34,21 @@ module.exports = {
       },
     },
   },
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Merriweather\:400,500,700`,
+        `Fredoka\:400,500,700`,
+      ],
+      display: 'swap'
+    }
+  },
   { // You can have multiple instances of this plugin
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `techniques`,
       path: `${__dirname}/src/techniques`,
-    },
-  },
-  {
-    resolve: `gatsby-plugin-styled-components`,
-    options: {
-      // Add any options here
     },
   },
   {
