@@ -33,7 +33,7 @@ export const COLORS = {
     dark: 'rgb(40,40,40)',
   },
   bg3: {
-    light: 'rgb(219, 184, 185)', // please change to some white
+    light: 'rgb(230,230,230)', // please change to some white
     dark: 'rgb(60,60,60)',
   },
   bgAlpha: {
