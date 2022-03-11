@@ -25,9 +25,6 @@ export const globalStyle = css`
     line-height: 1.5em;
     margin-bottom: 1em;
   }
-  img {
-    border-radius: 12px;
-  }
   .yt-lite::after {
     content: "";
     display: block;
