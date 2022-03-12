@@ -38,7 +38,7 @@ function TechniqueDetails({ data }) {
         {/* This section will be a color */}
         <DarkBackground>
           { demo ? 
-            <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} />
+            <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false} />
             :
             <p>No video.</p>
           }
