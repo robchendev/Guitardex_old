@@ -90,7 +90,9 @@ const SearchBar = ({ placeholder, data }) => {
         // true if any of this is true
         value.frontmatter.title?.toLowerCase().includes(searchWord) ||
         value.frontmatter.category?.toLowerCase().includes(searchWord) ||
-        value.frontmatter.tags?.find(eachTag => eachTag.includes(searchWord))
+        value.frontmatter.tags?.some(eachTag => {
+          return searchWord.toLowerCase().includes(eachTag.toLowerCase())
+        })
       )
     })
     setFilteredData(newFilter)
@@ -108,7 +110,6 @@ const SearchBar = ({ placeholder, data }) => {
       <DataResult>
         {/* data = techniques.nodes from pages/techniques/index */}
         {filteredData.map((technique, key) => {
-          console.log(filteredData.length)
           return (
             <DataResultBlockLink to={technique.frontmatter.slug}>
               <DataResultBlock>
