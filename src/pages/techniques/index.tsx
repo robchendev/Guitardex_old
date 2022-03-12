@@ -30,7 +30,7 @@ const Techniques = ({ data }) => {
 // export page query
 export const query = graphql`
   query TechniquesPage {
-    techniques: allMarkdownRemark(sort: {fields: id}) {
+    techniques: allMarkdownRemark(sort: {fields: frontmatter___title, order: ASC}) {
       nodes {
         html
         frontmatter {
@@ -46,6 +46,7 @@ export const query = graphql`
           category
           artists
         }
+        id
       }
     }
   }

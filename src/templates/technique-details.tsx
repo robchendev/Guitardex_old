@@ -10,19 +10,19 @@ const extractVideoURL = (demo) => {
 }
 
 function TechniqueDetails({ data }) {
-  const { html } = data.markdownRemark;
+  const { html } = data.allInfo;
   const { 
     title, demo, description, prereqs, exercises 
-  } = data.markdownRemark.frontmatter;
+  } = data.allInfo.frontmatter;
 
   // const slugFinder = graphql`
   //   query preReqFound($slug: String){
-  //     markdownRemark(frontmatter: {slug: {eq: $slug}}){
-  //       frontmatter {
-  //         title
-  //         slug
-  //       }
-  //     }
+      // preReqs: markdownRemark(frontmatter: {prereqs: {eq: $prereqs}}){
+      //   frontmatter {
+      //     prereqs
+      //     slug
+      //   }
+      // }
   //   }
   // `
   return (
@@ -62,8 +62,8 @@ function TechniqueDetails({ data }) {
 
 
 export const query = graphql`
-  query Techniques {
-    markdownRemark {
+  query TechniquesOne($slug: String) {
+    allInfo: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
       html
       frontmatter {
         title
@@ -76,7 +76,6 @@ export const query = graphql`
           text
           slce
         }
-        slug
         tags
         description
       }

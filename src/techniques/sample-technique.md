@@ -30,7 +30,7 @@ tags: [
 
 ## Sample Technique Page
 
-All of this is unstyled right now and looks terrible. If you're viewing this page from a mobile device then it'll look even worse. 
+Alls of this is unstyled right now and looks terrible. If you're viewing this page from a mobile device then it'll look even worse. 
 
 There will be a **lot** more content here when the site fully launches.
 
