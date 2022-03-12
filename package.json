@@ -24,7 +24,8 @@
     "framer-motion": "^6.2.6",
     "gatsby": "^4.7.2",
     "gatsby-plugin-emotion": "^7.7.0",
-    "gatsby-plugin-google-analytics": "^4.7.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-google-gtag": "^4.9.0",
     "gatsby-plugin-image": "^2.7.0",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-sharp": "^4.9.0",
@@ -39,6 +40,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-lite-yt-embed": "^1.2.7",
     "styled-components": "^5.3.3",
     "universal-cookie": "^4.0.4"
   }

@@ -1,14 +1,18 @@
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { btnReset, v, m } from "../../styles/variables" 
 import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
+  min-width: ${v.sidebarWidth};
   width: ${v.sidebarWidth};
   background: var(--color-bg, ${COLORS.bg.light});
-  height: 100vh;
+  border-radius: calc(${v.borderRadius} * 4);
+  box-shadow: 0 0 10px ${COLORS.bgAlpha.dark};
   padding: ${v.lgSpacing};
-
+  font-family: 'Fredoka', sans-serif;
   position: relative;
+  width: 25%;
+  pointer-events: auto;
 `
 
 export const SLogo = styled.div`
@@ -17,6 +21,7 @@ export const SLogo = styled.div`
   img {
     max-width: 100%;
     height: auto;
+    border-radius: 50%;
   }
   cursor: pointer;
 
@@ -28,7 +33,7 @@ export const SSearch = styled.div`
   border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   border-radius: ${v.borderRadius};
   input {
-    padding: 0 ${v.smSpacing};
+    padding: 0 ${v.smSpacing} 0 0;
     font-family: inherit;
     letter-spacing: inherit;
     font-size: 16px;

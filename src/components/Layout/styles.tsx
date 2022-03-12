@@ -1,17 +1,45 @@
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { btnReset, v } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
- 
+
 export const SLayout = styled.div`
   display: flex;
+  
 `
+export const SContainer = styled.div`
+  width: 90%;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+` 
+export const SidebarContainer = styled.div`
+  position: fixed;
+  top: 2em;
+  max-width: 1200px;
+  width: 100%;
+  pointer-events: none;
+`
+export const MainContainer = styled.div`
+  padding-left: 26%;
+`
+export const SMain = styled.main`  
+  padding: 2em;
 
-export const SMain = styled.main`
-  padding: calc(${v.smSpacing} * 2);
-
-  h1 {
-    font-size: 14px;
+  a {
+    //color: var(--color-link, ${COLORS.link.light});
+    //text-decoration: none;
+    border: 0;
+    padding: 0px 2px 2px 2px;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--color-link, ${COLORS.link.light});
+  }
+  a:hover {
+    border-top: 2px solid var(--color-link, ${COLORS.link.light});
+    outline-width: 0;
+    color: var(--color-linkHover, ${COLORS.linkHover.light});
+    background-color: var(--color-link, ${COLORS.link.light});
   }
 `
 
@@ -23,9 +51,8 @@ export const SDivider = styled.div`
 `
 
 export const SLinkContainer = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light}); 
-  color: var(--color-text, ${COLORS.text.light}); 
-  border-bottom: 3px solid ${({ isActive }) => (!isActive ? `transparent` : COLORS.primary.light)};  
+  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)` )};
+  color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 

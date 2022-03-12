@@ -1,19 +1,13 @@
-import React, { useContext, useRef, useEffect } from 'react'
+import React, { useContext, useRef, useEffect, useState } from 'react'
 import { SLogo, SSearch, SSidebar, SSearchIcon } from './styles'
-import { logoSVG } from "../../assets"
-import { SDivider, SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
-
-//Change these to what fits
-import { MdOutlineAnalytics, MdSave } from "react-icons/md"
-import { BsPeople } from "react-icons/bs"
-import { AiFillQuestionCircle,  AiOutlineHome, AiOutlineSearch, AiOutlineSetting, AiOutlineTool } from "react-icons/ai"
-
+import { logoPNG } from "../../assets"
+import { SDivider, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
+import { AiFillHome, AiOutlineSearch, AiFillSetting, AiOutlineTool, AiFillStar, AiFillSave, AiFillYoutube } from "react-icons/ai"
+import { FaDiscord } from "react-icons/fa"
 import { ThemeContext } from "../Layout/Layout"
-
 import { useLocation } from "@reach/router";
-//import Cookies from "universal-cookie";
-
 import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/theme';
+import { InternalLinks, ExternalLinks, UtilityLinks } from '../SidebarLinks'
 
 const Sidebar = () => {
   // if I ever need cookie functionality:
@@ -25,8 +19,10 @@ const Sidebar = () => {
   const searchClickHandler = () => {
     // search functionality
   }
+  const parentLocation = "/" + location.split('/')[1]
+  console.log(parentLocation)
 
-  // Set Cookies
+  // Set Cookies / LocalStorage
   useEffect(() => {
     if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string'){
       setColorMode(localStorage.getItem(COLOR_MODE_KEY))
@@ -36,7 +32,7 @@ const Sidebar = () => {
   return (
     <SSidebar>
       <SLogo>
-        <img src={logoSVG} alt="logo" />
+        <img src={logoPNG} alt="logo" />
       </SLogo>
       <SSearch onClick={searchClickHandler}>
         <SSearchIcon>
@@ -45,33 +41,26 @@ const Sidebar = () => {
         <input ref={searchRef} placeholder="Search"/>
       </SSearch>
       <SDivider />
-      {linksArray.map(({label, icon, link, notification}) => (
-        <SLinkContainer key={label} isActive={location === link}>
-          <SLink to={link}>
-            <SLinkIcon>{icon}</SLinkIcon>
-              <SLinkLabel>{label}</SLinkLabel>
-              {/* when notifications are 0 or null, don't show */}
-              {
-                !!notification && 
-                (<SLinkNotification>{notification}</SLinkNotification>
-              )}
-          </SLink>
-        </SLinkContainer>
+      {internalLinks.map(({label, icon, link, notification}) => (
+        <InternalLinks
+          label={label}
+          icon={icon}
+          link={link}
+          notification={notification}
+          isActive={parentLocation === link}
+        />
       ))}
       <SDivider />
-      {secondaryLinksArray.map(({label, icon}) => (
-        <SLinkContainer key={label}>
-          <SLink to="/">
-            <SLinkIcon>{icon}</SLinkIcon>
-            <SLinkLabel>{label}</SLinkLabel>           
-          </SLink>
-        </SLinkContainer>
+      {externalLinks.map(({label, icon, link}) => (
+        <ExternalLinks label={label} icon={icon} link={link}/>
       ))}
       <SDivider />
-      
+      {utilityLinks.map(({label, icon}) => (
+        <UtilityLinks label={label} icon={icon}/>
+      ))}
+      <SDivider />
       <STheme>
         <SThemeLabel>Dark Mode</SThemeLabel>
-        
         <SThemeToggler 
           onClick={
             () => {
@@ -89,47 +78,44 @@ const Sidebar = () => {
   )
 }
 
-const linksArray = [
+// TODO: Move all this into some other file or files
+
+const internalLinks = [
   {
     label: "Home",
-    icon: <AiOutlineHome />,
+    icon: <AiFillHome />,
     link: "/",
-    notification: 0,
+    notification: "NEW",
   },
   {
     label: "Techniques",
-    icon: <MdOutlineAnalytics />,
+    icon: <AiFillStar />,
     link: "/techniques",
-    notification: 3,
-  },
-  {
-    label: "GearCareQoL",
-    icon: <BsPeople />,
-    link: "/gearcareqol",
     notification: 0,
-  },
-  {
-    label: "Tools",
-    icon: <AiOutlineTool />,
-    link: "/tools",
-    notification: 1,
-  },
-  {
-    label: "About",
-    icon: <AiFillQuestionCircle />,
-    link: "/about",
-    notification: 5,
   },
 ]
 
-const secondaryLinksArray = [
+const externalLinks = [
+  {
+    label: "YouTube",
+    icon: <AiFillYoutube />,
+    link: "https://www.youtube.com/channel/UCvgSO-_LP2L9nTga7qbUhcw",
+  },
+  {
+    label: "Discord",
+    icon: <FaDiscord />,
+    link: "https://discord.gg/wgyqBZK",
+  },
+]
+
+const utilityLinks = [
   {
     label: "Settings",
-    icon: <AiOutlineSetting />
+    icon: <AiFillSetting />
   },
   {
     label: "Saved",
-    icon: <MdSave />
+    icon: <AiFillSave />
   },
 ]
 

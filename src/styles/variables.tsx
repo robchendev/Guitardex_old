@@ -1,7 +1,7 @@
-import { css } from "styled-components"
+import { css } from "@emotion/react"
 
 export const v =  {
-  sidebarWidth: `280px`,
+  sidebarWidth: `200px`,
   smSpacing: `8px`,
   mdSpacing: `16px`,
   lgSpacing: `24px`,

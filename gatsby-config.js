@@ -8,9 +8,40 @@ module.exports = {
   },
   plugins: ["gatsby-remark-embed-video", `gatsby-plugin-netlify`, "gatsby-plugin-emotion", 
   {
-    resolve: 'gatsby-plugin-google-analytics',
+    resolve: `gatsby-plugin-google-gtag`,
     options: {
-      "trackingId": "G-1H3X77R5H1"
+      // You can add multiple tracking ids and a pageview event will be fired for all of them.
+      trackingIds: [
+        "UA-222098428-1",
+      ],
+      // This object gets passed directly to the gtag config command
+      // This config will be shared across all trackingIds
+      gtagConfig: {
+        optimize_id: "OPT_CONTAINER_ID",
+        anonymize_ip: false,
+        cookie_expires: 0,
+      },
+      // This object is used for configuration specific to this plugin
+      pluginConfig: {
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        // Defaults to https://www.googletagmanager.com
+        origin: "YOUR_SELF_HOSTED_ORIGIN",
+      },
+    },
+  },
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Merriweather\:400,500,700`,
+        `Fredoka\:400,500,700`,
+      ],
+      display: 'swap'
     }
   },
   { // You can have multiple instances of this plugin
@@ -18,12 +49,6 @@ module.exports = {
     options: {
       name: `techniques`,
       path: `${__dirname}/src/techniques`,
-    },
-  },
-  {
-    resolve: `gatsby-plugin-styled-components`,
-    options: {
-      // Add any options here
     },
   },
   {
@@ -40,7 +65,7 @@ module.exports = {
           resolve: "gatsby-remark-embed-video",
           options: {
             width: 800,
-            ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+            //ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
             //height: 400, // Optional: Overrides optional.ratio
             related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
             noIframeBorder: true, //Optional: Disable insertion of <style> border: 0

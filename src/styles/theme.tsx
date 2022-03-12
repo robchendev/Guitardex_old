@@ -21,29 +21,60 @@ export const COLORS = {
     dark: 'rgb(210,210,210)',
   },
   bg: {
-    light: 'rgb(255,255,255)', 
+    light: 'rgb(241,242,245)', 
     dark: 'rgb(25,25,25)', 
   },
   primary: {
-    light: '#D43552',
-    dark: '#D43552', 
+    light: '#B92742',
+    dark: '#B92742', 
   },
   bg2: {
-    light: 'rgb(245,245,245)',
+    light: 'rgb(255,255,255)',
     dark: 'rgb(40,40,40)',
   },
   bg3: {
-    light: 'rgb(220,220,220)',
+    light: 'rgb(215,215,215)',
     dark: 'rgb(60,60,60)',
   },
   bgAlpha: {
-    light: 'rgba(250,250,250,.3)',
+    light: 'rgba(255,255,255,.4)',
     dark: 'rgba(0,0,0,.3)',
   },
-  toggle: {
-    light: 'rgb(220,220,220)',
-    dark: '#D43552'
+  link: {
+    light: '#B92742',
+    dark: '#fcdc97',
   },
+  linkHover: {
+    light: '#fff',
+    dark: 'rgb(45,45,45)',
+  },
+  toggle: {
+    light: '#B92742',
+    dark: '#B92742',
+  },
+  tabimg: {
+    light: 'invert(0)',
+    dark: 'invert(0.87)',
+  },
+  sectionGreen: {
+    light: '',
+    lightBorder: '',
+    dark: 'rgba(202, 255, 191, 0.2)',
+    darkBorder: 'rgba(202, 255, 191, 0.5)',
+  },
+  sectionPurple: {
+    light: '',
+    lightBorder: '',
+    dark: 'rgba(189, 178, 255, 0.2)',
+    darkBorder: 'rgba(189, 178, 255, 0.5)',
+  },
+  sectionOrange: {
+    light: '',
+    lightBorder: '',
+    dark: 'rgba(255, 214, 165, 0.2)',
+    darkBorder: 'rgba(255, 214, 165, 0.5)',
+  },
+  placeholder: '#8e8e8e'
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

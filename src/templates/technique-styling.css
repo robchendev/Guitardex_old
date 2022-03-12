@@ -1,0 +1,10 @@
+.tabImg {
+  filter: var(--color-tabimg);
+  margin-bottom: 1.1em;
+}
+
+.tabImg a:hover {
+  border: none !important;
+  background-color: transparent;
+  color: transparent;
+}

@@ -1,39 +1,36 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../../components/Layout/Layout"
-import { TechList } from "../../styles/styles"
+import { TechList } from "../../templates/technique-styling"
+import SearchBar from "../../components/SearchBar"
 
 const Techniques = ({ data }) => {
-  console.log(data)
+
   const techniques = data.techniques.nodes
   return (
     <Layout title="Techniques">
       <h1>Techniques</h1>
       <div>
-        {techniques.map(technique => (
-          <Link to={"/techniques/" + technique.frontmatter.slug} key={technique.id}>
-            <TechList>
-              <h3>{technique.frontmatter.title}</h3>
-              <p>{technique.frontmatter.prereqs}</p>
-            </TechList>
-          </Link>
-        ))}
+        <SearchBar placeholder="Search Techniques..." data={techniques}/>
       </div>
     </Layout>
   )
 }
 
-// export page query
+// TODO: Remove queries I dont need
 export const query = graphql`
   query TechniquesPage {
     techniques: allMarkdownRemark(sort: {fields: frontmatter___title, order: ASC}) {
       nodes {
         frontmatter {
-          title
-          prereqs
+          prereqs {
+            name
+          }
           slug
+          title
+          tags
+          category
         }
-        id
       }
     }
   }

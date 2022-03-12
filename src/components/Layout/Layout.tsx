@@ -1,19 +1,16 @@
 import Sidebar from "../Sidebar/Sidebar"
-import { SLayout, SMain } from "./styles"
+import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SLayout, SMain } from "./styles"
 import React, { useState } from "react"
 import { Helmet } from "react-helmet"
-import { ThemeProvider } from "styled-components"
-import FontLoad from "../../assets/fonts"
-import { GlobalStyle } from "../../styles/globalStyles"
+import { globalStyle } from "../../styles/globalStyles"
 import Cookies from "universal-cookie"
 import {
   COLORS,
   COLOR_MODE_KEY,
-  SIDEBAR_MODE_KEY,
   INITIAL_COLOR_MODE_CSS_PROP,
-  INITIAL_SIDEBAR_MODE_CSS_PROP,
-  SIDEBAR,
 } from '../../styles/theme';
+import { Global } from '@emotion/react'
+
 
 const cookies = new Cookies() 
 
@@ -59,15 +56,19 @@ const Layout = (props) => {
   return (
     <ThemeContext.Provider value={contextValue}>
       {/* <ThemeProvider theme={themeStyle}> */}
-        <GlobalStyle />
+        <Global styles={globalStyle} />
         <Helmet>
           <title>{props.title}</title>
-          <FontLoad />
         </Helmet>
         <SLayout>
-          
-          <Sidebar />
-          <SMain>{props.children}</SMain>
+          <SContainer>
+            <SidebarContainer>    
+              <Sidebar />
+            </SidebarContainer>
+            <MainContainer>
+              <SMain>{props.children}</SMain>
+            </MainContainer>
+          </SContainer>
         </SLayout>
       {/* </ThemeProvider> */}
     </ThemeContext.Provider>
