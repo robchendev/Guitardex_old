@@ -33,7 +33,7 @@ export const COLORS = {
     dark: 'rgb(40,40,40)',
   },
   bg3: {
-    light: 'rgb(215,215,215)', // please change to some white
+    light: 'rgb(215,215,215)',
     dark: 'rgb(60,60,60)',
   },
   bgAlpha: {
@@ -74,6 +74,7 @@ export const COLORS = {
     dark: 'rgba(255, 214, 165, 0.2)',
     darkBorder: 'rgba(255, 214, 165, 0.5)',
   },
+  placeholder: '#8e8e8e'
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

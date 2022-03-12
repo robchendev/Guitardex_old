@@ -78,6 +78,8 @@ const Sidebar = () => {
   )
 }
 
+// TODO: Move all this into some other file or files
+
 const internalLinks = [
   {
     label: "Home",

@@ -24,7 +24,7 @@ exercises: [
 ]
 artists: anotherObjectArray
 tags: [
-  wrist, thump
+  legato
 ]
 ---
 

@@ -33,7 +33,7 @@ export const SSearch = styled.div`
   border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   border-radius: ${v.borderRadius};
   input {
-    padding: 0 ${v.smSpacing};
+    padding: 0 ${v.smSpacing} 0 0;
     font-family: inherit;
     letter-spacing: inherit;
     font-size: 16px;

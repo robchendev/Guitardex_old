@@ -6,7 +6,7 @@ import { Description, Explanation, Exercises, DarkBackground } from "./technique
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 
 const extractVideoURL = (demo) => {
-  return demo.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
+  return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
 }
 
 function TechniqueDetails({ data }) {
@@ -32,26 +32,40 @@ function TechniqueDetails({ data }) {
 
         {/* This section will not have a color */}
         <h2>{title}</h2>
-        <h3>Required: {prereqs}</h3>
+        {/* <h3>Required: {prereqs}</h3> */}
         
 
         {/* This section will be a color */}
         <DarkBackground>
-          <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} />
+          { demo ? 
+            <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} />
+            :
+            <p>No video.</p>
+          }
+          
           { description ? <br /> : <></>}
           <p>{description}</p>
         </DarkBackground>
 
         {/* This section will not have a color */}
         <Explanation>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          { html ? 
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+            :
+            <p>This page has no content.</p>
+          }
+          
         </Explanation>
 
         <DarkBackground>
         <h2>Exercises</h2>
-          {exercises.map(({text,link,slce}) => (
+          {exercises ? 
+            exercises.map(({text,link,slce}) => (
               <p>{text}: <a href={link} target="_blank">Tablature</a><a href={slce} target="_blank">SoundSlice</a></p>
-          ))}
+            ))
+            :
+            <p>There are no exercises.</p>
+          }
         </DarkBackground>
         
       </div>
@@ -68,7 +82,10 @@ export const query = graphql`
       frontmatter {
         title
         demo
-        prereqs
+        prereqs {
+          name
+          slug
+        }
         artists
         category
         exercises {

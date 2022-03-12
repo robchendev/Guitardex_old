@@ -16,6 +16,7 @@ export const InternalLinks = ({label, icon, link, notification, isActive}) => {
   )
 }
 
+// Change to <a> component
 export const ExternalLinks = ({label, icon, link}) => {
   return (
     <SLinkContainer key={label}>
