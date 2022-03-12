@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { Description, Explanation, Exercises, DarkBackground } from "./technique-styling"
+import { Explanation, DarkBackground } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 
 const extractVideoURL = (demo) => {
