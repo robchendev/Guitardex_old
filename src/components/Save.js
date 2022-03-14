@@ -17,9 +17,12 @@ const Save = ({title, group, slug}) => {
     "name":"My Saved Profile",
     "items":[]
   } 
-  if (localStorage.getItem('save')) { // localStorage of save already exists
-    savedObj = JSON.parse(localStorage.getItem('save')) //gets savedObj
+  if (window) {
+    if (localStorage.getItem('save')) { // localStorage of save already exists
+      savedObj = JSON.parse(localStorage.getItem('save')) //gets savedObj
+    }
   }
+  
   let index = savedObj.items.findIndex(item => item.t === title && item.g === group && item.s === slug)
   useEffect(() => {
     setSaveState(index >= 0);
