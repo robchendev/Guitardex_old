@@ -1,12 +1,15 @@
-import React from "react"
+import React, { Component, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
+
 
 const SavedTechnique = styled.div`
 
 `
 
 const Saved = () => {
+
+  
   let savedObj = {
     "name":"My Saved Profile",
     "items":[]
@@ -16,7 +19,7 @@ const Saved = () => {
       savedObj = JSON.parse(localStorage.getItem('save'))
     }
   }
-  
+  const [items, setItems] = useState(savedObj.items) // starting state is items array
   console.log(savedObj)
   
   return (
