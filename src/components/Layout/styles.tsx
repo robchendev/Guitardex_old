@@ -70,6 +70,15 @@ export const SLink = styled(Link)`
   padding: calc(${v.smSpacing} - 2px) 0;
 `
 
+export const SLinkA = styled.a`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  padding: calc(${v.smSpacing} - 2px) 0;
+`
+
 export const SLinkIcon = styled.div`
   padding: ${v.smSpacing} ${v.mdSpacing};
   display: flex;

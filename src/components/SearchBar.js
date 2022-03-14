@@ -57,10 +57,8 @@ const DataResultBlock = styled.div`
   border-bottom: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   padding: ${v.mdSpacing} ${v.mdSpacing};
   transition: 0.3s;
-  margin-right: 1em;
   :hover {
     margin-left: 1em;
-    margin-right: 0;
     border-left: 3px solid var(--color-link, ${COLORS.link.light});
     color: var(--color-link, ${COLORS.link.light});
   }
@@ -111,29 +109,31 @@ const SearchBar = ({ placeholder, data }) => {
         {/* data = techniques.nodes from pages/techniques/index */}
         {filteredData.map((technique, key) => {
           return (
-            <DataResultBlockLink to={technique.frontmatter.slug}>
-              <DataResultBlock>
-                <DataResultTitle>
-                  {technique.frontmatter.title}
-                </DataResultTitle>
-                <DataResultCategory>
-                  {technique.frontmatter.category ?
-                    technique.frontmatter.category
-                    :
-                    "Uncategorized"
-                  }
-                </DataResultCategory>
-                <DataResultPreReq>
-                  Req:{' '}
-                  {technique.frontmatter.prereqs ? 
-                    technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ") 
-                    :
-                    "None"  
-                  }
-                </DataResultPreReq>
-                
-              </DataResultBlock>
-            </DataResultBlockLink>
+            <React.Fragment key={technique.frontmatter.slug}>
+              <DataResultBlockLink to={technique.frontmatter.slug}>
+                <DataResultBlock >
+                  <DataResultTitle>
+                    {technique.frontmatter.title}
+                  </DataResultTitle>
+                  <DataResultCategory>
+                    {technique.frontmatter.category ?
+                      technique.frontmatter.category
+                      :
+                      "Uncategorized"
+                    }
+                  </DataResultCategory>
+                  <DataResultPreReq>
+                    Req:{' '}
+                    {technique.frontmatter.prereqs ? 
+                      technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ") 
+                      :
+                      "None"  
+                    }
+                  </DataResultPreReq>
+                  
+                </DataResultBlock>
+              </DataResultBlockLink>
+            </React.Fragment>
           )
         })}
       </DataResult>

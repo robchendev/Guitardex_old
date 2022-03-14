@@ -20,7 +20,6 @@ const Sidebar = () => {
     // search functionality
   }
   const parentLocation = "/" + location.split('/')[1]
-  console.log(parentLocation)
 
   // Set Cookies / LocalStorage
   useEffect(() => {
@@ -43,7 +42,8 @@ const Sidebar = () => {
       <SDivider />
       {internalLinks.map(({label, icon, link, notification}) => (
         <InternalLinks
-          label={label}
+          key={label}
+          label={label} 
           icon={icon}
           link={link}
           notification={notification}
@@ -52,11 +52,11 @@ const Sidebar = () => {
       ))}
       <SDivider />
       {externalLinks.map(({label, icon, link}) => (
-        <ExternalLinks label={label} icon={icon} link={link}/>
+        <ExternalLinks key={label} label={label} icon={icon} link={link}/>
       ))}
       <SDivider />
-      {utilityLinks.map(({label, icon}) => (
-        <UtilityLinks label={label} icon={icon}/>
+      {utilityLinks.map(({label, icon, link, notification}) => (
+        <InternalLinks key={label} label={label} icon={icon} link={link} notification={notification}/>
       ))}
       <SDivider />
       <STheme>
@@ -111,11 +111,15 @@ const externalLinks = [
 const utilityLinks = [
   {
     label: "Settings",
-    icon: <AiFillSetting />
+    icon: <AiFillSetting />,
+    link: "/saved",
+    notification: 0
   },
   {
     label: "Saved",
-    icon: <AiFillSave />
+    icon: <AiFillSave />,
+    link: "/saved",
+    notification: 0
   },
 ]
 
