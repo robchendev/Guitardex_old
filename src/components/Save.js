@@ -17,7 +17,8 @@ const Save = ({title, group, slug}) => {
     "name":"My Saved Profile",
     "items":[]
   } 
-  if (window !== undefined) {
+  const isBrowser = () => typeof window !== "undefined"
+  if (isBrowser) {
     if (localStorage.getItem('save')) { // localStorage of save already exists
       savedObj = JSON.parse(localStorage.getItem('save')) //gets savedObj
     }
