@@ -11,8 +11,7 @@ const Saved = () => {
     "name":"My Saved Profile",
     "items":[]
   } 
-  const isBrowser = () => typeof window !== "undefined"
-  if(isBrowser){
+  if(typeof window !== `undefined`){
     if(localStorage.getItem('save')){
       savedObj = JSON.parse(localStorage.getItem('save'))
     }
