@@ -4,6 +4,7 @@ import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
 import { Explanation, DarkBackground } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
+import Save from '../components/Save';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
@@ -12,7 +13,7 @@ const extractVideoURL = (demo) => {
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const { 
-    title, demo, description, prereqs, exercises 
+    title, demo, description, slug, exercises 
   } = data.allInfo.frontmatter;
 
   // const slugFinder = graphql`
@@ -33,12 +34,12 @@ function TechniqueDetails({ data }) {
         {/* This section will not have a color */}
         <h2>{title}</h2>
         {/* <h3>Required: {prereqs}</h3> */}
-        
+        <Save title={title} group="techniques" slug={slug} />
 
         {/* This section will be a color */}
         <DarkBackground>
           { demo ? 
-            <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false} />
+            <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false}  />
             :
             <p>No video.</p>
           }
@@ -61,7 +62,9 @@ function TechniqueDetails({ data }) {
         <h2>Exercises</h2>
           {exercises ? 
             exercises.map(({text,link,slce}) => (
-              <p>{text}: <a href={link} target="_blank">Tablature</a><a href={slce} target="_blank">SoundSlice</a></p>
+              <React.Fragment key={text}>
+                <p>{text}: <a href={link} target="_blank">Tablature</a><a href={slce} target="_blank">SoundSlice</a></p>
+              </React.Fragment>
             ))
             :
             <p>There are no exercises.</p>
@@ -82,6 +85,7 @@ export const query = graphql`
       frontmatter {
         title
         demo
+        slug
         prereqs {
           name
           slug
