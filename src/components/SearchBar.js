@@ -30,7 +30,6 @@ const SearchInput = styled.div`
 `
 
 const DataResult = styled.div`
-  // resetting styling
   a {
     border: none;
     padding: 0;
@@ -104,7 +103,7 @@ const SearchBar = ({ placeholder, data }) => {
         <input placeholder={placeholder} type="text" onChange={handleFilter} />
       </SearchInput>
 
-      
+
       <DataResult>
         {/* data = techniques.nodes from pages/techniques/index */}
         {filteredData.map((technique, key) => {
@@ -124,13 +123,13 @@ const SearchBar = ({ placeholder, data }) => {
                   </DataResultCategory>
                   <DataResultPreReq>
                     Req:{' '}
-                    {technique.frontmatter.prereqs ? 
-                      technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ") 
+                    {technique.frontmatter.prereqs ?
+                      technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ")
                       :
-                      "None"  
+                      "None"
                     }
                   </DataResultPreReq>
-                  
+
                 </DataResultBlock>
               </DataResultBlockLink>
             </React.Fragment>

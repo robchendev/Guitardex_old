@@ -23,7 +23,7 @@ const Sidebar = () => {
 
   // Set Cookies / LocalStorage
   useEffect(() => {
-    if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string'){
+    if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string') {
       setColorMode(localStorage.getItem(COLOR_MODE_KEY))
     }
   }, [])
@@ -37,13 +37,13 @@ const Sidebar = () => {
         <SSearchIcon>
           <AiOutlineSearch />
         </SSearchIcon>
-        <input ref={searchRef} placeholder="Search"/>
+        <input ref={searchRef} placeholder="Search" />
       </SSearch>
       <SDivider />
-      {internalLinks.map(({label, icon, link, notification}) => (
+      {internalLinks.map(({ label, icon, link, notification }) => (
         <InternalLinks
           key={label}
-          label={label} 
+          label={label}
           icon={icon}
           link={link}
           notification={notification}
@@ -55,12 +55,12 @@ const Sidebar = () => {
         <ExternalLinks key={label} label={label} icon={icon} link={link}/>
       ))}
       <SDivider /> */}
-      {utilityLinks.map(({label, icon, link, notification}) => (
-        <InternalLinks 
-          key={label} 
-          label={label} 
-          icon={icon} 
-          link={link} 
+      {utilityLinks.map(({ label, icon, link, notification }) => (
+        <InternalLinks
+          key={label}
+          label={label}
+          icon={icon}
+          link={link}
           notification={notification}
           isActive={parentLocation === link}
         />
@@ -68,7 +68,7 @@ const Sidebar = () => {
       <SDivider />
       <STheme>
         <SThemeLabel>Dark Mode</SThemeLabel>
-        <SThemeToggler 
+        <SThemeToggler
           onClick={
             () => {
               setColorMode(colorMode === "light" ? 'dark' : 'light');
@@ -78,7 +78,7 @@ const Sidebar = () => {
             }
           }
         >
-          <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}}/>
+          <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}} />
         </SThemeToggler>
       </STheme>
     </SSidebar>
@@ -92,7 +92,7 @@ const internalLinks = [
     label: "Home",
     icon: <AiFillHome />,
     link: "/",
-    notification: "NEW",
+    notification: 0,
   },
   {
     label: "Techniques",

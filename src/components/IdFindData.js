@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 
-const IdFindData = ({id}) => { 
-    console.log("id = " + id)
+const IdFindData = ({ id }) => {
     return (
         <StaticQuery
             query={graphql`
@@ -19,14 +18,13 @@ const IdFindData = ({id}) => {
                     }
                 }`
             }
-          render={data => {
-            // TODO: CHECK IF ID IS EVEN IN THE DATABASE
-            const selection = data.allMarkdownRemark.nodes.find(
-                node => node.frontmatter.id === id
-            )
-            // Edit this into a component that displays each link
-            return(<p>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</p>)
-          }}
+            render={data => {
+                const selection = data.allMarkdownRemark.nodes.find(
+                    node => node.frontmatter.id === id
+                )
+                // Edit this into a component that displays each link
+                return (<h3>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</h3>)
+            }}
         />
     )
 }
