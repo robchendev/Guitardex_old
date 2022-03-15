@@ -51,12 +51,19 @@ const Sidebar = () => {
         />
       ))}
       <SDivider />
-      {externalLinks.map(({label, icon, link}) => (
+      {/* {externalLinks.map(({label, icon, link}) => (
         <ExternalLinks key={label} label={label} icon={icon} link={link}/>
       ))}
-      <SDivider />
+      <SDivider /> */}
       {utilityLinks.map(({label, icon, link, notification}) => (
-        <InternalLinks key={label} label={label} icon={icon} link={link} notification={notification}/>
+        <InternalLinks 
+          key={label} 
+          label={label} 
+          icon={icon} 
+          link={link} 
+          notification={notification}
+          isActive={parentLocation === link}
+        />
       ))}
       <SDivider />
       <STheme>
@@ -109,12 +116,6 @@ const externalLinks = [
 ]
 
 const utilityLinks = [
-  {
-    label: "Settings",
-    icon: <AiFillSetting />,
-    link: "/saved",
-    notification: 0
-  },
   {
     label: "Saved",
     icon: <AiFillSave />,
