@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { btnReset, v, m } from "../../styles/variables" 
+import { btnReset, v, m } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
@@ -50,7 +50,6 @@ export const SSearchIcon = styled.button`
   ${btnReset};
   padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
   display: flex;
-  cursor: pointer;
 
   svg {
     font-size: 20px;

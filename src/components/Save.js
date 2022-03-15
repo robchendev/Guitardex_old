@@ -11,49 +11,51 @@ const SaveButton = styled.button`
     border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
 `
-const Save = ({id, title, group, slug}) => {
+
+
+
+const Save = ({ id, title, group, slug }) => {
   const [saveState, setSaveState] = useState(false);
   let savedObj = {
-    "n":"My Saved Profile",
-    "e":[]
-  } 
-  if(typeof window !== `undefined`){
-    if(localStorage.getItem('save')){
+    "n": "My Saved Profile",
+    "e": []
+  }
+  if (typeof window !== `undefined`) {
+    if (localStorage.getItem('save')) {
       try {
         const saveCheck = JSON.parse(localStorage.getItem('save'))
 
         // both NAME and ELEMENTS ARRAY are in the wrong format
-        if (typeof saveCheck.n !== 'string' && 
-        Object.prototype.toString.call(saveCheck.e) !== '[object Array]'){
+        if (typeof saveCheck.n !== 'string' &&
+          Object.prototype.toString.call(saveCheck.e) !== '[object Array]') {
           savedObj.n = "My Saved Profile"
           savedObj.e = []
         }
         // NAME is in the wrong format
-        else if(typeof saveCheck.n !== 'string') {
+        else if (typeof saveCheck.n !== 'string') {
           savedObj.n = "My Saved Profile"
-        } 
+        }
         // ELEMENTS ARRAY is in the wrong format
-        else if (Object.prototype.toString.call(saveCheck.e) !== '[object Array]'){
+        else if (Object.prototype.toString.call(saveCheck.e) !== '[object Array]') {
           savedObj.e = []
           console.log(savedObj.e)
         }
         // import localStorage into save
         else {
           savedObj = JSON.parse(localStorage.getItem('save'))
-          console.log('oops')
         }
       } catch (error) {
         alert("Invalid save profile detected. Clearing save to prevent site crash.")
       }
     }
   }
-  
+
   let index = savedObj.e.findIndex(item => item === id)
   useEffect(() => {
     setSaveState(index >= 0);
     let newSavedObj = {
-      "n":savedObj.n,
-      "e":savedObj.e
+      "n": savedObj.n,
+      "e": savedObj.e
     }
     localStorage.setItem('save', JSON.stringify(newSavedObj)) // make save into a CONST VARIABLE later
   }, [index]);
@@ -62,8 +64,8 @@ const Save = ({id, title, group, slug}) => {
   const addSave = (thisPage) => {
     const newSavedItems = [thisPage].concat(savedObj.e) // [{"g":"tec","s":"wrist-thump"}...]
     let newSavedObj = {
-      "n":savedObj.n,
-      "e":newSavedItems
+      "n": savedObj.n,
+      "e": newSavedItems
     }
     localStorage.setItem('save', JSON.stringify(newSavedObj)) // make save into a CONST VARIABLE later
     setSaveState(true)
@@ -73,10 +75,10 @@ const Save = ({id, title, group, slug}) => {
     const newSavedItems = savedObj.e
     //this can be its own function
     let newSavedObj = {
-      "n":savedObj.n,
-      "e":newSavedItems
+      "n": savedObj.n,
+      "e": newSavedItems
     }
-    localStorage.setItem('save', JSON.stringify(newSavedObj)) 
+    localStorage.setItem('save', JSON.stringify(newSavedObj))
     setSaveState(false)
   }
   const updateSave = () => {
@@ -95,7 +97,7 @@ const Save = ({id, title, group, slug}) => {
     }
   }
   return (
-      // make sure to show button text as "save" and "saved" depending on localstorage
+    // make sure to show button text as "save" and "saved" depending on localstorage
     <SaveButton onClick={updateSave}>
       {saveState ? "Unsave" : "Save"}
     </SaveButton>

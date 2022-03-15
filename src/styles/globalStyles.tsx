@@ -25,6 +25,9 @@ export const globalStyle = css`
   h1 {
     font-size: 30px;
   }
+  h3 {
+    font-size: 18px;
+  }
   p:not(:last-child) {
     line-height: 1.5em;
     margin-bottom: 1em;

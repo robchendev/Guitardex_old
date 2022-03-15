@@ -17,16 +17,16 @@ export const darkTheme = {
 
 export const COLORS = {
   text: {
-    light: 'rgb(45,45,45)', 
+    light: 'rgb(45,45,45)',
     dark: 'rgb(210,210,210)',
   },
   bg: {
-    light: 'rgb(241,242,245)', 
-    dark: 'rgb(25,25,25)', 
+    light: 'rgb(241,242,245)',
+    dark: 'rgb(25,25,25)',
   },
   primary: {
     light: '#B92742',
-    dark: '#B92742', 
+    dark: '#B92742',
   },
   bg2: {
     light: 'rgb(255,255,255)',
@@ -34,7 +34,7 @@ export const COLORS = {
   },
   bg3: {
     light: 'rgb(215,215,215)',
-    dark: 'rgb(60,60,60)',
+    dark: 'rgb(70,70,70)',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',

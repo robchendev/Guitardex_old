@@ -2,7 +2,6 @@ import styled from "@emotion/styled"
 import { COLORS } from "../styles/theme"
 
 export const TechList = styled.div`
-  // resetting styling
   a {
     border: none;
     padding: 0;
