@@ -11,38 +11,70 @@ const SaveButton = styled.button`
     border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
 `
-const Save = ({title, group, slug}) => {
+const Save = ({id, title, group, slug}) => {
   const [saveState, setSaveState] = useState(false);
   let savedObj = {
-    "name":"My Saved Profile",
-    "items":[]
+    "n":"My Saved Profile",
+    "e":[]
   } 
-  if (typeof window !== `undefined`) {
-    if (localStorage.getItem('save')) { // localStorage of save already exists
-      savedObj = JSON.parse(localStorage.getItem('save')) //gets savedObj
+  if(typeof window !== `undefined`){
+    if(localStorage.getItem('save')){
+      try {
+        const saveCheck = JSON.parse(localStorage.getItem('save'))
+
+        // both NAME and ELEMENTS ARRAY are in the wrong format
+        if (typeof saveCheck.n !== 'string' && 
+        Object.prototype.toString.call(saveCheck.e) !== '[object Array]'){
+          savedObj.n = "My Saved Profile"
+          savedObj.e = []
+        }
+        // NAME is in the wrong format
+        else if(typeof saveCheck.n !== 'string') {
+          savedObj.n = "My Saved Profile"
+        } 
+        // ELEMENTS ARRAY is in the wrong format
+        else if (Object.prototype.toString.call(saveCheck.e) !== '[object Array]'){
+          savedObj.e = []
+          console.log(savedObj.e)
+        }
+        // import localStorage into save
+        else {
+          savedObj = JSON.parse(localStorage.getItem('save'))
+          console.log('oops')
+        }
+      } catch (error) {
+        alert("Invalid save profile detected. Clearing save to prevent site crash.")
+      }
     }
   }
   
-  let index = savedObj.items.findIndex(item => item.t === title && item.g === group && item.s === slug)
+  let index = savedObj.e.findIndex(item => item === id)
   useEffect(() => {
     setSaveState(index >= 0);
-  }, [index]);
-  const addSave = (thisPage) => {
-    const newSavedItems = savedObj.items.concat(thisPage) // [{"g":"tec","s":"wrist-thump"}...]
     let newSavedObj = {
-      "name":"My Saved Profile",
-      "items":newSavedItems
+      "n":savedObj.n,
+      "e":savedObj.e
+    }
+    localStorage.setItem('save', JSON.stringify(newSavedObj)) // make save into a CONST VARIABLE later
+  }, [index]);
+
+  // FIX 'n' TO PULL FROM LOCALSTORAGE
+  const addSave = (thisPage) => {
+    const newSavedItems = [thisPage].concat(savedObj.e) // [{"g":"tec","s":"wrist-thump"}...]
+    let newSavedObj = {
+      "n":savedObj.n,
+      "e":newSavedItems
     }
     localStorage.setItem('save', JSON.stringify(newSavedObj)) // make save into a CONST VARIABLE later
     setSaveState(true)
   }
   const removeSave = (index) => {
-    savedObj.items.splice(index, 1)
-    const newSavedItems = savedObj.items
+    savedObj.e.splice(index, 1)
+    const newSavedItems = savedObj.e
     //this can be its own function
     let newSavedObj = {
-      "name":"My Saved Profile",
-      "items":newSavedItems
+      "n":savedObj.n,
+      "e":newSavedItems
     }
     localStorage.setItem('save', JSON.stringify(newSavedObj)) 
     setSaveState(false)
@@ -52,8 +84,9 @@ const Save = ({title, group, slug}) => {
       savedObj = JSON.parse(localStorage.getItem('save')) //gets savedObj
     }
 
-    const thisPage = {t:title,g:group,s:slug}
-    index = savedObj.items.findIndex(item => item.t === title && item.g === group && item.s === slug)
+    //const thisPage = {t:title,g:group,s:slug}
+    const thisPage = id
+    index = savedObj.e.findIndex(item => item === id)
 
     if (index >= 0) { // item is in array
       removeSave(index)

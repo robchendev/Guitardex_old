@@ -13,7 +13,7 @@ const extractVideoURL = (demo) => {
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const { 
-    title, demo, description, slug, exercises 
+    id, title, demo, description, slug, exercises 
   } = data.allInfo.frontmatter;
 
   // const slugFinder = graphql`
@@ -34,7 +34,7 @@ function TechniqueDetails({ data }) {
         {/* This section will not have a color */}
         <h2>{title}</h2>
         {/* <h3>Required: {prereqs}</h3> */}
-        <Save title={title} group="techniques" slug={slug} />
+        <Save title={title} group="techniques" slug={slug} id={id} />
 
         {/* This section will be a color */}
         <DarkBackground>
@@ -83,6 +83,8 @@ export const query = graphql`
     allInfo: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
       html
       frontmatter {
+        id
+        group
         title
         demo
         slug
