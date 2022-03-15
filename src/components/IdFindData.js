@@ -25,7 +25,7 @@ const IdFindData = ({id}) => {
                 node => node.frontmatter.id === id
             )
             // Edit this into a component that displays each link
-            return(<p>{selection.frontmatter.title}</p>)
+            return(<p>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</p>)
           }}
         />
     )
