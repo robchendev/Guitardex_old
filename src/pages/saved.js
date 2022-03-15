@@ -76,8 +76,8 @@ const Saved = () => {
     setName(e.target.value);
   }
   const exportSave = () => {
-    // This is delayed by one character input
-    navigator.clipboard.writeText(JSON.stringify(localStorage.getItem('save')))
+    // This is delayed by one character input, SHOULD BE FIXED NOW
+    navigator.clipboard.writeText(localStorage.getItem('save'))
   }
   const importSave = () => {
     localStorage.setItem('save', document.getElementById("importText").value)
