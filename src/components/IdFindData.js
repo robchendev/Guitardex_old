@@ -20,6 +20,7 @@ const IdFindData = ({id}) => {
                 }`
             }
           render={data => {
+            // TODO: CHECK IF ID IS EVEN IN THE DATABASE
             const selection = data.allMarkdownRemark.nodes.find(
                 node => node.frontmatter.id === id
             )
