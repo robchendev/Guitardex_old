@@ -11,11 +11,12 @@ export const SSidebar = styled.div`
   padding: ${v.lgSpacing};
   font-family: 'Fredoka', sans-serif;
   position: relative;
-  width: 25%;
   pointer-events: auto;
-  display: block;
+  width: 25%;
   ${maxq[1]} {
-    display: none;
+    margin-top: ${v.lgSpacing};
+    border-radius: calc(${v.borderRadius} * 2);
+    width: 90%;
   }
 `
 

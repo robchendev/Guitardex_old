@@ -9,11 +9,19 @@ export const SLayout = styled.div`
   display: flex;
   
 `
+
 export const SContainer = styled.div`
   width: 90%;
+  
   justify-content: center;
   max-width: 1100px;
   margin: 0 auto;
+
+`
+export const SidebarRelative = styled.div`
+  position: relative;
+  z-index: 10;
+
 `
 export const SidebarContainer = styled.div`
   position: fixed;
@@ -21,9 +29,14 @@ export const SidebarContainer = styled.div`
   max-width: 1100px;
   width: 100%;
   pointer-events: none;
+
+  ${maxq[1]} {
+    display: none;
+  }
+  /* z-index: 10; // can prob delete */
 `
 export const MainContainer = styled.div`
-  padding-left: 28%;
+  padding-left: 26%;
   ${maxq[1]} {
     padding: 0;
   }

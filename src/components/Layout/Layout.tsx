@@ -1,5 +1,5 @@
 import Sidebar from "../Sidebar/Sidebar"
-import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SLayout, SMain } from "./styles"
+import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
 import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import { globalStyle } from "../../styles/globalStyles"
@@ -65,9 +65,11 @@ const Layout = (props) => {
       <MobileHeader />
       <SLayout>
         <SContainer>
-          <SidebarContainer>
-            <Sidebar />
-          </SidebarContainer>
+          <SidebarRelative>
+            <SidebarContainer id='sidenav'>
+              <Sidebar />
+            </SidebarContainer>
+          </SidebarRelative>
           <MainContainer>
             <SMain>{props.children}</SMain>
           </MainContainer>

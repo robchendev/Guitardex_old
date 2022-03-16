@@ -30,7 +30,7 @@ const Sidebar = () => {
   }, [])
 
   return (
-    <SSidebar id='sidenav'>
+    <SSidebar>
       <SLogo>
         <img src={logoPNG} alt="logo" />
       </SLogo>
