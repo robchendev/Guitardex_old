@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { COLORS } from "../styles/theme"
+import { maxq, minq } from "../styles/variables"
 
 export const TechList = styled.div`
   a {
@@ -21,10 +22,15 @@ export const DarkBackground = styled.div`
   p {
     margin: 0;
   }
+  ${maxq[1]} {
+    padding: 1.5em;
+  }
 `
 export const Explanation = styled.div`
 
   padding: 2em;
   border-radius: 12px;
-
+  ${maxq[1]} {
+    padding: 1.5em 0;
+  }
 `

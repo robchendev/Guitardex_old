@@ -36,9 +36,7 @@ Alls of this is unstyled right now and looks terrible. If you're viewing this pa
 
 There will be a **lot** more content here when the site fully launches.
 
-There would be a demonstration video at the top of each page:
-
-`youtube: https://www.youtube.com/embed/dQw4w9WgXcQ`
+There would be a demonstration video at the top of each page
 
 Followed by common ways the technique is written in tabs:
 

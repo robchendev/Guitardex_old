@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { btnReset, v, m } from "../../styles/variables"
+import { btnReset, v, maxq, minq } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
@@ -11,8 +11,13 @@ export const SSidebar = styled.div`
   padding: ${v.lgSpacing};
   font-family: 'Fredoka', sans-serif;
   position: relative;
-  width: 25%;
   pointer-events: auto;
+  width: 25%;
+  ${maxq[1]} {
+    margin-top: ${v.lgSpacing};
+    border-radius: calc(${v.borderRadius} * 2);
+    width: 90%;
+  }
 `
 
 export const SLogo = styled.div`

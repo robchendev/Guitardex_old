@@ -5,10 +5,17 @@ import "./technique-styling.css"
 import { Explanation, DarkBackground } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save';
+import styled from '@emotion/styled';
+import { v } from '../styles/variables';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
 }
+const EmbedContainer = styled.div`
+  border-radius: ${v.borderRadius};
+  overflow: hidden;
+  position: relative;
+`
 
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
@@ -16,46 +23,30 @@ function TechniqueDetails({ data }) {
     id, title, demo, description, slug, exercises
   } = data.allInfo.frontmatter;
 
-  // const slugFinder = graphql`
-  //   query preReqFound($slug: String){
-  // preReqs: markdownRemark(frontmatter: {prereqs: {eq: $prereqs}}){
-  //   frontmatter {
-  //     prereqs
-  //     slug
-  //   }
-  // }
-  //   }
-  // `
   return (
     <Layout>
-      {/* Container */}
       <div>
-
-        {/* This section will not have a color */}
         <h2>{title}</h2>
-        {/* <h3>Required: {prereqs}</h3> */}
         <Save id={id} />
 
-        {/* This section will be a color */}
         <DarkBackground>
           {demo ?
-            <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false} />
+            <EmbedContainer>
+              <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false} />
+            </EmbedContainer>
             :
             <p>No video.</p>
           }
-
           {description ? <br /> : <></>}
           <p>{description}</p>
         </DarkBackground>
 
-        {/* This section will not have a color */}
         <Explanation>
           {html ?
             <div dangerouslySetInnerHTML={{ __html: html }} />
             :
             <p>This page has no content.</p>
           }
-
         </Explanation>
 
         <DarkBackground>
@@ -70,13 +61,10 @@ function TechniqueDetails({ data }) {
             <p>There are no exercises.</p>
           }
         </DarkBackground>
-
       </div>
     </Layout>
   );
 }
-
-
 
 export const query = graphql`
   query TechniquesOne($slug: String) {
@@ -104,6 +92,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 export default TechniqueDetails;
