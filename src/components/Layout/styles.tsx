@@ -2,6 +2,8 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { btnReset, v } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
+import { maxq, minq } from "../../styles/variables"
+
 
 export const SLayout = styled.div`
   display: flex;
@@ -10,21 +12,28 @@ export const SLayout = styled.div`
 export const SContainer = styled.div`
   width: 90%;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-` 
+`
 export const SidebarContainer = styled.div`
   position: fixed;
   top: 2em;
-  max-width: 1200px;
+  max-width: 1100px;
   width: 100%;
   pointer-events: none;
 `
 export const MainContainer = styled.div`
-  padding-left: 26%;
+  padding-left: 28%;
+  ${maxq[1]} {
+    padding: 0;
+  }
 `
 export const SMain = styled.main`  
   padding: 2em;
+  ${maxq[1]} {
+    padding: 0;
+    margin-top: 5%;
+  }
 
   a {
     //color: var(--color-link, ${COLORS.link.light});
@@ -51,7 +60,7 @@ export const SDivider = styled.div`
 `
 
 export const SLinkContainer = styled.div`
-  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)` )};
+  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)`)};
   color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
   border-radius: ${v.borderRadius};
   margin: 6px 0;
@@ -91,7 +100,7 @@ export const SLinkIcon = styled.div`
 export const SLinkLabel = styled.span`
   display: block;
   flex: 1;
-  margin-left: ${v.smSpacing};
+
 `
 
 export const SLinkNotification = styled.div`

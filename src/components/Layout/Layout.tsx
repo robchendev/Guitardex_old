@@ -10,9 +10,11 @@ import {
   INITIAL_COLOR_MODE_CSS_PROP,
 } from '../../styles/theme';
 import { Global } from '@emotion/react'
+import { css } from '@emotion/css'
+import MobileHeader from "../MobileHeader"
 
 
-const cookies = new Cookies() 
+const cookies = new Cookies()
 
 
 // createContext should not have any params
@@ -56,20 +58,21 @@ const Layout = (props) => {
   return (
     <ThemeContext.Provider value={contextValue}>
       {/* <ThemeProvider theme={themeStyle}> */}
-        <Global styles={globalStyle} />
-        <Helmet>
-          <title>{props.title}</title>
-        </Helmet>
-        <SLayout>
-          <SContainer>
-            <SidebarContainer>    
-              <Sidebar />
-            </SidebarContainer>
-            <MainContainer>
-              <SMain>{props.children}</SMain>
-            </MainContainer>
-          </SContainer>
-        </SLayout>
+      <Global styles={globalStyle} />
+      <Helmet>
+        <title>{props.title}</title>
+      </Helmet>
+      <MobileHeader />
+      <SLayout>
+        <SContainer>
+          <SidebarContainer>
+            <Sidebar />
+          </SidebarContainer>
+          <MainContainer>
+            <SMain>{props.children}</SMain>
+          </MainContainer>
+        </SContainer>
+      </SLayout>
       {/* </ThemeProvider> */}
     </ThemeContext.Provider>
   )

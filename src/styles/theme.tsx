@@ -54,7 +54,7 @@ export const COLORS = {
   },
   tabimg: {
     light: 'brightness(1.04)',
-    dark: 'invert(0.87)',
+    dark: 'invert(0.88)',
   },
   sectionGreen: {
     light: '',
