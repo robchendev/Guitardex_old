@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { v, minq, maxq } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { css } from '@emotion/css'
-import { FiMenu } from 'react-icons/fi'
+import { FiMenu, FiXCircle } from 'react-icons/fi'
 
 const MHeader = styled.div`
   width: 100%;
@@ -29,23 +29,20 @@ const Logo = styled.div`
     margin-left: 5%;
 `
 
-let firstTimeShow = false;
 
-const showSidebar = () => {
-    console.log(document.getElementById('sidenav').style.display)
-    if (firstTimeShow === false) {
-        document.getElementById('sidenav').style.display = 'none'
-        firstTimeShow = true
-    }
-    if (document.getElementById('sidenav').style.display === 'none') {
-        document.getElementById('sidenav').style.display = 'block'
-    } else {
-        document.getElementById('sidenav').style.display = 'none'
-    }
-
-}
 
 const MobileHeader = () => {
+    const [menuActive, setMenuActive] = useState(false)
+    const showSidebar = () => {
+        if (document.getElementById('sidenav').style.display === 'block') {
+            document.getElementById('sidenav').style.display = 'none'
+            setMenuActive(false)
+        } else {
+            document.getElementById('sidenav').style.display = 'block'
+            setMenuActive(true)
+        }
+    }
+
     return (
         <MHeader>
             <MobileContainer>
@@ -57,7 +54,7 @@ const MobileHeader = () => {
                     </h3>
                 </Logo>
                 <MenuIcon onClick={() => showSidebar()}>
-                    <FiMenu />
+                    {menuActive ? <FiXCircle /> : <FiMenu />}
                 </MenuIcon>
             </MobileContainer>
         </MHeader >
