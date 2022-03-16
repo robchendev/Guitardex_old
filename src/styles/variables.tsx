@@ -1,6 +1,6 @@
 import { css } from "@emotion/react"
 
-export const v =  {
+export const v = {
   sidebarWidth: `200px`,
   smSpacing: `8px`,
   mdSpacing: `16px`,
@@ -25,3 +25,5 @@ export const btnReset = css`
   text-align: inherit;
   padding: 0;
 `
+
+export const SAVE_KEY = SAVE_KEY;
