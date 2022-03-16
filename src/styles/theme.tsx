@@ -30,7 +30,7 @@ export const COLORS = {
   },
   bg2: {
     light: 'rgb(255,255,255)',
-    dark: 'rgb(40,40,40)',
+    dark: 'rgb(37,37,37)',
   },
   bg3: {
     light: 'rgb(215,215,215)',
