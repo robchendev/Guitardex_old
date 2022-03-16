@@ -50,15 +50,13 @@ const DataResultBlockLink = styled(Link)`
 `
 
 const DataResultBlock = styled.div`
-  /* background: var(--color-bg, ${COLORS.bg.light});
+  background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
-   */
-  border-bottom: 1px solid var(--color-bg3, ${COLORS.bg3.light});
-  padding: ${v.mdSpacing} ${v.mdSpacing};
+  padding: ${v.mdSpacing};
+  margin: 5px 0;
   transition: 0.3s;
   :hover {
     margin-left: 1em;
-    border-left: 3px solid var(--color-link, ${COLORS.link.light});
     color: var(--color-link, ${COLORS.link.light});
   }
 `
