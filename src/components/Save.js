@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
-import { v } from '../styles/variables'
+import { v, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 
 const SaveButton = styled.button`
@@ -14,90 +14,68 @@ const SaveButton = styled.button`
 
 
 
-const Save = ({ id, title, group, slug }) => {
+const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);
+  const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
     "n": "My Saved Profile",
     "e": []
   }
-  if (typeof window !== `undefined`) {
-    if (localStorage.getItem('save')) {
-      try {
-        const saveCheck = JSON.parse(localStorage.getItem('save'))
-
-        // both NAME and ELEMENTS ARRAY are in the wrong format
-        if (typeof saveCheck.n !== 'string' &&
-          Object.prototype.toString.call(saveCheck.e) !== '[object Array]') {
-          savedObj.n = "My Saved Profile"
-          savedObj.e = []
-        }
-        // NAME is in the wrong format
-        else if (typeof saveCheck.n !== 'string') {
-          savedObj.n = "My Saved Profile"
-        }
-        // ELEMENTS ARRAY is in the wrong format
-        else if (Object.prototype.toString.call(saveCheck.e) !== '[object Array]') {
-          savedObj.e = []
-          console.log(savedObj.e)
-        }
-        // import localStorage into save
-        else {
-          savedObj = JSON.parse(localStorage.getItem('save'))
-        }
-      } catch (error) {
-        alert("Invalid save profile detected. Clearing save to prevent site crash.")
+  if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
+    try {
+      const save = JSON.parse(localStorage.getItem(SAVE_KEY))
+      if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
+      if (typeof save.n !== 'string' &&
+        Object.prototype.toString.call(save.e) !== '[object Array]') {
+        savedObj.n = "My Saved Profile"
+        savedObj.e = []
       }
+      else if (typeof save.n !== 'string') savedObj.n = "My Saved Profile"
+      else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
+        savedObj.e = []
+      }
+      else savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
+    } catch (error) {
+      alert("Invalid save profile detected. Clearing save.\n" + error)
     }
   }
 
   let index = savedObj.e.findIndex(item => item === id)
   useEffect(() => {
     setSaveState(index >= 0);
-    let newSavedObj = {
+    let newSaved = {
       "n": savedObj.n,
       "e": savedObj.e
     }
-    localStorage.setItem('save', JSON.stringify(newSavedObj)) // make save into a CONST VARIABLE later
-  }, [index]);
+    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) // make save into a CONST VARIABLE later
+  }, [index, savedObj.n, savedObj.e]);
 
-  // FIX 'n' TO PULL FROM LOCALSTORAGE
   const addSave = (thisPage) => {
     const newSavedItems = [thisPage].concat(savedObj.e) // [{"g":"tec","s":"wrist-thump"}...]
-    let newSavedObj = {
-      "n": savedObj.n,
-      "e": newSavedItems
-    }
-    localStorage.setItem('save', JSON.stringify(newSavedObj)) // make save into a CONST VARIABLE later
+    let newSaved = { "n": savedObj.n, "e": newSavedItems }
+    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) // make save into a CONST VARIABLE later
     setSaveState(true)
   }
+
   const removeSave = (index) => {
     savedObj.e.splice(index, 1)
     const newSavedItems = savedObj.e
-    //this can be its own function
-    let newSavedObj = {
-      "n": savedObj.n,
-      "e": newSavedItems
-    }
-    localStorage.setItem('save', JSON.stringify(newSavedObj))
+    let newSaved = { "n": savedObj.n, "e": newSavedItems }
+    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
     setSaveState(false)
   }
-  const updateSave = () => {
-    if (localStorage.getItem('save')) { // localStorage of save already exists
-      savedObj = JSON.parse(localStorage.getItem('save')) //gets savedObj
-    }
 
-    //const thisPage = {t:title,g:group,s:slug}
+  const updateSave = () => {
+    if (localStorage.getItem(SAVE_KEY)) { // localStorage of save already exists
+      savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
+    }
     const thisPage = id
     index = savedObj.e.findIndex(item => item === id)
-
-    if (index >= 0) { // item is in array
-      removeSave(index)
-    } else { // item is not in array, index < 0
-      addSave(thisPage)
-    }
+    if (index >= 0) removeSave(index) // item is in array 
+    else addSave(thisPage)
   }
+
   return (
-    // make sure to show button text as "save" and "saved" depending on localstorage
     <SaveButton onClick={updateSave}>
       {saveState ? "Unsave" : "Save"}
     </SaveButton>
@@ -105,4 +83,3 @@ const Save = ({ id, title, group, slug }) => {
 }
 
 export default Save
-

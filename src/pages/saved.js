@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
 import { useLocation } from "@reach/router";
-import { v } from '../styles/variables'
+import { v, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { btnReset } from "../styles/variables";
 import { RiPencilFill } from 'react-icons/ri'
@@ -48,18 +48,13 @@ const TechniqueList = styled.ul`
     
 `
 
-// Remove stuff from here
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s;
   :hover {
-    border: none !important;
-    background-color: var(--color-bg, ${COLORS.bg.light}) !important;
     margin-left: 1em;
   }
-  color: var(--color-text, ${COLORS.text.light}) !important;
   border-radius: ${v.borderRadius};
-
   user-select: none;
   position: relative;
   width: 100%;
@@ -188,84 +183,45 @@ const DeleteButton = styled.button`
 
 const Saved = () => {
 
-  const hasDuplicates = (array) => {
-    return (new Set(array)).size !== array.length;
-  }
-
+  const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
     "n": "My Saved Profile",
     "e": []
   }
-
-  if (typeof window !== `undefined` && localStorage.getItem('save')) {
+  if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
     try {
-      const saveCheck = JSON.parse(localStorage.getItem('save'))
-
-      // techniques array has duplicate ids
-      if (hasDuplicates(saveCheck.e)) {
-        throw new Error("Import code has duplicate ID")
-      }
-      // both NAME and ELEMENTS ARRAY are in the wrong format
-      if (typeof saveCheck.n !== 'string' &&
-        Object.prototype.toString.call(saveCheck.e) !== '[object Array]') {
+      const save = JSON.parse(localStorage.getItem(SAVE_KEY))
+      if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
+      if (typeof save.n !== 'string' &&
+        Object.prototype.toString.call(save.e) !== '[object Array]') {
         savedObj.n = "My Saved Profile"
         savedObj.e = []
       }
-      // NAME is in the wrong format
-      else if (typeof saveCheck.n !== 'string') {
-        savedObj.n = "My Saved Profile"
-      }
-      // ELEMENTS ARRAY is in the wrong format
-      else if (Object.prototype.toString.call(saveCheck.e) !== '[object Array]') {
+      else if (typeof save.n !== 'string') savedObj.n = "My Saved Profile"
+      else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
         savedObj.e = []
       }
-      // import localStorage into save
-      else {
-        savedObj = JSON.parse(localStorage.getItem('save'))
-      }
+      else savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
     } catch (error) {
-      alert("Invalid save profile detected. Clearing save to prevent site crash.\n" + error)
+      alert("Invalid save profile detected. Clearing save.\n" + error)
     }
   }
 
-  const [savedObjState, setSavedObjState] = useState(savedObj)
-  const [techniques, setTechniques] = useState(savedObjState.e)
-  const [name, setName] = useState(savedObjState.n)
+  const [saved, setSaved] = useState(savedObj)
 
   useEffect(() => {
-    setTechniques(savedObjState.e)
-    setName(savedObjState.n)
-    console.log("savedObjState useEffect")
-  }, [savedObjState])
+    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
+    document.getElementById("exportText").value = JSON.stringify(saved)
+  }, [saved])
 
-  useEffect(() => {
-    let newSavedObj = { "n": savedObjState.n, "e": techniques }
-    localStorage.setItem('save', JSON.stringify(newSavedObj))
-    document.getElementById("exportText").value = JSON.stringify(newSavedObj)
-  }, [savedObjState.n, techniques])
-
-  useEffect(() => {
-    let newSavedObj = { "n": name, "e": savedObjState.e }
-    localStorage.setItem('save', JSON.stringify(newSavedObj))
-    document.getElementById("exportText").value = JSON.stringify(newSavedObj)
-  }, [name, savedObjState.e]);
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  }
-
-  const remindValidSave = () => {
+  const remindValidSave = (v) => {
     document.getElementById("importText").value = ""
-    document.getElementById("importText").placeholder = "Please use a valid save"
-  }
-  const resetValidSave = () => {
-    document.getElementById("importText").value = ""
-    document.getElementById("importText").placeholder = "Paste your save code here"
-    document.getElementById("importText").placeholder = "Paste your save code here"
+    let textToUpdate = v === 'remind' ? "Please use a valid save" : "Paste your save code here"
+    document.getElementById("importText").placeholder = textToUpdate
   }
 
   const exportSave = () => {
-    navigator.clipboard.writeText(localStorage.getItem('save'))
+    navigator.clipboard.writeText(localStorage.getItem(SAVE_KEY))
     document.getElementById("copyButton").innerHTML = "Copied!"
     setTimeout(() => {
       document.getElementById("copyButton").innerHTML = "Copy Save"
@@ -275,52 +231,57 @@ const Saved = () => {
   const importSave = () => {
     try {
       if (document.getElementById("importText").value) {
-        let newSavedObj = JSON.parse(document.getElementById("importText").value)
-        if (newSavedObj.n.length > 100) {
-          newSavedObj.n = newSavedObj.n.substring(0, 97) + "..."
+        let newSaved = JSON.parse(document.getElementById("importText").value)
+        if (newSaved.n.length > 100) {
+          newSaved.n = newSaved.n.substring(0, 97) + "..."
         }
-        if (hasDuplicates(newSavedObj.e)) {
-          remindValidSave()
+        if (hasDupes(newSaved.e)) {
+          remindValidSave('remind')
           return
         }
-        setSavedObjState(newSavedObj)
-        resetValidSave()
-        document.getElementById("exportText").value = localStorage.getItem('save')
+        setSaved(newSaved)
+        remindValidSave('reset')
+        document.getElementById("exportText").value = localStorage.getItem(SAVE_KEY)
       } else {
-        remindValidSave()
+        remindValidSave('remind')
       }
     } catch (error) {
-      remindValidSave()
+      remindValidSave('remind')
     }
-
   }
 
   const clearSave = () => {
     if (window.confirm("This will delete your save. Click OK to continue.")) {
-      setSavedObjState({ "n": "", "e": [] })
-      resetValidSave()
+      setSaved({ "n": "", "e": [] })
+      remindValidSave('reset')
     }
   }
 
   const clearItem = (id) => {
     document.getElementById(id.toString()).style.display = "none"
-    const temp = techniques
+    const temp = saved.e
     const index = temp.indexOf(id)
     if (index > -1) temp.splice(index, 1)
-    let newSavedObj = {
-      "n": savedObjState.n,
+    let newSaved = {
+      "n": saved.n,
       "e": temp
     }
-    setSavedObjState(newSavedObj)
+    setSaved(newSaved)
   }
   const location = useLocation().pathname
 
-  const handleOnDragEnd = (result) => {
+  const handleNameChange = (e) => {
+    let newSaved = { "n": e.target.value, "e": saved.e }
+    setSaved(newSaved)
+  }
+
+  const handleTechniqueOrderChange = (result) => {
     if (!result.destination) return
-    const items = Array.from(techniques)
+    const items = Array.from(saved.e)
     const [reorderedItem] = items.splice(result.source.index, 1)
     items.splice(result.destination.index, 0, reorderedItem)
-    setTechniques(items)
+    let newSaved = { "n": saved.n, "e": items }
+    setSaved(newSaved)
   }
 
   return (
@@ -330,14 +291,14 @@ const Saved = () => {
         <SaveNameIcon>
           <RiPencilFill />
         </SaveNameIcon>
-        <input id="saveName" type="text" maxLength="100" onChange={(e) => handleNameChange(e)} value={name} />
+        <input id="saveName" type="text" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
-      {techniques.length === 0 ? <p>You do not have any saved pages</p> : <></>}
-      <DragDropContext onDragEnd={handleOnDragEnd}>
+      {saved.e.length === 0 ? <p>You do not have any saved pages</p> : <></>}
+      <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
           {(provided) => (
             <TechniqueList {...provided.droppableProps} ref={provided.innerRef}>
-              {techniques?.map((id, index) => {
+              {saved.e?.map((id, index) => {
                 return (
                   <Draggable key={id} draggableId={id.toString()} index={index}>
                     {(provided) => (
@@ -361,7 +322,7 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <textarea id="exportText" rows="1" defaultValue={JSON.stringify(savedObjState)} disabled></textarea>
+        <textarea id="exportText" rows="1" defaultValue={JSON.stringify(saved)} disabled></textarea>
         <button id="copyButton" onClick={exportSave}>Copy Save</button>
       </ExportSave>
       <ImportSave>
