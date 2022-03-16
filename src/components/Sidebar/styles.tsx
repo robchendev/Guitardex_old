@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { btnReset, v, m } from "../../styles/variables" 
+import { btnReset, v, m } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
@@ -33,7 +33,7 @@ export const SSearch = styled.div`
   border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   border-radius: ${v.borderRadius};
   input {
-    padding: 0 ${v.smSpacing};
+    padding: 0 ${v.smSpacing} 0 0;
     font-family: inherit;
     letter-spacing: inherit;
     font-size: 16px;
@@ -50,7 +50,6 @@ export const SSearchIcon = styled.button`
   ${btnReset};
   padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
   display: flex;
-  cursor: pointer;
 
   svg {
     font-size: 20px;

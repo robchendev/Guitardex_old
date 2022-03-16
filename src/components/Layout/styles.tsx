@@ -47,14 +47,14 @@ export const SDivider = styled.div`
   height: 1px;
   width: 100%;
   background: var(--color-bg3, ${COLORS.bg3.light});
-  margin: ${v.lgSpacing} 0;
+  margin: ${v.mdSpacing} 0;
 `
 
 export const SLinkContainer = styled.div`
   background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)` )};
   color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
   border-radius: ${v.borderRadius};
-  margin: 8px 0;
+  margin: 6px 0;
 
   :hover {
     box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
@@ -62,6 +62,15 @@ export const SLinkContainer = styled.div`
 `
 
 export const SLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  padding: calc(${v.smSpacing} - 2px) 0;
+`
+
+export const SLinkA = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;

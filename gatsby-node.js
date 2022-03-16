@@ -3,7 +3,7 @@ const path = require('path')
 exports.createPages = async ({graphql, actions}) => {
 
   const { data } = await graphql(`
-    query TechniquesPage {
+    query Techniques {
       allMarkdownRemark {
         nodes {
           frontmatter {
@@ -22,5 +22,5 @@ exports.createPages = async ({graphql, actions}) => {
         slug: node.frontmatter.slug,
       },
     })
-  })
+  }) 
 }

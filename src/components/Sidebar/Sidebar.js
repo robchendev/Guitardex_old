@@ -20,11 +20,10 @@ const Sidebar = () => {
     // search functionality
   }
   const parentLocation = "/" + location.split('/')[1]
-  console.log(parentLocation)
 
   // Set Cookies / LocalStorage
   useEffect(() => {
-    if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string'){
+    if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string') {
       setColorMode(localStorage.getItem(COLOR_MODE_KEY))
     }
   }, [])
@@ -38,11 +37,12 @@ const Sidebar = () => {
         <SSearchIcon>
           <AiOutlineSearch />
         </SSearchIcon>
-        <input ref={searchRef} placeholder="Search"/>
+        <input ref={searchRef} placeholder="Search" />
       </SSearch>
       <SDivider />
-      {internalLinks.map(({label, icon, link, notification}) => (
+      {internalLinks.map(({ label, icon, link, notification }) => (
         <InternalLinks
+          key={label}
           label={label}
           icon={icon}
           link={link}
@@ -51,17 +51,24 @@ const Sidebar = () => {
         />
       ))}
       <SDivider />
-      {externalLinks.map(({label, icon, link}) => (
-        <ExternalLinks label={label} icon={icon} link={link}/>
+      {/* {externalLinks.map(({label, icon, link}) => (
+        <ExternalLinks key={label} label={label} icon={icon} link={link}/>
       ))}
-      <SDivider />
-      {utilityLinks.map(({label, icon}) => (
-        <UtilityLinks label={label} icon={icon}/>
+      <SDivider /> */}
+      {utilityLinks.map(({ label, icon, link, notification }) => (
+        <InternalLinks
+          key={label}
+          label={label}
+          icon={icon}
+          link={link}
+          notification={notification}
+          isActive={parentLocation === link}
+        />
       ))}
       <SDivider />
       <STheme>
         <SThemeLabel>Dark Mode</SThemeLabel>
-        <SThemeToggler 
+        <SThemeToggler
           onClick={
             () => {
               setColorMode(colorMode === "light" ? 'dark' : 'light');
@@ -71,19 +78,21 @@ const Sidebar = () => {
             }
           }
         >
-          <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}}/>
+          <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}} />
         </SThemeToggler>
       </STheme>
     </SSidebar>
   )
 }
 
+// TODO: Move all this into some other file or files
+
 const internalLinks = [
   {
     label: "Home",
     icon: <AiFillHome />,
     link: "/",
-    notification: "NEW",
+    notification: 0,
   },
   {
     label: "Techniques",
@@ -108,12 +117,10 @@ const externalLinks = [
 
 const utilityLinks = [
   {
-    label: "Settings",
-    icon: <AiFillSetting />
-  },
-  {
     label: "Saved",
-    icon: <AiFillSave />
+    icon: <AiFillSave />,
+    link: "/saved",
+    notification: 0
   },
 ]
 

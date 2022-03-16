@@ -17,24 +17,24 @@ export const darkTheme = {
 
 export const COLORS = {
   text: {
-    light: 'rgb(45,45,45)', 
+    light: 'rgb(45,45,45)',
     dark: 'rgb(210,210,210)',
   },
   bg: {
-    light: 'rgb(241,242,245)', 
-    dark: 'rgb(25,25,25)', 
+    light: 'rgb(241,242,245)',
+    dark: 'rgb(25,25,25)',
   },
   primary: {
     light: '#B92742',
-    dark: '#B92742', 
+    dark: '#B92742',
   },
   bg2: {
     light: 'rgb(255,255,255)',
-    dark: 'rgb(40,40,40)',
+    dark: 'rgb(37,37,37)',
   },
   bg3: {
-    light: 'rgb(215,215,215)', // please change to some white
-    dark: 'rgb(60,60,60)',
+    light: 'rgb(215,215,215)',
+    dark: 'rgb(70,70,70)',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',
@@ -53,7 +53,7 @@ export const COLORS = {
     dark: '#B92742',
   },
   tabimg: {
-    light: 'invert(0)',
+    light: 'brightness(1.04)',
     dark: 'invert(0.87)',
   },
   sectionGreen: {
@@ -74,6 +74,7 @@ export const COLORS = {
     dark: 'rgba(255, 214, 165, 0.2)',
     darkBorder: 'rgba(255, 214, 165, 0.5)',
   },
+  placeholder: '#8e8e8e'
 };
 
 export const COLOR_MODE_KEY = 'color-mode';
