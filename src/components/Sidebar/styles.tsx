@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { btnReset, v, m } from "../../styles/variables"
+import { btnReset, v, maxq, minq } from "../../styles/variables"
 import { COLORS } from "../../styles/theme"
 
 export const SSidebar = styled.div`
@@ -13,6 +13,10 @@ export const SSidebar = styled.div`
   position: relative;
   width: 25%;
   pointer-events: auto;
+  display: block;
+  ${maxq[1]} {
+    display: none;
+  }
 `
 
 export const SLogo = styled.div`

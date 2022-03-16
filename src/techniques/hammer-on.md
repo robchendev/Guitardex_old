@@ -33,7 +33,7 @@ tags: [legato]
 
 There will be a **lot** more content here when the site fully launches.
 
-There would be a demonstration video at the top of each page:
+There would be a demonstration video at the top of each page
 
 Followed by common ways the technique is written in tabs:
 

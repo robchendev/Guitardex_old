@@ -1,7 +1,7 @@
 import { css } from "@emotion/react"
 
 export const v = {
-  sidebarWidth: `200px`,
+  sidebarWidth: `210px`,
   smSpacing: `8px`,
   mdSpacing: `16px`,
   lgSpacing: `24px`,
@@ -26,4 +26,26 @@ export const btnReset = css`
   padding: 0;
 `
 
-export const SAVE_KEY = 'save';
+export const SAVE_KEY = 'save'
+
+const breakpoints = [400, 850]
+
+export const maxq = breakpoints.map(
+  bp => `@media (max-width: ${bp + 1}px)`
+)
+
+export const minq = breakpoints.map(
+  bp => `@media (min-width: ${bp}px)`
+)
+
+// const Container = styled.div`
+//   ${mq["sm"]} {
+//     max-width: 750px;
+//   }
+//   ${mq["md"]} {
+//     max-width: 970px;
+//   }
+//   ${mq["lg"]} {
+//     max-width: 1170px;
+//   }
+// `;
