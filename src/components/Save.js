@@ -65,7 +65,8 @@ const Save = ({ id }) => {
     setSaveState(false)
   }
 
-  const updateSave = () => {
+  const updateSave = (e) => {
+
     if (localStorage.getItem(SAVE_KEY)) { // localStorage of save already exists
       savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
     }
@@ -73,10 +74,14 @@ const Save = ({ id }) => {
     index = savedObj.e.findIndex(item => item === id)
     if (index >= 0) removeSave(index) // item is in array 
     else addSave(thisPage)
+
   }
 
   return (
-    <SaveButton onClick={updateSave}>
+    <SaveButton onClick={(e) => {
+      updateSave(e)
+      e.preventDefault()
+    }}>
       {saveState ? "Unsave" : "Save"}
     </SaveButton>
   )

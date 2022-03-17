@@ -5,13 +5,25 @@ import { COLORS } from '../styles/theme'
 import { css } from '@emotion/css'
 import { FiMenu, FiXCircle } from 'react-icons/fi'
 
+const MHeaderRelative = styled.div`
+    padding-bottom: 3em;
+    position: relative;
+    ${minq[1]} {
+        display: none;
+    }
+`
+
 const MHeader = styled.div`
   width: 100%;
   background: var(--color-bg, ${COLORS.bg.light});
-
-  ${minq[1]} {
-    display: none;
-  }
+  position: fixed;
+    z-index: 10;    
+`
+const MobileContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 `
 
 const MenuIcon = styled.div`
@@ -19,12 +31,7 @@ const MenuIcon = styled.div`
     font-size: 30px;
 `
 
-const MobileContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-`
+
 const Logo = styled.div`
     margin-left: 5%;
 `
@@ -44,20 +51,22 @@ const MobileHeader = () => {
     }
 
     return (
-        <MHeader>
-            <MobileContainer>
-                <Logo>
-                    <h3 className={css`
-                        margin-bottom: 0;
-                    `}>
-                        Fingerstyle Central
-                    </h3>
-                </Logo>
-                <MenuIcon onClick={() => showSidebar()}>
-                    {menuActive ? <FiXCircle /> : <FiMenu />}
-                </MenuIcon>
-            </MobileContainer>
-        </MHeader >
+        <MHeaderRelative>
+            <MHeader>
+                <MobileContainer>
+                    <Logo>
+                        <h3 className={css`
+                            margin-bottom: 0;
+                        `}>
+                            Fingerstyle Central
+                        </h3>
+                    </Logo>
+                    <MenuIcon onClick={() => showSidebar()}>
+                        {menuActive ? <FiXCircle /> : <FiMenu />}
+                    </MenuIcon>
+                </MobileContainer>
+            </MHeader>
+        </MHeaderRelative>
     )
 }
 

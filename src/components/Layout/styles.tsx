@@ -38,7 +38,7 @@ export const SidebarContainer = styled.div`
 export const MainContainer = styled.div`
   padding-left: 26%;
   ${maxq[1]} {
-    padding: 0;
+    padding: 0 0 5% 0;
   }
 `
 export const SMain = styled.main`  

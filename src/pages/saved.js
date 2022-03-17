@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
-import { useLocation } from "@reach/router";
+import { useLocation } from "@reach/router"
 import { v, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
-import { btnReset } from "../styles/variables";
+import { btnReset } from "../styles/variables"
 import { RiPencilFill } from 'react-icons/ri'
-import { MdClose } from 'react-icons/md'
+import { FiTrash2 } from 'react-icons/fi'
 
 // react beautiful dnd
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import IdFindData from "../components/IdFindData"
-import { Link } from "gatsby";
+import { Link } from "gatsby"
 
 // calc(50% - ${n}px) where n is h3 font size / 2
 const DeleteItemButtonContainer = styled.div`
@@ -45,7 +45,6 @@ const TechniqueList = styled.ul`
     align-items: center;
     margin: 5px 0;
   }
-    
 `
 
 const SavedTechnique = styled.div`
@@ -307,7 +306,7 @@ const Saved = () => {
                           <IdFindData id={id} />
                           <DeleteItemButtonContainer>
                             <DeleteItemButton onClick={() => { clearItem(id) }}>
-                              <MdClose />
+                              <FiTrash2 />
                             </DeleteItemButton>
                           </DeleteItemButtonContainer>
                         </SavedTechnique>

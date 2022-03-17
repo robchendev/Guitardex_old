@@ -31,11 +31,11 @@ export const SAVE_KEY = 'save'
 const breakpoints = [400, 850]
 
 export const maxq = breakpoints.map(
-  bp => `@media (max-width: ${bp + 1}px)`
+  bp => `@media (max-width: ${bp}px)`
 )
 
 export const minq = breakpoints.map(
-  bp => `@media (min-width: ${bp}px)`
+  bp => `@media (min-width: ${bp + 1}px)`
 )
 
 // const Container = styled.div`

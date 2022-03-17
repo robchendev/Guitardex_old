@@ -11,7 +11,7 @@ const Techniques = ({ data }) => {
     <Layout title="Techniques">
       <h1>Techniques</h1>
       <div>
-        <SearchBar placeholder="Search Techniques..." data={techniques}/>
+        <SearchBar placeholder="Search Techniques..." data={techniques} />
       </div>
     </Layout>
   )
@@ -30,6 +30,7 @@ export const query = graphql`
           title
           tags
           category
+          id
         }
       }
     }

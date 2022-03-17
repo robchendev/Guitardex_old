@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 import { COLORS } from '../styles/theme'
 import { v } from '../styles/variables'
 import { SSearchIcon } from './Sidebar/styles'
-import { AiOutlineSearch } from 'react-icons/ai'
+import { FiSearch } from 'react-icons/fi'
+import Save from './Save'
 
 export const Search = styled.div`
   
@@ -54,6 +55,7 @@ const DataResultBlock = styled.div`
   border-radius: ${v.borderRadius};
   padding: ${v.mdSpacing};
   margin: 5px 0;
+  position: relative;
   transition: 0.3s;
   :hover {
     margin-left: 1em;
@@ -74,7 +76,28 @@ const DataResultPreReq = styled.p`
   color: ${COLORS.placeholder};
 `
 
+const SaveItemButtonContainer = styled.div`
+  position: absolute;
+  top: calc(50% - 22px);
+  right: 9px;
+`
 
+const SaveItemButton = styled.span`
+  background: transparent;
+  opacity: 50%;
+  transition: 0.2s;
+  :hover {
+    background: var(--color-primary, ${COLORS.primary.light});
+    cursor: pointer;
+    color: white;
+    opacity: 100%;
+  }
+  border-radius: ${v.borderRadius};
+  padding: 5px;
+  font-size: 26px; 
+  display: flex;
+  z-index: 99;
+`
 
 const SearchBar = ({ placeholder, data }) => {
   const [filteredData, setFilteredData] = useState(data);
@@ -96,15 +119,15 @@ const SearchBar = ({ placeholder, data }) => {
     <Search>
       <SearchInput>
         <SSearchIcon>
-          <AiOutlineSearch />
+          <FiSearch />
         </SSearchIcon>
         <input placeholder={placeholder} type="text" onChange={handleFilter} />
       </SearchInput>
 
-
+      {filteredData.length === 0 ? <p>We have no records of this technique, but you can <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">request</a> us to make a page about it.</p> : <></>}
       <DataResult>
         {/* data = techniques.nodes from pages/techniques/index */}
-        {filteredData.map((technique, key) => {
+        {filteredData.map((technique) => {
           return (
             <React.Fragment key={technique.frontmatter.slug}>
               <DataResultBlockLink to={technique.frontmatter.slug}>
@@ -127,7 +150,10 @@ const SearchBar = ({ placeholder, data }) => {
                       "None"
                     }
                   </DataResultPreReq>
+                  <SaveItemButtonContainer>
+                    <Save id={technique.frontmatter.id} />
 
+                  </SaveItemButtonContainer>
                 </DataResultBlock>
               </DataResultBlockLink>
             </React.Fragment>
