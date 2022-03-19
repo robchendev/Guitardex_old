@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
 import { useLocation } from "@reach/router"
-import { v, maxq, minq, SAVE_KEY } from '../styles/variables'
+import { v, maxq, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { btnReset } from "../styles/variables"
 import { RiPencilFill } from 'react-icons/ri'
@@ -308,12 +308,15 @@ const Saved = () => {
     } else { // Only Second half
       decoded = [stringToDecode]
     }
+    // Fingerstyle-Basics=1.3.2.5.6.10
+
 
     // If saveName=1.2.3
     if (decoded.length === 2) {
       const decodedText = decoded[0].replace(/-/g, ' ')
       let decodedItems = []
-      if (isNaN(decoded[1])) {
+      // check if 1.2.3 has number
+      if (!(/\d/.test(decoded[1]))) {
         return false
       }
       // If saveName=1.2.3 or saveName
