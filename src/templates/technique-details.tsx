@@ -16,6 +16,11 @@ const EmbedContainer = styled.div`
   overflow: hidden;
   position: relative;
 `
+const HeadingContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
@@ -26,9 +31,10 @@ function TechniqueDetails({ data }) {
   return (
     <Layout>
       <div>
-        <h2>{title}</h2>
-        <Save id={id} />
-
+        <HeadingContainer>
+          <h2>{title}</h2>
+          <Save id={id} />
+        </HeadingContainer>
         <DarkBackground>
           {demo ?
             <EmbedContainer>
@@ -50,7 +56,7 @@ function TechniqueDetails({ data }) {
         </Explanation>
 
         <DarkBackground>
-          <h2>Exercises</h2>
+          <h3>Exercises</h3>
           {exercises ?
             exercises.map(({ text, link, slce }) => (
               <React.Fragment key={text}>
