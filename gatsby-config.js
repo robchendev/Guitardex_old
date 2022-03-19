@@ -30,7 +30,6 @@ module.exports = {
           // Avoids sending pageview hits from custom paths
           exclude: ["/preview/**", "/do-not-track/me/too/"],
           // Defaults to https://www.googletagmanager.com
-          origin: "YOUR_SELF_HOSTED_ORIGIN",
         },
       },
     },
@@ -38,8 +37,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Merriweather\:400,500,700`,
+          `Patua One\:400`,
           `Fredoka\:400,500,700`,
+          `Roboto Slab\:400,500,600`,
         ],
         display: 'swap'
       }
@@ -47,8 +47,8 @@ module.exports = {
     { // You can have multiple instances of this plugin
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `techniques`,
-        path: `${__dirname}/src/techniques`,
+        name: `t`,
+        path: `${__dirname}/src/t`,
       },
     },
     {

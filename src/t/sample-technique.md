@@ -1,12 +1,13 @@
 ---
-id: 3
-group: techniques
-title: Hammer Ons
+id: 422
+group: t
+title: Sample Technique
 demo: https://youtu.be/dQw4w9WgXcQ
-description: All of this is unstyled right now and looks terrible. If you're viewing this page from a mobile device then it'll look even worse.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit ultricies purus, nec elementum risus vehicula a. Nunc venenatis diam odio, id tempor nibh tempus non. Fusce eget nulla ipsum. Ut aliquam at erat mattis tempus. Aenean tortor erat, pulvinar ut gravida vel, tempor sit amet nisi. Mauris nec augue tellus. Sed convallis placerat arcu at condimentum. Praesent rhoncus elit eu mi lacinia scelerisque. Suspendisse a elementum tellus, vitae ultricies nulla.
 prereqs:
+  [{ name: Hammer-on, slug: hammer-on }, { name: Pull-off, slug: pull-off }]
 category: percussion
-slug: hammer-ons
+slug: sample-technique
 exercises:
   [
     {
@@ -26,10 +27,12 @@ exercises:
     },
   ]
 artists: anotherObjectArray
-tags: [legato]
+tags: [wrist, thump]
 ---
 
-## Hammer Ons Page
+## Sample Technique Page
+
+Alls of this is unstyled right now and looks terrible. If you're viewing this page from a mobile device then it'll look even worse.
 
 There will be a **lot** more content here when the site fully launches.
 

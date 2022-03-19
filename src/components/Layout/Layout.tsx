@@ -12,6 +12,7 @@ import {
 import { Global } from '@emotion/react'
 import { css } from '@emotion/css'
 import MobileHeader from "../MobileHeader"
+import styled from '@emotion/styled'
 
 
 const cookies = new Cookies()
