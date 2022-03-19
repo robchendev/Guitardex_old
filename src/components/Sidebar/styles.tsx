@@ -14,7 +14,7 @@ export const SSidebar = styled.div`
   pointer-events: auto;
   width: 25%;
   ${maxq[1]} {
-    margin-top: ${v.lgSpacing};
+    margin-top: calc(${v.lgSpacing} * 2);
     border-radius: calc(${v.borderRadius} * 2);
     width: 90%;
   }

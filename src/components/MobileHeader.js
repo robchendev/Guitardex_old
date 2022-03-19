@@ -6,7 +6,7 @@ import { css } from '@emotion/css'
 import { FiMenu, FiXCircle } from 'react-icons/fi'
 
 const MHeaderRelative = styled.div`
-    padding-bottom: 3em;
+    padding-bottom: 4em;
     position: relative;
     ${minq[1]} {
         display: none;
@@ -14,10 +14,11 @@ const MHeaderRelative = styled.div`
 `
 
 const MHeader = styled.div`
-  width: 100%;
-  background: var(--color-bg, ${COLORS.bg.light});
-  position: fixed;
+    width: 100%;
+    background: var(--color-bg, ${COLORS.bg.light});
+    position: fixed;
     z-index: 10;    
+    padding: 0.5em 0;
 `
 const MobileContainer = styled.div`
     display: flex;
@@ -57,6 +58,7 @@ const MobileHeader = () => {
                     <Logo>
                         <h3 className={css`
                             margin-bottom: 0;
+                            font-size: 20px;
                         `}>
                             Fingerstyle Central
                         </h3>

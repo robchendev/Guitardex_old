@@ -88,7 +88,7 @@ const internalLinks = [
   {
     label: "Techniques",
     icon: <FiLayers />,
-    link: "/techniques",
+    link: "/t",
     notification: 0,
   },
   {

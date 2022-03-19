@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
 import { useLocation } from "@reach/router"
-import { v, SAVE_KEY } from '../styles/variables'
+import { v, maxq, minq, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { btnReset } from "../styles/variables"
 import { RiPencilFill } from 'react-icons/ri'
@@ -118,6 +118,11 @@ const ExportSave = styled.div`
     border: none;
     border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
   }
+  ${maxq[1]} {
+    button {
+      width: 50%;
+    } 
+  }
   display: flex;
   align-items:center;
   margin-bottom: ${v.smSpacing};
@@ -125,7 +130,6 @@ const ExportSave = styled.div`
 const ImportSave = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
-  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   input {
     resize: none;
     white-space: nowrap;
@@ -142,14 +146,6 @@ const ImportSave = styled.div`
     ::-webkit-scrollbar {
       display: none;
     }
-  }
-  button {
-    width:30%;
-    padding: ${v.smSpacing};
-    color: #fff;
-    background-color: var(--color-primary, ${COLORS.primary.light});
-    border: none;
-    border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
   }
   display: flex;
   align-items:center;
@@ -170,6 +166,14 @@ const LinkButton = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${maxq[1]} {
+    width: 50%;
+  }
+`
+const DeleteButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 const DeleteButton = styled.button`
   width:20%; 
@@ -178,6 +182,9 @@ const DeleteButton = styled.button`
   background-color: var(--color-primary, ${COLORS.primary.light});
   border: none;
   border-radius: ${v.borderRadius};
+  ${maxq[1]} {
+    width:32%;
+  }
 `
 
 const Saved = () => {
@@ -210,7 +217,7 @@ const Saved = () => {
 
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    document.getElementById("exportText").value = JSON.stringify(saved)
+    document.getElementById("exportText").value = encode(saved)
   }, [saved])
 
   const remindValidSave = (v) => {
@@ -220,7 +227,7 @@ const Saved = () => {
   }
 
   const exportSave = () => {
-    navigator.clipboard.writeText(localStorage.getItem(SAVE_KEY))
+    navigator.clipboard.writeText(encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
     document.getElementById("copyButton").innerHTML = "Copied!"
     setTimeout(() => {
       document.getElementById("copyButton").innerHTML = "Copy Save"
@@ -230,7 +237,7 @@ const Saved = () => {
   const importSave = () => {
     try {
       if (document.getElementById("importText").value) {
-        let newSaved = JSON.parse(document.getElementById("importText").value)
+        let newSaved = decode(document.getElementById("importText").value)
         if (newSaved.n.length > 100) {
           newSaved.n = newSaved.n.substring(0, 97) + "..."
         }
@@ -238,9 +245,11 @@ const Saved = () => {
           remindValidSave('remind')
           return
         }
-        setSaved(newSaved)
-        remindValidSave('reset')
-        document.getElementById("exportText").value = localStorage.getItem(SAVE_KEY)
+        if (window.confirm("This will replace your current save. Continue?")) {
+          setSaved(newSaved)
+          remindValidSave('reset')
+          document.getElementById("exportText").value = encode(JSON.parse(localStorage.getItem(SAVE_KEY)))
+        }
       } else {
         remindValidSave('remind')
       }
@@ -270,7 +279,8 @@ const Saved = () => {
   const location = useLocation().pathname
 
   const handleNameChange = (e) => {
-    let newSaved = { "n": e.target.value, "e": saved.e }
+    const newName = e.target.value.replace(/[-=]/g, '')
+    let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
 
@@ -281,6 +291,61 @@ const Saved = () => {
     items.splice(result.destination.index, 0, reorderedItem)
     let newSaved = { "n": saved.n, "e": items }
     setSaved(newSaved)
+  }
+
+  const encode = (objectToEncode) => {
+    const encodedItems = objectToEncode.e.join('.')
+    if (objectToEncode.n === "") return encodedItems
+    return objectToEncode.n.replace(/\s/g, '-') + '=' + encodedItems
+  }
+
+  const decode = (stringToDecode) => {
+    let decoded = []
+    let result = { "n": "", "e": [] }
+
+    if (stringToDecode.includes("=")) {
+      decoded = stringToDecode.split("=")
+    } else { // Only Second half
+      decoded = [stringToDecode]
+    }
+
+    // If saveName=1.2.3
+    if (decoded.length === 2) {
+      const decodedText = decoded[0].replace(/-/g, ' ')
+      let decodedItems = []
+      if (isNaN(decoded[1])) {
+        return false
+      }
+      // If saveName=1.2.3 or saveName
+      else if (decoded[1] !== '') {
+        decodedItems = decoded[1].split(".").map(function (item) {
+          return parseInt(item, 10);
+        });
+      }
+      // If saveName= do nothing, since decodedItems is set to []
+      result = { "n": decodedText, "e": decodedItems }
+    }
+
+    else if (decoded.length === 1) {
+      let decodedText = ""
+      let decodedItems = []
+      // if not an empty string
+      if (decoded[0] !== '') {
+        // If 2.4 (string has numbers)
+        if (/\d/.test(decoded[0])) {
+          decodedItems = decoded[0].split(".").map(function (item) {
+            return parseInt(item, 10);
+          })
+        }
+        // If "" (string has no numbers), or asdfg, the save will clear
+        else return false
+      }
+      result = { "n": decodedText, "e": decodedItems }
+    }
+    // Decoded array is >2 or 0 length
+    else return false
+
+    return result
   }
 
   return (
@@ -321,7 +386,7 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <textarea id="exportText" rows="1" defaultValue={JSON.stringify(saved)} disabled></textarea>
+        <textarea id="exportText" rows="1" defaultValue={encode(saved)} disabled></textarea>
         <button id="copyButton" onClick={exportSave}>Copy Save</button>
       </ExportSave>
       <ImportSave>
@@ -329,7 +394,9 @@ const Saved = () => {
         {/* i WOULD make an on Enter key event here, but that wont work well with <Link> */}
         <LinkButton onClick={importSave} to={location}>Load Save</LinkButton>
       </ImportSave>
-      <DeleteButton onClick={clearSave}>Delete Save</DeleteButton>
+      <DeleteButtonContainer>
+        <DeleteButton onClick={clearSave}>Delete Save</DeleteButton>
+      </DeleteButtonContainer>
     </Layout>
   )
 }

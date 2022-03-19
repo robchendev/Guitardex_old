@@ -4,15 +4,17 @@ import { v, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 
 const SaveButton = styled.button`
-    padding: ${v.mdSpacing} calc(${v.mdSpacing} * 1.5);
+    font-family: 'Fredoka';
+    font-size: 18px;
+    width: 5em;
+    letter-spacing: .6px;
+    padding: calc(${v.smSpacing} * 1.5) 0;
     border: none;
     color: #fff;
     background: var(--color-primary, ${COLORS.primary.light});
-    border-radius: ${v.borderRadius};
+    border-radius: calc(${v.borderRadius} * 1.5);
     margin-bottom: ${v.mdSpacing};
 `
-
-
 
 const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);
@@ -65,8 +67,7 @@ const Save = ({ id }) => {
     setSaveState(false)
   }
 
-  const updateSave = (e) => {
-
+  const updateSave = () => {
     if (localStorage.getItem(SAVE_KEY)) { // localStorage of save already exists
       savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
     }
@@ -74,12 +75,11 @@ const Save = ({ id }) => {
     index = savedObj.e.findIndex(item => item === id)
     if (index >= 0) removeSave(index) // item is in array 
     else addSave(thisPage)
-
   }
 
   return (
     <SaveButton onClick={(e) => {
-      updateSave(e)
+      updateSave()
       e.preventDefault()
     }}>
       {saveState ? "Unsave" : "Save"}

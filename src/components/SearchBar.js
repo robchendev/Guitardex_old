@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { Link } from "gatsby"
 import React, { useState } from 'react'
 import { COLORS } from '../styles/theme'
-import { v } from '../styles/variables'
+import { v, maxq } from '../styles/variables'
 import { SSearchIcon } from './Sidebar/styles'
 import { FiSearch } from 'react-icons/fi'
 import Save from './Save'
@@ -79,24 +79,14 @@ const DataResultPreReq = styled.p`
 const SaveItemButtonContainer = styled.div`
   position: absolute;
   top: calc(50% - 22px);
-  right: 9px;
+  right: 1em;
 `
 
-const SaveItemButton = styled.span`
-  background: transparent;
-  opacity: 50%;
-  transition: 0.2s;
-  :hover {
-    background: var(--color-primary, ${COLORS.primary.light});
-    cursor: pointer;
-    color: white;
-    opacity: 100%;
+const DataResultMetaContainer = styled.div`
+  width: 85%;
+  ${maxq[1]} {
+    width: 72%;
   }
-  border-radius: ${v.borderRadius};
-  padding: 5px;
-  font-size: 26px; 
-  display: flex;
-  z-index: 99;
 `
 
 const SearchBar = ({ placeholder, data }) => {
@@ -132,24 +122,27 @@ const SearchBar = ({ placeholder, data }) => {
             <React.Fragment key={technique.frontmatter.slug}>
               <DataResultBlockLink to={technique.frontmatter.slug}>
                 <DataResultBlock >
-                  <DataResultTitle>
-                    {technique.frontmatter.title}
-                  </DataResultTitle>
-                  <DataResultCategory>
-                    {technique.frontmatter.category ?
-                      technique.frontmatter.category
-                      :
-                      "Uncategorized"
-                    }
-                  </DataResultCategory>
-                  <DataResultPreReq>
-                    Req:{' '}
-                    {technique.frontmatter.prereqs ?
-                      technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ")
-                      :
-                      "None"
-                    }
-                  </DataResultPreReq>
+                  <DataResultMetaContainer>
+                    <DataResultTitle>
+                      {technique.frontmatter.title}
+                    </DataResultTitle>
+                    <DataResultCategory>
+                      {technique.frontmatter.category ?
+                        technique.frontmatter.category
+                        :
+                        "Uncategorized"
+                      }
+                    </DataResultCategory>
+                    <DataResultPreReq>
+                      Req:{' '}
+                      {technique.frontmatter.prereqs ?
+                        technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ")
+                        :
+                        "None"
+                      }
+                    </DataResultPreReq>
+                  </DataResultMetaContainer>
+
                   <SaveItemButtonContainer>
                     <Save id={technique.frontmatter.id} />
 

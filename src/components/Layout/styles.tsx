@@ -7,7 +7,6 @@ import { maxq, minq } from "../../styles/variables"
 
 export const SLayout = styled.div`
   display: flex;
-  
 `
 
 export const SContainer = styled.div`
