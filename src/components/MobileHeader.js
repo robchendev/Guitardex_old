@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { v, minq, maxq } from '../styles/variables'
+import { v, minq } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { css } from '@emotion/css'
 import { FiMenu, FiXCircle } from 'react-icons/fi'
