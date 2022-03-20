@@ -401,7 +401,7 @@ const Saved = () => {
         </SaveNameIcon>
         <input id="saveName" type="text" placeholder="Save Name" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
-      {saved.e.length === 0 ? <p>You do not have any saved pages</p> : <></>}
+      {saved.e.length === 0 ? <p>Your saved pages will show up here.</p> : <></>}
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
           {(provided) => (
