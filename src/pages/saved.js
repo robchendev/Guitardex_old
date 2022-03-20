@@ -350,21 +350,39 @@ const Saved = () => {
 
     return result
   }
-  if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
+
+  const [saved, setSaved] = useState(savedObj)
+
+  useEffect(() => {
+    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
+    document.getElementById("exportText").value = encode(saved)
+    document.getElementById("exportURL").value = window.location.href +
+      "?" + document.getElementById("exportText").value
+  }, [saved])
+
+  if (typeof window !== `undefined`) {
     try {
       if (window.location.search.includes("?")) {
         const stringToImport = window.location.search.replace("?", "")
         let newSaved = decode(stringToImport)
-        if (localStorage.getItem(SAVE_KEY) === "{\"n\":\"\",\"e\":[]}") {
-          localStorage.setItem('save', JSON.stringify(newSaved))
+        // If save is empty or does not exist
+        if (localStorage.getItem(SAVE_KEY) !== null || localStorage.getItem(SAVE_KEY) !== "{\"n\":\"\",\"e\":[]}") {
+          setSaved(newSaved)
         }
         else {
           if (window.confirm("This will replace your current save. Continue?")) {
-            localStorage.setItem('save', JSON.stringify(newSaved))
+            setSaved(newSaved)
           }
         }
         window.history.replaceState({}, document.title, location);
       }
+    } catch (error) {
+      // do nothing
+    }
+  }
+
+  if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
+    try {
       const save = JSON.parse(localStorage.getItem(SAVE_KEY))
       if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
       if (typeof save.n !== 'string' &&
@@ -381,15 +399,6 @@ const Saved = () => {
       alert("Invalid save profile detected. Clearing save.\n" + error)
     }
   }
-
-  const [saved, setSaved] = useState(savedObj)
-
-  useEffect(() => {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    document.getElementById("exportText").value = encode(saved)
-    document.getElementById("exportURL").value = window.location.href +
-      "?" + document.getElementById("exportText").value
-  }, [saved])
 
 
   return (
