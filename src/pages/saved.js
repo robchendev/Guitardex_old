@@ -434,7 +434,7 @@ const Saved = () => {
         <button id="copyButton" onClick={exportSave}>Copy Save</button>
       </ExportSave>
       <ExportSave>
-        <textarea id="exportURL" rows="1" defaultValue={window.location.href + "?" + encode(saved)} disabled></textarea>
+        <textarea id="exportURL" rows="1" defaultValue={"https://fingerstylecentral.com/saved/?" + encode(saved)} disabled></textarea>
         <button id="copyURLButton" onClick={exportURL}>Copy URL</button>
       </ExportSave>
       <ImportSave>
