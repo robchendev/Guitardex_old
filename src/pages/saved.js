@@ -189,36 +189,14 @@ const DeleteButton = styled.button`
 
 const Saved = () => {
 
+
+
   const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
-    "n": "My Saved Profile",
+    "n": "",
     "e": []
   }
-  if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
-    try {
-      const save = JSON.parse(localStorage.getItem(SAVE_KEY))
-      if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
-      if (typeof save.n !== 'string' &&
-        Object.prototype.toString.call(save.e) !== '[object Array]') {
-        savedObj.n = "My Saved Profile"
-        savedObj.e = []
-      }
-      else if (typeof save.n !== 'string') savedObj.n = "My Saved Profile"
-      else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
-        savedObj.e = []
-      }
-      else savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
-    } catch (error) {
-      alert("Invalid save profile detected. Clearing save.\n" + error)
-    }
-  }
 
-  const [saved, setSaved] = useState(savedObj)
-
-  useEffect(() => {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    document.getElementById("exportText").value = encode(saved)
-  }, [saved])
 
   const remindValidSave = (v) => {
     document.getElementById("importText").value = ""
@@ -235,6 +213,7 @@ const Saved = () => {
   }
 
   const importSave = () => {
+
     try {
       if (document.getElementById("importText").value) {
         let newSaved = decode(document.getElementById("importText").value)
@@ -279,7 +258,7 @@ const Saved = () => {
   const location = useLocation().pathname
 
   const handleNameChange = (e) => {
-    const newName = e.target.value.replace(/[-=]/g, '')
+    const newName = e.target.value.replace(/[-=~]/g, '')
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -296,15 +275,15 @@ const Saved = () => {
   const encode = (objectToEncode) => {
     const encodedItems = objectToEncode.e.join('.')
     if (objectToEncode.n === "") return encodedItems
-    return objectToEncode.n.replace(/\s/g, '-') + '=' + encodedItems
+    return objectToEncode.n.replace(/\s/g, '-') + '~' + encodedItems
   }
 
   const decode = (stringToDecode) => {
     let decoded = []
     let result = { "n": "", "e": [] }
 
-    if (stringToDecode.includes("=")) {
-      decoded = stringToDecode.split("=")
+    if (stringToDecode.includes("~")) {
+      decoded = stringToDecode.split("~")
     } else { // Only Second half
       decoded = [stringToDecode]
     }
@@ -313,11 +292,12 @@ const Saved = () => {
 
     // If saveName=1.2.3
     if (decoded.length === 2) {
+
       const decodedText = decoded[0].replace(/-/g, ' ')
       let decodedItems = []
       // check if 1.2.3 has number
       if (!(/\d/.test(decoded[1]))) {
-        return false
+        return { "n": decodedText, "e": decodedItems }
       }
       // If saveName=1.2.3 or saveName
       else if (decoded[1] !== '') {
@@ -326,7 +306,8 @@ const Saved = () => {
         });
       }
       // If saveName= do nothing, since decodedItems is set to []
-      result = { "n": decodedText, "e": decodedItems }
+
+      return { "n": decodedText, "e": decodedItems }
     }
 
     else if (decoded.length === 1) {
@@ -350,6 +331,45 @@ const Saved = () => {
 
     return result
   }
+  if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
+    try {
+      if (window.location.search.includes("?")) {
+        const stringToImport = window.location.search.replace("?", "")
+        let newSaved = decode(stringToImport)
+        if (localStorage.getItem(SAVE_KEY) === "{\"n\":\"\",\"e\":[]}") {
+          localStorage.setItem('save', JSON.stringify(newSaved))
+        }
+        else {
+          if (window.confirm("This will replace your current save. Continue?")) {
+            localStorage.setItem('save', JSON.stringify(newSaved))
+          }
+        }
+        window.history.replaceState({}, document.title, location);
+      }
+      const save = JSON.parse(localStorage.getItem(SAVE_KEY))
+      if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
+      if (typeof save.n !== 'string' &&
+        Object.prototype.toString.call(save.e) !== '[object Array]') {
+        savedObj.n = ""
+        savedObj.e = []
+      }
+      else if (typeof save.n !== 'string') savedObj.n = ""
+      else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
+        savedObj.e = []
+      }
+      else savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
+    } catch (error) {
+      alert("Invalid save profile detected. Clearing save.\n" + error)
+    }
+  }
+
+  const [saved, setSaved] = useState(savedObj)
+
+  useEffect(() => {
+    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
+    document.getElementById("exportText").value = encode(saved)
+  }, [saved])
+
 
   return (
     <Layout title="Saved">
@@ -358,7 +378,7 @@ const Saved = () => {
         <SaveNameIcon>
           <RiPencilFill />
         </SaveNameIcon>
-        <input id="saveName" type="text" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
+        <input id="saveName" type="text" placeholder="Save Name" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
       {saved.e.length === 0 ? <p>You do not have any saved pages</p> : <></>}
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
