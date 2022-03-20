@@ -225,7 +225,14 @@ const Saved = () => {
 
     try {
       if (document.getElementById("importText").value) {
-        let newSaved = decode(document.getElementById("importText").value)
+        let load = document.getElementById("importText").value
+
+        if (load.includes(window.location.href)) {
+          load = load.replace(window.location.href + "?", "")
+        }
+
+        let newSaved = decode(load)
+
         if (newSaved.n.length > 100) {
           newSaved.n = newSaved.n.substring(0, 97) + "..."
         }
@@ -233,7 +240,7 @@ const Saved = () => {
           remindValidSave('remind')
           return
         }
-        if (window.confirm("This will replace your current save. Continue?")) {
+        if (window.confirm("Your existing save will be overwritten. Continue?")) {
           setSaved(newSaved)
           remindValidSave('reset')
           document.getElementById("exportText").value =
