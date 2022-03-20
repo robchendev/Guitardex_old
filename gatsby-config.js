@@ -37,9 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Patua One\:400`,
           `Fredoka\:400,500,700`,
-          `Roboto Slab\:400,500,600`,
         ],
         display: 'swap'
       }
