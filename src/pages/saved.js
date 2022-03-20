@@ -212,6 +212,15 @@ const Saved = () => {
     }, 2 * 1000);
   }
 
+  const exportURL = () => {
+    navigator.clipboard.writeText(window.location.href + "?"
+      + encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
+    document.getElementById("copyURLButton").innerHTML = "Copied!"
+    setTimeout(() => {
+      document.getElementById("copyURLButton").innerHTML = "Copy URL"
+    }, 2 * 1000);
+  }
+
   const importSave = () => {
 
     try {
@@ -227,7 +236,10 @@ const Saved = () => {
         if (window.confirm("This will replace your current save. Continue?")) {
           setSaved(newSaved)
           remindValidSave('reset')
-          document.getElementById("exportText").value = encode(JSON.parse(localStorage.getItem(SAVE_KEY)))
+          document.getElementById("exportText").value =
+            encode(JSON.parse(localStorage.getItem(SAVE_KEY)))
+          document.getElementById("exportURL").value = window.location.href +
+            "?" + document.getElementById("exportText").value
         }
       } else {
         remindValidSave('remind')
@@ -368,6 +380,8 @@ const Saved = () => {
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
     document.getElementById("exportText").value = encode(saved)
+    document.getElementById("exportURL").value = window.location.href +
+      "?" + document.getElementById("exportText").value
   }, [saved])
 
 
@@ -411,6 +425,10 @@ const Saved = () => {
       <ExportSave>
         <textarea id="exportText" rows="1" defaultValue={encode(saved)} disabled></textarea>
         <button id="copyButton" onClick={exportSave}>Copy Save</button>
+      </ExportSave>
+      <ExportSave>
+        <textarea id="exportURL" rows="1" defaultValue={window.location.href + "?" + encode(saved)} disabled></textarea>
+        <button id="copyURLButton" onClick={exportURL}>Copy URL</button>
       </ExportSave>
       <ImportSave>
         <input id="importText" type="text" placeholder="Paste your save code here"></input>
