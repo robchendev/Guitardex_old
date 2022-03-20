@@ -360,25 +360,31 @@ const Saved = () => {
       if (window.location.search.includes("?")){
         stringToImport = window.location.search.replace("?", "")
         newSaved = decode(stringToImport)
-        // If save is empty or does not exist
-        if (localStorage.getItem(SAVE_KEY) !== null || localStorage.getItem(SAVE_KEY) !== "{\"n\":\"\",\"e\":[]}") {
-          //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
-          savedObj = newSaved
-          
-        }
-        else {
+        window.history.replaceState({}, document.title, location);
+        // If save is NOT empty or does not exist
+        // This will work when
+        // Save exists OR save is not empty 
+        if (hasDupes(newSaved.e)) throw new Error("Save has duplicate ID")
+        if (localStorage.getItem(SAVE_KEY) !== null && localStorage.getItem(SAVE_KEY) !== "{\"n\":\"\",\"e\":[]}") {
           if (window.confirm("This will replace your current save. Continue?")) {
             //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
             savedObj = newSaved
-          
+            console.log('1')
           }
+          //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
+          
+          
+        }
+        else {
+          savedObj = newSaved
+          console.log('2')
         }
         hasUrl = true
-        window.history.replaceState({}, document.title, location);
+        
       }
     }
     catch (error) {
-      // do nothing
+      alert("Invalid save profile detected. Save will not be loaded.\n" + error)
     }
   }
   // console.log(savedObj)
