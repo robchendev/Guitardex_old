@@ -351,37 +351,45 @@ const Saved = () => {
     return result
   }
 
-  const [saved, setSaved] = useState(savedObj)
-
-  useEffect(() => {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    document.getElementById("exportText").value = encode(saved)
-    document.getElementById("exportURL").value = window.location.href +
-      "?" + document.getElementById("exportText").value
-  }, [saved])
+  let hasUrl = false
 
   if (typeof window !== `undefined`) {
     try {
-      if (window.location.search.includes("?")) {
-        const stringToImport = window.location.search.replace("?", "")
-        let newSaved = decode(stringToImport)
-        // If save is empty or does not exist
-        if (localStorage.getItem(SAVE_KEY) !== null || localStorage.getItem(SAVE_KEY) !== "{\"n\":\"\",\"e\":[]}") {
-          setSaved(newSaved)
+      let stringToImport = ""
+      let newSaved = {}
+      if (window.location.search.includes("?")){
+        stringToImport = window.location.search.replace("?", "")
+        newSaved = decode(stringToImport)
+        window.history.replaceState({}, document.title, location);
+        // If save is NOT empty or does not exist
+        // This will work when
+        // Save exists OR save is not empty 
+        if (hasDupes(newSaved.e)) throw new Error("Save has duplicate ID")
+        if (localStorage.getItem(SAVE_KEY) !== null && localStorage.getItem(SAVE_KEY) !== "{\"n\":\"\",\"e\":[]}") {
+          if (window.confirm("This will replace your current save. Continue?")) {
+            //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
+            savedObj = newSaved
+            console.log('1')
+          }
+          //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
+          
+          
         }
         else {
-          if (window.confirm("This will replace your current save. Continue?")) {
-            setSaved(newSaved)
-          }
+          savedObj = newSaved
+          console.log('2')
         }
-        window.history.replaceState({}, document.title, location);
+        hasUrl = true
+        
       }
-    } catch (error) {
-      // do nothing
+    }
+    catch (error) {
+      alert("Invalid save profile detected. Save will not be loaded.\n" + error)
     }
   }
-
+  // console.log(savedObj)
   if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
+    
     try {
       const save = JSON.parse(localStorage.getItem(SAVE_KEY))
       if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
@@ -392,14 +400,24 @@ const Saved = () => {
       }
       else if (typeof save.n !== 'string') savedObj.n = ""
       else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
+        console.log('should be here')
         savedObj.e = []
       }
-      else savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
+      else if (!hasUrl) savedObj = JSON.parse(localStorage.getItem(SAVE_KEY)) // PROBLEM
+      
     } catch (error) {
       alert("Invalid save profile detected. Clearing save.\n" + error)
     }
   }
+  // console.log(savedObj)
 
+  const [saved, setSaved] = useState(savedObj)
+  useEffect(() => {
+    localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
+    document.getElementById("exportText").value = encode(saved)
+    document.getElementById("exportURL").value = window.location.href +
+      "?" + document.getElementById("exportText").value
+  }, [saved])
 
   return (
     <Layout title="Saved">
