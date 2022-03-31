@@ -8,7 +8,7 @@ export const SSidebar = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: calc(${v.borderRadius} * 4);
   box-shadow: 0 0 10px ${COLORS.bgAlpha.dark};
-  padding: ${v.lgSpacing};
+  padding: ${v.lgSpacing} ${v.lgSpacing} ${v.mdSpacing} ${v.lgSpacing};
   font-family: 'Fredoka', sans-serif;
   position: relative;
   pointer-events: auto;

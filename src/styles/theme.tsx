@@ -56,25 +56,23 @@ export const COLORS = {
     light: 'brightness(1.04)',
     dark: 'invert(0.88)',
   },
-  sectionGreen: {
-    light: '',
-    lightBorder: '',
-    dark: 'rgba(202, 255, 191, 0.2)',
-    darkBorder: 'rgba(202, 255, 191, 0.5)',
+  toggleThumb: {
+    light: 'calc(100% - 16px - 2px)',
+    dark: '2px',
   },
-  sectionPurple: {
-    light: '',
-    lightBorder: '',
-    dark: 'rgba(189, 178, 255, 0.2)',
-    darkBorder: 'rgba(189, 178, 255, 0.5)',
+  toggleName: {
+    light: '"Dark Theme"',
+    dark: '"Light Theme"',
   },
-  sectionOrange: {
-    light: '',
-    lightBorder: '',
-    dark: 'rgba(255, 214, 165, 0.2)',
-    darkBorder: 'rgba(255, 214, 165, 0.5)',
+  moonIcon: {
+    light: 'flex',
+    dark: 'none',
   },
-  placeholder: '#8e8e8e'
+  sunIcon: {
+    light: 'none',
+    dark: 'flex',
+  },
+  placeholder: '#8e8e8e',
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

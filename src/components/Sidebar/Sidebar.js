@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { SLogo, SSidebar } from './styles'
 import { logoPNG } from "../../assets"
-import { SDivider, STheme, SThemeLabel, SThemeToggler, SToggleThumb } from '../Layout/styles'
+import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../Layout/styles'
 import { FaDiscord } from "react-icons/fa"
-import { FiFolder, FiHome, FiInfo, FiLayers } from "react-icons/fi"
+import { FiFolder, FiHome, FiInfo, FiLayers, FiMoon, FiSun } from "react-icons/fi"
 
 import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router";
@@ -56,8 +56,36 @@ const Sidebar = () => {
           isActive={parentLocation === link}
         />
       ))}
-      <SDivider />
-      <STheme>
+
+      <SLinkContainer key={colorMode === "light" ? 'Dark Theme' : 'Light Theme'}>
+        <SToggle
+          onClick={
+            () => {
+              setColorMode(colorMode === "light" ? 'dark' : 'light');
+              localStorage.setItem(COLOR_MODE_KEY, colorMode === "light" ? 'dark' : 'light')
+              // this needs to be here otherwise we get that "wrong initial state" bug
+              document.documentElement.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode === "light" ? 'dark' : 'light');
+              console.log("hi")
+            }
+          }
+        >
+
+          <MoonContainer>
+            <FiMoon />
+          </MoonContainer>
+          <SunContainer>
+            <FiSun />
+          </SunContainer>
+
+          <SToggleLabel></SToggleLabel>
+          <SThemeToggler>
+            <SToggleThumb />
+          </SThemeToggler>
+        </SToggle>
+      </SLinkContainer>
+
+
+      {/* <STheme>
         <SThemeLabel>Dark Mode</SThemeLabel>
         <SThemeToggler
           onClick={
@@ -66,12 +94,13 @@ const Sidebar = () => {
               localStorage.setItem(COLOR_MODE_KEY, colorMode === "light" ? 'dark' : 'light')
               // this needs to be here otherwise we get that "wrong initial state" bug
               document.documentElement.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode === "light" ? 'dark' : 'light');
+
             }
           }
         >
           <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}} />
         </SThemeToggler>
-      </STheme>
+      </STheme> */}
     </SSidebar>
   )
 }
@@ -111,7 +140,7 @@ const utilityLinks = [
   {
     label: "Saved",
     icon: <FiFolder />,
-    link: "/saved",
+    link: "/s",
     notification: 0
   },
 ]
