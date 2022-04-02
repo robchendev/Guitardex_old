@@ -180,7 +180,7 @@ export const MoonContainer = styled.span`
   display: var(--color-moonIcon, ${COLORS.moonIcon.light});
   padding: ${v.smSpacing} ${v.mdSpacing};
   svg {
-    font-size: 20px;
+    font-size: 24px;
   }
 `
 
@@ -188,6 +188,6 @@ export const SunContainer = styled.span`
   display: var(--color-sunIcon, ${COLORS.sunIcon.light});
   padding: ${v.smSpacing} ${v.mdSpacing};
   svg {
-    font-size: 20px;
+    font-size: 24px;
   }
 `
