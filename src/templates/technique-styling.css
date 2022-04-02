@@ -1,6 +1,7 @@
 .tabImg {
   filter: var(--color-tabimg);
   margin-bottom: 1.1em;
+  pointer-events: none;
 }
 
 .tabImg a:hover {

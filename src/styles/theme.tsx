@@ -17,24 +17,24 @@ export const darkTheme = {
 
 export const COLORS = {
   text: {
-    light: 'rgb(45,45,45)', 
+    light: 'rgb(45,45,45)',
     dark: 'rgb(210,210,210)',
   },
   bg: {
-    light: 'rgb(241,242,245)', 
-    dark: 'rgb(25,25,25)', 
+    light: 'rgb(241,242,245)',
+    dark: 'rgb(25,25,25)',
   },
   primary: {
     light: '#B92742',
-    dark: '#B92742', 
+    dark: '#B92742',
   },
   bg2: {
     light: 'rgb(255,255,255)',
-    dark: 'rgb(40,40,40)',
+    dark: 'rgb(37,37,37)',
   },
   bg3: {
-    light: 'rgb(215,215,215)', // please change to some white
-    dark: 'rgb(60,60,60)',
+    light: 'rgb(215,215,215)',
+    dark: 'rgb(70,70,70)',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',
@@ -53,27 +53,26 @@ export const COLORS = {
     dark: '#B92742',
   },
   tabimg: {
-    light: 'invert(0)',
-    dark: 'invert(0.87)',
+    light: 'brightness(1.04)',
+    dark: 'invert(0.88)',
   },
-  sectionGreen: {
-    light: '',
-    lightBorder: '',
-    dark: 'rgba(202, 255, 191, 0.2)',
-    darkBorder: 'rgba(202, 255, 191, 0.5)',
+  toggleThumb: {
+    light: 'calc(100% - 16px - 2px)',
+    dark: '2px',
   },
-  sectionPurple: {
-    light: '',
-    lightBorder: '',
-    dark: 'rgba(189, 178, 255, 0.2)',
-    darkBorder: 'rgba(189, 178, 255, 0.5)',
+  toggleName: {
+    light: '"Dark Theme"',
+    dark: '"Light Theme"',
   },
-  sectionOrange: {
-    light: '',
-    lightBorder: '',
-    dark: 'rgba(255, 214, 165, 0.2)',
-    darkBorder: 'rgba(255, 214, 165, 0.5)',
+  moonIcon: {
+    light: 'flex',
+    dark: 'none',
   },
+  sunIcon: {
+    light: 'none',
+    dark: 'flex',
+  },
+  placeholder: '#8e8e8e',
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

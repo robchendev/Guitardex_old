@@ -1,5 +1,5 @@
 import Sidebar from "../Sidebar/Sidebar"
-import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SLayout, SMain } from "./styles"
+import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
 import React, { useState } from "react"
 import { Helmet } from "react-helmet"
 import { globalStyle } from "../../styles/globalStyles"
@@ -10,9 +10,12 @@ import {
   INITIAL_COLOR_MODE_CSS_PROP,
 } from '../../styles/theme';
 import { Global } from '@emotion/react'
+import { css } from '@emotion/css'
+import MobileHeader from "../MobileHeader"
+import styled from '@emotion/styled'
 
 
-const cookies = new Cookies() 
+const cookies = new Cookies()
 
 
 // createContext should not have any params
@@ -56,20 +59,23 @@ const Layout = (props) => {
   return (
     <ThemeContext.Provider value={contextValue}>
       {/* <ThemeProvider theme={themeStyle}> */}
-        <Global styles={globalStyle} />
-        <Helmet>
-          <title>{props.title}</title>
-        </Helmet>
-        <SLayout>
-          <SContainer>
-            <SidebarContainer>    
+      <Global styles={globalStyle} />
+      <Helmet>
+        <title>{props.title}</title>
+      </Helmet>
+      <MobileHeader />
+      <SLayout>
+        <SContainer>
+          <SidebarRelative>
+            <SidebarContainer id='sidenav'>
               <Sidebar />
             </SidebarContainer>
-            <MainContainer>
-              <SMain>{props.children}</SMain>
-            </MainContainer>
-          </SContainer>
-        </SLayout>
+          </SidebarRelative>
+          <MainContainer>
+            <SMain>{props.children}</SMain>
+          </MainContainer>
+        </SContainer>
+      </SLayout>
       {/* </ThemeProvider> */}
     </ThemeContext.Provider>
   )

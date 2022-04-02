@@ -1,5 +1,5 @@
 import React from 'react'
-import { SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification } from './Layout/styles'
+import { SLink, SLinkContainer, SLinkIcon, SLinkLabel, SLinkNotification, SLinkA } from './Layout/styles'
 
 export const InternalLinks = ({label, icon, link, notification, isActive}) => {
   return (
@@ -16,13 +16,14 @@ export const InternalLinks = ({label, icon, link, notification, isActive}) => {
   )
 }
 
+// Change to <a> component
 export const ExternalLinks = ({label, icon, link}) => {
   return (
     <SLinkContainer key={label}>
-      <SLink to={link}>
+      <SLinkA href={link}>
         <SLinkIcon>{icon}</SLinkIcon>
         <SLinkLabel>{label}</SLinkLabel>
-      </SLink>
+      </SLinkA>
     </SLinkContainer>
   )
 }
@@ -37,3 +38,4 @@ export const UtilityLinks = ({label, icon}) => {
     </SLinkContainer>
   )
 }
+

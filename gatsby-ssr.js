@@ -75,6 +75,30 @@ const MagicScriptTag = () => {
         ? '${COLORS.linkHover.light}'
         : '${COLORS.linkHover.dark}'
     );
+    root.style.setProperty(
+      '--color-toggleThumb',
+      colorMode === 'light'
+        ? '${COLORS.toggleThumb.light}'
+        : '${COLORS.toggleThumb.dark}'
+    );
+    root.style.setProperty(
+      '--color-toggleName',
+      colorMode === 'light'
+        ? '${COLORS.toggleName.light}'
+        : '${COLORS.toggleName.dark}'
+    );
+    root.style.setProperty(
+      '--color-moonIcon',
+      colorMode === 'light'
+        ? '${COLORS.moonIcon.light}'
+        : '${COLORS.moonIcon.dark}'
+    );
+    root.style.setProperty(
+      '--color-sunIcon',
+      colorMode === 'light'
+        ? '${COLORS.sunIcon.light}'
+        : '${COLORS.sunIcon.dark}'
+    );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;
