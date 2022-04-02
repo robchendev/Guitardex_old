@@ -3,7 +3,7 @@ import { SLogo, SSidebar } from './styles'
 import { logoPNG } from "../../assets"
 import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../Layout/styles'
 import { FaDiscord } from "react-icons/fa"
-import { FiFolder, FiHome, FiInfo, FiLayers, FiMoon, FiSun } from "react-icons/fi"
+import { FiFolder, FiHome, FiInfo, FiLayers, FiMoon, FiSun, FiHelpCircle, FiUser } from "react-icons/fi"
 
 import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router";
@@ -29,7 +29,7 @@ const Sidebar = () => {
 
   return (
     <SSidebar>
-      <h2>Guitardex</h2>
+      {/* <h2>Guitardex</h2> */}
       {/* <SLogo>
         <img src={logoPNG} alt="logo" />
       </SLogo> */}
@@ -110,10 +110,10 @@ const Sidebar = () => {
 
 const internalLinks = [
   {
-    label: "Home",
+    label: "My Guitardex",
     icon: <FiHome />,
     link: "/",
-    notification: 0,
+    notification: 0
   },
   {
     label: "Techniques",
@@ -123,7 +123,7 @@ const internalLinks = [
   },
   {
     label: "About",
-    icon: <FiInfo />,
+    icon: <FiUser />,
     link: "/about",
     notification: 0,
   },
@@ -139,9 +139,9 @@ const externalLinks = [
 
 const utilityLinks = [
   {
-    label: "Saved",
-    icon: <FiFolder />,
-    link: "/s",
+    label: "Help",
+    icon: <FiHelpCircle />,
+    link: "/help",
     notification: 0
   },
 ]

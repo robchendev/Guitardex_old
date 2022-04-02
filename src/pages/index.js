@@ -9,6 +9,7 @@ import { RiPencilFill } from 'react-icons/ri'
 import { FiTrash2 } from 'react-icons/fi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import IdFindData from "../components/IdFindData"
+import { Link } from 'gatsby';
 
 const DeleteItemButtonContainer = styled.div`
   position: absolute;
@@ -39,6 +40,8 @@ const TechniqueList = styled.ul`
     align-items: center;
     margin: 5px 0;
   }
+  transition: 0.3s ease padding;
+  
 `
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
@@ -154,6 +157,20 @@ const DeleteButton = styled.button`
   :hover {
     background: #972036;
   }
+`
+const HelpLinkContainer = styled(Link)`
+    padding: 0 !important;
+`
+
+const HelpLinkDiv = styled.div`
+    padding: ${v.mdSpacing} !important;
+    color: var(--color-text, ${COLORS.text.light}) !important;
+    background-color: transparent !important;
+    :hover {
+        border: none !important;
+        background-color: transparent !important;
+        color: var(--color-link, ${COLORS.link.light}) !important;
+    }
 `
 const Saved = () => {
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -304,19 +321,45 @@ const Saved = () => {
     document.getElementById("exportURL").value = "https://gdex.cc/s?" + encode(saved)
   }, [saved])
   return (
-    <Layout title="Saved">
-      <h1>Saved</h1>
+    <Layout title="My Guitardex">
+      <h1>My Guitardex</h1>
       <SaveNameInput>
         <SaveNameIcon>
           <RiPencilFill />
         </SaveNameIcon>
         <input id="saveName" type="text" placeholder="Save Name" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
-      {saved.e.length === 0 ? <p>Your saved pages will show up here.</p> : <></>}
+      {saved.e.length === 0 ? 
+        <TechniqueList>
+          <li>
+            <SavedTechnique>
+              <HelpLinkContainer to='t'>
+                <HelpLinkDiv>
+                    <h3>Start adding techniques!</h3>
+                    <p>Click here to browse techniques</p>
+                </HelpLinkDiv>
+              </HelpLinkContainer>
+            </SavedTechnique>
+          </li>
+          <li>
+            <SavedTechnique>
+              <HelpLinkContainer to='help'>
+                <HelpLinkDiv>
+                    <h3>Need help?</h3>
+                    <p>Click here for help</p>
+                </HelpLinkDiv>
+              </HelpLinkContainer>
+            </SavedTechnique>
+          </li>
+          
+        </TechniqueList>
+        : 
+        <></>
+      }
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
           {(provided) => (
-            <TechniqueList {...provided.droppableProps} ref={provided.innerRef}>
+            <TechniqueList  iqueList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {
                 return (
                   <Draggable key={id} draggableId={id.toString()} index={index}>

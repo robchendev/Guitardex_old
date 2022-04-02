@@ -44,7 +44,7 @@ const IdFindData = ({ id }) => {
                 // Edit this into a component that displays each link
                 return (
                     <ELinkContainer to={
-                        selection ? '../' + selection.frontmatter.group + '/' + selection.frontmatter.slug : `#`
+                        selection ? selection.frontmatter.group + '/' + selection.frontmatter.slug : `#`
                     }>
                         <ELinkDiv>
                             <h3>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</h3>
