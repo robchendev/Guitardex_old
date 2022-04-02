@@ -56,7 +56,7 @@ const DataResultBlock = styled.div`
   padding: ${v.mdSpacing};
   margin: 5px 0;
   position: relative;
-  transition: 0.3s;
+  transition: 0.3s ease margin;
   :hover {
     margin-left: 1em;
     color: var(--color-link, ${COLORS.link.light});
@@ -133,14 +133,14 @@ const SearchBar = ({ placeholder, data }) => {
                         "Uncategorized"
                       }
                     </DataResultCategory>
-                    <DataResultPreReq>
+                    {/* <DataResultPreReq>
                       Req:{' '}
                       {technique.frontmatter.prereqs ?
                         technique.frontmatter.prereqs.map(prereq => prereq.name).join(", ")
                         :
                         "None"
                       }
-                    </DataResultPreReq>
+                    </DataResultPreReq> */}
                   </DataResultMetaContainer>
 
                   <SaveItemButtonContainer>
