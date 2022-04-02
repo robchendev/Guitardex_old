@@ -21,6 +21,13 @@ const HeadingContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `
+const AddedText = styled.span`
+  display: inline-flex;
+  h3 {
+    margin-top: 0.7em;
+    margin-right: 0.5em;
+  }
+`
 
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
@@ -33,7 +40,10 @@ function TechniqueDetails({ data }) {
       <div>
         <HeadingContainer>
           <h2>{title}</h2>
-          <Save id={id} />
+          <span>
+            <AddedText><h3>Saved</h3><Save id={id} /></AddedText>
+          </span>
+          
         </HeadingContainer>
         <DarkBackground>
           {demo ?

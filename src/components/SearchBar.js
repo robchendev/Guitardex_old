@@ -64,7 +64,7 @@ const DataResultBlock = styled.div`
 `
 
 const DataResultTitle = styled.h3`
-  margin-bottom: 0;
+  margin-bottom: 0.1em;
 `
 
 const DataResultCategory = styled.p`

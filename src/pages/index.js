@@ -5,8 +5,7 @@ import { useLocation } from "@reach/router"
 import { v, maxq, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { btnReset } from "../styles/variables"
-import { RiPencilFill } from 'react-icons/ri'
-import { FiTrash2 } from 'react-icons/fi'
+import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import IdFindData from "../components/IdFindData"
 import { Link } from 'gatsby';
@@ -183,7 +182,7 @@ const Saved = () => {
       + encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
     document.getElementById("copyURLButton").innerHTML = "Copied!"
     setTimeout(() => {
-      document.getElementById("copyURLButton").innerHTML = "Copy URL"
+      document.getElementById("copyURLButton").innerHTML = "Copy Link"
     }, 2 * 1000);
   }
   const clearSave = () => {
@@ -325,9 +324,9 @@ const Saved = () => {
       <h1>My Guitardex</h1>
       <SaveNameInput>
         <SaveNameIcon>
-          <RiPencilFill />
+          <HiOutlinePencilAlt />
         </SaveNameIcon>
-        <input id="saveName" type="text" placeholder="Save Name" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
+        <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
       {saved.e.length === 0 ? 
         <TechniqueList>
@@ -369,7 +368,7 @@ const Saved = () => {
                           <IdFindData id={id} />
                           <DeleteItemButtonContainer>
                             <DeleteItemButton onClick={() => { clearItem(id) }}>
-                              <FiTrash2 />
+                              <HiOutlineTrash />
                             </DeleteItemButton>
                           </DeleteItemButtonContainer>
                         </SavedTechnique>
@@ -385,7 +384,7 @@ const Saved = () => {
       </DragDropContext>
       <ExportSave>
         <textarea id="exportURL" rows="1" defaultValue={"https://gdex.cc/s?" + encode(saved)} disabled></textarea>
-        <button id="copyURLButton" onClick={exportURL}>Copy URL</button>
+        <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
       <DeleteButtonContainer>
         <DeleteButton onClick={clearSave}>Delete Save</DeleteButton>

@@ -2,25 +2,52 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { v, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
+import { ImCheckmark } from 'react-icons/im'
 
 const SaveButton = styled.button`
     font-family: 'Fredoka';
-    font-size: 18px;
-    width: 5em;
+    font-size: 22px;
+    
     letter-spacing: .6px;
-    padding: calc(${v.smSpacing} * 1.5) 0;
+    height: 100%;
+    //padding: calc(${v.smSpacing} * 1.5) 0;
     border: none;
-    color: #fff;
-    background: var(--color-primary, ${COLORS.primary.light});
+
+
     border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
     cursor: pointer;
     transition: 0.3s ease;
-    :hover {
-      background: #972036;
-    }
+
+    display: inline-flex;
+    justify-content: center;
 `
 
+const Checkbox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg2, ${COLORS.bg2.light});
+  border-radius: ${v.borderRadius};
+
+  padding-top: 5px;
+  border: 2px solid var(--color-text, ${COLORS.text.light});
+  width: 2em;
+  height: 2em;
+
+
+  :hover {
+
+    border: 2px solid var(--color-text, ${COLORS.text.light});
+    filter: invert(0.1);
+  }
+`
+const UnChecked = styled.div`
+  color: var(--color-bg2, ${COLORS.bg2.light});
+`
+const Checked = styled.div`
+  color: var(--color-text, ${COLORS.text.light});
+`
 const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -87,7 +114,7 @@ const Save = ({ id }) => {
       updateSave()
       e.preventDefault()
     }}>
-      {saveState ? "Unsave" : "Save"}
+      {saveState ? <Checkbox><Checked><ImCheckmark /></Checked></Checkbox> : <Checkbox><UnChecked><ImCheckmark /></UnChecked></Checkbox>}
     </SaveButton>
   )
 }

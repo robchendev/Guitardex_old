@@ -11,6 +11,7 @@ const Text = styled.p`
 const About = () => {
   return (
     <Layout title="About">
+      <h1>About</h1>
       <h2>Why I am developing this website</h2>
       <p>
         Fingerstyle is a young style of guitar rising in popularity. Due to its infancy in
@@ -33,8 +34,7 @@ const About = () => {
       <h2>Fingerstyle Central Community</h2>
       <p>
         Join our <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">Discord Server</a>!
-      </p>
-      <h1>About</h1>
+      </p><br />
       <h2>About me</h2>
       <p>
         My name is Robert Chen, I am a fingerstyle guitarist and fingerstyle transcriber from Canada and I'm the lead developer for this project.  If you're interested in my music, I've included my YouTube and Spotify links below.

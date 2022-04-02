@@ -3,7 +3,8 @@ import { SLogo, SSidebar } from './styles'
 import { logoPNG } from "../../assets"
 import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../Layout/styles'
 import { FaDiscord } from "react-icons/fa"
-import { FiFolder, FiHome, FiInfo, FiLayers, FiMoon, FiSun, FiHelpCircle, FiUser } from "react-icons/fi"
+import { FiHome, FiLayers, FiMoon, FiSun, FiHelpCircle, FiUser, FiMessageCircle } from "react-icons/fi"
+import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid,HiOutlineQuestionMarkCircle } from "react-icons/hi"
 
 import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router";
@@ -43,9 +44,9 @@ const Sidebar = () => {
           isActive={parentLocation === link}
         />
       ))}
-      {externalLinks.map(({ label, icon, link }) => (
+      {/* {externalLinks.map(({ label, icon, link }) => (
         <ExternalLinks key={label} label={label} icon={icon} link={link} />
-      ))}
+      ))} */}
       <SDivider />
       {utilityLinks.map(({ label, icon, link, notification }) => (
         <InternalLinks
@@ -111,36 +112,41 @@ const Sidebar = () => {
 const internalLinks = [
   {
     label: "My Guitardex",
-    icon: <FiHome />,
+    icon: <HiOutlineHome />,
     link: "/",
     notification: 0
   },
   {
     label: "Techniques",
-    icon: <FiLayers />,
+    icon: <HiOutlineViewGrid />,
     link: "/t",
     notification: 0,
   },
   {
     label: "About",
-    icon: <FiUser />,
+    icon: <HiOutlineUserGroup />,
     link: "/about",
     notification: 0,
+  },
+  {
+    label: "Community",
+    icon: <HiOutlineChatAlt />,
+    link: "/community",
   },
 ]
 
 const externalLinks = [
   {
-    label: "Discord",
+    label: "Community",
     icon: <FaDiscord />,
-    link: "https://discord.gg/wgyqBZK",
+    link: "community",
   },
 ]
 
 const utilityLinks = [
   {
     label: "Help",
-    icon: <FiHelpCircle />,
+    icon: <HiOutlineQuestionMarkCircle />,
     link: "/help",
     notification: 0
   },
