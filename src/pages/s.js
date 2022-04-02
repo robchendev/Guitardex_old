@@ -341,7 +341,7 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <textarea id="exportURL" rows="1" defaultValue={"https://guitardex.com/s?" + encode(saved)} disabled></textarea>
+        <textarea id="exportURL" rows="1" defaultValue={"https://gdex.cc/s?" + encode(saved)} disabled></textarea>
         <button id="copyURLButton" onClick={exportURL}>Copy URL</button>
       </ExportSave>
       <DeleteButtonContainer>
