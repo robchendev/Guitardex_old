@@ -114,9 +114,8 @@ export const SLinkA = styled.a`
 export const SLinkIcon = styled.div`
   padding: ${v.smSpacing} ${v.mdSpacing};
   display: flex;
-
   svg {
-    font-size: 20px;
+    font-size: 24px;
   }
 `
 
