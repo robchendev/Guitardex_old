@@ -32,6 +32,7 @@ export const SidebarContainer = styled.div`
   ${maxq[1]} {
     display: none;
   }
+
   /* z-index: 10; // can prob delete */
 `
 export const MainContainer = styled.div`

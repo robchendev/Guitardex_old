@@ -13,7 +13,6 @@ const ELinkDiv = styled.div`
     padding: ${v.mdSpacing} !important;
     color: var(--color-text, ${COLORS.text.light}) !important;
     background-color: transparent !important;
-    transition: 0.3s;
     :hover {
         border: none !important;
         background-color: transparent !important;

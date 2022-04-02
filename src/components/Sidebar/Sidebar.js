@@ -29,9 +29,10 @@ const Sidebar = () => {
 
   return (
     <SSidebar>
-      <SLogo>
+      <h2>Guitardex</h2>
+      {/* <SLogo>
         <img src={logoPNG} alt="logo" />
-      </SLogo>
+      </SLogo> */}
       {internalLinks.map(({ label, icon, link, notification }) => (
         <InternalLinks
           key={label}

@@ -49,7 +49,7 @@ const TechniqueList = styled.ul`
 
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
-  transition: 0.3s;
+  transition: 0.3s ease margin;
   :hover {
     margin-left: 1em;
   }
@@ -71,7 +71,7 @@ const SaveNameInput = styled.div`
     padding: 0 ${v.mdSpacing} 0 0;
     font-family: inherit;
     letter-spacing: inherit;
-    font-size: 16px;
+    font-size: 28px;
     width: 100%;
     outline: none;
     border: none;
@@ -117,6 +117,11 @@ const ExportSave = styled.div`
     background-color: var(--color-primary, ${COLORS.primary.light});
     border: none;
     border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+    :hover {
+      background: #972036;
+    }
   }
   ${maxq[1]} {
     button {
@@ -156,9 +161,10 @@ const ImportSave = styled.div`
 const LinkButton = styled(Link)`
   color: #fff !important;
   background-color: var(--color-primary, ${COLORS.primary.light}) !important;
+  transition: 0.3s ease;
   :hover {
     border: none !important;
-    background-color: var(--color-primary, ${COLORS.primary.light}) !important;
+    background: #972036 !important;;
   }
   width:30%;
   padding: ${v.smSpacing} !important;
@@ -169,6 +175,8 @@ const LinkButton = styled(Link)`
   ${maxq[1]} {
     width: 50%;
   }
+  cursor: pointer;
+  transition: 0.3s ease;
 `
 const DeleteButtonContainer = styled.div`
   display: flex;
@@ -184,6 +192,11 @@ const DeleteButton = styled.button`
   border-radius: ${v.borderRadius};
   ${maxq[1]} {
     width:32%;
+  }
+  cursor: pointer;
+  transition: 0.3s ease;
+  :hover {
+    background: #972036;
   }
 `
 

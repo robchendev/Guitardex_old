@@ -12,8 +12,13 @@ const SaveButton = styled.button`
     border: none;
     color: #fff;
     background: var(--color-primary, ${COLORS.primary.light});
-    border-radius: calc(${v.borderRadius} * 1.5);
+    border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
+    cursor: pointer;
+    transition: 0.3s ease;
+    :hover {
+      background: #972036;
+    }
 `
 
 const Save = ({ id }) => {
