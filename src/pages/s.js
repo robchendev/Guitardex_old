@@ -7,19 +7,14 @@ import { COLORS } from '../styles/theme'
 import { btnReset } from "../styles/variables"
 import { RiPencilFill } from 'react-icons/ri'
 import { FiTrash2 } from 'react-icons/fi'
-
-// react beautiful dnd
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import IdFindData from "../components/IdFindData"
-import { Link } from "gatsby"
 
-// calc(50% - ${n}px) where n is h3 font size / 2
 const DeleteItemButtonContainer = styled.div`
   position: absolute;
   top: calc(50% - 18px);
   right: 9px;
 `
-
 const DeleteItemButton = styled.span`
   background: transparent;
   opacity: 50%;
@@ -36,7 +31,6 @@ const DeleteItemButton = styled.span`
   display: flex;
   z-index: 99;
 `
-
 const TechniqueList = styled.ul`
   padding-bottom: 1em;
   list-style-type: none;
@@ -46,7 +40,6 @@ const TechniqueList = styled.ul`
     margin: 5px 0;
   }
 `
-
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s ease margin;
@@ -62,7 +55,6 @@ const SavedTechnique = styled.div`
   }
   cursor: pointer;
 `
-
 const SaveNameInput = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
@@ -71,7 +63,7 @@ const SaveNameInput = styled.div`
     padding: 0 ${v.mdSpacing} 0 0;
     font-family: inherit;
     letter-spacing: inherit;
-    font-size: 28px;
+    font-size: 20px;
     width: 100%;
     outline: none;
     border: none;
@@ -85,7 +77,6 @@ const SaveNameIcon = styled.button`
   ${btnReset};
   padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
   display: flex;
-
   svg {
     font-size: 20px;
   }
@@ -109,10 +100,11 @@ const ExportSave = styled.div`
     ::-webkit-scrollbar {
       display: none;
     }
+    padding: calc(${v.smSpacing} * 1.3);
   }
   button {
     width:30%;
-    padding: ${v.smSpacing};
+    padding: calc(${v.smSpacing} * 1.3);
     color: #fff;
     background-color: var(--color-primary, ${COLORS.primary.light});
     border: none;
@@ -122,6 +114,16 @@ const ExportSave = styled.div`
     :hover {
       background: #972036;
     }
+    position: relative;
+    :before {
+      content: "";
+      position: absolute;
+      left: -2em;
+      top: 0;
+      width: 2em;
+      height: 100%;
+      background: linear-gradient(to left, var(--color-bg, ${COLORS.bg.light}), transparent); 
+    }
   }
   ${maxq[1]} {
     button {
@@ -130,53 +132,7 @@ const ExportSave = styled.div`
   }
   display: flex;
   align-items:center;
-  margin-bottom: ${v.smSpacing};
-`
-const ImportSave = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light});
-  border-radius: ${v.borderRadius};
-  input {
-    resize: none;
-    white-space: nowrap;
-    width:100%;
-    padding: 0 ${v.smSpacing};
-    font-family: inherit;
-    letter-spacing: inherit;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    border: none;
-    background: transparent;
-    color: inherit;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  display: flex;
-  align-items:center;
-  margin-bottom: ${v.smSpacing};
-`
-
-// This is bad practice. Change it.
-const LinkButton = styled(Link)`
-  color: #fff !important;
-  background-color: var(--color-primary, ${COLORS.primary.light}) !important;
-  transition: 0.3s ease;
-  :hover {
-    border: none !important;
-    background: #972036 !important;;
-  }
-  width:30%;
-  padding: ${v.smSpacing} !important;
-  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ${maxq[1]} {
-    width: 50%;
-  }
-  cursor: pointer;
-  transition: 0.3s ease;
+  margin-bottom: ${v.mdSpacing};
 `
 const DeleteButtonContainer = styled.div`
   display: flex;
@@ -185,7 +141,7 @@ const DeleteButtonContainer = styled.div`
 `
 const DeleteButton = styled.button`
   width:20%; 
-  padding: ${v.smSpacing};
+  padding: calc(${v.smSpacing} * 1.3);
   color: #fff;
   background-color: var(--color-primary, ${COLORS.primary.light});
   border: none;
@@ -199,83 +155,25 @@ const DeleteButton = styled.button`
     background: #972036;
   }
 `
-
 const Saved = () => {
-
-
-
   const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
     "n": "",
     "e": []
   }
-
-
-  const remindValidSave = (v) => {
-    document.getElementById("importText").value = ""
-    let textToUpdate = v === 'remind' ? "Please use a valid save" : "Paste your save code here"
-    document.getElementById("importText").placeholder = textToUpdate
-  }
-
-  const exportSave = () => {
-    navigator.clipboard.writeText(encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
-    document.getElementById("copyButton").innerHTML = "Copied!"
-    setTimeout(() => {
-      document.getElementById("copyButton").innerHTML = "Copy Save"
-    }, 2 * 1000);
-  }
-
   const exportURL = () => {
-    navigator.clipboard.writeText(window.location.href + "?"
+    navigator.clipboard.writeText("https://gdex.cc/s?"
       + encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
     document.getElementById("copyURLButton").innerHTML = "Copied!"
     setTimeout(() => {
       document.getElementById("copyURLButton").innerHTML = "Copy URL"
     }, 2 * 1000);
   }
-
-  const importSave = () => {
-
-    try {
-      if (document.getElementById("importText").value) {
-        let load = document.getElementById("importText").value
-
-        if (load.includes(window.location.href)) {
-          load = load.replace(window.location.href + "?", "")
-        }
-
-        let newSaved = decode(load)
-
-        if (newSaved.n.length > 100) {
-          newSaved.n = newSaved.n.substring(0, 97) + "..."
-        }
-        if (hasDupes(newSaved.e)) {
-          remindValidSave('remind')
-          return
-        }
-        if (window.confirm("Your existing save will be overwritten. Continue?")) {
-          setSaved(newSaved)
-          remindValidSave('reset')
-          document.getElementById("exportText").value =
-            encode(JSON.parse(localStorage.getItem(SAVE_KEY)))
-          document.getElementById("exportURL").value = window.location.href +
-            "?" + document.getElementById("exportText").value
-        }
-      } else {
-        remindValidSave('remind')
-      }
-    } catch (error) {
-      remindValidSave('remind')
-    }
-  }
-
   const clearSave = () => {
     if (window.confirm("This will delete your save. Click OK to continue.")) {
       setSaved({ "n": "", "e": [] })
-      remindValidSave('reset')
     }
   }
-
   const clearItem = (id) => {
     document.getElementById(id.toString()).style.display = "none"
     const temp = saved.e
@@ -288,13 +186,11 @@ const Saved = () => {
     setSaved(newSaved)
   }
   const location = useLocation().pathname
-
   const handleNameChange = (e) => {
     const newName = e.target.value.replace(/[-=~]/g, '')
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
-
   const handleTechniqueOrderChange = (result) => {
     if (!result.destination) return
     const items = Array.from(saved.e)
@@ -303,28 +199,21 @@ const Saved = () => {
     let newSaved = { "n": saved.n, "e": items }
     setSaved(newSaved)
   }
-
   const encode = (objectToEncode) => {
     const encodedItems = objectToEncode.e.join('.')
     if (objectToEncode.n === "") return encodedItems
     return objectToEncode.n.replace(/\s/g, '-') + '~' + encodedItems
   }
-
   const decode = (stringToDecode) => {
     let decoded = []
     let result = { "n": "", "e": [] }
-
     if (stringToDecode.includes("~")) {
       decoded = stringToDecode.split("~")
     } else { // Only Second half
       decoded = [stringToDecode]
     }
-    // Fingerstyle-Basics=1.3.2.5.6.10
-
-
     // If saveName=1.2.3
     if (decoded.length === 2) {
-
       const decodedText = decoded[0].replace(/-/g, ' ')
       let decodedItems = []
       // check if 1.2.3 has number
@@ -338,10 +227,8 @@ const Saved = () => {
         });
       }
       // If saveName= do nothing, since decodedItems is set to []
-
       return { "n": decodedText, "e": decodedItems }
     }
-
     else if (decoded.length === 1) {
       let decodedText = ""
       let decodedItems = []
@@ -360,12 +247,9 @@ const Saved = () => {
     }
     // Decoded array is >2 or 0 length
     else return false
-
     return result
   }
-
   let hasUrl = false
-
   if (typeof window !== `undefined`) {
     try {
       let stringToImport = ""
@@ -375,34 +259,24 @@ const Saved = () => {
         newSaved = decode(stringToImport)
         window.history.replaceState({}, document.title, location);
         // If save is NOT empty or does not exist
-        // This will work when
-        // Save exists OR save is not empty 
+        // This will work when save exists OR save is not empty 
         if (hasDupes(newSaved.e)) throw new Error("Save has duplicate ID")
         if (localStorage.getItem(SAVE_KEY) !== null && localStorage.getItem(SAVE_KEY) !== "{\"n\":\"\",\"e\":[]}") {
           if (window.confirm("This will replace your current save. Continue?")) {
-            //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
             savedObj = newSaved
-            console.log('1')
           }
-          //localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
-          
-          
         }
         else {
           savedObj = newSaved
-          console.log('2')
         }
         hasUrl = true
-        
       }
     }
     catch (error) {
       alert("Invalid save profile detected. Save will not be loaded.\n" + error)
     }
   }
-  // console.log(savedObj)
   if (typeof window !== `undefined` && localStorage.getItem(SAVE_KEY)) {
-    
     try {
       const save = JSON.parse(localStorage.getItem(SAVE_KEY))
       if (hasDupes(save.e)) throw new Error("Save has duplicate ID")
@@ -417,21 +291,15 @@ const Saved = () => {
         savedObj.e = []
       }
       else if (!hasUrl) savedObj = JSON.parse(localStorage.getItem(SAVE_KEY)) // PROBLEM
-      
     } catch (error) {
       alert("Invalid save profile detected. Clearing save.\n" + error)
     }
   }
-  // console.log(savedObj)
-
   const [saved, setSaved] = useState(savedObj)
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    document.getElementById("exportText").value = encode(saved)
-    document.getElementById("exportURL").value = window.location.href +
-      "?" + document.getElementById("exportText").value
+    document.getElementById("exportURL").value = "https://gdex.cc/s?" + encode(saved)
   }, [saved])
-
   return (
     <Layout title="Saved">
       <h1>Saved</h1>
@@ -470,18 +338,9 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <textarea id="exportText" rows="1" defaultValue={encode(saved)} disabled></textarea>
-        <button id="copyButton" onClick={exportSave}>Copy Save</button>
-      </ExportSave>
-      <ExportSave>
         <textarea id="exportURL" rows="1" defaultValue={"https://guitardex.com/s?" + encode(saved)} disabled></textarea>
         <button id="copyURLButton" onClick={exportURL}>Copy URL</button>
       </ExportSave>
-      <ImportSave>
-        <input id="importText" type="text" placeholder="Paste your save code here"></input>
-        {/* i WOULD make an on Enter key event here, but that wont work well with <Link> */}
-        <LinkButton onClick={importSave} to={location}>Load Save</LinkButton>
-      </ImportSave>
       <DeleteButtonContainer>
         <DeleteButton onClick={clearSave}>Delete Save</DeleteButton>
       </DeleteButtonContainer>
