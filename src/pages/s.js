@@ -265,6 +265,9 @@ const Saved = () => {
           if (window.confirm("This will replace your current save. Continue?")) {
             savedObj = newSaved
           }
+          else {
+            savedObj = JSON.parse(localStorage.getItem(SAVE_KEY))
+          }
         }
         else {
           savedObj = newSaved
