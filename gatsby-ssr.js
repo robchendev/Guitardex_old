@@ -99,6 +99,12 @@ const MagicScriptTag = () => {
         ? '${COLORS.sunIcon.light}'
         : '${COLORS.sunIcon.dark}'
     );
+    root.style.setProperty(
+      '--color-checkMarkBorder',
+      colorMode === 'light'
+        ? '${COLORS.checkMarkBorder.light}'
+        : '${COLORS.checkMarkBorder.dark}'
+    );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;

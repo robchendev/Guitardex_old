@@ -72,6 +72,10 @@ export const COLORS = {
     light: 'none',
     dark: 'flex',
   },
+  checkMarkBorder: {
+    light: 'rgb(130,130,130)',
+    dark: 'rgb(150,150,150)',
+  },
   placeholder: '#8e8e8e',
 };
 

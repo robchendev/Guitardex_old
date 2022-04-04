@@ -31,14 +31,14 @@ const Checkbox = styled.div`
   border-radius: ${v.borderRadius};
 
   padding-top: 5px;
-  border: 2px solid var(--color-text, ${COLORS.text.light});
+  border: 2px solid var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   width: 2em;
   height: 2em;
 
 
   :hover {
 
-    border: 2px solid var(--color-text, ${COLORS.text.light});
+    
     filter: invert(0.1);
   }
 `

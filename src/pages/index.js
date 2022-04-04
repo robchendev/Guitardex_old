@@ -178,7 +178,7 @@ const Saved = () => {
     "e": []
   }
   const exportURL = () => {
-    navigator.clipboard.writeText("https://gdex.cc/s?"
+    navigator.clipboard.writeText("https://gdex.cc/?"
       + encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
     document.getElementById("copyURLButton").innerHTML = "Copied!"
     setTimeout(() => {
@@ -270,7 +270,7 @@ const Saved = () => {
     try {
       let stringToImport = ""
       let newSaved = {}
-      if (window.location.search.includes("?")){
+      if (window.location.search.includes("?")) {
         stringToImport = window.location.search.replace("?", "")
         newSaved = decode(stringToImport)
         window.history.replaceState({}, document.title, location);
@@ -317,7 +317,7 @@ const Saved = () => {
   const [saved, setSaved] = useState(savedObj)
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    document.getElementById("exportURL").value = "https://gdex.cc/s?" + encode(saved)
+    document.getElementById("exportURL").value = "https://gdex.cc/?" + encode(saved)
   }, [saved])
   return (
     <Layout title="My Guitardex">
@@ -328,14 +328,14 @@ const Saved = () => {
         </SaveNameIcon>
         <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
-      {saved.e.length === 0 ? 
+      {saved.e.length === 0 ?
         <TechniqueList>
           <li>
             <SavedTechnique>
               <HelpLinkContainer to='t'>
                 <HelpLinkDiv>
-                    <h3>Start adding techniques!</h3>
-                    <p>Click here to browse techniques</p>
+                  <h3>Start adding techniques!</h3>
+                  <p>Click here to browse techniques</p>
                 </HelpLinkDiv>
               </HelpLinkContainer>
             </SavedTechnique>
@@ -344,21 +344,21 @@ const Saved = () => {
             <SavedTechnique>
               <HelpLinkContainer to='help'>
                 <HelpLinkDiv>
-                    <h3>Need help?</h3>
-                    <p>Click here for help</p>
+                  <h3>Need help?</h3>
+                  <p>Click here for help</p>
                 </HelpLinkDiv>
               </HelpLinkContainer>
             </SavedTechnique>
           </li>
-          
+
         </TechniqueList>
-        : 
+        :
         <></>
       }
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
           {(provided) => (
-            <TechniqueList  iqueList {...provided.droppableProps} ref={provided.innerRef}>
+            <TechniqueList iqueList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {
                 return (
                   <Draggable key={id} draggableId={id.toString()} index={index}>
@@ -383,7 +383,7 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <textarea id="exportURL" rows="1" defaultValue={"https://gdex.cc/s?" + encode(saved)} disabled></textarea>
+        <textarea id="exportURL" rows="1" defaultValue={"https://gdex.cc/?" + encode(saved)} disabled></textarea>
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
       <DeleteButtonContainer>
