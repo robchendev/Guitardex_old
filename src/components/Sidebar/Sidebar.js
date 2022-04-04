@@ -4,7 +4,7 @@ import { logoPNG } from "../../assets"
 import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../Layout/styles'
 import { FaDiscord } from "react-icons/fa"
 import { FiHome, FiLayers, FiMoon, FiSun, FiHelpCircle, FiUser, FiMessageCircle } from "react-icons/fi"
-import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid,HiOutlineQuestionMarkCircle } from "react-icons/hi"
+import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle } from "react-icons/hi"
 
 import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router";
@@ -80,9 +80,9 @@ const Sidebar = () => {
           </SunContainer>
 
           <SToggleLabel></SToggleLabel>
-          <SThemeToggler>
+          {/* <SThemeToggler>
             <SToggleThumb />
-          </SThemeToggler>
+          </SThemeToggler> */}
         </SToggle>
       </SLinkContainer>
 
