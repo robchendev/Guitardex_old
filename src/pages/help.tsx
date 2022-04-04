@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <Layout title="Help">
 
-      <h1>Help</h1>
+      <h1>Hello Toby</h1>
       <p>There's nothing here yet</p>
     </Layout>
   )
