@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { Explanation, DarkBackground } from "./technique-styling"
+import { Explanation, DarkBackground, VideoContainer } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save';
 import styled from '@emotion/styled';
@@ -19,45 +19,77 @@ const EmbedContainer = styled.div`
 const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
+  h2 {
+    margin-bottom: 0.1em;
+  }
+  margin: 0 !important;
 `
 const AddedText = styled.span`
   display: inline-flex;
+  align-items: center;
+  margin-top:0.25em;
   h3 {
-    margin-top: 0.7em;
+    margin-top: -0.15em;
     margin-right: 0.5em;
   }
 `
-
+const PageHeader = styled.div`
+  margin-bottom: 1em;
+`
+const TechniqueName = styled.h2`
+  margin-bottom: 0;
+`
+const ExerciseLinks = styled.ul`
+  margin-bottom: 0.5em;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+`
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const {
-    id, title, demo, description, slug, exercises
+    id, title, demo, slug, exercises, prereqs, category
   } = data.allInfo.frontmatter;
 
   return (
     <Layout>
       <div>
         <HeadingContainer>
-          <h2>{title}</h2>
+          <PageHeader>
+            <TechniqueName>{title}</TechniqueName>
+            <span>
+              Reqs:{" "}
+              {prereqs ?
+                prereqs.map((prereq, index) => (
+                  <span key={index}>
+                    {index > 0 && ", "}
+                    <a href={prereq.slug} target="_blank">{prereq.name}</a>
+                  </span>
+                ))
+                :
+                <span> None</span>}
+            </span>
+
+          </PageHeader>
           <span>
-            <AddedText><h3>Saved</h3><Save id={id} /></AddedText>
+            <AddedText>
+              <h3>Saved</h3>
+              <Save id={id} />
+            </AddedText>
           </span>
-          
         </HeadingContainer>
-        <DarkBackground>
-          {demo ?
+        <VideoContainer>
+          {demo &&
             <EmbedContainer>
               <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false} />
             </EmbedContainer>
-            :
-            <p>No video.</p>
           }
-          {description ? <br /> : <></>}
-          <p>{description}</p>
-        </DarkBackground>
-
+        </VideoContainer>
         <Explanation>
+
           {html ?
             <div dangerouslySetInnerHTML={{ __html: html }} />
             :
@@ -66,19 +98,21 @@ function TechniqueDetails({ data }) {
         </Explanation>
 
         <DarkBackground>
-          <h3>Exercises</h3>
+          <h3>Tabs</h3>
           {exercises ?
             exercises.map(({ text, link, slce }) => (
               <React.Fragment key={text}>
-                <p>{text}: <a href={link} target="_blank">Tablature</a><a href={slce} target="_blank">SoundSlice</a></p>
+                <ExerciseLinks>
+                  <li><span>{text}:{" "}<a href={link}>PDF</a></span></li>
+                </ExerciseLinks>
               </React.Fragment>
             ))
             :
-            <p>There are no exercises.</p>
+            <p>There are no tabs.</p>
           }
         </DarkBackground>
       </div>
-    </Layout>
+    </Layout >
   );
 }
 

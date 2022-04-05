@@ -1,9 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 
-const Text = styled.p`
-
+const CustomUL = styled.ul`
+  li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
 `
 
 
@@ -12,6 +17,9 @@ const About = () => {
   return (
     <Layout title="About">
       <h1>About</h1>
+      <h2>Development Notes</h2>
+      <p>View the change log, future plans, and known issues <Link to="/dev">here</Link>.</p>
+      <br />
       <h2>Why I am developing this website</h2>
       <p>
         Fingerstyle is a young style of guitar rising in popularity. Due to its infancy in
@@ -47,8 +55,10 @@ const About = () => {
         I will be outsourcing help from some friends who excel in fingerstyle if they're willing to help make content for this site. These are the wonderful people who have agreed to help me on the site so far:
       </p>
       <p>
-        <a href="https://www.youtube.com/c/EddievanderMeer">Eddie van der Meer</a><br />
-        <a href="https://www.youtube.com/channel/UCv5lp4CKs7tdTdJwTknjrpA">Bob Ma</a>
+        <CustomUL>
+          <li><a href="https://www.youtube.com/c/EddievanderMeer">Eddie van der Meer</a></li>
+          <li><a href="https://www.youtube.com/channel/UCv5lp4CKs7tdTdJwTknjrpA">Bob Ma</a></li>
+        </CustomUL>
       </p>
     </Layout>
   )

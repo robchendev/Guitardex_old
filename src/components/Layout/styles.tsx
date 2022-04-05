@@ -49,17 +49,10 @@ export const SMain = styled.main`
   }
 
   a {
-    //color: var(--color-link, ${COLORS.link.light});
-    //text-decoration: none;
-    border: 0;
-    padding: 0px 2px 2px 2px;
-    background-color: transparent;
     text-decoration: none;
     color: var(--color-link, ${COLORS.link.light});
   }
   a:hover {
-    border-top: 2px solid var(--color-link, ${COLORS.link.light});
-    outline-width: 0;
     color: var(--color-linkHover, ${COLORS.linkHover.light});
     background-color: var(--color-link, ${COLORS.link.light});
   }

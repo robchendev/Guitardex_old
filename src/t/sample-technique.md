@@ -1,7 +1,7 @@
 ---
 id: 422
 group: t
-title: Sample Technique
+title: 0 - Sample Technique
 demo: https://youtu.be/dQw4w9WgXcQ
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit ultricies purus, nec elementum risus vehicula a. Nunc venenatis diam odio, id tempor nibh tempus non. Fusce eget nulla ipsum. Ut aliquam at erat mattis tempus. Aenean tortor erat, pulvinar ut gravida vel, tempor sit amet nisi. Mauris nec augue tellus. Sed convallis placerat arcu at condimentum. Praesent rhoncus elit eu mi lacinia scelerisque. Suspendisse a elementum tellus, vitae ultricies nulla.
 prereqs:
@@ -11,17 +11,17 @@ slug: sample-technique
 exercises:
   [
     {
-      text: Exercise 1,
+      text: This page,
       link: https://colorhunt.co/palettes/dark,
       slce: https://www.youtube.com/watch?v=rgyTpQVDP44,
     },
     {
-      text: Exercise 2,
+      text: Exercise,
       link: https://colorhunt.co/palettes/dark,
       slce: https://www.youtube.com/watch?v=rgyTpQVDP44,
     },
     {
-      text: Challenge Song,
+      text: Challenge song,
       link: https://colorhunt.co/palettes/dark,
       slce: https://www.youtube.com/watch?v=rgyTpQVDP44,
     },
@@ -30,15 +30,9 @@ artists: anotherObjectArray
 tags: [wrist, thump]
 ---
 
-## Sample Technique Page
+This is a sample page demonstrating what each page would look like. There will be a **lot** more content here when the site fully launches.
 
-Alls of this is unstyled right now and looks terrible. If you're viewing this page from a mobile device then it'll look even worse.
-
-There will be a **lot** more content here when the site fully launches.
-
-There would be a demonstration video at the top of each page
-
-Followed by common ways the technique is written in tabs:
+### Ex1
 
 <div class="tabImg">
   <img src="images/exampletab.jpg" />

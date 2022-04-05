@@ -1,0 +1,83 @@
+{
+    "changelog": [
+        {
+            "v": "1.0.0",
+            "title": "Official Launch",
+            "date": "TBA",
+            "new": [
+                "Guitardex is launched to the public."
+            ]
+        },
+        {
+            "v": "0.9.1",
+            "title": "Launched Closed Beta",
+            "date": "TBA",
+            "new": [
+                "Guitardex is launched to a select group of volunteer testers of the end-users: Learners, Teachers, and Professional Musicians."
+            ]
+        },
+        {
+            "v": "0.5.1",
+            "title": "Created Necessary Pages",
+            "date": "Apr 4, 2022",
+            "new": [
+                "Added pages Help, About, and Community. Development (this) page was also added."
+            ]
+        },
+        {
+            "v": "0.4.2",
+            "title": "My Guitardex UX",
+            "date": "Mar 24, 2022",
+            "new": [
+                "Added a way to delete individual entries of the Guitardex.",
+                "Added a way to delete all entries of the Guitardex.",
+                "Added a way to re-order entries of the Guitardex, which also updates the Guitardex's browser save accordingly."
+            ]
+        },
+        {
+            "v": "0.4.1",
+            "title": "My Guitardex",
+            "date": "Mar 8, 2022",
+            "new": [
+                "'My Guitardex' page displays the saved techniques of the end-user.",
+                "Encodes the save configuration to a short URL to share the user's Guitardex with others.",
+                "Added automatic decoding of a custom Guitardex URL upon visit to the site via the URL."
+            ]
+        },
+        {
+            "v": "0.3.2",
+            "title": "Technique Search",
+            "date": "Feb 27, 2022",
+            "new": [
+                "Added a Searchbar that queries search terms of the technique titles and their tags.",
+                "Added Guitardex browser saving functionality and put a save button on the Searchbar page and each individual technique page."
+            ]
+        },
+        {
+            "v": "0.3.1",
+            "title": "Technique Pages",
+            "date": "Feb 27, 2022",
+            "new": [
+                "Created the content structure to individually generate technique pages.",
+                "Created template skeletons of what the technique pages would look like."
+            ]
+        },
+        {
+            "v": "0.2.1",
+            "title": "Dark Mode",
+            "date": "Feb 19, 2022",
+            "new": [
+                "Allows end-users to freely toggle between light and dark theme (defaults to light).",
+                "User's browser remembers the color mode preference of the end-user."
+            ]
+        },
+        {
+            "v": "0.1.1",
+            "title": "Website Skeleton",
+            "date": "Feb 04, 2022",
+            "new": [
+                "The start of this website."
+            ]
+        }
+    ]
+}

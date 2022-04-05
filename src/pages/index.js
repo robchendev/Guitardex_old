@@ -65,7 +65,7 @@ const SaveNameInput = styled.div`
     padding: 0 ${v.mdSpacing} 0 0;
     font-family: inherit;
     letter-spacing: inherit;
-    font-size: 20px;
+    font-size: 18px;
     width: 100%;
     outline: none;
     border: none;
@@ -186,7 +186,7 @@ const Saved = () => {
     }, 2 * 1000);
   }
   const clearSave = () => {
-    if (window.confirm("This will delete your save. Click OK to continue.")) {
+    if (window.confirm("This will delete your added techniques. Click OK to continue.")) {
       setSaved({ "n": "", "e": [] })
     }
   }
@@ -387,7 +387,7 @@ const Saved = () => {
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
       <DeleteButtonContainer>
-        <DeleteButton onClick={clearSave}>Delete Save</DeleteButton>
+        <DeleteButton onClick={clearSave}>Delete Dex</DeleteButton>
       </DeleteButtonContainer>
     </Layout>
   )
