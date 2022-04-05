@@ -344,7 +344,7 @@ const Saved = () => {
             <SavedTechnique>
               <HelpLinkContainer to='help'>
                 <HelpLinkDiv>
-                  <h3>Need help?</h3>
+                  <h3>New to Guitardex?</h3>
                   <p>Click here for help</p>
                 </HelpLinkDiv>
               </HelpLinkContainer>

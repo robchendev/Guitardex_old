@@ -128,11 +128,11 @@ const internalLinks = [
     link: "/about",
     notification: 0,
   },
-  {
-    label: "Community",
-    icon: <HiOutlineChatAlt />,
-    link: "/community",
-  },
+  // {
+  //   label: "Community",
+  //   icon: <HiOutlineChatAlt />,
+  //   link: "/community",
+  // },
 ]
 
 const externalLinks = [

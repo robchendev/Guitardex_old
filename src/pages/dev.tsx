@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
-import changeLogData from "../assets/change-log-data.json"
-import plansData from "../assets/future-plans.json"
-import issuesData from "../assets/known-issues.json"
+import changeLogData from "../assets/development/change-log-data.json"
+import plansData from "../assets/development/future-plans.json"
+import issuesData from "../assets/development/known-issues.json"
 import { COLORS } from "../styles/theme"
 
 const LogRender = styled.div`
