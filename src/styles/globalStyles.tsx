@@ -28,6 +28,7 @@ export const globalStyle = css`
     font-size: 30px;
     display: flex;
     justify-content: center;
+    margin-bottom: 1em;
   }
   h2 {
     font-size: 26px;

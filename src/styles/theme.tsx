@@ -54,7 +54,7 @@ export const COLORS = {
   },
   tabimg: {
     light: 'brightness(1.04)',
-    dark: 'invert(0.88)',
+    dark: 'invert(0.847)',
   },
   toggleThumb: {
     light: 'calc(100% - 16px - 2px)',

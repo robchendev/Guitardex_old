@@ -16,21 +16,22 @@ export const TechList = styled.div`
 `
 
 export const DarkBackground = styled.div`
-  padding: 2em;
+  padding: 1em;
   border-radius: 12px;
   background: var(--color-bg, ${COLORS.bg.light});
   p {
     margin: 0;
   }
-  ${maxq[1]} {
-    padding: 1.5em;
-  }
+
 `
 export const Explanation = styled.div`
 
-  padding: 2em;
+  padding: 1.5em 0;
   border-radius: 12px;
   ${maxq[1]} {
     padding: 1.5em 0;
   }
+`
+export const VideoContainer = styled.div`
+  
 `

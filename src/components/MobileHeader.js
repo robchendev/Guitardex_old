@@ -60,7 +60,7 @@ const MobileHeader = () => {
                             margin-bottom: 0;
                             font-size: 20px;
                         `}>
-                            Fingerstyle Central
+                            Guitardex
                         </h3>
                     </Logo>
                     <MenuIcon onClick={() => showSidebar()}>
