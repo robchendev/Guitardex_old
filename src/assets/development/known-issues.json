@@ -1,6 +1,6 @@
 {
     "issues": [
-        "[FIXED] Erasing name at once (CTRL+A -> CTRL+X) does not erase in the save preview textbox after refreshing page.",
+        "[This only happens on live] Erasing name at once (CTRL+A -> CTRL+X) does not erase in the save preview textbox after refreshing page.",
         "If the user already has a Guitardex save file in their browser's localStorage, the starter save file will be loaded first.",
         "If the user already has a Guitardex save file in their browser's localStorage, and has accessed the site via a direct short link, (gdex.cc/?...), the starter save file will be loaded before the browser prompt for overwriting the previous save opens."
     ]

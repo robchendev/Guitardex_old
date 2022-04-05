@@ -37,7 +37,7 @@
         {
             "v": "0.4.1",
             "title": "My Guitardex",
-            "date": "Mar 8, 2022",
+            "date": "Mar 12, 2022",
             "new": [
                 "'My Guitardex' page displays the saved techniques of the end-user.",
                 "Encodes the save configuration to a short URL to share the user's Guitardex with others.",
@@ -47,7 +47,7 @@
         {
             "v": "0.3.2",
             "title": "Technique Search",
-            "date": "Feb 27, 2022",
+            "date": "Mar 2, 2022",
             "new": [
                 "Added a Searchbar that queries search terms of the technique titles and their tags.",
                 "Added Guitardex browser saving functionality and put a save button on the Searchbar page and each individual technique page."
