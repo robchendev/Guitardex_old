@@ -104,7 +104,7 @@ const SaveNameIcon = styled.button`
 const ExportSave = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
-  textarea {
+  input {
     resize: none;
     white-space: nowrap;
     width:100%;
@@ -396,7 +396,7 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <textarea id="exportURL" rows="1" defaultValue={"https://gdex.cc/?" + encode(saved)} disabled></textarea>
+        <input id="exportURL" defaultValue={"https://gdex.cc/?" + encode(saved)} disabled></input>
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
       <DeleteButtonContainer>
