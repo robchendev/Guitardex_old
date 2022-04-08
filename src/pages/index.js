@@ -344,7 +344,7 @@ const Saved = () => {
         <SaveNameIcon>
           <HiOutlinePencilAlt />
         </SaveNameIcon>
-        <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
+        <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onInput={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
       {saved.e.length === 0 ?
         <EmptyList>
