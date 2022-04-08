@@ -12,7 +12,7 @@ export const globalStyle = css`
     color: var(--color-text, ${COLORS.text.light});
     font-family: 'Fredoka', sans-serif;
     letter-spacing: .6px;
-    overflow: scroll;
+    overflow-y: scroll;
   }
   button {
     font-family: 'Fredoka', sans-serif;
