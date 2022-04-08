@@ -12,6 +12,6 @@ artists:
 tags: [thumb, slap]
 ---
 
-### New Page
+There are many different ways to produce the "slap" sound. As long as you do the following, you'll be set.
 
-stub
+1. Most of the movement
