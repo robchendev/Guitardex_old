@@ -40,9 +40,34 @@ const TechniqueList = styled.ul`
     margin: 5px 0;
   }
   transition: 0.3s ease padding;
-  
 `
 const SavedTechnique = styled.div`
+  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
+  transition: 0.3s ease margin;
+  :hover {
+    margin-left: 1em;
+  }
+  border-radius: ${v.borderRadius};
+  user-select: none;
+  position: relative;
+  width: 100%;
+  h3 {
+    margin-bottom: 0;
+  }
+  cursor: pointer;
+`
+// This is here to prevent that undraggable bug... refactor pls.
+const TechniqueList2 = styled.ul`
+  padding-bottom: 1em;
+  list-style-type: none;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  transition: 0.3s ease padding;
+`
+const SavedTechnique2 = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s ease margin;
   :hover {
@@ -329,16 +354,16 @@ const Saved = () => {
         <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
       {saved.e.length === 0 ?
-        <TechniqueList>
+        <TechniqueList2>
           <li>
-            <SavedTechnique>
+            <SavedTechnique2>
               <HelpLinkContainer to='t'>
                 <HelpLinkDiv>
                   <h3>Start adding techniques!</h3>
                   <p>Click here to browse techniques</p>
                 </HelpLinkDiv>
               </HelpLinkContainer>
-            </SavedTechnique>
+            </SavedTechnique2>
           </li>
           <li>
             <SavedTechnique>
@@ -351,7 +376,7 @@ const Saved = () => {
             </SavedTechnique>
           </li>
 
-        </TechniqueList>
+        </TechniqueList2>
         :
         <></>
       }
