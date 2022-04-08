@@ -40,7 +40,25 @@ const TechniqueList = styled.ul`
     margin: 5px 0;
   }
   transition: 0.3s ease padding;
-  
+`
+const EmptyList = styled.div`
+  div {
+    margin: 5px 0;
+  }
+`
+const EmptyListEntries = styled.div`
+  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
+  transition: 0.3s ease margin;
+  :hover {
+    margin-left: 1em;
+  }
+  border-radius: ${v.borderRadius};
+  user-select: none;
+  position: relative;
+  h3 {
+    margin-bottom: 0;
+  }
+  cursor: pointer;
 `
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
@@ -329,36 +347,31 @@ const Saved = () => {
         <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onChange={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
       {saved.e.length === 0 ?
-        <TechniqueList>
-          <li>
-            <SavedTechnique>
-              <HelpLinkContainer to='t'>
-                <HelpLinkDiv>
-                  <h3>Start adding techniques!</h3>
-                  <p>Click here to browse techniques</p>
-                </HelpLinkDiv>
-              </HelpLinkContainer>
-            </SavedTechnique>
-          </li>
-          <li>
-            <SavedTechnique>
-              <HelpLinkContainer to='help'>
-                <HelpLinkDiv>
-                  <h3>New to Guitardex?</h3>
-                  <p>Click here for help</p>
-                </HelpLinkDiv>
-              </HelpLinkContainer>
-            </SavedTechnique>
-          </li>
-
-        </TechniqueList>
+        <EmptyList>
+          <EmptyListEntries>
+            <HelpLinkContainer to='t'>
+              <HelpLinkDiv>
+                <h3>Start adding techniques!</h3>
+                <p>Click here to browse techniques</p>
+              </HelpLinkDiv>
+            </HelpLinkContainer>
+          </EmptyListEntries>
+          <EmptyListEntries>
+            <HelpLinkContainer to='help'>
+              <HelpLinkDiv>
+                <h3>New to Guitardex?</h3>
+                <p>Click here for help</p>
+              </HelpLinkDiv>
+            </HelpLinkContainer>
+          </EmptyListEntries>
+        </EmptyList>
         :
         <></>
       }
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
           {(provided) => (
-            <TechniqueList {...provided.droppableProps} ref={provided.innerRef}>
+            <TechniqueList iqueList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {
                 return (
                   <Draggable key={id} draggableId={id.toString()} index={index}>
