@@ -40,7 +40,7 @@ Some thumbpick players prefer to angle their slap more towards the floor than di
 
 #### Which string should I slap?
 
-Different strings have different slap sounds. While the X on a tab marks where you should slap, slapping a different string won't change the sound that much. To make it easier to pluck the next note, slap the string that you'll be plucking with the thumb next. This way the thumb does not need to leave the string before the next pluck.
+While the X on a tab marks where you should slap, slapping a different string won't change the sound that much. To make it easier to pluck the next note, slap the string that you'll be plucking with the thumb next. This way the thumb does not need to leave the string before the next pluck. The differences in the thumb slap sound is not important when the main purpose of it is to contribute to the rhythmic feel of your playing.
 
 #### Why do I have to slap really hard to get the sound?
 

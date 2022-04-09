@@ -125,7 +125,14 @@ function TechniqueDetails({ data }) {
             <p>There are no tabs.</p>
           }
         </DarkBackground>
-        <ReactTooltip className="ttEdit" arrowColor="transparent" offset={{ top: -12 }} effect="solid" />
+        <ReactTooltip
+          className="ttEdit"
+          arrowColor="transparent"
+          offset={{ top: -12 }}
+          effect="solid"
+          scrollHide={false}
+          resizeHide={false}
+        />
       </EntireWrapper>
 
     </Layout >

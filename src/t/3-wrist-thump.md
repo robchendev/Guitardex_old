@@ -44,7 +44,7 @@ A wrist thump's sound can be different for many reasons which are not easily cha
 - The body fat around your palm
 - The <span class="tt" data-tip="post processing / editing of an audio track">mixing</span> of the audio recording
 
-Don't worry about it too much, the difference in wrist thump sound is not important when the main purpose of it is to contribute to the rhythmic feel of your playing.
+Don't worry about it too much, the differences in the wrist thump sound is not important when the main purpose of it is to contribute to the rhythmic feel of your playing.
 
 #### Why does my wrist hurt?
 
