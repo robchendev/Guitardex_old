@@ -27,6 +27,8 @@ The slap strum expands on the thumb slap technique by doing a quick strum at the
 
 It should not be a slow strum, every note of the strum should almost sound like it's being played at the same time as the slap.
 
+![Slap Strum]()
+
 The slap strum is commonly notated with a few notes above an X, sometimes with a strum arrow. Strum arrow or not, the same technique can be used.
 
 #### Targeting specific strings
