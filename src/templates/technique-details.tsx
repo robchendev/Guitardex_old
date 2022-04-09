@@ -8,6 +8,7 @@ import Save from '../components/Save';
 import styled from '@emotion/styled';
 import { v } from '../styles/variables';
 import ReactTooltip from 'react-tooltip';
+import { COLORS } from '../styles/theme';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
@@ -49,6 +50,18 @@ const ExerciseLinks = styled.ul`
     margin: 5px 0;
   }
 `
+const EntireWrapper = styled.div`
+  .ttEdit {
+    padding: 3px 6px 4px 6px;
+    background-color: var(--color-text, ${COLORS.text.light});
+    color: var(--color-ttText, ${COLORS.ttText.light});
+    opacity: 1 !important;
+    font-size: 1rem;
+    max-width: 13em;
+    text-align: center;
+    transition: none;
+  }
+`
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const {
@@ -57,7 +70,7 @@ function TechniqueDetails({ data }) {
   return (
     <Layout>
 
-      <div>
+      <EntireWrapper>
         <HeadingContainer>
           <PageHeader>
             <TechniqueName>{title}</TechniqueName>
@@ -112,8 +125,8 @@ function TechniqueDetails({ data }) {
             <p>There are no tabs.</p>
           }
         </DarkBackground>
-        <ReactTooltip />
-      </div>
+        <ReactTooltip className="ttEdit" arrowColor="transparent" offset={{ top: -12 }} effect="solid" />
+      </EntireWrapper>
 
     </Layout >
   );

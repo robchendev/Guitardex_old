@@ -46,7 +46,7 @@ Different strings have different slap sounds. While the X on a tab marks where y
 
 If you find yourself having to slap really hard to get the slap sound, your guitar's <span class="tt" data-tip="distance from your fret wire to the string">action</span> might be too high. The higher it is, the harder it is to do a slap. Conversely, the lower the action is, the harder it will be to control the volume of the slap, so it's important to find a middle ground. 
 
-Otherwise, if your guitar's action isn't that high, then it's most likely the angle at which you slap the string at. Remember, the slap sound only comes from the string colliding with the <span class="tt" data-tip="the metal strips of your fretboard">fret wire</span>. Try slapping at more of an angle that would accomplish that.
+Otherwise, if your guitar's action isn't that high, then it's most likely the angle at which you slap the string at. Remember, the slap sound only comes from the string colliding with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span>. Try slapping at more of an angle that would accomplish that.
 
 #### How do I stop my string from buzzing when I slap?
 

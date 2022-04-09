@@ -35,7 +35,7 @@ Place your finger(s) on the strings you intend to pluck. When you do the wrist t
 
 ### FAQ
 
-#### Why does my wrist thump sound different than ____'s?
+#### Why does my wrist thump sound different than _'s?
 
 A wrist thump's sound can be different for many reasons which are not easily changed:
 
