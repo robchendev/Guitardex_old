@@ -7,6 +7,7 @@ import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save';
 import styled from '@emotion/styled';
 import { v } from '../styles/variables';
+import ReactTooltip from 'react-tooltip';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
@@ -29,7 +30,7 @@ const AddedText = styled.span`
   display: inline-flex;
   align-items: center;
   margin-top:0.25em;
-  h3 {
+  h4 {
     margin-top: -0.15em;
     margin-right: 0.5em;
   }
@@ -53,9 +54,9 @@ function TechniqueDetails({ data }) {
   const {
     id, title, demo, slug, exercises, prereqs, category
   } = data.allInfo.frontmatter;
-
   return (
     <Layout>
+
       <div>
         <HeadingContainer>
           <PageHeader>
@@ -66,7 +67,7 @@ function TechniqueDetails({ data }) {
                 prereqs.map((prereq, index) => (
                   <span key={index}>
                     {index > 0 && ", "}
-                    <a href={prereq.slug} target="_blank">{prereq.name}</a>
+                    <a href={prereq.slug}>{prereq.name}</a>
                   </span>
                 ))
                 :
@@ -76,7 +77,7 @@ function TechniqueDetails({ data }) {
           </PageHeader>
           <span>
             <AddedText>
-              <h3>Saved</h3>
+              <h4>Saved</h4>
               <Save id={id} />
             </AddedText>
           </span>
@@ -98,7 +99,7 @@ function TechniqueDetails({ data }) {
         </Explanation>
 
         <DarkBackground>
-          <h3>Tabs</h3>
+          <h4>Tabs</h4>
           {exercises ?
             exercises.map(({ text, link, slce }) => (
               <React.Fragment key={text}>
@@ -111,7 +112,9 @@ function TechniqueDetails({ data }) {
             <p>There are no tabs.</p>
           }
         </DarkBackground>
+        <ReactTooltip />
       </div>
+
     </Layout >
   );
 }

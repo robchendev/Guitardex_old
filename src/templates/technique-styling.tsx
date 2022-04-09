@@ -31,7 +31,25 @@ export const Explanation = styled.div`
   ${maxq[1]} {
     padding: 1.5em 0;
   }
+  ol, ul {
+    margin-left: 2em;
+    margin-bottom: 1em;
+    li {
+      margin: 5px 0;
+      line-height: 1.5em;
+    }
+    ${maxq[1]} {
+      margin-left: 1em;
+    }
+  }
+  p:last-child {
+    padding-bottom: 1em;
+  }
+  h3:not(first-child),h4:not(first-child) {
+    padding-top: 0.5em;
+  }
+
 `
 export const VideoContainer = styled.div`
-  
+  margin-bottom: 0.5em;
 `

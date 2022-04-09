@@ -105,6 +105,12 @@ const MagicScriptTag = () => {
         ? '${COLORS.checkMarkBorder.light}'
         : '${COLORS.checkMarkBorder.dark}'
     );
+    root.style.setProperty(
+      '--color-tooltip',
+      colorMode === 'light'
+        ? '${COLORS.tooltip.light}'
+        : '${COLORS.tooltip.dark}'
+    );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;

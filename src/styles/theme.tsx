@@ -76,6 +76,10 @@ export const COLORS = {
     light: 'rgb(130,130,130)',
     dark: 'rgb(150,150,150)',
   },
+  tooltip: {
+    light: 'rgba(185, 39, 66, 0.3)',
+    dark: 'rgba(252, 220, 151, 0.3)',
+  },
   placeholder: '#8e8e8e',
 };
 
