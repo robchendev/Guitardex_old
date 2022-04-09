@@ -13,10 +13,11 @@ export const globalStyle = css`
     font-family: 'Fredoka', sans-serif;
     letter-spacing: .6px;
     overflow-y: scroll;
+    font-size: 1rem;
   }
   button {
     font-family: 'Fredoka', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
   }
   h1,h2,h3,h4,h5,h6,strong {
 
@@ -31,15 +32,21 @@ export const globalStyle = css`
     margin-bottom: 1em;
   }
   h2 {
-    font-size: 26px;
+    font-size: 1.6rem;
   }
   h3 {
-    font-size: 18px;
+    font-size: 1.45rem;
   }
-  p:not(:last-child) {
+  h4 {
+    font-size: 1.3rem;
+  }
+  p {
     line-height: 1.5em;
-    margin-bottom: 1em;
+    :not(:last-child) {
+      margin-bottom: 1em;
+    }
   }
+  
   .yt-lite::after {
     content: "";
     display: block;

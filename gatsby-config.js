@@ -4,7 +4,6 @@ module.exports = {
     description: `Fingerstyle Information`,
     copyright: `Copyright 2022 Fingerstyle Central`,
     siteUrl: `https://www.fingerstylecentral.com`
-
   },
   plugins: ["gatsby-remark-embed-video", `gatsby-plugin-netlify`, "gatsby-plugin-emotion",
     {
@@ -38,6 +37,7 @@ module.exports = {
       options: {
         fonts: [
           `Fredoka\:400,500,700`,
+          `Helvetica\:400,500,700`,
         ],
         display: 'swap'
       }

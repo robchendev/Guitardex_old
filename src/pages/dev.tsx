@@ -7,7 +7,7 @@ import issuesData from "../assets/development/known-issues.json"
 import { COLORS } from "../styles/theme"
 
 const LogRender = styled.div`
-    h3 {
+    h4 {
         margin-bottom: 0;
     }
     p {
@@ -59,7 +59,7 @@ const Dev = () => {
             <h2>Change Log</h2>
             {changeLogData.changelog.map(update => (
                 <LogRender>
-                    <h3>v{update.v} - {update.title} </h3><p>{update.date}</p>
+                    <h4>v{update.v} - {update.title} </h4><p>{update.date}</p>
                     <ItemList>{update.new.map(item => (
                         <li>{item}</li>
                     ))}

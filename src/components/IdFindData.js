@@ -47,7 +47,7 @@ const IdFindData = ({ id }) => {
                         selection ? selection.frontmatter.group + '/' + selection.frontmatter.slug : `#`
                     }>
                         <ELinkDiv>
-                            <h3>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</h3>
+                            <h4>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</h4>
                         </ELinkDiv>
                     </ELinkContainer>
                 )

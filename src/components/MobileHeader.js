@@ -56,12 +56,12 @@ const MobileHeader = () => {
             <MHeader>
                 <MobileContainer>
                     <Logo>
-                        <h3 className={css`
+                        <h4 className={css`
                             margin-bottom: 0;
                             font-size: 20px;
                         `}>
                             Guitardex
-                        </h3>
+                        </h4>
                     </Logo>
                     <MenuIcon onClick={() => showSidebar()}>
                         {menuActive ? <FiXCircle /> : <FiMenu />}

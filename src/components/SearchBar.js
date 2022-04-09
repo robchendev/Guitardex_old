@@ -63,7 +63,7 @@ const DataResultBlock = styled.div`
   }
 `
 
-const DataResultTitle = styled.h3`
+const DataResultTitle = styled.h4`
   margin-bottom: 0.1em;
 `
 
