@@ -28,6 +28,8 @@ The thumb slap is commonly notated as an X on the string you're supposed to slap
 
 The thickest string is the easiest to slap, and also the loudest. The thinner the strings are, the less noticeable the slaps on them are.
 
+Thumb slaps are naturally loud, so be aware of how loud your slaps are. If they're too loud, they can drown out the other elements of the song. You don't want the thumb slaps to be the main focus of your performance. Instead, they should be there to accompany the rhythmic feel of a song.
+
 #### Thumb slap with a thumbpick
 
 Doing a thumb slap with a thumbpick is more difficult since your thumbpick can get in the way, but the goal remains the same: to produce a 'click' sound by making the string collide with the fret wire.
