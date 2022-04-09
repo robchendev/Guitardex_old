@@ -18,7 +18,7 @@ Video:
 - slap one string thumbpick
 - slap multiple strings thumbpick
 
-The slap sound comes from the guitar string coming in contact with the <span class="tt" data-tip="the metal strips of your fretboard">fret wire</span> itself. This sound is similar to that of a snare drum, commonly used on beats 2 and 4 in modern music.
+The slap sound comes from the guitar string coming in contact with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> itself. This sound is similar to a snare drum, commonly used on beats 2 and 4 in modern music.
 
 Most of the slapping motion should come from your wrist and thumb. You should not be using your arm as your main source of motion. Rotate your wrist and point your thumb away from the guitar as a wind-up, then reverse that motion to slap the string. The goal is to get a 'click' sound.
 
