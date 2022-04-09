@@ -35,10 +35,10 @@ export const globalStyle = css`
     font-size: 1.6rem;
   }
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
   }
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   p {
     line-height: 1.5em;

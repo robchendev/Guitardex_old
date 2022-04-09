@@ -11,7 +11,7 @@
 }
 
 .tt { /* tooltip */
-  padding: 3px 0 1px 0;
+  padding: 3px 0 1px 0.5px;
   border-bottom: 2px solid var(--color-link);
 }
 .tt:hover {

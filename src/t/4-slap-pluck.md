@@ -17,6 +17,4 @@ artists:
 tags: [thumb, slap, pluck]
 ---
 
-### New Page
-
-stub
+The slap pluck technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be performed by the same hand.

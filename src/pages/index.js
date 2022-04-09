@@ -55,7 +55,7 @@ const EmptyListEntries = styled.div`
   border-radius: ${v.borderRadius};
   user-select: none;
   position: relative;
-  h3 {
+  h4 {
     margin-bottom: 0;
   }
   cursor: pointer;
@@ -70,7 +70,7 @@ const SavedTechnique = styled.div`
   user-select: none;
   position: relative;
   width: 100%;
-  h3 {
+  h4 {
     margin-bottom: 0;
   }
   cursor: pointer;
@@ -351,7 +351,7 @@ const Saved = () => {
           <EmptyListEntries>
             <HelpLinkContainer to='t'>
               <HelpLinkDiv>
-                <h3>Start adding techniques!</h3>
+                <h4>Start adding techniques!</h4>
                 <p>Click here to browse techniques</p>
               </HelpLinkDiv>
             </HelpLinkContainer>
@@ -359,7 +359,7 @@ const Saved = () => {
           <EmptyListEntries>
             <HelpLinkContainer to='help'>
               <HelpLinkDiv>
-                <h3>New to Guitardex?</h3>
+                <h4>New to Guitardex?</h4>
                 <p>Click here for help</p>
               </HelpLinkDiv>
             </HelpLinkContainer>
