@@ -75,6 +75,9 @@ const EmptyListEntries = styled.div`
   transition: 0.3s ease margin;
   :hover {
     margin-left: 1em;
+    ${maxq[1]} {
+      margin-left: 0;
+    }
   }
   border-radius: ${v.borderRadius};
   user-select: none;
@@ -89,6 +92,9 @@ const SavedTechnique = styled.div`
   transition: 0.3s ease margin;
   :hover, :active {
     margin-left: 1em;
+    ${maxq[1]} {
+      margin-left: 0;
+    }
   }
   border-radius: ${v.borderRadius};
   user-select: none;
