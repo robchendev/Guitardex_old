@@ -60,6 +60,9 @@ const DataResultBlock = styled.div`
   :hover {
     margin-left: 1em;
     color: var(--color-link, ${COLORS.link.light});
+    ${maxq[1]} {
+      margin-left: 0;
+    }
   }
 `
 
