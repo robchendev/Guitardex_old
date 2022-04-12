@@ -18,6 +18,9 @@ const ELinkDiv = styled.div`
         background-color: transparent !important;
         color: var(--color-link, ${COLORS.link.light}) !important;
     }
+    h4 {
+        margin-bottom: 0.1em;
+    }
     p {
         color: ${COLORS.placeholder};
         text-transform: capitalize;
@@ -33,6 +36,7 @@ const IdFindData = ({ id }) => {
                         nodes {
                             frontmatter {
                                 id
+                                g
                                 group
                                 title
                                 slug
@@ -49,11 +53,11 @@ const IdFindData = ({ id }) => {
                 // Edit this into a component that displays each link
                 return (
                     <ELinkContainer to={
-                        selection ? selection.frontmatter.group + '/' + selection.frontmatter.slug : `#`
+                        selection ? selection.frontmatter.g + '/' + selection.frontmatter.slug : `#`
                     }>
                         <ELinkDiv>
                             <h4>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</h4>
-                            {selection ? <p>{selection.frontmatter.group} - {selection.frontmatter.category}</p> : <p>Unrecognized</p>}
+                            {selection ? <p>{selection.frontmatter.group} - {selection.frontmatter.category}</p> : <p>Unrecognized ID</p>}
                         </ELinkDiv >
                     </ELinkContainer >
                 )

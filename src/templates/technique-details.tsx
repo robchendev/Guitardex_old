@@ -62,6 +62,14 @@ const EntireWrapper = styled.div`
     transition: none;
   }
 `
+const SaveItemButtonContainer = styled.div`
+  top: 0;
+  right: 0;
+  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
+  height: 3.5em;
+  width: 3.5em;
+`
+
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const {
@@ -89,10 +97,13 @@ function TechniqueDetails({ data }) {
 
           </PageHeader>
           <span>
-            <AddedText>
-              <h4>Saved</h4>
+
+
+            <SaveItemButtonContainer>
               <Save id={id} />
-            </AddedText>
+
+            </SaveItemButtonContainer>
+
           </span>
         </HeadingContainer>
         <VideoContainer>

@@ -1,5 +1,6 @@
 ---
 id: 422
+g: t
 group: technique
 title: 0 - Sample Technique
 demo: https://youtu.be/dQw4w9WgXcQ

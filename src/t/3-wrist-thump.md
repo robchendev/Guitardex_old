@@ -1,5 +1,6 @@
 ---
 id: 3
+g: t
 group: technique
 title: Wrist Thump
 demo: 

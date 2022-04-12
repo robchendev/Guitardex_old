@@ -17,6 +17,15 @@
             ]
         },
         {
+            "v": "0.5.2",
+            "title": "Improved Technique Button UI",
+            "date": "Apr 12, 2022",
+            "new": [
+                "Changed technique buttons from box and checkmark to save icon and checkmark.",
+                "Revamped save button and delete button UI to be more minimalistic"
+            ]
+        },
+        {
             "v": "0.5.1",
             "title": "Created Necessary Pages",
             "date": "Apr 4, 2022",
