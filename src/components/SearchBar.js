@@ -54,7 +54,7 @@ const DataResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
   padding: ${v.mdSpacing};
-  margin: 5px 0;
+  margin: 0 0 5px 0;
   position: relative;
   transition: 0.3s ease margin;
   :hover {
@@ -78,8 +78,15 @@ const DataResultPreReq = styled.p`
 
 const SaveItemButtonContainer = styled.div`
   position: absolute;
-  top: calc(50% - 22px);
-  right: 1em;
+  top: 0;
+  right: 0;
+  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
+  height: 100%;
+  width: 5em;
+  padding: 2px 0 0 6px;
+  ${maxq[1]} {
+    width: 4em;
+  }
 `
 
 const DataResultMetaContainer = styled.div`

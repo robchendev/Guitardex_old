@@ -12,25 +12,48 @@ import { Link } from 'gatsby';
 import { MdDragIndicator } from 'react-icons/md'
 
 const DeleteItemButtonContainer = styled.div`
+
   position: absolute;
-  top: 0.75em;
-  right: 9px;
+  top: 0;
+  right: 0;
+  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
+  height: 100%;
+  width: 5em;
+  
+  ${maxq[1]} {
+    width: 3.5em;
+  }
 `
 const DeleteItemButton = styled.span`
-  background: transparent;
-  opacity: 50%;
-  transition: 0.2s;
-  :hover {
-    background: var(--color-primary, ${COLORS.primary.light});
+    font-family: 'Fredoka';
+    font-size: 22px;
+    
+    letter-spacing: .6px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: var(--color-bg, ${COLORS.bg.light});
+    border-radius: ${v.borderRadius};
+    margin-bottom: ${v.mdSpacing};
     cursor: pointer;
-    color: white;
-    opacity: 100%;
-  }
-  border-radius: ${v.borderRadius};
-  padding: 0.5em 0.25em;
-  font-size: 28px; 
+    transition: 0.3s ease;
+
+    display: inline-flex;
+    justify-content: center;
+`
+
+const DeleteItemIcon = styled.div`
   display: flex;
-  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+  font-size: 30px;
+  transition: 0.3s ease;
+  :hover {
+    color: var(--color-link, ${COLORS.link.light});
+  }
 `
 const TechniqueList = styled.ul`
   padding-bottom: 1em;
@@ -175,6 +198,7 @@ const DeleteButton = styled.button`
   :hover {
     background: #972036;
   }
+  
 `
 const HelpLinkContainer = styled(Link)`
     padding: 0 !important;
@@ -400,7 +424,10 @@ const Saved = () => {
                             <IdFindData id={id} />
                             <DeleteItemButtonContainer>
                               <DeleteItemButton onClick={() => { clearItem(id) }}>
-                                <HiOutlineTrash />
+                                <DeleteItemIcon>
+                                  <HiOutlineTrash />
+                                </DeleteItemIcon>
+
                               </DeleteItemButton>
                             </DeleteItemButtonContainer>
                           </SavedTechnique>

@@ -11,10 +11,10 @@ const SaveButton = styled.button`
     
     letter-spacing: .6px;
     height: 100%;
-    //padding: calc(${v.smSpacing} * 1.5) 0;
+    width: 100%;
+    padding: 6px 0 0 0;
     border: none;
-
-
+    background: var(--color-bg, ${COLORS.bg.light});
     border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
     cursor: pointer;
@@ -28,40 +28,35 @@ const Checkbox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--color-bg2, ${COLORS.bg2.light});
-  border-radius: ${v.borderRadius};
-  padding-top: 5px;
-  border: 2px solid var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
-  width: 2em;
-  height: 2em;
+  
+  width: 100%;
+  height: 100%;
   color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+  transition: 0.3s ease;
   :hover {
-    filter: invert(0.1);
+    color: var(--color-link, ${COLORS.link.light});
   }
 `
 const CheckboxSaved = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--color-bg2, ${COLORS.bg2.light});
-  border-radius: ${v.borderRadius};
-  padding-top: 5px;
-  border: 2px solid var(--color-link, ${COLORS.link.light});
-  width: 2em;
-  height: 2em;
+  
+  
+  width: 100%;
+  height: 100%;
   color: var(--color-link, ${COLORS.link.light});
+  transition: 0.3s ease;
   :hover {
-    filter: invert(0.1);
+    color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   }
 `
 const UnChecked = styled.div`
-  
   margin-bottom: -1px; 
-  font-size: 28px;
+  font-size: 30px;
 `
 const Checked = styled.div`
-  
-  
+
 `
 const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);

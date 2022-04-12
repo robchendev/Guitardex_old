@@ -18,6 +18,9 @@ const ELinkDiv = styled.div`
         background-color: transparent !important;
         color: var(--color-link, ${COLORS.link.light}) !important;
     }
+    h4 {
+        margin-bottom: 0.1em;
+    }
     p {
         color: ${COLORS.placeholder};
         text-transform: capitalize;
