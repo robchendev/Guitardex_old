@@ -135,7 +135,7 @@ function TechniqueDetails({ data }) {
         />
       </EntireWrapper>
 
-    </Layout >
+    </Layout>
   );
 }
 

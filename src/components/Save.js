@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { v, SAVE_KEY } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { ImCheckmark } from 'react-icons/im'
+import { BiSave } from 'react-icons/bi'
 
 const SaveButton = styled.button`
     font-family: 'Fredoka';
@@ -29,24 +30,38 @@ const Checkbox = styled.div`
   align-items: center;
   background: var(--color-bg2, ${COLORS.bg2.light});
   border-radius: ${v.borderRadius};
-
   padding-top: 5px;
   border: 2px solid var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   width: 2em;
   height: 2em;
-
-
+  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   :hover {
-
-    
+    filter: invert(0.1);
+  }
+`
+const CheckboxSaved = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg2, ${COLORS.bg2.light});
+  border-radius: ${v.borderRadius};
+  padding-top: 5px;
+  border: 2px solid var(--color-link, ${COLORS.link.light});
+  width: 2em;
+  height: 2em;
+  color: var(--color-link, ${COLORS.link.light});
+  :hover {
     filter: invert(0.1);
   }
 `
 const UnChecked = styled.div`
-  color: var(--color-bg2, ${COLORS.bg2.light});
+  
+  margin-bottom: -1px; 
+  font-size: 28px;
 `
 const Checked = styled.div`
-  color: var(--color-text, ${COLORS.text.light});
+  
+  
 `
 const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);
@@ -114,7 +129,19 @@ const Save = ({ id }) => {
       updateSave()
       e.preventDefault()
     }}>
-      {saveState ? <Checkbox><Checked><ImCheckmark /></Checked></Checkbox> : <Checkbox><UnChecked><ImCheckmark /></UnChecked></Checkbox>}
+      {saveState ?
+        <CheckboxSaved>
+          <Checked>
+            <ImCheckmark />
+          </Checked>
+        </CheckboxSaved>
+        :
+        <Checkbox>
+          <UnChecked>
+            <BiSave />
+          </UnChecked>
+        </Checkbox>
+      }
     </SaveButton>
   )
 }

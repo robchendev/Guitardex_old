@@ -1,6 +1,6 @@
 ---
 id: 421
-group: t
+group: technique
 title: Hammer Ons
 demo: https://youtu.be/dQw4w9WgXcQ
 description: All of this is unstyled right now and looks terrible. If you're viewing this page from a mobile device then it'll look even worse.

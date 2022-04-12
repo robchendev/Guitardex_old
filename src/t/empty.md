@@ -1,6 +1,6 @@
 ---
 id: 420
-group: t
+group: technique
 title: Empty
 demo:
 description:

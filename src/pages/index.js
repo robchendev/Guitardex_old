@@ -9,10 +9,11 @@ import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import IdFindData from "../components/IdFindData"
 import { Link } from 'gatsby';
+import { MdDragIndicator } from 'react-icons/md'
 
 const DeleteItemButtonContainer = styled.div`
   position: absolute;
-  top: calc(50% - 18px);
+  top: 0.75em;
   right: 9px;
 `
 const DeleteItemButton = styled.span`
@@ -26,8 +27,8 @@ const DeleteItemButton = styled.span`
     opacity: 100%;
   }
   border-radius: ${v.borderRadius};
-  padding: 5px;
-  font-size: 26px; 
+  padding: 0.5em 0.25em;
+  font-size: 28px; 
   display: flex;
   z-index: 99;
 `
@@ -180,14 +181,28 @@ const HelpLinkContainer = styled(Link)`
 `
 
 const HelpLinkDiv = styled.div`
-    padding: ${v.mdSpacing} !important;
-    color: var(--color-text, ${COLORS.text.light}) !important;
+  padding: ${v.mdSpacing} !important;
+  color: var(--color-text, ${COLORS.text.light}) !important;
+  background-color: transparent !important;
+  :hover {
+    border: none !important;
     background-color: transparent !important;
-    :hover {
-        border: none !important;
-        background-color: transparent !important;
-        color: var(--color-link, ${COLORS.link.light}) !important;
-    }
+    color: var(--color-link, ${COLORS.link.light}) !important;
+  }
+`
+
+const MoveableContainer = styled.div`
+  display: flex;
+  width: 100%;
+`
+
+const DragIconContainer = styled.div`
+  position: absolute;
+  display: flex;
+  margin-top: 1em;
+  color: ${COLORS.placeholder};
+  font-size: 1.7em;
+  margin-left: -0.25em;
 `
 const Saved = () => {
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -377,14 +392,19 @@ const Saved = () => {
                   <Draggable key={id} draggableId={id.toString()} index={index}>
                     {(provided) => (
                       <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                        <SavedTechnique>
-                          <IdFindData id={id} />
-                          <DeleteItemButtonContainer>
-                            <DeleteItemButton onClick={() => { clearItem(id) }}>
-                              <HiOutlineTrash />
-                            </DeleteItemButton>
-                          </DeleteItemButtonContainer>
-                        </SavedTechnique>
+                        <MoveableContainer>
+                          <DragIconContainer>
+                            <MdDragIndicator />
+                          </DragIconContainer>
+                          <SavedTechnique>
+                            <IdFindData id={id} />
+                            <DeleteItemButtonContainer>
+                              <DeleteItemButton onClick={() => { clearItem(id) }}>
+                                <HiOutlineTrash />
+                              </DeleteItemButton>
+                            </DeleteItemButtonContainer>
+                          </SavedTechnique>
+                        </MoveableContainer>
                       </li>
                     )}
                   </Draggable>

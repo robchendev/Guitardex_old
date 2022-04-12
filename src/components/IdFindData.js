@@ -18,6 +18,10 @@ const ELinkDiv = styled.div`
         background-color: transparent !important;
         color: var(--color-link, ${COLORS.link.light}) !important;
     }
+    p {
+        color: ${COLORS.placeholder};
+        text-transform: capitalize;
+    }
 `
 
 const IdFindData = ({ id }) => {
@@ -32,6 +36,7 @@ const IdFindData = ({ id }) => {
                                 group
                                 title
                                 slug
+                                category
                             }
                         }
                     }
@@ -48,8 +53,9 @@ const IdFindData = ({ id }) => {
                     }>
                         <ELinkDiv>
                             <h4>{selection ? selection.frontmatter.title : `Unknown (id: ${id})`}</h4>
-                        </ELinkDiv>
-                    </ELinkContainer>
+                            {selection ? <p>{selection.frontmatter.group} - {selection.frontmatter.category}</p> : <p>Unrecognized</p>}
+                        </ELinkDiv >
+                    </ELinkContainer >
                 )
             }}
         />

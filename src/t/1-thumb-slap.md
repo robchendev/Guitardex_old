@@ -1,6 +1,6 @@
 ---
 id: 1
-group: t
+group: technique
 title: Thumb Slap
 demo: 
 description:
