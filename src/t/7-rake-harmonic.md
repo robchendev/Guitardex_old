@@ -1,5 +1,6 @@
 ---
 id: 7
+g: t
 group: technique
 title: Rake Harmonic
 demo: 

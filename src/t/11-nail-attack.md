@@ -1,5 +1,6 @@
 ---
 id: 11
+g: t
 group: technique
 title: Nail Attack
 demo: 

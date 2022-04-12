@@ -1,5 +1,6 @@
 ---
 id: 6
+g: t
 group: technique
 title: Artificial Harmonic
 demo: 

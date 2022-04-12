@@ -38,13 +38,13 @@ const TechniqueList = styled.ul`
   li {
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 0 0 5px 0;
   }
   transition: 0.3s ease padding;
 `
 const EmptyList = styled.div`
   div {
-    margin: 5px 0;
+    margin: 0 0 5px 0;
   }
 `
 const EmptyListEntries = styled.div`
@@ -64,7 +64,7 @@ const EmptyListEntries = styled.div`
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s ease margin;
-  :hover {
+  :hover, :active {
     margin-left: 1em;
   }
   border-radius: ${v.borderRadius};
@@ -386,7 +386,7 @@ const Saved = () => {
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
           {(provided) => (
-            <TechniqueList iqueList {...provided.droppableProps} ref={provided.innerRef}>
+            <TechniqueList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {
                 return (
                   <Draggable key={id} draggableId={id.toString()} index={index}>
