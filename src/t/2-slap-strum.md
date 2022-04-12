@@ -1,6 +1,6 @@
 ---
 id: 2
-group: t
+group: technique
 title: Slap Strum
 demo: https://youtu.be/dQw4w9WgXcQ
 description:

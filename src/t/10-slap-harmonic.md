@@ -1,6 +1,6 @@
 ---
 id: 10
-group: t
+group: technique
 title: Slap Harmonic
 demo: 
 description:

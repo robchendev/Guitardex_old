@@ -1,6 +1,6 @@
 ---
 id: 9
-group: t
+group: technique
 title: Tap Harmonic
 demo: 
 description:

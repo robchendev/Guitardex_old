@@ -1,6 +1,6 @@
 ---
 id: 5
-group: t
+group: technique
 title: Natural Harmonic
 demo: 
 description:

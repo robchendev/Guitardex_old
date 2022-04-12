@@ -1,6 +1,6 @@
 ---
 id: 12
-group: t
+group: technique
 title: Palm Mute
 demo: 
 description:
