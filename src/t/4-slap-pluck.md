@@ -18,9 +18,16 @@ artists:
 tags: [thumb, slap, pluck]
 ---
 
+Video:
+- Slap pluck (normal)
+- Slap pluck (twist)
+- remake the videos with thumbpick later
+
 The slap pluck is used to target pluck specific strings at the same time as a thumb slap.
 
 This technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be performed by the same hand.
+
+Like the slap strum, the slap pluck is commonly notated with a few notes above an X. Unlike the slap strum, the slap pluck is not notated with a strum arrow.
 
 #### Slap pluck (with twist)
 
