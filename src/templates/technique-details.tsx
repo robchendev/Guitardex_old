@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
 import { Explanation, DarkBackground, VideoContainer } from "./technique-styling"
@@ -73,7 +73,7 @@ const SaveItemButtonContainer = styled.div`
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const {
-    id, title, demo, slug, exercises, prereqs, category
+    id, g, title, demo, exercises, prereqs
   } = data.allInfo.frontmatter;
   return (
     <Layout>
@@ -88,7 +88,7 @@ function TechniqueDetails({ data }) {
                 prereqs.map((prereq, index) => (
                   <span key={index}>
                     {index > 0 && ", "}
-                    <a href={prereq.slug}>{prereq.name}</a>
+                    <Link to={"/" + g + "/" + prereq.slug}>{prereq.name}</Link>
                   </span>
                 ))
                 :
@@ -156,23 +156,18 @@ export const query = graphql`
       html
       frontmatter {
         id
-        group
+        g
         title
         demo
-        slug
         prereqs {
           name
           slug
         }
-        artists
-        category
         exercises {
           link
           text
           slce
         }
-        tags
-        description
       }
     }
   }
