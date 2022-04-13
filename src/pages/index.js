@@ -211,7 +211,7 @@ const HelpLinkContainer = styled(Link)`
 `
 
 const HelpLinkDiv = styled.div`
-  padding: ${v.mdSpacing} !important;
+  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} !important;
   color: var(--color-text, ${COLORS.text.light}) !important;
   background-color: transparent !important;
   :hover {
