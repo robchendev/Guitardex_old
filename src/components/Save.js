@@ -95,7 +95,7 @@ const Save = ({ id }) => {
   }, [index, savedObj.n, savedObj.e]);
 
   const addSave = (thisPage) => {
-    const newSavedItems = [thisPage].concat(savedObj.e) // [{"g":"tec","s":"wrist-thump"}...]
+    const newSavedItems = savedObj.e.concat(thisPage) // [{"g":"tec","s":"wrist-thump"}...]
     let newSaved = { "n": savedObj.n, "e": newSavedItems }
     localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) // make save into a CONST VARIABLE later
     setSaveState(true)

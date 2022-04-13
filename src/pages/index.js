@@ -219,6 +219,9 @@ const HelpLinkDiv = styled.div`
     background-color: transparent !important;
     color: var(--color-link, ${COLORS.link.light}) !important;
   }
+  p {
+    color: ${COLORS.placeholder};
+  }
 `
 
 const MoveableContainer = styled.div`
