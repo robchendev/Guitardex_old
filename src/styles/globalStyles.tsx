@@ -63,10 +63,12 @@ export const globalStyle = css`
     padding-bottom: calc(100% / (16 / 9));
   }
 
+  // This fixes tooltip FOUC
+  // A line shows up at page bottom every reload if this is removed
+  // https://github.com/wwayne/react-tooltip/issues/588
   .__react_component_tooltip {
     position: fixed;
     opacity: 0 !important;
-
     &.show {
       opacity: 1 !important;
     }
