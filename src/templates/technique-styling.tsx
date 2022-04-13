@@ -22,7 +22,7 @@ export const DarkBackground = styled.div`
   p {
     margin: 0;
   }
-
+  z-index: 5; // This is to keep the black line from react-tooltip from showing
 `
 export const Explanation = styled.div`
 
