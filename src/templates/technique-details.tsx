@@ -122,7 +122,7 @@ function TechniqueDetails({ data }) {
           }
         </Explanation>
 
-        <DarkBackground>
+        {/* <DarkBackground>
           <h4>Tabs</h4>
           {exercises ?
             exercises.map(({ text, link, slce }) => (
@@ -135,9 +135,14 @@ function TechniqueDetails({ data }) {
             :
             <p>There are no tabs.</p>
           }
-        </DarkBackground>
+        </DarkBackground> */}
         <ReactTooltip
-
+          className="ttEdit"
+          arrowColor="transparent"
+          offset={{ top: -12 }}
+          effect="solid"
+          scrollHide={false}
+          resizeHide={false}
         />
       </EntireWrapper>
 
