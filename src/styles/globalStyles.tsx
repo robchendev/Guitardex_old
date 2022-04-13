@@ -1,5 +1,6 @@
 import { COLORS } from "../styles/theme"
 import { css } from '@emotion/react'
+import { maxq } from './variables'
 
 export const globalStyle = css`
   *, *::before, *::after {
@@ -33,12 +34,21 @@ export const globalStyle = css`
   }
   h2 {
     font-size: 1.6rem;
+    ${maxq[1]} {
+      font-size: 1.4rem;
+    }
   }
   h3 {
     font-size: 1.4rem;
+    ${maxq[1]} {
+      font-size: 1.25rem;
+    }
   }
   h4 {
     font-size: 1.2rem;
+    ${maxq[1]} {
+      font-size: 1.1rem;
+    }
   }
   p {
     line-height: 1.5em;
