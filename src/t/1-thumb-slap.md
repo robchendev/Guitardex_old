@@ -16,8 +16,7 @@ tags: [thumb, slap]
 Video: 
 - slap one string no thumbpick
 - slap multiple strings no thumbpick
-- slap one string thumbpick
-- slap multiple strings thumbpick
+- remake the videos with thumbpick later
 
 The slap sound comes from the guitar string coming in contact with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> itself. This sound is similar to a snare drum, commonly used on beats 2 and 4 in modern music.
 

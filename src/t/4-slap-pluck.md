@@ -18,7 +18,16 @@ artists:
 tags: [thumb, slap, pluck]
 ---
 
-The slap pluck technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be performed by the same hand.
+Video:
+- Slap pluck (normal)
+- Slap pluck (twist)
+- remake the videos with thumbpick later
+
+The slap pluck is used to target pluck specific strings at the same time as a thumb slap.
+
+This technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be performed by the same hand.
+
+Like the slap strum, the slap pluck is commonly notated with a few notes above an X. Unlike the slap strum, the slap pluck is not notated with a strum arrow.
 
 #### Slap pluck (with twist)
 
@@ -28,6 +37,6 @@ A slap pluck can also be done in one movement through the rotation of your wrist
 
 #### Slap Pluck vs Slap Strum?
 
-The slap pluck is an useful alternative to the slap strum when specific strings are to be played during the slap. Doing a slap strum on one or two strings sounds very different - the notes are the same, but the <span class="tt" data-tip="the note's sound depending on your guitar and how you play">tone</span> of the notes are different. 
+The slap pluck is a useful alternative to the slap strum when specific strings are to be played during the slap. It is more accurate to slap pluck when targeting specific notes than to slap strum the same notes. Doing a slap pluck on one or two strings sounds very different in <span class="tt" data-tip="the note's sound depending on your guitar and how you play">tone</span> when compared to a slap strum. 
 
 A slap strum's tone is similar to an aggressive downpick while a slap pluck's tone is close to your usual plucking tone. A slap pluck also makes controlling dynamics easier and when done right.

@@ -21,8 +21,7 @@ tags: [thumb, slap, strum]
 Video: 
 - slap strum 4 strings no thumbpick
 - slap strum 1 string no thumbpick
-- slap strum 4 strings thumbpick
-- slap strum 1 string thumbpick
+- remake the videos with thumbpick later
 
 The slap strum expands on the thumb slap technique by doing a quick strum at the same time. The strum is done by extending your index or middle finger quickly to brush across the strings as soon as the thumb slaps the string.
 

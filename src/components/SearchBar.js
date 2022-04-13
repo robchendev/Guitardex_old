@@ -53,7 +53,7 @@ const DataResultBlockLink = styled(Link)`
 const DataResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
-  padding: ${v.mdSpacing};
+  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
   margin: 0 0 5px 0;
   position: relative;
   transition: 0.3s ease margin;

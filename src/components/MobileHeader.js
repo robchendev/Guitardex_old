@@ -4,6 +4,7 @@ import { v, minq } from '../styles/variables'
 import { COLORS } from '../styles/theme'
 import { css } from '@emotion/css'
 import { FiMenu, FiXCircle } from 'react-icons/fi'
+import { Link } from 'gatsby'
 
 const MHeaderRelative = styled.div`
     padding-bottom: 4em;
@@ -37,6 +38,14 @@ const Logo = styled.div`
     margin-left: 5%;
 `
 
+const MobileHeaderLink = styled(Link)`
+    text-decoration: none;
+    color: var(--color-text, ${COLORS.text.light});
+    h2 {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+`
 
 
 const MobileHeader = () => {
@@ -56,12 +65,9 @@ const MobileHeader = () => {
             <MHeader>
                 <MobileContainer>
                     <Logo>
-                        <h4 className={css`
-                            margin-bottom: 0;
-                            font-size: 20px;
-                        `}>
-                            Guitardex
-                        </h4>
+                        <MobileHeaderLink to="/">
+                            <h2>Guitardex</h2>
+                        </MobileHeaderLink>
                     </Logo>
                     <MenuIcon onClick={() => showSidebar()}>
                         {menuActive ? <FiXCircle /> : <FiMenu />}
