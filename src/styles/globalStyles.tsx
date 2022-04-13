@@ -62,4 +62,13 @@ export const globalStyle = css`
     display: block;
     padding-bottom: calc(100% / (16 / 9));
   }
+
+  .__react_component_tooltip {
+    position: fixed;
+    opacity: 0 !important;
+
+    &.show {
+      opacity: 1 !important;
+    }
+  }
 `
