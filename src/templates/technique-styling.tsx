@@ -22,7 +22,6 @@ export const DarkBackground = styled.div`
   p {
     margin: 0;
   }
-  z-index: 1000 !important; //react tooltip has a bug and its 999 z index
 `
 export const Explanation = styled.div`
 

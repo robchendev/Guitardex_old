@@ -137,12 +137,7 @@ function TechniqueDetails({ data }) {
           }
         </DarkBackground>
         <ReactTooltip
-          className="ttEdit"
-          arrowColor="transparent"
-          offset={{ top: -12 }}
-          effect="solid"
-          scrollHide={false}
-          resizeHide={false}
+
         />
       </EntireWrapper>
 
