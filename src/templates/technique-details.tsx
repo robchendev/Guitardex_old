@@ -60,6 +60,7 @@ const EntireWrapper = styled.div`
     max-width: 13em;
     text-align: center;
     transition: none;
+    z-index: 1000; //react tooltip has a bug and its 999 z index
   }
 `
 const SaveItemButtonContainer = styled.div`
