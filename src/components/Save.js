@@ -18,7 +18,7 @@ const SaveButton = styled.button`
     border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
     cursor: pointer;
-    transition: 0.3s ease;
+    
 
     display: inline-flex;
     justify-content: center;
@@ -32,7 +32,7 @@ const Checkbox = styled.div`
   width: 100%;
   height: 100%;
   color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
-  transition: 0.3s ease;
+  
   :hover {
     color: var(--color-link, ${COLORS.link.light});
   }
@@ -46,7 +46,7 @@ const CheckboxSaved = styled.div`
   width: 100%;
   height: 100%;
   color: var(--color-link, ${COLORS.link.light});
-  transition: 0.3s ease;
+  
   :hover {
     color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   }

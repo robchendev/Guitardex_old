@@ -36,7 +36,7 @@ const DeleteItemButton = styled.span`
     border-radius: ${v.borderRadius};
     margin-bottom: ${v.mdSpacing};
     cursor: pointer;
-    transition: 0.3s ease;
+    
 
     display: inline-flex;
     justify-content: center;
@@ -50,7 +50,7 @@ const DeleteItemIcon = styled.div`
   height: 100%;
   color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   font-size: 30px;
-  transition: 0.3s ease;
+  
   :hover {
     color: var(--color-link, ${COLORS.link.light});
   }
@@ -229,7 +229,7 @@ const MoveableContainer = styled.div`
 const DragIconContainer = styled.div`
   position: absolute;
   display: flex;
-  margin-top: 1em;
+  margin-top: 0.85em;
   color: ${COLORS.placeholder};
   font-size: 1.7em;
   margin-left: -0.25em;

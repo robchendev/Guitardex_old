@@ -17,7 +17,7 @@ const Help = () => {
       <h4>Add Techniques to Your Guitardex</h4>
       <CustomOL>
         <li>Go to the <Link to="/t">Techniques</Link> library</li>
-        <li>Click the checkbox at the right of the technique you want saved</li>
+        <li>Click the save icon at the right of the technique you want saved</li>
         <li>Go to your <Link to="/">Guitardex</Link> to view saved techniques</li>
       </CustomOL>
       <br />

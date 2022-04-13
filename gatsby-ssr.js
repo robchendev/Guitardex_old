@@ -117,6 +117,10 @@ const MagicScriptTag = () => {
         ? '${COLORS.ttText.light}'
         : '${COLORS.ttText.dark}'
     );
+    root.style.setProperty(
+      '--color-placeholder',
+      '${COLORS.placeholder}'
+    );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;
