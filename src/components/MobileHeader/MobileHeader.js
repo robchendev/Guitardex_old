@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FiMenu, FiXCircle } from 'react-icons/fi'
 import { MHeaderRelative, MHeader, MobileContainer, Logo, MobileHeaderLink, MenuIcon } from './styles'
-
+ 
 const MobileHeader = () => {
 	const [menuActive, setMenuActive] = useState(false)
 	const showSidebar = () => {

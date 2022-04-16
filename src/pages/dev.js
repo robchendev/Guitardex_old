@@ -42,5 +42,5 @@ const Dev = () => {
 		</Layout>
 	)
 }
-
+ 
 export default Dev
