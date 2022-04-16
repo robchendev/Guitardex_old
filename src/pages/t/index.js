@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
-import Layout from "../../components/Layout/Layout"
+import Layout from "../../newcomp/Layout/Layout"
 import { TechList } from "../../templates/technique-styling"
 import SearchBar from "../../newcomp/SearchBar/SearchBar"
 

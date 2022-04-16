@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/Layout/Layout"
+import Layout from "../newcomp/Layout/Layout"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 

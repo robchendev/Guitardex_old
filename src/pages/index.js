@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../components/Layout/Layout"
+import Layout from "../newcomp/Layout/Layout"
 import styled from "@emotion/styled"
 import { useLocation } from "@reach/router"
 import { v, maxq, SAVE_KEY } from '../styles/globalstyles/variables'
