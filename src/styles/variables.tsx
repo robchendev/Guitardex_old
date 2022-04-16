@@ -37,15 +37,3 @@ export const maxq = breakpoints.map(
 export const minq = breakpoints.map(
   bp => `@media (min-width: ${bp + 1}px)`
 )
-
-// const Container = styled.div`
-//   ${mq["sm"]} {
-//     max-width: 750px;
-//   }
-//   ${mq["md"]} {
-//     max-width: 970px;
-//   }
-//   ${mq["lg"]} {
-//     max-width: 1170px;
-//   }
-// `;

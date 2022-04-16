@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { COLORS } from '../../styles/theme'
-import { v } from '../../styles/variables'
+import { btnReset, v } from '../../styles/variables'
 
 export const Search = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
@@ -17,5 +17,13 @@ export const Search = styled.div`
     outline: none;
     border: none;
     background: transparent;
+  }
+`
+export const SearchIcon = styled.button`
+  ${btnReset};
+  padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
+  display: flex;
+  svg {
+    font-size: 20px;
   }
 `

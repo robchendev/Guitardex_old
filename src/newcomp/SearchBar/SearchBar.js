@@ -1,8 +1,7 @@
 
 import React, { useState } from 'react'
-import { SearchIcon } from '../../components/Sidebar/styles'
 import { FiSearch } from 'react-icons/fi'
-import { Search } from './styles'
+import { Search, SearchIcon } from './styles'
 import SearchResult from '../SearchResult/SearchResult'
 
 const SearchBar = ({ placeholder, data }) => {
