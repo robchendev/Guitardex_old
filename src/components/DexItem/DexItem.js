@@ -52,5 +52,5 @@ const DexItem = ({ id }) => {
 		/>
 	)
 }
-
+ 
 export default DexItem
