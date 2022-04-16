@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { SAVE_KEY } from '../../styles/variables'
 import { ImCheckmark } from 'react-icons/im'
 import { BiSave } from 'react-icons/bi'
-import { SaveButton, UnChecked, Checked } from './Save-style'
+import { SaveButton, UnChecked, Checked } from './styles'
 
 const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);
@@ -37,13 +37,13 @@ const Save = ({ id }) => {
       "n": savedObj.n,
       "e": savedObj.e
     }
-    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) // make save into a CONST VARIABLE later
+    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) 
   }, [index, savedObj.n, savedObj.e]);
 
   const addSave = (thisPage) => {
     const newSavedItems = savedObj.e.concat(thisPage) // [{"g":"tec","s":"wrist-thump"}...]
     let newSaved = { "n": savedObj.n, "e": newSavedItems }
-    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) // make save into a CONST VARIABLE later
+    localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved))
     setSaveState(true)
   }
 
@@ -71,17 +71,7 @@ const Save = ({ id }) => {
       e.preventDefault()
     }}>
       {saveState ?
-
-          <Checked>
-            <ImCheckmark />
-          </Checked>
-
-        :
-
-          <UnChecked>
-            <BiSave />
-          </UnChecked>
-
+        <Checked><ImCheckmark /></Checked> : <UnChecked><BiSave /></UnChecked>
       }
     </SaveButton>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
-import { v } from '../styles/variables';
+import { v, maxq } from '../styles/variables';
 import { Link } from 'gatsby';
 import { COLORS } from '../styles/theme';
 
@@ -13,6 +13,10 @@ const ELinkDiv = styled.div`
     padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} !important;
     color: var(--color-text, ${COLORS.text.light}) !important;
     background-color: transparent !important;
+    width: calc(100% - 4.5em);
+    ${maxq[1]} {
+        width: calc(100% - 3.5em);
+    } 
     :hover {
         border: none !important;
         background-color: transparent !important;

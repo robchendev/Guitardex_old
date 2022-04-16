@@ -2,6 +2,15 @@ import styled from '@emotion/styled'
 import { COLORS } from '../../styles/theme'
 import { v } from '../../styles/variables'
 
+export const UnChecked = styled.div`
+  font-size: 30px;
+  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+`
+export const Checked = styled.div`
+  margin-top: -2px;
+  font-size: 24px;
+  color: var(--color-link, ${COLORS.link.light});
+`
 export const SaveButton = styled.button`
   display: flex;
   justify-content: center;
@@ -14,19 +23,12 @@ export const SaveButton = styled.button`
   border-radius: ${v.borderRadius};
   margin-bottom: ${v.mdSpacing};
   cursor: pointer;
-`
-export const UnChecked = styled.div`
-  font-size: 30px;
-  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
   :hover {
-    color: var(--color-link, ${COLORS.link.light});
-  }
-`
-export const Checked = styled.div`
-  margin-top: -2px;
-  font-size: 24px;
-  color: var(--color-link, ${COLORS.link.light});
-  :hover {
-    color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+    ${UnChecked} {
+      color: var(--color-link, ${COLORS.link.light});
+    }
+    ${Checked} {
+      color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+    }
   }
 `

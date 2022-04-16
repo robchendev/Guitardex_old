@@ -49,7 +49,7 @@ export const SSearch = styled.div`
   display: flex;
 `
 
-export const SSearchIcon = styled.button`
+export const SearchIcon = styled.button`
   ${btnReset};
   padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
   display: flex;

@@ -18,7 +18,7 @@ const DeleteItemButtonContainer = styled.div`
   right: 0;
   border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
   height: 100%;
-  width: 5em;
+  width: 4.5em;
   
   ${maxq[1]} {
     width: 3.5em;
