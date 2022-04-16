@@ -17,6 +17,7 @@ export const Search = styled.div`
     outline: none;
     border: none;
     background: transparent;
+    color: var(--color-text, ${COLORS.text.light});
   }
 `
 export const SearchIcon = styled.button`

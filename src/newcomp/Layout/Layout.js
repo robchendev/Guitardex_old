@@ -1,6 +1,6 @@
+import React from "react"
 import Sidebar from "../Sidebar/Sidebar"
 import { MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
-import React from "react"
 import { Helmet } from "react-helmet"
 import { globalStyle } from "../../styles/globalstyles/globalStyles"
 import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme'
