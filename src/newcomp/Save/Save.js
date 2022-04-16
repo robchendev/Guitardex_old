@@ -1,63 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import styled from '@emotion/styled'
-import { v, SAVE_KEY } from '../styles/variables'
-import { COLORS } from '../styles/theme'
+import { SAVE_KEY } from '../../styles/variables'
 import { ImCheckmark } from 'react-icons/im'
 import { BiSave } from 'react-icons/bi'
+import { SaveButton, UnChecked, Checked } from './Save-style'
 
-const SaveButton = styled.button`
-    font-family: 'Fredoka';
-    font-size: 22px;
-    
-    letter-spacing: .6px;
-    height: 100%;
-    width: 100%;
-    padding: 8px 0 0 0;
-    border: none;
-    background: var(--color-bg, ${COLORS.bg.light});
-    border-radius: ${v.borderRadius};
-    margin-bottom: ${v.mdSpacing};
-    cursor: pointer;
-    
-
-    display: inline-flex;
-    justify-content: center;
-`
-
-const Checkbox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  width: 100%;
-  height: 100%;
-  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
-  
-  :hover {
-    color: var(--color-link, ${COLORS.link.light});
-  }
-`
-const CheckboxSaved = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  
-  width: 100%;
-  height: 100%;
-  color: var(--color-link, ${COLORS.link.light});
-  
-  :hover {
-    color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
-  }
-`
-const UnChecked = styled.div`
-  margin-bottom: -1px; 
-  font-size: 30px;
-`
-const Checked = styled.div`
-
-`
 const Save = ({ id }) => {
   const [saveState, setSaveState] = useState(false);
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -125,17 +71,17 @@ const Save = ({ id }) => {
       e.preventDefault()
     }}>
       {saveState ?
-        <CheckboxSaved>
+
           <Checked>
             <ImCheckmark />
           </Checked>
-        </CheckboxSaved>
+
         :
-        <Checkbox>
+
           <UnChecked>
             <BiSave />
           </UnChecked>
-        </Checkbox>
+
       }
     </SaveButton>
   )

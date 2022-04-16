@@ -4,7 +4,7 @@ import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
 import { Explanation, DarkBackground, VideoContainer } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
-import Save from '../components/Save';
+import Save from '../newcomp/Save/Save';
 import styled from '@emotion/styled';
 import { v } from '../styles/variables';
 import ReactTooltip from 'react-tooltip';
@@ -68,6 +68,7 @@ const SaveItemButtonContainer = styled.div`
   border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
   height: 3.5em;
   width: 3.5em;
+
 `
 
 function TechniqueDetails({ data }) {

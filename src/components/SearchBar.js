@@ -5,9 +5,9 @@ import { COLORS } from '../styles/theme'
 import { v, maxq } from '../styles/variables'
 import { SSearchIcon } from './Sidebar/styles'
 import { FiSearch } from 'react-icons/fi'
-import Save from './Save'
+import Save from '../newcomp/Save/Save'
 
-export const Search = styled.div`
+const Search = styled.div`
   
 `
 
