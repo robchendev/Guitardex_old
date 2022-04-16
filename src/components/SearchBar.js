@@ -86,7 +86,7 @@ const SaveItemButtonContainer = styled.div`
   border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
   height: 100%;
   width: 5em;
-  padding: 2px 0 0 6px;
+  padding: 0 0 0 6px;
   ${maxq[1]} {
     width: 4em;
   }

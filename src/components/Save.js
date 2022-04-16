@@ -12,7 +12,7 @@ const SaveButton = styled.button`
     letter-spacing: .6px;
     height: 100%;
     width: 100%;
-    padding: 6px 0 0 0;
+    padding: 8px 0 0 0;
     border: none;
     background: var(--color-bg, ${COLORS.bg.light});
     border-radius: ${v.borderRadius};
@@ -95,7 +95,7 @@ const Save = ({ id }) => {
   }, [index, savedObj.n, savedObj.e]);
 
   const addSave = (thisPage) => {
-    const newSavedItems = [thisPage].concat(savedObj.e) // [{"g":"tec","s":"wrist-thump"}...]
+    const newSavedItems = savedObj.e.concat(thisPage) // [{"g":"tec","s":"wrist-thump"}...]
     let newSaved = { "n": savedObj.n, "e": newSavedItems }
     localStorage.setItem(SAVE_KEY, JSON.stringify(newSaved)) // make save into a CONST VARIABLE later
     setSaveState(true)

@@ -87,24 +87,7 @@ const EmptyListEntries = styled.div`
   }
   cursor: pointer;
 `
-const SavedTechnique = styled.div`
-  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
-  transition: 0.3s ease margin;
-  :hover, :active {
-    margin-left: 1em;
-    ${maxq[1]} {
-      margin-left: 0;
-    }
-  }
-  border-radius: ${v.borderRadius};
-  user-select: none;
-  position: relative;
-  width: 100%;
-  h4 {
-    margin-bottom: 0;
-  }
-  cursor: pointer;
-`
+
 const SaveNameInput = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
@@ -219,20 +202,45 @@ const HelpLinkDiv = styled.div`
     background-color: transparent !important;
     color: var(--color-link, ${COLORS.link.light}) !important;
   }
+  p {
+    color: ${COLORS.placeholder};
+  }
 `
-
+const SavedTechnique = styled.div`
+  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
+  transition: 0.3s ease;
+  transition-property: margin, padding;
+  :hover, :active {
+    margin-left: 1em;
+    padding-left: 0.5em;
+    ${maxq[1]} {
+      margin-left: 0;
+    }
+    > div {
+      opacity: 1;
+    }              
+  }
+  border-radius: ${v.borderRadius};
+  user-select: none;
+  position: relative;
+  width: 100%;
+  h4 {
+    margin-bottom: 0;
+  }
+  cursor: pointer;
+`
 const MoveableContainer = styled.div`
   display: flex;
   width: 100%;
 `
-
 const DragIconContainer = styled.div`
   position: absolute;
-  display: flex;
+  opacity: 0;
+  transition: 0.3s ease opacity;
   margin-top: 0.85em;
   color: ${COLORS.placeholder};
   font-size: 1.7em;
-  margin-left: -0.25em;
+  margin-left: -0.325em;
 `
 const Saved = () => {
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -266,7 +274,7 @@ const Saved = () => {
   }
   const location = useLocation().pathname
   const handleNameChange = (e) => {
-    const newName = e.target.value.replace(/[-=~]/g, '')
+    const newName = e.target.value.replace(/[-=~']/g, '')
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -423,10 +431,12 @@ const Saved = () => {
                     {(provided) => (
                       <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                         <MoveableContainer>
-                          <DragIconContainer>
-                            <MdDragIndicator />
-                          </DragIconContainer>
+                             
+                          
                           <SavedTechnique>
+                            <DragIconContainer>
+                              <MdDragIndicator />
+                            </DragIconContainer>
                             <IdFindData id={id} />
                             <DeleteItemButtonContainer>
                               <DeleteItemButton onClick={() => { clearItem(id) }}>
