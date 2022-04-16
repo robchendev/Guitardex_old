@@ -1,247 +1,14 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
-import styled from "@emotion/styled"
 import { useLocation } from "@reach/router"
-import { v, maxq, SAVE_KEY } from '../styles/variables'
-import { COLORS } from '../styles/theme'
-import { btnReset } from "../styles/variables"
+import { SAVE_KEY } from '../styles/globalstyles/variables'
 import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
-import IdFindData from "../components/IdFindData"
-import { Link } from 'gatsby';
+import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer } from "../styles/pagestyles/index"
 
-const DeleteItemButtonContainer = styled.div`
 
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
-  height: 100%;
-  width: 5em;
-  
-  ${maxq[1]} {
-    width: 3.5em;
-  }
-`
-const DeleteItemButton = styled.span`
-    font-family: 'Fredoka';
-    font-size: 22px;
-    
-    letter-spacing: .6px;
-    height: 100%;
-    width: 100%;
-    border: none;
-    background: var(--color-bg, ${COLORS.bg.light});
-    border-radius: ${v.borderRadius};
-    margin-bottom: ${v.mdSpacing};
-    cursor: pointer;
-    
-
-    display: inline-flex;
-    justify-content: center;
-`
-
-const DeleteItemIcon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
-  font-size: 30px;
-  
-  :hover {
-    color: var(--color-link, ${COLORS.link.light});
-  }
-`
-const TechniqueList = styled.ul`
-  padding-bottom: 1em;
-  list-style-type: none;
-  li {
-    display: flex;
-    align-items: center;
-    margin: 0 0 5px 0;
-  }
-  transition: 0.3s ease padding;
-`
-const EmptyList = styled.div`
-  div {
-    margin: 0 0 5px 0;
-  }
-`
-const EmptyListEntries = styled.div`
-  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
-  transition: 0.3s ease margin;
-  :hover {
-    margin-left: 1em;
-    ${maxq[1]} {
-      margin-left: 0;
-    }
-  }
-  border-radius: ${v.borderRadius};
-  user-select: none;
-  position: relative;
-  h4 {
-    margin-bottom: 0;
-  }
-  cursor: pointer;
-`
-
-const SaveNameInput = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light});
-  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
-  border-radius: ${v.borderRadius};
-  input {
-    padding: 0 ${v.mdSpacing} 0 0;
-    font-family: inherit;
-    letter-spacing: inherit;
-    font-size: 18px;
-    width: 100%;
-    outline: none;
-    border: none;
-    color: inherit;
-    background: transparent;
-  }
-  display: flex;
-  margin-bottom: 1em;
-`
-const SaveNameIcon = styled.button`
-  ${btnReset};
-  padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
-  display: flex;
-  svg {
-    font-size: 20px;
-  }
-`
-const ExportSave = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light});
-  border-radius: ${v.borderRadius};
-  input {
-    resize: none;
-    white-space: nowrap;
-    width:100%;
-    padding: 0 ${v.smSpacing};
-    font-family: inherit;
-    letter-spacing: inherit;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    border: none;
-    background: transparent;
-    color: ${COLORS.placeholder};
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    padding: calc(${v.smSpacing} * 1.3);
-  }
-  button {
-    width:30%;
-    padding: calc(${v.smSpacing} * 1.3);
-    color: #fff;
-    background-color: var(--color-primary, ${COLORS.primary.light});
-    border: none;
-    border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
-    cursor: pointer;
-    transition: 0.3s ease;
-    :hover {
-      background: #972036;
-    }
-    position: relative;
-    :before {
-      content: "";
-      position: absolute;
-      left: -2em;
-      top: 0;
-      width: 2em;
-      height: 100%;
-      background: linear-gradient(to left, var(--color-bg, ${COLORS.bg.light}), transparent); 
-    }
-  }
-  ${maxq[1]} {
-    button {
-      width: 50%;
-    } 
-  }
-  display: flex;
-  align-items:center;
-  margin-bottom: ${v.mdSpacing};
-`
-const DeleteButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-const DeleteButton = styled.button`
-  width:20%; 
-  padding: calc(${v.smSpacing} * 1.3);
-  color: #fff;
-  background-color: var(--color-primary, ${COLORS.primary.light});
-  border: none;
-  border-radius: ${v.borderRadius};
-  ${maxq[1]} {
-    width:32%;
-  }
-  cursor: pointer;
-  transition: 0.3s ease;
-  :hover {
-    background: #972036;
-  }
-  
-`
-const HelpLinkContainer = styled(Link)`
-    padding: 0 !important;
-`
-
-const HelpLinkDiv = styled.div`
-  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} !important;
-  color: var(--color-text, ${COLORS.text.light}) !important;
-  background-color: transparent !important;
-  :hover {
-    border: none !important;
-    background-color: transparent !important;
-    color: var(--color-link, ${COLORS.link.light}) !important;
-  }
-  p {
-    color: ${COLORS.placeholder};
-  }
-`
-const SavedTechnique = styled.div`
-  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
-  transition: 0.3s ease;
-  transition-property: margin, padding;
-  :hover, :active {
-    margin-left: 1em;
-    padding-left: 0.5em;
-    ${maxq[1]} {
-      margin-left: 0;
-    }
-    > div {
-      opacity: 1;
-    }              
-  }
-  border-radius: ${v.borderRadius};
-  user-select: none;
-  position: relative;
-  width: 100%;
-  h4 {
-    margin-bottom: 0;
-  }
-  cursor: pointer;
-`
-const MoveableContainer = styled.div`
-  display: flex;
-  width: 100%;
-`
-const DragIconContainer = styled.div`
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease opacity;
-  margin-top: 0.85em;
-  color: ${COLORS.placeholder};
-  font-size: 1.7em;
-  margin-left: -0.325em;
-`
 const Saved = () => {
   const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
@@ -278,7 +45,7 @@ const Saved = () => {
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
-  const handleTechniqueOrderChange = (result) => {
+  const handleDexOrderChange = (result) => {
     if (!result.destination) return
     const items = Array.from(saved.e)
     const [reorderedItem] = items.splice(result.source.index, 1)
@@ -399,7 +166,7 @@ const Saved = () => {
         </SaveNameIcon>
         <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onInput={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
-      {saved.e.length === 0 ?
+      {saved.e.length === 0 &&
         <EmptyList>
           <EmptyListEntries>
             <HelpLinkContainer to='t'>
@@ -418,35 +185,34 @@ const Saved = () => {
             </HelpLinkContainer>
           </EmptyListEntries>
         </EmptyList>
-        :
-        <></>
       }
-      <DragDropContext onDragEnd={handleTechniqueOrderChange}>
-        <Droppable droppableId="techniques" >
+      <DragDropContext onDragEnd={handleDexOrderChange}>
+        <Droppable droppableId="techniques">
           {(provided) => (
-            <TechniqueList {...provided.droppableProps} ref={provided.innerRef}>
+            <DexList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {
                 return (
                   <Draggable key={id} draggableId={id.toString()} index={index}>
                     {(provided) => (
                       <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                        <DragIconContainer>
+                            <MdDragIndicator />
+                          </DragIconContainer> 
                         <MoveableContainer>
-                             
+                            
                           
-                          <SavedTechnique>
-                            <DragIconContainer>
-                              <MdDragIndicator />
-                            </DragIconContainer>
-                            <IdFindData id={id} />
-                            <DeleteItemButtonContainer>
-                              <DeleteItemButton onClick={() => { clearItem(id) }}>
-                                <DeleteItemIcon>
+                          <SavedDexItem>
+                            
+                            <DexItem id={id} />
+                            <TrashContainer>
+                              <Trash onClick={() => { clearItem(id) }}>
+                                <TrashIcon>
                                   <HiOutlineTrash />
-                                </DeleteItemIcon>
+                                </TrashIcon>
 
-                              </DeleteItemButton>
-                            </DeleteItemButtonContainer>
-                          </SavedTechnique>
+                              </Trash>
+                            </TrashContainer>
+                          </SavedDexItem>
                         </MoveableContainer>
                       </li>
                     )}
@@ -454,7 +220,7 @@ const Saved = () => {
                 )
               })}
               {provided.placeholder}
-            </TechniqueList>
+            </DexList>
           )}
         </Droppable>
       </DragDropContext>
@@ -462,9 +228,9 @@ const Saved = () => {
         <input id="exportURL" defaultValue={"https://gdex.cc/?" + encode(saved)} disabled></input>
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
-      <DeleteButtonContainer>
-        <DeleteButton onClick={clearSave}>Delete Dex</DeleteButton>
-      </DeleteButtonContainer>
+      <DeleteAllContainer>
+        <DeleteAll onClick={clearSave}>Delete Dex</DeleteAll>
+      </DeleteAllContainer>
     </Layout>
   )
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
+// import {  } from "../styles/pagestyles/community" 
 
 const Community = () => {
   return (

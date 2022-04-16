@@ -4,11 +4,11 @@ import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
 import { Explanation, DarkBackground, VideoContainer } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
-import Save from '../components/Save';
+import Save from '../components/Save/Save';
 import styled from '@emotion/styled';
-import { v } from '../styles/variables';
+import { v } from '../styles/globalstyles/variables';
 import ReactTooltip from 'react-tooltip';
-import { COLORS } from '../styles/theme';
+import { COLORS } from '../styles/globalstyles/theme';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
@@ -26,15 +26,6 @@ const HeadingContainer = styled.div`
     margin-bottom: 0.1em;
   }
   margin: 0 !important;
-`
-const AddedText = styled.span`
-  display: inline-flex;
-  align-items: center;
-  margin-top:0.25em;
-  h4 {
-    margin-top: -0.15em;
-    margin-right: 0.5em;
-  }
 `
 const PageHeader = styled.div`
   margin-bottom: 1em;
@@ -68,6 +59,7 @@ const SaveItemButtonContainer = styled.div`
   border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
   height: 3.5em;
   width: 3.5em;
+
 `
 
 function TechniqueDetails({ data }) {

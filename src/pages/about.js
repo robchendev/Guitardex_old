@@ -1,17 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
-import styled from "@emotion/styled"
 import { Link } from "gatsby"
-
-const CustomUL = styled.ul`
-  li {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-  }
-`
-
-
+import { CustomUL } from "../styles/pagestyles/about"
 
 const About = () => {
   return (

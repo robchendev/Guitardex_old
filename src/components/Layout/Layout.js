@@ -1,45 +1,22 @@
+import React from "react"
 import Sidebar from "../Sidebar/Sidebar"
-import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
-import React, { useState } from "react"
+import { MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
 import { Helmet } from "react-helmet"
-import { globalStyle } from "../../styles/globalStyles"
-import Cookies from "universal-cookie"
-import {
-  COLORS,
-  COLOR_MODE_KEY,
-  INITIAL_COLOR_MODE_CSS_PROP,
-} from '../../styles/theme';
+import { globalStyle } from "../../styles/globalstyles/globalStyles"
+import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme'
 import { Global } from '@emotion/react'
-import { css } from '@emotion/css'
-import MobileHeader from "../MobileHeader"
-import styled from '@emotion/styled'
+import MobileHeader from "../MobileHeader/MobileHeader"
 
-
-const cookies = new Cookies()
-
-
-// createContext should not have any params
-// but that only works in js
-export const ThemeContext = React.createContext(null)
-
+export const ThemeContext = React.createContext()
 const Layout = (props) => {
   const [colorMode, rawSetColorMode] = React.useState(undefined);
-
   React.useEffect(() => {
     const root = window.document.documentElement;
-
-    // Because colors matter so much for the initial page view, we're
-    // doing a lot of the work in gatsby-ssr. That way it can happen before
-    // the React component tree mounts.
     const initialColorValue = root.style.getPropertyValue(
       INITIAL_COLOR_MODE_CSS_PROP
     );
-    // this isnt updating correctly, and its really weird, depends on localstorage i guess
-    //getInitialColorMode() in gatsby-ssr.js is returning wrong values sometimes
-
     rawSetColorMode(initialColorValue);
   }, []);
-
   const contextValue = React.useMemo(() => {
     function setColorMode(newValue) {
       const root = window.document.documentElement;
@@ -51,14 +28,13 @@ const Layout = (props) => {
       rawSetColorMode(newValue);
     }
     return {
-      colorMode, ////////////// CAN RETURN SIDEBAR HERE OR NO???
+      colorMode,
       setColorMode,
     };
   }, [colorMode, rawSetColorMode]);
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {/* <ThemeProvider theme={themeStyle}> */}
       <Global styles={globalStyle} />
       <Helmet>
         <title>{props.title}</title>
@@ -76,7 +52,6 @@ const Layout = (props) => {
           </MainContainer>
         </SContainer>
       </SLayout>
-      {/* </ThemeProvider> */}
     </ThemeContext.Provider>
   )
 }

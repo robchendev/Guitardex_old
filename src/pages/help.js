@@ -1,14 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
-import styled from "@emotion/styled"
 import { Link } from "gatsby"
-
-const CustomOL = styled.ol`
-  margin-left: 1em;
-  li {
-    margin: 3px 0;
-  }
-`
+import { CustomOL } from "../styles/pagestyles/help"
 
 const Help = () => {
   return (
@@ -46,7 +39,6 @@ const Help = () => {
         <li>Go to your <Link to="/">Guitardex</Link></li>
         <li>Click 'Delete Dex'</li>
       </CustomOL>
-
     </Layout>
   )
 }
