@@ -11,7 +11,7 @@ import {
 } from '../../styles/theme';
 import { Global } from '@emotion/react'
 import { css } from '@emotion/css'
-import MobileHeader from "../MobileHeader"
+import MobileHeader from "../../newcomp/MobileHeader/MobileHeader"
 import styled from '@emotion/styled'
 
 
