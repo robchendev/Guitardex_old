@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import { SearchIcon } from '../../components/Sidebar/styles'
 import { FiSearch } from 'react-icons/fi'
-import Save from '../Save/Save'
-import { Search, ResultLink, ResultBlock, Title, Category, SaveContainer, MetaContainer } from './styles'
+import { Search } from './styles'
+import { SearchResult } from '../SearchResult/SearchResult'
 
 const SearchBar = ({ placeholder, data }) => {
   const [filteredData, setFilteredData] = useState(data);
@@ -28,31 +28,19 @@ const SearchBar = ({ placeholder, data }) => {
         </SearchIcon>
         <input placeholder={placeholder} type="text" onChange={handleFilter} />
       </Search>
-      {filteredData.length === 0 ? 
-        <p>We have no records of this technique, but you can <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">request</a> us to make a page about it.</p> 
-        :
-        <></>
+      {filteredData.length === 0 && 
+        <p>We have no records of this technique, but you can <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">request</a> us to make a page about it.</p>
       }
         {filteredData.map((technique) => (
-          <React.Fragment key={technique.frontmatter.slug}>
-            <ResultLink to={technique.frontmatter.slug}>
-              <ResultBlock>
-                <MetaContainer>
-                  <Title>{technique.frontmatter.title}</Title>
-                  <Category>
-                    {technique.frontmatter.category ?
-                      technique.frontmatter.category : "Uncategorized"
-                    }
-                  </Category>
-                </MetaContainer>
-                <SaveContainer>
-                  <Save id={technique.frontmatter.id} />
-                </SaveContainer>
-              </ResultBlock>
-            </ResultLink>
-          </React.Fragment>
+          <SearchResult
+            slug={technique.frontmatter.slug}
+            title={technique.frontmatter.title}
+            category={technique.frontmatter.category}
+            id={technique.frontmatter.id}
+          />
         ))}
     </div>
   )
 }
+
 export default SearchBar

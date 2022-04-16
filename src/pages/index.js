@@ -399,7 +399,7 @@ const Saved = () => {
         </SaveNameIcon>
         <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onInput={(e) => handleNameChange(e)} value={saved.n} />
       </SaveNameInput>
-      {saved.e.length === 0 ?
+      {saved.e.length === 0 &&
         <EmptyList>
           <EmptyListEntries>
             <HelpLinkContainer to='t'>
@@ -418,8 +418,6 @@ const Saved = () => {
             </HelpLinkContainer>
           </EmptyListEntries>
         </EmptyList>
-        :
-        <></>
       }
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
         <Droppable droppableId="techniques" >
