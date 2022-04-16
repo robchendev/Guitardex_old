@@ -3,16 +3,13 @@ import { v, maxq } from '../../styles/variables';
 import { COLORS } from '../../styles/theme';
 
 export const MetaInfo = styled.div`
-  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} !important;
-  color: var(--color-text, ${COLORS.text.light}) !important;
-  background-color: transparent !important;
+  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
+  color: var(--color-text, ${COLORS.text.light});
   width: calc(100% - 4.5em);
   ${maxq[1]} {
     width: calc(100% - 3.5em);
   } 
   :hover {
-    border: none !important;
-    background-color: transparent !important;
     color: var(--color-link, ${COLORS.link.light}) !important;
   }
   h4 {
