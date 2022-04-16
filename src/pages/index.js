@@ -209,17 +209,7 @@ const HelpLinkDiv = styled.div`
 const SavedTechnique = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s ease;
-  transition-property: margin, padding;
-  :hover, :active {
-    margin-left: 1em;
-    padding-left: 0.5em;
-    ${maxq[1]} {
-      margin-left: 0;
-    }
-    > div {
-      opacity: 1;
-    }              
-  }
+  transition-property: margin;
   border-radius: ${v.borderRadius};
   user-select: none;
   position: relative;
@@ -227,20 +217,30 @@ const SavedTechnique = styled.div`
   h4 {
     margin-bottom: 0;
   }
-  cursor: pointer;
+  //cursor: pointer;
 `
+
+const DragIconContainer = styled.div`
+  position: absolute;
+  transition: 0.3s ease opacity;
+  margin-top: 0.25em;
+  color: ${COLORS.placeholder};
+  font-size: 1.7em;
+  margin-left: -0.25em;
+  pointer-events: none;
+`
+
 const MoveableContainer = styled.div`
   display: flex;
   width: 100%;
-`
-const DragIconContainer = styled.div`
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease opacity;
-  margin-top: 0.85em;
-  color: ${COLORS.placeholder};
-  font-size: 1.7em;
-  margin-left: -0.325em;
+  :hover, :active {
+    ${SavedTechnique} {
+      margin-left: 1em;
+      ${maxq[1]} {
+        margin-left: 0;
+      }
+    }
+  }
 `
 const Saved = () => {
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -430,13 +430,14 @@ const Saved = () => {
                   <Draggable key={id} draggableId={id.toString()} index={index}>
                     {(provided) => (
                       <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                        <DragIconContainer>
+                            <MdDragIndicator />
+                          </DragIconContainer> 
                         <MoveableContainer>
-                             
+                            
                           
                           <SavedTechnique>
-                            <DragIconContainer>
-                              <MdDragIndicator />
-                            </DragIconContainer>
+                            
                             <IdFindData id={id} />
                             <DeleteItemButtonContainer>
                               <DeleteItemButton onClick={() => { clearItem(id) }}>
