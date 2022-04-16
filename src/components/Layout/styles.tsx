@@ -57,82 +57,9 @@ export const SMain = styled.main`
   }
 `
 
-export const SDivider = styled.div`
-  height: 1px;
-  width: 100%;
-  background: var(--color-bg3, ${COLORS.bg3.light});
-  margin: ${v.mdSpacing} 0;
-`
 
-export const SLinkContainer = styled.div`
-  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)`)};
-  color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
-  border-radius: ${v.borderRadius};
-  margin: 6px 0;
 
-  :hover {
-    box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
-  }
-`
 
-export const SLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  padding: calc(${v.smSpacing} - 2px) 0;
-`
-
-export const SToggle = styled.div`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  padding: calc(${v.smSpacing} - 2px) 0;
-  cursor: pointer;
-`
-
-export const SLinkA = styled.a`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  padding: calc(${v.smSpacing} - 2px) 0;
-`
-
-export const SLinkIcon = styled.div`
-  padding: ${v.smSpacing} ${v.mdSpacing};
-  display: flex;
-  svg {
-    font-size: 24px;
-  }
-`
-
-export const SLinkLabel = styled.span`
-  display: block;
-  flex: 1;  
-`
-
-export const SToggleLabel = styled.span`
-  display: block;
-  flex: 1;
-  ::after{
-    content: var(--color-toggleName, ${COLORS.toggleName.light});
-  } 
-`
-
-export const SLinkNotification = styled.div`
-  font-size: 14px;
-  padding: calc(${v.smSpacing} / 2) ${v.smSpacing};
-  border-radius: calc(${v.borderRadius} / 2);
-  background: var(--color-primary, ${COLORS.primary.light});
-  color: #fff;
-
-  margin-right: ${v.mdSpacing};
-`
 
 export const STheme = styled.div`
   display: flex;
@@ -168,18 +95,3 @@ export const SToggleThumb = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
 `
 
-export const MoonContainer = styled.span`
-  display: var(--color-moonIcon, ${COLORS.moonIcon.light});
-  padding: ${v.smSpacing} ${v.mdSpacing};
-  svg {
-    font-size: 24px;
-  }
-`
-
-export const SunContainer = styled.span`
-  display: var(--color-sunIcon, ${COLORS.sunIcon.light});
-  padding: ${v.smSpacing} ${v.mdSpacing};
-  svg {
-    font-size: 24px;
-  }
-`

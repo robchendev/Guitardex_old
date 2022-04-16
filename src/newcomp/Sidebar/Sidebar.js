@@ -1,46 +1,30 @@
 import React, { useContext, useEffect } from 'react'
-import { SLogo, SSidebar } from './styles'
-import { logoPNG } from "../../assets"
-import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../../components/Layout/styles'
-import { FaDiscord } from "react-icons/fa"
-import { FiHome, FiLayers, FiMoon, FiSun, FiHelpCircle, FiUser, FiMessageCircle } from "react-icons/fi"
-import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle } from "react-icons/hi"
-
+import { SSidebar } from './styles'
+import { FiMoon, FiSun } from "react-icons/fi"
 import { ThemeContext } from "../../components/Layout/Layout"
 import { useLocation } from "@reach/router";
 import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme';
-import { InternalLinks, ExternalLinks } from '../../components/SidebarLinks'
+import { InternalLinks, ExternalLinks } from '../SidebarLinks/SidebarLinks'
+import { internalLinks, externalLinks, utilityLinks } from '../SidebarLinks/links'
+import { SDivider, SLinkContainer, SToggle, SToggleLabel, SunContainer, MoonContainer } from './styles'
 
 const Sidebar = () => {
-  // if I ever need cookie functionality:
-  // const cookies = new Cookies()
-  // const expiry = {path: '/', expires: new Date(Date.now()+(30*24*60*60*1000))}
-  //const searchRef = useRef(null)
   const { colorMode, setColorMode } = useContext(ThemeContext);
   const location = useLocation().pathname
-
   const parentLocation = "/" + location.split('/')[1]
-
-  // Set Cookies / LocalStorage
   useEffect(() => {
     if (typeof localStorage.getItem(COLOR_MODE_KEY) === 'string') {
       setColorMode(localStorage.getItem(COLOR_MODE_KEY))
     }
   })
-
   return (
     <SSidebar>
-      {/* <h2>Guitardex</h2> */}
-      {/* <SLogo>
-        <img src={logoPNG} alt="logo" />
-      </SLogo> */}
-      {internalLinks.map(({ label, icon, link, notification }) => (
+      {internalLinks.map(({ label, icon, link }) => (
         <InternalLinks
           key={label}
           label={label}
           icon={icon}
           link={link}
-          notification={notification}
           isActive={parentLocation === link}
         />
       ))}
@@ -48,17 +32,15 @@ const Sidebar = () => {
         <ExternalLinks key={label} label={label} icon={icon} link={link} />
       ))} */}
       <SDivider />
-      {utilityLinks.map(({ label, icon, link, notification }) => (
+      {utilityLinks.map(({ label, icon, link }) => (
         <InternalLinks
           key={label}
           label={label}
           icon={icon}
           link={link}
-          notification={notification}
           isActive={parentLocation === link}
         />
       ))}
-
       <SLinkContainer key={colorMode === "light" ? 'Dark Theme' : 'Light Theme'}>
         <SToggle
           onClick={
@@ -67,89 +49,16 @@ const Sidebar = () => {
               localStorage.setItem(COLOR_MODE_KEY, colorMode === "light" ? 'dark' : 'light')
               // this needs to be here otherwise we get that "wrong initial state" bug
               document.documentElement.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode === "light" ? 'dark' : 'light');
-              console.log("hi")
             }
           }
         >
-
-          <MoonContainer>
-            <FiMoon />
-          </MoonContainer>
-          <SunContainer>
-            <FiSun />
-          </SunContainer>
-
+          <MoonContainer><FiMoon /></MoonContainer>
+          <SunContainer><FiSun /></SunContainer>
           <SToggleLabel></SToggleLabel>
-          {/* <SThemeToggler>
-            <SToggleThumb />
-          </SThemeToggler> */}
         </SToggle>
       </SLinkContainer>
-
-
-      {/* <STheme>
-        <SThemeLabel>Dark Mode</SThemeLabel>
-        <SThemeToggler
-          onClick={
-            () => {
-              setColorMode(colorMode === "light" ? 'dark' : 'light');
-              localStorage.setItem(COLOR_MODE_KEY, colorMode === "light" ? 'dark' : 'light')
-              // this needs to be here otherwise we get that "wrong initial state" bug
-              document.documentElement.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode === "light" ? 'dark' : 'light');
-
-            }
-          }
-        >
-          <SToggleThumb style={colorMode === "dark" ? { right: "2px" } : {}} />
-        </SThemeToggler>
-      </STheme> */}
     </SSidebar>
   )
 }
-
-// TODO: Move all this into some other file or files
-
-const internalLinks = [
-  {
-    label: "My Guitardex",
-    icon: <HiOutlineHome />,
-    link: "/",
-    notification: 0
-  },
-  {
-    label: "Techniques",
-    icon: <HiOutlineViewGrid />,
-    link: "/t",
-    notification: 0,
-  },
-  {
-    label: "About",
-    icon: <HiOutlineUserGroup />,
-    link: "/about",
-    notification: 0,
-  },
-  // {
-  //   label: "Community",
-  //   icon: <HiOutlineChatAlt />,
-  //   link: "/community",
-  // },
-]
-
-const externalLinks = [
-  {
-    label: "Community",
-    icon: <FaDiscord />,
-    link: "community",
-  },
-]
-
-const utilityLinks = [
-  {
-    label: "Help",
-    icon: <HiOutlineQuestionMarkCircle />,
-    link: "/help",
-    notification: 0
-  },
-]
 
 export default Sidebar

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
-import { btnReset, v, maxq } from "../../styles/globalstyles/variables"
+import { css } from "@emotion/react"
+import { v, maxq } from "../../styles/globalstyles/variables"
 import { COLORS } from "../../styles/globalstyles/theme"
 
 export const SSidebar = styled.div`
@@ -8,7 +9,7 @@ export const SSidebar = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: calc(${v.borderRadius} * 2);
   box-shadow: 0 0 4px ${COLORS.bgAlpha.dark};
-  padding: ${v.smSpacing} ${v.mdSpacing} ${v.smSpacing} ${v.mdSpacing};
+  padding: ${v.smSpacing} ${v.mdSpacing};
   font-family: 'Fredoka', sans-serif;
   position: relative;
   pointer-events: auto;
@@ -19,32 +20,48 @@ export const SSidebar = styled.div`
     width: 90%;
   }
 `
-
-export const SLogo = styled.div`
-  width: 52px;
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-  }
-  cursor: pointer;
-  margin-bottom: ${v.lgSpacing};
+export const SDivider = styled.div`
+  height: 1px;
+  width: 100%;
+  background: var(--color-bg3, ${COLORS.bg3.light});
+  margin: ${v.mdSpacing} 0;
 `
-
-export const SSearch = styled.div`
-  background: var(--color-bgAlpha, ${COLORS.bgAlpha.light});
-  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
+export const SLinkContainer = styled.div`
+  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)`)};
+  color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
   border-radius: ${v.borderRadius};
-  input {
-    padding: 0 ${v.smSpacing} 0 0;
-    font-family: inherit;
-    letter-spacing: inherit;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    border: none;
-    color: inherit;
-    background: transparent;
+  margin: 6px 0;
+  :hover {
+    box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
   }
+`
+export const SToggle = styled.div`
   display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  padding: calc(${v.smSpacing} - 2px) 0;
+  cursor: pointer;
+`
+export const SToggleLabel = styled.span`
+  display: block;
+  flex: 1;
+  ::after{
+    content: var(--color-toggleName, ${COLORS.toggleName.light});
+  } 
+`
+const colorModeIcon = css`
+  padding: ${v.smSpacing} ${v.mdSpacing};
+  svg {
+    font-size: 24px;
+  }
+`
+export const MoonContainer = styled.span`
+  display: var(--color-moonIcon, ${COLORS.moonIcon.light});
+  ${colorModeIcon};
+`
+export const SunContainer = styled.span`
+  display: var(--color-sunIcon, ${COLORS.sunIcon.light});
+  ${colorModeIcon};
 `
