@@ -1,8 +1,7 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { btnReset, v } from "../../styles/variables"
-import { COLORS } from "../../styles/theme"
-import { maxq, minq } from "../../styles/variables"
+import { btnReset, v, maxq } from "../../styles/globalstyles/variables"
+import { COLORS } from "../../styles/globalstyles/theme"
 
 
 export const SLayout = styled.div`

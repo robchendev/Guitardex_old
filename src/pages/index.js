@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import styled from "@emotion/styled"
 import { useLocation } from "@reach/router"
-import { v, maxq, SAVE_KEY } from '../styles/variables'
-import { COLORS } from '../styles/theme'
-import { btnReset } from "../styles/variables"
+import { v, maxq, SAVE_KEY } from '../styles/globalstyles/variables'
+import { COLORS } from '../styles/globalstyles/theme'
+import { btnReset } from "../styles/globalstyles/variables"
 import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../newcomp/DexItem/DexItem"
@@ -420,7 +420,7 @@ const Saved = () => {
         </EmptyList>
       }
       <DragDropContext onDragEnd={handleTechniqueOrderChange}>
-        <Droppable droppableId="techniques" >
+        <Droppable droppableId="techniques">
           {(provided) => (
             <TechniqueList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {

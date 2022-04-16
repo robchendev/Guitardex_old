@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import changeLogData from "../assets/development/change-log-data.json"
 import plansData from "../assets/development/future-plans.json"
 import issuesData from "../assets/development/known-issues.json"
-import { COLORS } from "../styles/theme"
+import { COLORS } from "../styles/globalstyles/theme"
 
 const LogRender = styled.div`
     h4 {

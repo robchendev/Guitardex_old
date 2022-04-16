@@ -6,9 +6,9 @@ import { Explanation, DarkBackground, VideoContainer } from "./technique-styling
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../newcomp/Save/Save';
 import styled from '@emotion/styled';
-import { v } from '../styles/variables';
+import { v } from '../styles/globalstyles/variables';
 import ReactTooltip from 'react-tooltip';
-import { COLORS } from '../styles/theme';
+import { COLORS } from '../styles/globalstyles/theme';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]

@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import { SLogo, SSidebar } from './styles'
 import { logoPNG } from "../../assets"
-import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../Layout/styles'
+import { MoonContainer, SDivider, SLinkContainer, SLinkIcon, SLinkLabel, STheme, SThemeLabel, SThemeToggler, SToggle, SToggleLabel, SToggleThumb, SunContainer } from '../../components/Layout/styles'
 import { FaDiscord } from "react-icons/fa"
 import { FiHome, FiLayers, FiMoon, FiSun, FiHelpCircle, FiUser, FiMessageCircle } from "react-icons/fi"
 import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle } from "react-icons/hi"
 
-import { ThemeContext } from "../Layout/Layout"
+import { ThemeContext } from "../../components/Layout/Layout"
 import { useLocation } from "@reach/router";
-import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/theme';
-import { InternalLinks, ExternalLinks } from '../SidebarLinks'
+import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme';
+import { InternalLinks, ExternalLinks } from '../../components/SidebarLinks'
 
 const Sidebar = () => {
   // if I ever need cookie functionality:

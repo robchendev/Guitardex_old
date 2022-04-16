@@ -1,14 +1,14 @@
-import Sidebar from "../Sidebar/Sidebar"
+import Sidebar from "../../newcomp/Sidebar/Sidebar"
 import { AbsoluteContainer, MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
 import React, { useState } from "react"
 import { Helmet } from "react-helmet"
-import { globalStyle } from "../../styles/globalStyles"
+import { globalStyle } from "../../styles/globalstyles/globalStyles"
 import Cookies from "universal-cookie"
 import {
   COLORS,
   COLOR_MODE_KEY,
   INITIAL_COLOR_MODE_CSS_PROP,
-} from '../../styles/theme';
+} from '../../styles/globalstyles/theme';
 import { Global } from '@emotion/react'
 import { css } from '@emotion/css'
 import MobileHeader from "../../newcomp/MobileHeader/MobileHeader"

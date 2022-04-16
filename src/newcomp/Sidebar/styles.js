@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
-import { btnReset, v, maxq } from "../../styles/variables"
-import { COLORS } from "../../styles/theme"
+import { btnReset, v, maxq } from "../../styles/globalstyles/variables"
+import { COLORS } from "../../styles/globalstyles/theme"
 
 export const SSidebar = styled.div`
   min-width: ${v.sidebarWidth};

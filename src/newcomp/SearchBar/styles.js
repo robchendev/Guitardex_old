@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/theme'
-import { btnReset, v } from '../../styles/variables'
+import { COLORS } from '../../styles/globalstyles/theme'
+import { btnReset, v } from '../../styles/globalstyles/variables'
 
 export const Search = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});

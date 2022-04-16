@@ -1,4 +1,4 @@
-import { COLORS } from '/src/styles/theme';
+import { COLORS } from '/src/styles/globalstyles/theme';
 
 const MagicScriptTag = () => {
 

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import { v, minq } from '../../styles/variables'
-import { COLORS } from '../../styles/theme'
+import { v, minq } from '../../styles/globalstyles/variables'
+import { COLORS } from '../../styles/globalstyles/theme'
 import { Link } from 'gatsby'
 
 export const MHeaderRelative = styled.div`

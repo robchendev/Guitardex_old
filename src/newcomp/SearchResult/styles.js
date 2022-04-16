@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/theme'
-import { v, maxq } from '../../styles/variables'
+import { COLORS } from '../../styles/globalstyles/theme'
+import { v, maxq } from '../../styles/globalstyles/variables'
 import { Link } from "gatsby"
 
 export const ResultLink = styled(Link)`

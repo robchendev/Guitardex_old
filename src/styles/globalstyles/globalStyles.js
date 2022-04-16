@@ -1,4 +1,4 @@
-import { COLORS } from "../styles/theme"
+import { COLORS } from "./theme"
 import { css } from '@emotion/react'
 import { maxq } from './variables'
 

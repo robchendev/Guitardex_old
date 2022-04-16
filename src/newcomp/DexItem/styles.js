@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { v, maxq } from '../../styles/variables';
-import { COLORS } from '../../styles/theme';
+import { v, maxq } from '../../styles/globalstyles/variables';
+import { COLORS } from '../../styles/globalstyles/theme';
 
 export const MetaInfo = styled.div`
   padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};

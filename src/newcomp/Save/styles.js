@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import { COLORS } from '../../styles/theme'
-import { v } from '../../styles/variables'
+import { COLORS } from '../../styles/globalstyles/theme'
+import { v } from '../../styles/globalstyles/variables'
 
 export const UnChecked = styled.div`
   font-size: 30px;

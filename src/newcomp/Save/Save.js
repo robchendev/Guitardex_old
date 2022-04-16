@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { SAVE_KEY } from '../../styles/variables'
+import { SAVE_KEY } from '../../styles/globalstyles/variables'
 import { ImCheckmark } from 'react-icons/im'
 import { BiSave } from 'react-icons/bi'
 import { SaveButton, UnChecked, Checked } from './styles'
