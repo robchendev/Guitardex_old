@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { COLORS } from "../styles/globalstyles/theme"
-import { maxq, minq } from "../styles/globalstyles/variables"
+import { maxq } from "../styles/globalstyles/variables"
 
 export const TechList = styled.div`
   a {

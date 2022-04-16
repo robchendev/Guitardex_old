@@ -27,15 +27,6 @@ const HeadingContainer = styled.div`
   }
   margin: 0 !important;
 `
-const AddedText = styled.span`
-  display: inline-flex;
-  align-items: center;
-  margin-top:0.25em;
-  h4 {
-    margin-top: -0.15em;
-    margin-right: 0.5em;
-  }
-`
 const PageHeader = styled.div`
   margin-bottom: 1em;
 `
