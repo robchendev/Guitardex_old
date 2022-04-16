@@ -7,7 +7,7 @@ import { COLORS } from '../styles/theme'
 import { btnReset } from "../styles/variables"
 import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
-import IdFindData from "../components/IdFindData"
+import DexItem from "../newcomp/DexItem/DexItem"
 import { Link } from 'gatsby';
 import { MdDragIndicator } from 'react-icons/md'
 
@@ -436,7 +436,7 @@ const Saved = () => {
                           
                           <SavedTechnique>
                             
-                            <IdFindData id={id} />
+                            <DexItem id={id} />
                             <DeleteItemButtonContainer>
                               <DeleteItemButton onClick={() => { clearItem(id) }}>
                                 <DeleteItemIcon>
