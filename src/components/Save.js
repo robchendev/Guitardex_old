@@ -12,7 +12,7 @@ const SaveButton = styled.button`
     letter-spacing: .6px;
     height: 100%;
     width: 100%;
-    padding: 6px 0 0 0;
+    padding: 8px 0 0 0;
     border: none;
     background: var(--color-bg, ${COLORS.bg.light});
     border-radius: ${v.borderRadius};
