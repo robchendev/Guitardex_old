@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../newcomp/Layout/Layout"
+import Layout from "../components/Layout/Layout"
 // import {  } from "../styles/pagestyles/community" 
 
 const Community = () => {

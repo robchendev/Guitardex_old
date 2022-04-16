@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../newcomp/Layout/Layout"
+import Layout from "../components/Layout/Layout"
 import { Link } from "gatsby"
 import { CustomUL } from "../styles/pagestyles/about"
 

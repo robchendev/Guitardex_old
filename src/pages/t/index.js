@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
-import Layout from "../../newcomp/Layout/Layout"
-import SearchBar from "../../newcomp/SearchBar/SearchBar"
+import Layout from "../../components/Layout/Layout"
+import SearchBar from "../../components/SearchBar/SearchBar"
 
 const Techniques = ({ data }) => {
   const techniques = data.techniques.nodes

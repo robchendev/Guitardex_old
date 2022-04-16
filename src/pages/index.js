@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../newcomp/Layout/Layout"
+import Layout from "../components/Layout/Layout"
 import { useLocation } from "@reach/router"
 import { SAVE_KEY } from '../styles/globalstyles/variables'
 import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
-import DexItem from "../newcomp/DexItem/DexItem"
+import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
 import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer } from "../styles/pagestyles/index"
 

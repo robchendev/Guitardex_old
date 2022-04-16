@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../newcomp/Layout/Layout"
+import Layout from "../components/Layout/Layout"
 import changeLogData from "../assets/development/change-log-data.json"
 import plansData from "../assets/development/future-plans.json"
 import issuesData from "../assets/development/known-issues.json"

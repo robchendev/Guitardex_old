@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../newcomp/Layout/Layout';
+import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
 import { Explanation, DarkBackground, VideoContainer } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
-import Save from '../newcomp/Save/Save';
+import Save from '../components/Save/Save';
 import styled from '@emotion/styled';
 import { v } from '../styles/globalstyles/variables';
 import ReactTooltip from 'react-tooltip';

@@ -4,8 +4,8 @@ import { FiMoon, FiSun } from "react-icons/fi"
 import { ThemeContext } from "../Layout/Layout"
 import { useLocation } from "@reach/router";
 import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme';
-import { InternalLinks, ExternalLinks } from '../SidebarLinks/SidebarLinks'
-import { internalLinks, externalLinks, utilityLinks } from '../SidebarLinks/links'
+import { InternalLinks, /*ExternalLinks*/ } from '../SidebarLinks/SidebarLinks'
+import { internalLinks, /*externalLinks,*/ utilityLinks } from '../SidebarLinks/links'
 import { SDivider, SLinkContainer, SToggle, SToggleLabel, SunContainer, MoonContainer } from './styles'
 
 const Sidebar = () => {
