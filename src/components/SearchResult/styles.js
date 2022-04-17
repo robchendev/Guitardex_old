@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 export const ResultLink = styled(Link)`
   color: var(--color-text, ${COLORS.text.light}) !important;
 `
+
 export const ResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
@@ -21,7 +22,8 @@ export const ResultBlock = styled.div`
     }
   }
 `
-export const MetaContainer = styled.div`
+export const MetaContainer = styled.span`
+
   width: calc(100% - 4.5em);
   ${maxq[1]} {
     width: calc(100% - 4em);

@@ -18,7 +18,6 @@ exercises:
 artists: 
 tags: [slap, harmonic]
 ---
-
 Video:
 - 3<15> slap harmonic from the front
 - 3<15> slap harmonic from the side

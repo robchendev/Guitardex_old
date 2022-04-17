@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import { MetaInfo } from './styles'
 import { Link } from 'gatsby';
+import DifficultyStripe from '../DifficultyStripe/DifficultyStripe';
 
 const DexItem = ({ id }) => {
 	return (
@@ -15,6 +16,7 @@ const DexItem = ({ id }) => {
 								g
 								group
 								title
+								difficulty
 								slug
 								category
 							}
@@ -31,7 +33,9 @@ const DexItem = ({ id }) => {
 					<Link to={
 						selection ? selection.frontmatter.g + '/' + selection.frontmatter.slug : `#`
 					}>
+						
 						<MetaInfo>
+							<DifficultyStripe difficulty={selection.frontmatter.difficulty} />
 							<h4>
 								{selection ? 
 									selection.frontmatter.title 
@@ -41,7 +45,7 @@ const DexItem = ({ id }) => {
 							</h4>
 							<p>
 								{selection ? 
-									`${selection.frontmatter.group}${selection.frontmatter.category ? ` - ${selection.frontmatter.category}` : ""}`
+									`${selection.frontmatter.group}${selection.frontmatter.category ? ` - ${selection.frontmatter.category}` : ""}${selection.frontmatter.difficulty ? ` (${selection.frontmatter.difficulty})` : ""}`
 									: 
 									`Unrecognized ID`
 								}

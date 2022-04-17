@@ -67,6 +67,10 @@ export const COLORS = {
     light: 'rgb(210,210,210)',
     dark: 'rgb(45,45,45)',
   },
+  diffEasy: 'rgb(35, 136, 35)',
+  diffMed: 'rgb(220, 130, 0)',
+  diffHard: 'rgb(210, 34, 45)',
+
   placeholder: '#8e8e8e',
 };
 
