@@ -37,7 +37,7 @@ This is a sample page demonstrating what each page would look like. There will b
 ### Ex1
 
 <div class="tabImg">
-  <img src="images/exampletab.jpg" />
+  <img src="./exampletab.jpg" />
 </div>
 
 **And of course the tabs will be affected by dark mode as well.**
