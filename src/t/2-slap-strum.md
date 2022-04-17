@@ -3,6 +3,7 @@ id: 2
 g: t
 group: technique
 title: Slap Strum
+difficulty: medium
 demo: https://youtu.be/dQw4w9WgXcQ
 description:
 prereqs: [
@@ -23,7 +24,7 @@ Video:
 - slap strum 1 string no thumbpick
 - remake the videos with thumbpick later
 
-The slap strum expands on the thumb slap technique by doing a quick strum at the same time. The strum is done by extending your index or middle finger quickly to brush across the strings as soon as the thumb slaps the string.
+The slap strum expands on the thumb slap technique by extending your index or middle finger quickly to strum across the strings as soon as the thumb slaps the string.
 
 It should not be a slow strum, every note of the strum should almost sound like it's being played at the same time as the slap.
 

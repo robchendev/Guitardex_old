@@ -2,7 +2,7 @@ import React from 'react'
 import { ResultLink, ResultBlock, Title, Category, SaveContainer, MetaContainer } from './styles'
 import Save from '../Save/Save'
 
-const SearchResult = ({ slug, title, category, id }) => {
+const SearchResult = ({ slug, title, category, difficulty, id }) => {
   return (
     <React.Fragment key={slug}>
       <ResultLink to={slug}>
@@ -10,7 +10,7 @@ const SearchResult = ({ slug, title, category, id }) => {
           <MetaContainer>
             <Title>{title}</Title>
             <Category>
-              {category ? category : "Uncategorized"}
+              {category ? category : "Uncategorized"}{difficulty && ` - ${difficulty}`}
             </Category>
           </MetaContainer>
           <SaveContainer>

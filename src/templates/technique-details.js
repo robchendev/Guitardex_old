@@ -68,7 +68,7 @@ function TechniqueDetails({ data }) {
     id, g, title, demo, exercises, prereqs
   } = data.allInfo.frontmatter;
   return (
-    <Layout>
+    <Layout title={title}>
 
       <EntireWrapper>
         <HeadingContainer>

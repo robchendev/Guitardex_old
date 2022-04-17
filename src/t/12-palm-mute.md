@@ -3,6 +3,7 @@ id: 12
 g: t
 group: technique
 title: Palm Mute
+difficulty: easy
 demo: 
 description:
 prereqs: 
