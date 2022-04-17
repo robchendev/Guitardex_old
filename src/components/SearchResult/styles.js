@@ -6,7 +6,6 @@ import { Link } from "gatsby"
 export const ResultLink = styled(Link)`
   color: var(--color-text, ${COLORS.text.light}) !important;
 `
-
 export const ResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
@@ -14,16 +13,19 @@ export const ResultBlock = styled.div`
   margin: 0 0 5px 0;
   position: relative;
   transition: 0.3s ease margin;
+`
+export const ResultContainer = styled.div`
   :hover {
-    margin-left: 1em;
-    color: var(--color-link, ${COLORS.link.light});
-    ${maxq[1]} {
-      margin-left: 0;
+    ${ResultBlock} {
+      margin-left: 1em;
+      color: var(--color-link, ${COLORS.link.light});
+      ${maxq[1]} {
+        margin-left: 0;
+      }
     }
   }
 `
 export const MetaContainer = styled.span`
-
   width: calc(100% - 4.5em);
   ${maxq[1]} {
     width: calc(100% - 4em);
