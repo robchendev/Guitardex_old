@@ -2,7 +2,6 @@ import styled from "@emotion/styled"
 import { v, maxq } from '../globalstyles/variables'
 import { COLORS } from '../globalstyles/theme'
 import { btnReset } from "../globalstyles/variables"
-import { Link } from 'gatsby';
 
 export const TrashContainer = styled.div`
   position: absolute;
@@ -59,12 +58,7 @@ export const EmptyList = styled.div`
 export const EmptyListEntries = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s ease margin;
-  :hover {
-    margin-left: 1em;
-    ${maxq[1]} {
-      margin-left: 0;
-    }
-  }
+  
   border-radius: ${v.borderRadius};
   user-select: none;
   position: relative;
@@ -73,6 +67,7 @@ export const EmptyListEntries = styled.div`
   }
   cursor: pointer;
 `
+
 export const SaveNameInput = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
@@ -173,18 +168,8 @@ export const DeleteAll = styled.button`
     background: #972036;
   }
 `
-export const HelpLinkContainer = styled(Link)`
-  padding: 0 !important;
-`
 export const HelpLinkDiv = styled.div`
-  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} !important;
-  color: var(--color-text, ${COLORS.text.light}) !important;
-  background-color: transparent !important;
-  :hover {
-    border: none !important;
-    background-color: transparent !important;
-    color: var(--color-link, ${COLORS.link.light}) !important;
-  }
+  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
   p {
     color: ${COLORS.placeholder};
   }
@@ -216,6 +201,18 @@ export const MoveableContainer = styled.div`
   :hover, :active {
     ${SavedDexItem} {
       margin-left: 1em;
+      ${maxq[1]} {
+        margin-left: 0;
+      }
+    }
+  }
+`
+export const EmptyListEntryContainer = styled.div`
+  color: var(--color-text, ${COLORS.text.light});
+  :hover {
+    ${EmptyListEntries} {
+      margin-left: 1em;
+      color: var(--color-link, ${COLORS.link.light}) !important;
       ${maxq[1]} {
         margin-left: 0;
       }

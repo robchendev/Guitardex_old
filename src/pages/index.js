@@ -6,8 +6,8 @@ import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
-import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer } from "../styles/pagestyles/index"
-
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer } from "../styles/pagestyles/index"
+import { Link } from 'gatsby';
 
 const Saved = () => {
   const hasDupes = (array) => (new Set(array)).size !== array.length
@@ -168,22 +168,26 @@ const Saved = () => {
       </SaveNameInput>
       {saved.e.length === 0 &&
         <EmptyList>
-          <EmptyListEntries>
-            <HelpLinkContainer to='t'>
-              <HelpLinkDiv>
-                <h4>Start adding techniques!</h4>
-                <p>Click here to browse techniques</p>
-              </HelpLinkDiv>
-            </HelpLinkContainer>
-          </EmptyListEntries>
-          <EmptyListEntries>
-            <HelpLinkContainer to='help'>
-              <HelpLinkDiv>
-                <h4>New to Guitardex?</h4>
-                <p>Click here for help</p>
-              </HelpLinkDiv>
-            </HelpLinkContainer>
-          </EmptyListEntries>
+          <Link to='t'>
+            <EmptyListEntryContainer>
+              <EmptyListEntries>
+                <HelpLinkDiv>
+                  <h4>Start adding techniques!</h4>
+                  <p>Click here to browse techniques</p>
+                </HelpLinkDiv>
+              </EmptyListEntries>
+            </EmptyListEntryContainer>
+          </Link>
+          <Link to='help'>
+            <EmptyListEntryContainer>
+              <EmptyListEntries>
+                <HelpLinkDiv>
+                  <h4>New to Guitardex?</h4>
+                  <p>Click here for help</p>
+                </HelpLinkDiv>
+              </EmptyListEntries>
+            </EmptyListEntryContainer>
+          </Link>
         </EmptyList>
       }
       <DragDropContext onDragEnd={handleDexOrderChange}>
