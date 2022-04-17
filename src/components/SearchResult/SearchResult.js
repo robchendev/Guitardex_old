@@ -1,8 +1,7 @@
 import React from 'react'
 import { ResultLink, ResultBlock, Title, Category, SaveContainer, MetaContainer } from './styles'
 import Save from '../Save/Save'
-import DifficultyStripe from '../DifficultyStripe/DifficultyStripe'
-import DiffContainer from '../DifficultyStripe/DiffContainer'
+import DiffContainer from '../DiffContainer/DiffContainer'
 
 const SearchResult = ({ slug, title, category, difficulty, id }) => {
   return (

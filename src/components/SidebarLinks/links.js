@@ -1,5 +1,6 @@
 import React from 'react'
-import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle } from "react-icons/hi"
+import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle, HiOutlineDatabase } from "react-icons/hi"
+import changeLogData from "../../assets/development/change-log-data.json"
 
 export const internalLinks = [
   {
@@ -16,6 +17,13 @@ export const internalLinks = [
     label: "About",
     icon: <HiOutlineUserGroup />,
     link: "/about"
+  }
+]
+export const devLinks = [
+  {
+    label: `Updated: ${changeLogData.changelog[0].date}`,
+    icon: <HiOutlineDatabase />,
+    link: "/dev"
   }
 ]
 export const externalLinks = [

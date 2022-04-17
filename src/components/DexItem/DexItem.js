@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import { MetaInfo } from './styles'
 import { Link } from 'gatsby';
-import DifficultyStripe from '../DifficultyStripe/DifficultyStripe';
+import DiffContainer from '../DiffContainer/DiffContainer';
 
 const DexItem = ({ id }) => {
 	return (
@@ -35,7 +35,6 @@ const DexItem = ({ id }) => {
 					}>
 						
 						<MetaInfo>
-							<DifficultyStripe difficulty={selection.frontmatter.difficulty} />
 							<h4>
 								{selection ? 
 									selection.frontmatter.title 
@@ -45,7 +44,7 @@ const DexItem = ({ id }) => {
 							</h4>
 							<p>
 								{selection ? 
-									`${selection.frontmatter.group}${selection.frontmatter.category ? ` - ${selection.frontmatter.category}` : ""}${selection.frontmatter.difficulty ? ` (${selection.frontmatter.difficulty})` : ""}`
+									<span>{selection.frontmatter.difficulty && <DiffContainer difficulty={selection.frontmatter.difficulty} />} {selection.frontmatter.group}{selection.frontmatter.category ? ` - ${selection.frontmatter.category}` : ""}</span>
 									: 
 									`Unrecognized ID`
 								}
