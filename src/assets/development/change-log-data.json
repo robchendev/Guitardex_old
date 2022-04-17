@@ -21,10 +21,10 @@
         {
             "v": "0.6.1",
             "title": "Difficulty Markers",
-            "date": "Apr 12",
+            "date": "Apr 17",
             "year": "2022",
             "new": [
-                "Techniques page and Guitardex now shows difficulty",
+                "Techniques page and Guitardex now shows color coded difficulty markers",
                 "Guitardex now shows a drag icon when hovered"
             ]
         },
