@@ -144,7 +144,6 @@ const Saved = () => {
       }
       else if (typeof save.n !== 'string') savedObj.n = ""
       else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
-        console.log('should be here')
         savedObj.e = []
       }
       else if (!hasUrl) savedObj = JSON.parse(localStorage.getItem(SAVE_KEY)) // PROBLEM

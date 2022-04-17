@@ -11,7 +11,10 @@ export const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: top;
-  h2 {
+  h1 {
+    margin-bottom: 0.1em;
+  }
+  span {
     margin-bottom: 0.1em;
   }
   margin: 0 !important;
@@ -21,6 +24,9 @@ export const PageHeader = styled.div`
 `
 export const TechniqueName = styled.h2`
   margin-bottom: 0;
+`
+export const PreRequisites = styled.div`
+  margin-bottom: 0.5em;
 `
 export const ExerciseLinks = styled.ul`
   margin-bottom: 0.5em;

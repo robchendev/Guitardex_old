@@ -24,12 +24,20 @@ export const COLORS = {
     dark: 'rgba(0,0,0,.3)',
   },
   link: {
-    light: '#B92742',
+    light: '#2563EB',
+    dark: '#fcdc97',
+  },
+  link2: {
+    light: '#7C3AED',
     dark: '#fcdc97',
   },
   linkHover: {
     light: '#fff',
     dark: 'rgb(45,45,45)',
+  },
+  link2Hover: {
+    light: '#fff',
+    dark: '#2563EB',
   },
   toggle: {
     light: '#B92742',
@@ -64,9 +72,10 @@ export const COLORS = {
     dark: 'rgba(252, 220, 151, 0.3)',
   },
   ttText: {
-    light: 'rgb(210,210,210)',
+    light: 'rgb(240,240,240)',
     dark: 'rgb(45,45,45)',
   },
+  buttonText: '#F4F4F5',
   diffEasy: 'rgb(35, 136, 35)',
   diffMed: 'rgb(220, 130, 0)',
   diffHard: 'rgb(210, 34, 45)',

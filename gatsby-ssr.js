@@ -76,6 +76,18 @@ const MagicScriptTag = () => {
         : '${COLORS.linkHover.dark}'
     );
     root.style.setProperty(
+      '--color-link2',
+      colorMode === 'light'
+        ? '${COLORS.link2.light}'
+        : '${COLORS.link2.dark}'
+    );
+    root.style.setProperty(
+      '--color-link2Hover',
+      colorMode === 'light'
+        ? '${COLORS.link2Hover.light}'
+        : '${COLORS.link2Hover.dark}'
+    );
+    root.style.setProperty(
       '--color-toggleThumb',
       colorMode === 'light'
         ? '${COLORS.toggleThumb.light}'

@@ -2,7 +2,7 @@
 id: 7
 g: t
 group: technique
-title: Rake Harmonic
+title: Open Rake Harmonic
 difficulty: easy
 demo: 
 description:
@@ -13,7 +13,7 @@ prereqs: [
     }
 ]
 category: harmonics
-slug: rake-harmonic
+slug: open-rake-harmonic
 exercises:
 artists: 
 tags: [rake, artificial, harmonic]

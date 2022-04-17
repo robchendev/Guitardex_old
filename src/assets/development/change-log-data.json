@@ -24,8 +24,8 @@
             "date": "Apr 17",
             "year": "2022",
             "new": [
-                "Techniques page and Guitardex now shows color coded difficulty markers",
-                "Guitardex now shows a drag icon when hovered"
+                "Techniques page and Guitardex now shows color coded difficulty markers.",
+                "Guitardex now shows a drag icon when hovered."
             ]
         },
         {
@@ -35,7 +35,7 @@
             "year": "2022",
             "new": [
                 "Changed technique buttons from box and checkmark to save icon and checkmark.",
-                "Revamped save button and delete button UI to be more minimalistic",
+                "Revamped save button and delete button UI to be more minimalistic.",
                 "Bug Fix: Erasing Guitardex name using CTRL/CMD hotkeys now work."
             ]
         },

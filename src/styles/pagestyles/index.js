@@ -189,7 +189,7 @@ export const SavedDexItem = styled.div`
 export const DragIconContainer = styled.div`
   position: absolute;
   transition: 0.3s ease opacity;
-  margin-top: 0.25em;
+  margin-top: 0.3em;
   color: ${COLORS.placeholder};
   font-size: 1.7em;
   margin-left: -0.25em;
