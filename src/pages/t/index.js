@@ -22,6 +22,7 @@ export const query = graphql`
         frontmatter {
           slug
           title
+          difficulty
           tags
           category
           id

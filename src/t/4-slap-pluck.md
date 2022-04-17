@@ -3,6 +3,7 @@ id: 4
 g: t
 group: technique
 title: Slap Pluck
+difficulty: hard
 demo: 
 description:
 prereqs: [
@@ -23,9 +24,11 @@ Video:
 - Slap pluck (twist)
 - remake the videos with thumbpick later
 
-The slap pluck is used to target pluck specific strings at the same time as a thumb slap.
+The slap pluck is a combination of your regular picking technique with a thumb slap, used to target pluck specific strings. 
 
 This technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be performed by the same hand.
+
+![Slap Pluck]()
 
 Like the slap strum, the slap pluck is commonly notated with a few notes above an X. Unlike the slap strum, the slap pluck is not notated with a strum arrow.
 

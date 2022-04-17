@@ -23,6 +23,7 @@ const DexItem = ({ id }) => {
 				}`
 			}
 			render={data => {
+				console.log(data.allMarkdownRemark.nodes) 
 				const selection = data.allMarkdownRemark.nodes.find(
 					node => node.frontmatter.id === id
 				)
@@ -40,7 +41,7 @@ const DexItem = ({ id }) => {
 							</h4>
 							<p>
 								{selection ? 
-									`${selection.frontmatter.group} - ${selection.frontmatter.category}` 
+									`${selection.frontmatter.group}${selection.frontmatter.category ? ` - ${selection.frontmatter.category}` : ""}`
 									: 
 									`Unrecognized ID`
 								}

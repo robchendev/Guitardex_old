@@ -35,6 +35,7 @@ const SearchBar = ({ placeholder, data }) => {
             slug={technique.frontmatter.slug}
             title={technique.frontmatter.title}
             category={technique.frontmatter.category}
+            difficulty={technique.frontmatter.difficulty}
             id={technique.frontmatter.id}
           />
         ))}

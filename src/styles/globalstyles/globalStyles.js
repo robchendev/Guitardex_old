@@ -56,7 +56,9 @@ export const globalStyle = css`
       margin-bottom: 1em;
     }
   }
-  
+  .anchorclass {
+    background: black !important;
+  }
   .yt-lite::after {
     content: "";
     display: block;

@@ -3,6 +3,7 @@ id: 422
 g: t
 group: technique
 title: 0 - Sample Technique
+difficulty: easy
 demo: https://youtu.be/dQw4w9WgXcQ
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit ultricies purus, nec elementum risus vehicula a. Nunc venenatis diam odio, id tempor nibh tempus non. Fusce eget nulla ipsum. Ut aliquam at erat mattis tempus. Aenean tortor erat, pulvinar ut gravida vel, tempor sit amet nisi. Mauris nec augue tellus. Sed convallis placerat arcu at condimentum. Praesent rhoncus elit eu mi lacinia scelerisque. Suspendisse a elementum tellus, vitae ultricies nulla.
 prereqs:
