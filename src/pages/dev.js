@@ -32,7 +32,7 @@ const Dev = () => {
 			<h2>Change Log</h2>
 			{changeLogData.changelog.map(update => (
 				<LogRender>
-					<h4>v{update.v} - {update.title} </h4><p>{update.date}</p>
+					<h4>v{update.v} - {update.title} </h4><p>{update.date}, {update.year}</p>
 					<ItemList>{update.new.map(item => (
 						<li>{item}</li>
 					))}

@@ -2,65 +2,14 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { Explanation, DarkBackground, VideoContainer } from "./technique-styling"
+import { EmbedContainer, HeadingContainer, PageHeader, TechniqueName, ExerciseLinks, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save/Save';
-import styled from '@emotion/styled';
-import { v } from '../styles/globalstyles/variables';
 import ReactTooltip from 'react-tooltip';
-import { COLORS } from '../styles/globalstyles/theme';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
 }
-const EmbedContainer = styled.div`
-  border-radius: ${v.borderRadius};
-  overflow: hidden;
-  position: relative;
-`
-const HeadingContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-  h2 {
-    margin-bottom: 0.1em;
-  }
-  margin: 0 !important;
-`
-const PageHeader = styled.div`
-  margin-bottom: 1em;
-`
-const TechniqueName = styled.h2`
-  margin-bottom: 0;
-`
-const ExerciseLinks = styled.ul`
-  margin-bottom: 0.5em;
-  li {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-  }
-`
-const EntireWrapper = styled.div`
-  .ttEdit {
-    padding: 3px 6px 4px 6px;
-    background-color: var(--color-text, ${COLORS.text.light});
-    color: var(--color-ttText, ${COLORS.ttText.light});
-    opacity: 1 !important;
-    font-size: 1rem;
-    max-width: 13em;
-    text-align: center;
-    transition: none;
-  }
-`
-const SaveItemButtonContainer = styled.div`
-  top: 0;
-  right: 0;
-  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
-  height: 3.5em;
-  width: 3.5em;
-
-`
 
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
@@ -69,7 +18,6 @@ function TechniqueDetails({ data }) {
   } = data.allInfo.frontmatter;
   return (
     <Layout title={title}>
-
       <EntireWrapper>
         <HeadingContainer>
           <PageHeader>
@@ -86,16 +34,11 @@ function TechniqueDetails({ data }) {
                 :
                 <span> None</span>}
             </span>
-
           </PageHeader>
           <span>
-
-
-            <SaveItemButtonContainer>
+            <SaveContainer>
               <Save id={id} />
-
-            </SaveItemButtonContainer>
-
+            </SaveContainer>
           </span>
         </HeadingContainer>
         <VideoContainer>
@@ -106,14 +49,12 @@ function TechniqueDetails({ data }) {
           }
         </VideoContainer>
         <Explanation>
-
           {html ?
             <div dangerouslySetInnerHTML={{ __html: html }} />
             :
             <p>This page has no content.</p>
           }
         </Explanation>
-
         <DarkBackground>
           <h4>Tabs</h4>
           {exercises ?
@@ -137,7 +78,6 @@ function TechniqueDetails({ data }) {
           resizeHide={false}
         />
       </EntireWrapper>
-
     </Layout>
   );
 }

@@ -118,6 +118,12 @@ const MagicScriptTag = () => {
         : '${COLORS.ttText.dark}'
     );
     root.style.setProperty(
+      '--color-diffOpacity',
+      colorMode === 'light'
+        ? '${COLORS.diffOpacity.light}'
+        : '${COLORS.diffOpacity.dark}'
+    );
+    root.style.setProperty(
       '--color-placeholder',
       '${COLORS.placeholder}'
     );
