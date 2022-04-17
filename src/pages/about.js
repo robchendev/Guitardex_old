@@ -63,6 +63,7 @@ const About = () => {
         <CustomUL>
           <li><p><a href="https://www.youtube.com/RobertChen/">Robert Chen</a> - Development & Content Creation</p></li>
           <li><p><a href="https://www.davidjameszecchel.com/">David James Zecchel</a> - Content Editing</p></li>
+          <li><p><a href="https://github.com/biryaniq">Bryan Quan</a> - Concepts & QA</p></li>
           <li><p><a href="https://www.youtube.com/c/EddievanderMeer">Eddie van der Meer</a> - Content Creation</p></li>
           <li><p><a href="https://www.youtube.com/channel/UCv5lp4CKs7tdTdJwTknjrpA">Bob Ma</a> - Content Advising</p></li>
         </CustomUL>
