@@ -17,7 +17,7 @@ export const COLORS = {
   },
   bg3: {
     light: '#CBD5E1',
-    dark: '#52525B',
+    dark: '#737373',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',
@@ -25,7 +25,7 @@ export const COLORS = {
   },
   link: {
     light: '#7C3AED',
-    dark: '#C4B5FD',
+    dark: '#A1A1AA',
   },
   linkHover: {
     light: '#fff',

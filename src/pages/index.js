@@ -6,10 +6,22 @@ import { HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
-import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer } from "../styles/pagestyles/index"
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer, InputCounterInner, MobileReminder } from "../styles/pagestyles/index"
 import { Link } from 'gatsby';
 
 const Saved = () => {
+  function handleEnterKey(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      event.target.blur();
+    }
+  }
+  function handleBackButton(event) {
+    event.preventDefault();
+    event.target.blur();
+  }
+
+
   const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
     "n": "",
@@ -161,14 +173,27 @@ const Saved = () => {
   return (
     <Layout title="My Guitardex">
       <SaveNameInput>
-        <input autoComplete="off" id="saveName" type="text" placeholder="My Guitardex" maxLength="24" onInput={(e) => handleNameChange(e)} value={saved.n} />
+        <input
+          autoComplete="off" 
+          id="saveName" 
+          type="text" 
+          placeholder="Edit Name..." 
+          maxLength="24" 
+          onInput={handleNameChange} 
+          value={saved.n} 
+          onKeyUp={handleEnterKey}
+        />
         <InputCounterContainer>
           <InputCounter>
-            <span id="inputLimit"></span>
-            <span>/24</span>
+            <MobileReminder>Click enter when done</MobileReminder>
+            <span>
+              <span id="inputLimit"></span>
+              <span>/24</span>
+            </span>
           </InputCounter>
         </InputCounterContainer>
       </SaveNameInput>
+      
       {saved.e.length === 0 &&
         <EmptyList>
           <Link to='t'>

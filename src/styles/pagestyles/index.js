@@ -71,10 +71,16 @@ export const InputCounterContainer = styled.div`
 `
 export const InputCounter = styled.span`
   position: absolute;
-  bottom: -1.25em;
+  top: 0;
   right: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   visibility: hidden;
   color: ${COLORS.placeholder};
+`
+export const MobileReminder = styled.span`
+  visibility: hidden;
 `
 export const SaveNameInput = styled.div`
   input {
@@ -84,7 +90,7 @@ export const SaveNameInput = styled.div`
     //padding: ${v.mdSpacing};
     font-family: inherit;
     letter-spacing: inherit;
-    padding-bottom: 0.1em;
+
     font-size: 1.8em;
     font-weight: 500;
     width: 100%;
@@ -92,24 +98,27 @@ export const SaveNameInput = styled.div`
     color: inherit;
     background: transparent;
     ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
-      color: var(--color-text, ${COLORS.text.light});
+      color: ${COLORS.text.placeholder};
       opacity: 1;
     }
-    :hover, :focus {
-      border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+    :focus, :placeholder-shown {
+      background-color: var(--color-bg, ${COLORS.bg.light});
+      border-radius: ${v.borderRadius};
     }
     :focus {
       & ~ ${InputCounterContainer} ${InputCounter} {
         visibility: visible;
       }
-      ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
-        color: transparent;
-        opacity: 1;
+      & ~ ${InputCounterContainer} ${InputCounter} ${MobileReminder} {
+        ${maxq[1]} {
+          visibility: visible;
+        }
       }
+      border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+      border-radius: ${v.borderRadius} ${v.borderRadius} 0 0;
     }
   }
-  display: flex;
-  margin-bottom: calc(1.8em - 2px - 0.1em);
+  margin-bottom: calc(1.8em - 2px);
 `
 export const InputBox = styled.input`
 

@@ -10,7 +10,7 @@ export const DexResultBlock = styled.div`
   transition: 0.3s ease margin;
 `
 export const DexResultContainer = styled.div`
-  :hover {
+  :hover, :active {
     ${DexResultBlock} {
       margin-left: 1em;
       color: var(--color-link, ${COLORS.link.light});
@@ -28,7 +28,6 @@ export const DexMetaContainer = styled.span`
 `
 export const MetaInfo = styled.div`
   color: var(--color-text, ${COLORS.text.light});
-  
   :hover {
     color: var(--color-link, ${COLORS.link.light}) !important;
   }
