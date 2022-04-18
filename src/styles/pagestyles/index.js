@@ -68,31 +68,60 @@ export const EmptyListEntries = styled.div`
   cursor: pointer;
 `
 
-export const SaveNameInput = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light});
-  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
-  border-radius: ${v.borderRadius};
-  input {
-    padding: 0 ${v.mdSpacing} 0 0;
-    font-family: inherit;
-    letter-spacing: inherit;
-    font-size: 18px;
-    width: 100%;
-    outline: none;
-    border: none;
-    color: inherit;
-    background: transparent;
-  }
-  display: flex;
-  margin-bottom: 1em;
-`
 export const SaveNameIcon = styled.button`
   ${btnReset};
   padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
   display: flex;
+  position: absolute;
+  visibility: hidden;
+  z-index: 999;
   svg {
     font-size: 20px;
   }
+`
+export const InputCounterContainer = styled.div`
+  position: relative;
+`
+export const InputCounter = styled.span`
+  position: absolute;
+  bottom: -1.25em;
+  right: 0;
+  visibility: hidden;
+  color: ${COLORS.placeholder};
+`
+export const SaveNameInput = styled.div`
+  input {
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+    //padding: ${v.mdSpacing};
+    font-family: inherit;
+    letter-spacing: inherit;
+    font-size: 1.8em;
+    font-weight: 500;
+    width: 100%;
+    outline: none;
+    color: inherit;
+    background: transparent;
+    ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
+      color: ${COLORS.placeholder};
+      opacity: 1;
+    }
+    :hover, :focus {
+      border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+    }
+    :focus {
+      & + ${InputCounterContainer} ${InputCounter} {
+        visibility: visible;
+      }
+    }
+  }
+ 
+  display: flex;
+  margin-bottom: calc(1.8em - 2px);
+`
+export const InputBox = styled.input`
+
 `
 export const ExportSave = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});

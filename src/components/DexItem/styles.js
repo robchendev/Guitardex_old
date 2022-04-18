@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import { v, maxq } from '../../styles/globalstyles/variables';
 import { COLORS } from '../../styles/globalstyles/theme';
 
+
+
 export const MetaInfo = styled.div`
   padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
   color: var(--color-text, ${COLORS.text.light});
@@ -13,6 +15,7 @@ export const MetaInfo = styled.div`
     color: var(--color-link, ${COLORS.link.light}) !important;
   }
   h4 {
+
     margin-bottom: 0.1em;
   }
   p {

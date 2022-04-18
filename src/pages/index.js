@@ -6,7 +6,7 @@ import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
-import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer } from "../styles/pagestyles/index"
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, HiddenHeading, InputCounter, InputCounterContainer, InputBox } from "../styles/pagestyles/index"
 import { Link } from 'gatsby';
 
 const Saved = () => {
@@ -42,6 +42,8 @@ const Saved = () => {
   const location = useLocation().pathname
   const handleNameChange = (e) => {
     const newName = e.target.value.replace(/[-=~']/g, '')
+    document.getElementById("inputLimit").innerHTML = newName.length
+    
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -158,12 +160,15 @@ const Saved = () => {
   }, [saved])
   return (
     <Layout title="My Guitardex">
-      <h1>My Guitardex</h1>
       <SaveNameInput>
-        <SaveNameIcon>
-          <HiOutlinePencilAlt />
-        </SaveNameIcon>
-        <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onInput={(e) => handleNameChange(e)} value={saved.n} />
+
+        <input autoComplete="off" id="saveName" type="text" placeholder="Untitled" maxLength="24" onInput={(e) => handleNameChange(e)} value={saved.n} />
+        <InputCounterContainer>
+          <InputCounter>
+            <span id="inputLimit"></span>
+            <span>/24</span>
+          </InputCounter>
+        </InputCounterContainer>
       </SaveNameInput>
       {saved.e.length === 0 &&
         <EmptyList>
@@ -202,17 +207,13 @@ const Saved = () => {
                             <MdDragIndicator />
                           </DragIconContainer> 
                         <MoveableContainer>
-                            
-                          
                           <SavedDexItem>
-                            
                             <DexItem id={id} />
                             <TrashContainer>
                               <Trash onClick={() => { clearItem(id) }}>
                                 <TrashIcon>
                                   <HiOutlineTrash />
                                 </TrashIcon>
-
                               </Trash>
                             </TrashContainer>
                           </SavedDexItem>

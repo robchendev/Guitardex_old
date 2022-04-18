@@ -34,23 +34,25 @@ const DexItem = ({ id }) => {
 					<Link to={
 						selection ? selection.frontmatter.g + '/' + selection.frontmatter.slug : `#`
 					}>
-						
-						<MetaInfo>
-							<h4>
-								{selection ? 
-									selection.frontmatter.title 
-									: 
-									`Unknown (id: ${id})`
-								}
-							</h4>
-							<p>
-								{selection ? 
-									<span>{selection.frontmatter.difficulty && <DiffContainer difficulty={selection.frontmatter.difficulty} />}{selection.frontmatter.group && <GroupContainer group={selection.frontmatter.group} />}{selection.frontmatter.category && <CategoryContainer category={selection.frontmatter.category} />}</span>
-									: 
-									`Unrecognized ID`
-								}
-							</p>
-						</MetaInfo>
+
+							<MetaInfo>
+								
+								<h4>
+									{selection ? 
+										selection.frontmatter.title 
+										: 
+										`Unknown (id: ${id})`
+									}
+								</h4>
+								<p>
+									{selection ? 
+										<span>{selection.frontmatter.difficulty && <DiffContainer difficulty={selection.frontmatter.difficulty} />}{selection.frontmatter.group && <GroupContainer group={selection.frontmatter.group} />}{selection.frontmatter.category && <CategoryContainer category={selection.frontmatter.category} />}</span>
+										: 
+										`Unrecognized ID`
+									}
+								</p>
+							</MetaInfo>
+
 					</Link>
 				)
 			}}
