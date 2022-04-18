@@ -41,9 +41,7 @@ const Saved = () => {
   }
   const location = useLocation().pathname
   const handleNameChange = (e) => {
-    const newName = e.target.value.replace(/[-=~']/g, '')
-    document.getElementById("inputLimit").innerHTML = newName.length
-    
+    const newName = e.target.value.replace(/[-=~']/g, '')    
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -157,7 +155,9 @@ const Saved = () => {
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
     document.getElementById("exportURL").value = "https://gdex.cc/?" + encode(saved)
+    document.getElementById("inputLimit").innerHTML = saved.n.length
   }, [saved])
+  
   return (
     <Layout title="My Guitardex">
       <SaveNameInput>

@@ -1,11 +1,10 @@
 import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import { DexMetaContainer, MetaInfo, OverflowContainer } from './styles'
+import { DexMetaContainer, MetaInfo } from './styles'
 import { Link } from 'gatsby'
 import DiffContainer from '../DiffContainer/DiffContainer'
 import GroupContainer from '../GroupContainer/GroupContainer'
 import CategoryContainer from '../CategoryContainer/CategoryContainer'
-import { MetaContainer,  } from '../SearchResult/styles'
 import { DexResultContainer, DexResultBlock } from './styles'
 
 const DexItem = ({ id }) => {
