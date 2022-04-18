@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import { useLocation } from "@reach/router"
 import { SAVE_KEY } from '../styles/globalstyles/variables'
-import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
+import { HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
-import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, HiddenHeading, InputCounter, InputCounterContainer, InputBox } from "../styles/pagestyles/index"
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer } from "../styles/pagestyles/index"
 import { Link } from 'gatsby';
 
 const Saved = () => {
@@ -161,8 +161,7 @@ const Saved = () => {
   return (
     <Layout title="My Guitardex">
       <SaveNameInput>
-
-        <input autoComplete="off" id="saveName" type="text" placeholder="Untitled" maxLength="24" onInput={(e) => handleNameChange(e)} value={saved.n} />
+        <input autoComplete="off" id="saveName" type="text" placeholder="My Guitardex" maxLength="24" onInput={(e) => handleNameChange(e)} value={saved.n} />
         <InputCounterContainer>
           <InputCounter>
             <span id="inputLimit"></span>
@@ -210,7 +209,10 @@ const Saved = () => {
                           <SavedDexItem>
                             <DexItem id={id} />
                             <TrashContainer>
-                              <Trash onClick={() => { clearItem(id) }}>
+                              <Trash onClick={(e) => {
+                                clearItem(id)
+                                e.preventDefault()
+                              }}> 
                                 <TrashIcon>
                                   <HiOutlineTrash />
                                 </TrashIcon>

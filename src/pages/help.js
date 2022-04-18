@@ -39,7 +39,7 @@ const Help = () => {
         <li>Go to your <Link to="/">Guitardex</Link></li>
         <li>Click 'Delete Dex'</li>
       </CustomOL>
-    </Layout>
+    </Layout> 
   )
 }
 

@@ -67,18 +67,6 @@ export const EmptyListEntries = styled.div`
   }
   cursor: pointer;
 `
-
-export const SaveNameIcon = styled.button`
-  ${btnReset};
-  padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
-  display: flex;
-  position: absolute;
-  visibility: hidden;
-  z-index: 999;
-  svg {
-    font-size: 20px;
-  }
-`
 export const InputCounterContainer = styled.div`
   position: relative;
 `
@@ -97,6 +85,7 @@ export const SaveNameInput = styled.div`
     //padding: ${v.mdSpacing};
     font-family: inherit;
     letter-spacing: inherit;
+    padding-bottom: 0.1em;
     font-size: 1.8em;
     font-weight: 500;
     width: 100%;
@@ -104,21 +93,24 @@ export const SaveNameInput = styled.div`
     color: inherit;
     background: transparent;
     ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
-      color: ${COLORS.placeholder};
+      color: var(--color-text, ${COLORS.text.light});
       opacity: 1;
     }
     :hover, :focus {
       border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
     }
     :focus {
-      & + ${InputCounterContainer} ${InputCounter} {
+      & ~ ${InputCounterContainer} ${InputCounter} {
         visibility: visible;
+      }
+      ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
+        color: transparent;
+        opacity: 1;
       }
     }
   }
- 
   display: flex;
-  margin-bottom: calc(1.8em - 2px);
+  margin-bottom: calc(1.8em - 2px - 0.1em);
 `
 export const InputBox = styled.input`
 
@@ -201,7 +193,7 @@ export const HelpLinkDiv = styled.div`
   padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
 `
 export const SavedDexItem = styled.div`
-  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
+
   transition: 0.3s ease;
   transition-property: margin;
   border-radius: ${v.borderRadius};
@@ -224,14 +216,6 @@ export const DragIconContainer = styled.div`
 export const MoveableContainer = styled.div`
   display: flex;
   width: 100%;
-  :hover, :active {
-    ${SavedDexItem} {
-      margin-left: 1em;
-      ${maxq[1]} {
-        margin-left: 0;
-      }
-    }
-  }
 `
 export const EmptyListEntryContainer = styled.div`
   color: var(--color-text, ${COLORS.text.light});
