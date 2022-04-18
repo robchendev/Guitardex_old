@@ -8,7 +8,7 @@ export const SSidebar = styled.div`
   width: ${v.sidebarWidth};
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: calc(${v.borderRadius} * 2);
-  box-shadow: 0 0 4px ${COLORS.bgAlpha.dark};
+  box-shadow: 0 0 4px ${COLORS.bgAlpha};
   padding: ${v.smSpacing} ${v.mdSpacing};
   font-family: 'Fredoka', sans-serif;
   position: relative;
@@ -24,11 +24,11 @@ export const SDivider = styled.div`
   height: 1px;
   width: 100%;
   background: var(--color-bg3, ${COLORS.bg3.light});
-  margin: ${v.mdSpacing} 0;
+  margin: ${v.smSpacing} 0;
 `
 export const SLinkContainer = styled.div`
-  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, COLORS.primary.light)`)};
-  color: ${({ isActive }) => (!isActive ? `var(--color-text, COLORS.text.light)` : `#fff`)};
+  background: ${({ isActive }) => (!isActive ? `none` : `var(--color-primary, ${COLORS.primary.light})`)};
+  color: ${({ isActive }) => (!isActive ? `var(--color-text, ${COLORS.text.light})` : COLORS.buttonText)};
   border-radius: ${v.borderRadius};
   margin: 6px 0;
   :hover {

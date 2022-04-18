@@ -7,5 +7,5 @@ export const GContainer = styled.span`
   padding: 0 3px 1px 3px;
   border-radius: calc(${v.borderRadius} / 2);
   color: ${COLORS.buttonText};
-  background: ${COLORS.link2.light};
+  background: var(--color-group, ${COLORS.group.light});
 `

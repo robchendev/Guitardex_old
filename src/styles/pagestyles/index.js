@@ -34,7 +34,7 @@ export const TrashIcon = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+  color: var(--color-checkMarkColor, ${COLORS.checkMarkColor.light});
   font-size: 30px;
   :hover {
     color: var(--color-link, ${COLORS.link.light});
@@ -125,7 +125,7 @@ export const ExportSave = styled.div`
     cursor: pointer;
     transition: 0.3s ease;
     :hover {
-      background: #972036;
+      background: #6D28D9;
     }
     position: relative;
     :before {
@@ -165,7 +165,7 @@ export const DeleteAll = styled.button`
   cursor: pointer;
   transition: 0.3s ease;
   :hover {
-    background: #972036;
+    background: #6D28D9;
   }
 `
 export const HelpLinkDiv = styled.div`

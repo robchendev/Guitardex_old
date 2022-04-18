@@ -12,14 +12,14 @@ export const internalLinks = [
     label: "Techniques",
     icon: <HiOutlineViewGrid />,
     link: "/t"
-  },
+  }  
+]
+export const devLinks = [
   {
     label: "About",
     icon: <HiOutlineUserGroup />,
     link: "/about"
-  }
-]
-export const devLinks = [
+  },
   {
     label: `Updated: ${changeLogData.changelog[0].date}`,
     icon: <HiOutlineDatabase />,
