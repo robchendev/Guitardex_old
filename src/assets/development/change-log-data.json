@@ -20,11 +20,14 @@
         },
         {
             "v": "0.6.1",
-            "title": "Difficulty Markers",
+            "title": "Color and interface design overhaul",
             "date": "Apr 17",
             "year": "2022",
             "new": [
-                "Techniques page and Guitardex now shows color coded difficulty markers.",
+                "Techniques search page and Guitardex now shows color coded difficulty markers.",
+                "Techniques search page now shows category markers",
+                "Guitardex now shows category and group markers",
+                "Technique pages now has the page header (reqs, difficulty, group, category, save button) visibly separate from the content below.",
                 "Guitardex now shows a drag icon when hovered."
             ]
         },

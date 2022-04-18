@@ -170,9 +170,6 @@ export const DeleteAll = styled.button`
 `
 export const HelpLinkDiv = styled.div`
   padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
-  p {
-    color: ${COLORS.placeholder};
-  }
 `
 export const SavedDexItem = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;

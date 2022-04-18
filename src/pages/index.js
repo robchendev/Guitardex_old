@@ -24,7 +24,7 @@ const Saved = () => {
     }, 2 * 1000);
   }
   const clearSave = () => {
-    if (window.confirm("This will delete your added techniques. Click OK to continue.")) {
+    if (window.confirm("This will clear your guitardex. Click OK to continue.")) {
       setSaved({ "n": "", "e": [] })
     }
   }

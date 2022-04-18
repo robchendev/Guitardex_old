@@ -3,7 +3,7 @@ import { COLORS } from "../styles/globalstyles/theme"
 import { v, maxq } from "../styles/globalstyles/variables"
 
 export const EmbedContainer = styled.div`
-  border-radius: ${v.borderRadius};
+  border-radius: calc(${v.borderRadius} * 2);
   overflow: hidden;
   position: relative;
 `
@@ -15,6 +15,7 @@ export const HeadingContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   h1 {
+    font-size: 1.4em;
     margin-top: -0.2em;
     margin-bottom: 0.1em;
     justify-content: start;
@@ -26,6 +27,7 @@ export const HeadingContainer = styled.div`
 `
 export const PageHeader = styled.div`
   margin-bottom: 0.25em;
+  margin-right: 0.25em;
 `
 export const TechniqueName = styled.h2`
   margin-bottom: 0;
