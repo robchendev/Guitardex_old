@@ -25,8 +25,8 @@
             "year": "2022",
             "new": [
                 "Techniques search page and Guitardex now shows color coded difficulty markers.",
-                "Techniques search page now shows category markers",
-                "Guitardex now shows category and group markers",
+                "Techniques search page now shows category markers.",
+                "Guitardex now shows category and group markers.",
                 "Technique pages now has the page header (reqs, difficulty, group, category, save button) visibly separate from the content below."
             ]
         },
@@ -37,7 +37,7 @@
             "year": "2022",
             "new": [
                 "Guitardex profile names are now displayed as the page heading to make the profile name have more visual impact instead of 'My Guitardex' with an input box below. Unnamed profiles now have a placeholder of 'My Guitardex' displayed above instead.",
-                "A maximum character length of 24 is now shown with a counter when editing the profile",
+                "A maximum character length of 24 is now shown with a counter when editing the profile.",
                 "Guitardex now shows a drag icon when hovered."
             ]
         },
