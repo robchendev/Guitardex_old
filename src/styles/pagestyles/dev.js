@@ -6,7 +6,8 @@ export const LogRender = styled.div`
     margin-bottom: 0;
   }
   p {
-    color: ${COLORS.placeholder};
+    color: var(--color-text, ${COLORS.text.light});
+    opacity: 0.9;
   }
   margin-bottom: 1em;
   :not(:last-child) {

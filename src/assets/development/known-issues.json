@@ -1,6 +1,7 @@
 {
     "issues": [
         "If the user already has a Guitardex save file in their browser's localStorage, the starter save file will be loaded first.",
-        "If the user already has a Guitardex save file in their browser's localStorage, and has accessed the site via a direct short link, (gdex.cc/?...), the starter save file will be loaded before the browser prompt for overwriting the previous save opens."
+        "If the user already has a Guitardex save file in their browser's localStorage, and has accessed the site via a direct short link, (gdex.cc/?...), the starter save file will be loaded before the browser prompt for overwriting the previous save opens.",
+        "Samsung Galaxy mobile browser forces dark mode and ruins the design's colors"
     ]
 }

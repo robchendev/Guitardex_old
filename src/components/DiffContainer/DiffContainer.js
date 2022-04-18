@@ -13,7 +13,6 @@ const DiffContainer = ({ difficulty }) => {
     diffColor = COLORS.diffHard
     diffText = "hard"
   }
-
   return (
     <span><DContainer diffColor={diffColor}>{diffText}</DContainer> </span>
   )

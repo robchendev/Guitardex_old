@@ -32,6 +32,7 @@ const Sidebar = () => {
       {/* {externalLinks.map(({ label, icon, link }) => (
         <ExternalLinks key={label} label={label} icon={icon} link={link} />
       ))} */}
+      <SDivider />
       {devLinks.map(({ label, icon, link }) => (
         <InternalLinks
           key={label}

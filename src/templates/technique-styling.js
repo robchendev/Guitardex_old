@@ -3,24 +3,37 @@ import { COLORS } from "../styles/globalstyles/theme"
 import { v, maxq } from "../styles/globalstyles/variables"
 
 export const EmbedContainer = styled.div`
-  border-radius: ${v.borderRadius};
+  border-radius: calc(${v.borderRadius} * 2);
   overflow: hidden;
   position: relative;
 `
 export const HeadingContainer = styled.div`
+  background: var(--color-bg, ${COLORS.bg.light});
+  padding: ${v.mdSpacing};
+  border-radius: calc(${v.borderRadius} * 2);
   display: flex;
   justify-content: space-between;
-  align-items: top;
-  h2 {
+  align-items: center;
+  h1 {
+    font-size: 1.4em;
+    margin-top: -0.2em;
+    margin-bottom: 0.1em;
+    justify-content: start;
+  }
+  span {
     margin-bottom: 0.1em;
   }
-  margin: 0 !important;
+  margin-bottom: 1.5em;
 `
 export const PageHeader = styled.div`
-  margin-bottom: 1em;
+  margin-bottom: 0.25em;
+  margin-right: 0.25em;
 `
 export const TechniqueName = styled.h2`
   margin-bottom: 0;
+`
+export const PreRequisites = styled.div`
+  margin-bottom: 0.5em;
 `
 export const ExerciseLinks = styled.ul`
   margin-bottom: 0.5em;
@@ -43,9 +56,11 @@ export const EntireWrapper = styled.div`
   }
 `
 export const SaveContainer = styled.div`
-  top: 0;
-  right: 0;
-  border-radius: 0 ${v.borderRadius} ${v.borderRadius} 0;
+  background-color: var(--color-bg2, ${COLORS.bg2.light});
+  border: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+  border-radius: ${v.borderRadius};
+
+  margin-top: 0.2em;
   height: 3.5em;
   width: 3.5em;
 `
@@ -62,8 +77,8 @@ export const TechList = styled.div`
   }
 `
 export const DarkBackground = styled.div`
-  padding: 1em;
-  border-radius: 12px;
+  padding: ${v.mdSpacing};
+  border-radius: calc(${v.borderRadius} * 2);
   background: var(--color-bg, ${COLORS.bg.light});
   p {
     margin: 0;
@@ -71,7 +86,7 @@ export const DarkBackground = styled.div`
 `
 export const Explanation = styled.div`
   padding: 1.5em 0;
-  border-radius: 12px;
+  border-radius: calc(${v.borderRadius} * 2);
   ${maxq[1]} {
     padding: 1.5em 0;
   }

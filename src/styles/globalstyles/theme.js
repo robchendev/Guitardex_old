@@ -1,47 +1,39 @@
 export const COLORS = {
   text: {
-    light: 'rgb(45,45,45)',
-    dark: 'rgb(210,210,210)',
+    light: '#1E293B',
+    dark: '#E7E5E4',
   },
   bg: {
-    light: 'rgb(241,242,245)',
-    dark: 'rgb(25,25,25)',
+    light: '#F1F5F9',
+    dark: '#1e1e1e',
   },
   primary: {
-    light: '#B92742',
-    dark: '#B92742',
+    light: '#7C3AED',
+    dark: '#7C3AED',
   },
   bg2: {
     light: 'rgb(255,255,255)',
-    dark: 'rgb(45,45,45)',
+    dark: '#363636',
   },
   bg3: {
-    light: 'rgb(215,215,215)',
-    dark: 'rgb(70,70,70)',
+    light: '#CBD5E1',
+    dark: '#52525B',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',
-    dark: 'rgba(0,0,0,.3)',
+    dark: 'rgba(0,0,0,.4)',
   },
   link: {
-    light: '#B92742',
-    dark: '#fcdc97',
+    light: '#7C3AED',
+    dark: '#C4B5FD',
   },
   linkHover: {
     light: '#fff',
     dark: 'rgb(45,45,45)',
   },
-  toggle: {
-    light: '#B92742',
-    dark: '#B92742',
-  },
   tabimg: {
     light: 'brightness(1.04)',
-    dark: 'invert(0.847)',
-  },
-  toggleThumb: {
-    light: 'calc(100% - 16px - 2px)',
-    dark: '2px',
+    dark: 'invert(0.831) contrast(110%) brightness(130%)',
   },
   toggleName: {
     light: '"Dark Theme"',
@@ -55,23 +47,31 @@ export const COLORS = {
     light: 'none',
     dark: 'flex',
   },
-  checkMarkBorder: {
-    light: 'rgb(130,130,130)',
-    dark: 'rgb(150,150,150)',
+  checkMarkColor: {
+    light: '#9CA3AF',
+    dark: '#6B7280',
   },
   tooltip: {
-    light: 'rgba(185, 39, 66, 0.3)',
-    dark: 'rgba(252, 220, 151, 0.3)',
+    light: 'rgba(139, 92, 246, 0.3)',
+    dark: 'rgba(139, 92, 246, 0.5)',
   },
   ttText: {
-    light: 'rgb(210,210,210)',
+    light: '#F1F5F9',
     dark: 'rgb(45,45,45)',
   },
-  diffEasy: 'rgb(35, 136, 35)',
-  diffMed: 'rgb(220, 130, 0)',
-  diffHard: 'rgb(210, 34, 45)',
-
-  placeholder: '#8e8e8e',
+  buttonText: '#FAFAFA',
+  diffEasy: '#16A34A',
+  diffMed: '#F59E0B',
+  diffHard: '#E11D48',
+  group: {
+    light: '#7C3AED',
+    dark: '#8B5CF6',
+  },
+  category: {
+    light: '#64748B',
+    dark: '#64748B',
+  },
+  placeholder: '#9CA3AF',
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

@@ -2,10 +2,13 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { EmbedContainer, HeadingContainer, PageHeader, TechniqueName, ExerciseLinks, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer } from "./technique-styling"
+import { EmbedContainer, HeadingContainer, PageHeader, PreRequisites, ExerciseLinks, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save/Save';
 import ReactTooltip from 'react-tooltip';
+import DiffContainer from '../components/DiffContainer/DiffContainer';
+import CategoryContainer from '../components/CategoryContainer/CategoryContainer';
+import GroupContainer from '../components/GroupContainer/GroupContainer';
 
 const extractVideoURL = (demo) => {
   return demo?.match(/^https?:\/\/.*(?:youtu.be\/|v\/|u\/\\w\/|embed\/|watch?v=)([^#&?]*).*$/)[1]
@@ -14,15 +17,15 @@ const extractVideoURL = (demo) => {
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const {
-    id, g, title, demo, exercises, prereqs
+    id, g, group, title, category, difficulty, demo, exercises, prereqs
   } = data.allInfo.frontmatter;
   return (
     <Layout title={title}>
       <EntireWrapper>
         <HeadingContainer>
           <PageHeader>
-            <TechniqueName>{title}</TechniqueName>
-            <span>
+            <h1>{title}</h1>
+            <PreRequisites>
               Reqs:{" "}
               {prereqs ?
                 prereqs.map((prereq, index) => (
@@ -33,7 +36,12 @@ function TechniqueDetails({ data }) {
                 ))
                 :
                 <span> None</span>}
-            </span>
+            </PreRequisites>
+            <div>
+              <DiffContainer difficulty={difficulty} />
+              <GroupContainer group={group} />
+              <CategoryContainer category={category} />
+            </div>
           </PageHeader>
           <span>
             <SaveContainer>
@@ -89,7 +97,10 @@ export const query = graphql`
       frontmatter {
         id
         g
+        group
         title
+        category
+        difficulty
         demo
         prereqs {
           name

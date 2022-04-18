@@ -32,6 +32,13 @@ export const MetaContainer = styled.span`
   }
 `
 export const Title = styled.h4`
+  width: calc(100% - 3em);
+  ${maxq[1]} {
+    width: calc(100% - 2em);
+  }
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   margin-bottom: 0.1em;
 `
 export const Category = styled.p`

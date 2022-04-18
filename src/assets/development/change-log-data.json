@@ -11,7 +11,7 @@
         },
         {
             "v": "0.9.1",
-            "title": "Launched Closed Beta",
+            "title": "Closed Beta Launch",
             "date": "TBA",
             "year": "2022",
             "new": [
@@ -19,30 +19,43 @@
             ]
         },
         {
-            "v": "0.6.1",
-            "title": "Difficulty Markers",
+            "v": "0.6.2",
+            "title": "Color Scheme Overhaul",
             "date": "Apr 17",
             "year": "2022",
             "new": [
-                "Techniques page and Guitardex now shows color coded difficulty markers",
-                "Guitardex now shows a drag icon when hovered"
+                "Techniques search page and Guitardex now shows color coded difficulty markers.",
+                "Techniques search page now shows category markers",
+                "Guitardex now shows category and group markers",
+                "Technique pages now has the page header (reqs, difficulty, group, category, save button) visibly separate from the content below."
+            ]
+        },
+        {
+            "v": "0.6.1",
+            "title": "User Interface Overhaul",
+            "date": "Apr 12",
+            "year": "2022",
+            "new": [
+                "Guitardex profile names are now displayed as the page heading to make the profile name have more visual impact instead of 'My Guitardex' with an input box below. Unnamed profiles now have a placeholder of 'My Guitardex' displayed above instead.",
+                "A maximum character length of 24 is now shown with a counter when editing the profile",
+                "Guitardex now shows a drag icon when hovered."
             ]
         },
         {
             "v": "0.5.2",
             "title": "Improved Technique Button UI",
-            "date": "Apr 12",
+            "date": "Apr 8",
             "year": "2022",
             "new": [
                 "Changed technique buttons from box and checkmark to save icon and checkmark.",
-                "Revamped save button and delete button UI to be more minimalistic",
+                "Revamped save button and delete button UI to be more minimalistic.",
                 "Bug Fix: Erasing Guitardex name using CTRL/CMD hotkeys now work."
             ]
         },
         {
             "v": "0.5.1",
             "title": "Created Necessary Pages",
-            "date": "Apr 4",
+            "date": "Apr 2",
             "year": "2022",
             "new": [
                 "Added pages Help, About, and Community. Development (this) page was also added."

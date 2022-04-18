@@ -1,6 +1,6 @@
 .tabImg {
   
-  filter: var(--color-tabimg);
+  filter: var(--color-tabimg) ;
   margin-bottom: 1.1em;
 }
 
@@ -16,5 +16,5 @@
 }
 .tt:hover {
   background-color: var(--color-tooltip);
-  cursor: help;
+  cursor: pointer;
 }

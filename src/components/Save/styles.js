@@ -4,7 +4,7 @@ import { v } from '../../styles/globalstyles/variables'
 
 export const UnChecked = styled.div`
   font-size: 30px;
-  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+  color: var(--color-checkMarkColor, ${COLORS.checkMarkColor.light});
 `
 export const Checked = styled.div`
   margin-top: -2px;
@@ -19,7 +19,7 @@ export const SaveButton = styled.button`
   height: 100%;
   padding-top: 8px;
   border: none;
-  background: var(--color-bg, ${COLORS.bg.light});
+  background: transparent;
   border-radius: ${v.borderRadius};
   margin-bottom: ${v.mdSpacing};
   cursor: pointer;
@@ -28,7 +28,7 @@ export const SaveButton = styled.button`
       color: var(--color-link, ${COLORS.link.light});
     }
     ${Checked} {
-      color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+      color: var(--color-checkMarkColor, ${COLORS.checkMarkColor.light});
     }
   }
 `

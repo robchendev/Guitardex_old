@@ -34,7 +34,7 @@ export const TrashIcon = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  color: var(--color-checkMarkBorder, ${COLORS.checkMarkBorder.light});
+  color: var(--color-checkMarkColor, ${COLORS.checkMarkColor.light});
   font-size: 30px;
   :hover {
     color: var(--color-link, ${COLORS.link.light});
@@ -67,32 +67,53 @@ export const EmptyListEntries = styled.div`
   }
   cursor: pointer;
 `
-
+export const InputCounterContainer = styled.div`
+  position: relative;
+`
+export const InputCounter = styled.span`
+  position: absolute;
+  bottom: -1.25em;
+  right: 0;
+  visibility: hidden;
+  color: ${COLORS.placeholder};
+`
 export const SaveNameInput = styled.div`
-  background: var(--color-bg, ${COLORS.bg.light});
-  border: 1px solid var(--color-bg3, ${COLORS.bg3.light});
-  border-radius: ${v.borderRadius};
   input {
-    padding: 0 ${v.mdSpacing} 0 0;
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+    //padding: ${v.mdSpacing};
     font-family: inherit;
     letter-spacing: inherit;
-    font-size: 18px;
+    padding-bottom: 0.1em;
+    font-size: 1.8em;
+    font-weight: 500;
     width: 100%;
     outline: none;
-    border: none;
     color: inherit;
     background: transparent;
+    ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
+      color: var(--color-text, ${COLORS.text.light});
+      opacity: 1;
+    }
+    :hover, :focus {
+      border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+    }
+    :focus {
+      & ~ ${InputCounterContainer} ${InputCounter} {
+        visibility: visible;
+      }
+      ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
+        color: transparent;
+        opacity: 1;
+      }
+    }
   }
   display: flex;
-  margin-bottom: 1em;
+  margin-bottom: calc(1.8em - 2px - 0.1em);
 `
-export const SaveNameIcon = styled.button`
-  ${btnReset};
-  padding: calc(${v.mdSpacing} - 2px) ${v.mdSpacing};
-  display: flex;
-  svg {
-    font-size: 20px;
-  }
+export const InputBox = styled.input`
+
 `
 export const ExportSave = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
@@ -125,7 +146,7 @@ export const ExportSave = styled.div`
     cursor: pointer;
     transition: 0.3s ease;
     :hover {
-      background: #972036;
+      background: #6D28D9;
     }
     position: relative;
     :before {
@@ -165,17 +186,14 @@ export const DeleteAll = styled.button`
   cursor: pointer;
   transition: 0.3s ease;
   :hover {
-    background: #972036;
+    background: #6D28D9;
   }
 `
 export const HelpLinkDiv = styled.div`
   padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
-  p {
-    color: ${COLORS.placeholder};
-  }
 `
 export const SavedDexItem = styled.div`
-  background-color: var(--color-bg, ${COLORS.bg.light}) !important;
+
   transition: 0.3s ease;
   transition-property: margin;
   border-radius: ${v.borderRadius};
@@ -189,7 +207,7 @@ export const SavedDexItem = styled.div`
 export const DragIconContainer = styled.div`
   position: absolute;
   transition: 0.3s ease opacity;
-  margin-top: 0.25em;
+  margin-top: 0.3em;
   color: ${COLORS.placeholder};
   font-size: 1.7em;
   margin-left: -0.25em;
@@ -198,14 +216,6 @@ export const DragIconContainer = styled.div`
 export const MoveableContainer = styled.div`
   display: flex;
   width: 100%;
-  :hover, :active {
-    ${SavedDexItem} {
-      margin-left: 1em;
-      ${maxq[1]} {
-        margin-left: 0;
-      }
-    }
-  }
 `
 export const EmptyListEntryContainer = styled.div`
   color: var(--color-text, ${COLORS.text.light});

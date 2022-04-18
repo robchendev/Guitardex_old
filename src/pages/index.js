@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/Layout/Layout"
 import { useLocation } from "@reach/router"
 import { SAVE_KEY } from '../styles/globalstyles/variables'
-import { HiOutlinePencilAlt, HiOutlineTrash } from 'react-icons/hi'
+import { HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
-import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, SaveNameIcon, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkContainer, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer } from "../styles/pagestyles/index"
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer } from "../styles/pagestyles/index"
 import { Link } from 'gatsby';
 
 const Saved = () => {
@@ -24,7 +24,7 @@ const Saved = () => {
     }, 2 * 1000);
   }
   const clearSave = () => {
-    if (window.confirm("This will delete your added techniques. Click OK to continue.")) {
+    if (window.confirm("This will clear your guitardex. Click OK to continue.")) {
       setSaved({ "n": "", "e": [] })
     }
   }
@@ -42,6 +42,8 @@ const Saved = () => {
   const location = useLocation().pathname
   const handleNameChange = (e) => {
     const newName = e.target.value.replace(/[-=~']/g, '')
+    document.getElementById("inputLimit").innerHTML = newName.length
+    
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -144,7 +146,6 @@ const Saved = () => {
       }
       else if (typeof save.n !== 'string') savedObj.n = ""
       else if (Object.prototype.toString.call(save.e) !== '[object Array]') {
-        console.log('should be here')
         savedObj.e = []
       }
       else if (!hasUrl) savedObj = JSON.parse(localStorage.getItem(SAVE_KEY)) // PROBLEM
@@ -159,12 +160,14 @@ const Saved = () => {
   }, [saved])
   return (
     <Layout title="My Guitardex">
-      <h1>My Guitardex</h1>
       <SaveNameInput>
-        <SaveNameIcon>
-          <HiOutlinePencilAlt />
-        </SaveNameIcon>
-        <input id="saveName" type="text" placeholder="Untitled" maxLength="100" onInput={(e) => handleNameChange(e)} value={saved.n} />
+        <input autoComplete="off" id="saveName" type="text" placeholder="My Guitardex" maxLength="24" onInput={(e) => handleNameChange(e)} value={saved.n} />
+        <InputCounterContainer>
+          <InputCounter>
+            <span id="inputLimit"></span>
+            <span>/24</span>
+          </InputCounter>
+        </InputCounterContainer>
       </SaveNameInput>
       {saved.e.length === 0 &&
         <EmptyList>
@@ -203,17 +206,16 @@ const Saved = () => {
                             <MdDragIndicator />
                           </DragIconContainer> 
                         <MoveableContainer>
-                            
-                          
                           <SavedDexItem>
-                            
                             <DexItem id={id} />
                             <TrashContainer>
-                              <Trash onClick={() => { clearItem(id) }}>
+                              <Trash onClick={(e) => {
+                                clearItem(id)
+                                e.preventDefault()
+                              }}> 
                                 <TrashIcon>
                                   <HiOutlineTrash />
                                 </TrashIcon>
-
                               </Trash>
                             </TrashContainer>
                           </SavedDexItem>

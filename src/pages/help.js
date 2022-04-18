@@ -1,13 +1,13 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import { Link } from "gatsby"
-import { CustomOL } from "../styles/pagestyles/help"
+import { CustomOL, CustomUL } from "../styles/pagestyles/help"
 
 const Help = () => {
   return (
     <Layout title="Help">
       <h1>Help</h1>
-      <h4>Add Techniques to Your Guitardex</h4>
+      <h4>Add/Remove Techniques to Your Guitardex</h4>
       <CustomOL>
         <li>Go to the <Link to="/t">Techniques</Link> library</li>
         <li>Click the save icon at the right of the technique you want saved</li>
@@ -17,9 +17,13 @@ const Help = () => {
       <h4>Edit Your Guitardex</h4>
       <CustomOL>
         <li>Go to your <Link to="/">Guitardex</Link></li>
-        <li>Order your techniques by dragging and dropping them</li>
-        <li>Give your dex a name</li>
-        <li>Delete individual techniques using the trash can buttons</li>
+        <li>Do any of the following:</li>
+        <CustomUL>
+          <li>Re-order your techniques by dragging and dropping them</li>
+          <li>Click the Guitardex's name to edit it</li>
+          <li>Delete techniques using the trash bin buttons</li>
+        </CustomUL>
+        <li>Changes are automatically saved</li>
       </CustomOL>
       <br />
       <h4>Share Your Guitardex</h4>
@@ -39,7 +43,7 @@ const Help = () => {
         <li>Go to your <Link to="/">Guitardex</Link></li>
         <li>Click 'Delete Dex'</li>
       </CustomOL>
-    </Layout>
+    </Layout> 
   )
 }
 

@@ -28,12 +28,6 @@ const MagicScriptTag = () => {
         : '${COLORS.bg.dark}'
     );
     root.style.setProperty(
-      '--color-bgAlpha',
-      colorMode === 'light'
-        ? '${COLORS.bgAlpha.light}'
-        : '${COLORS.bgAlpha.dark}'
-    );
-    root.style.setProperty(
       '--color-bg2',
       colorMode === 'light'
         ? '${COLORS.bg2.light}'
@@ -50,12 +44,6 @@ const MagicScriptTag = () => {
       colorMode === 'light'
         ? '${COLORS.primary.light}'
         : '${COLORS.primary.dark}'
-    );
-    root.style.setProperty(
-      '--color-toggle',
-      colorMode === 'light'
-        ? '${COLORS.toggle.light}'
-        : '${COLORS.toggle.dark}'
     );
     root.style.setProperty(
       '--color-tabimg',
@@ -76,12 +64,6 @@ const MagicScriptTag = () => {
         : '${COLORS.linkHover.dark}'
     );
     root.style.setProperty(
-      '--color-toggleThumb',
-      colorMode === 'light'
-        ? '${COLORS.toggleThumb.light}'
-        : '${COLORS.toggleThumb.dark}'
-    );
-    root.style.setProperty(
       '--color-toggleName',
       colorMode === 'light'
         ? '${COLORS.toggleName.light}'
@@ -100,10 +82,10 @@ const MagicScriptTag = () => {
         : '${COLORS.sunIcon.dark}'
     );
     root.style.setProperty(
-      '--color-checkMarkBorder',
+      '--color-checkMarkColor',
       colorMode === 'light'
-        ? '${COLORS.checkMarkBorder.light}'
-        : '${COLORS.checkMarkBorder.dark}'
+        ? '${COLORS.checkMarkColor.light}'
+        : '${COLORS.checkMarkColor.dark}'
     );
     root.style.setProperty(
       '--color-tooltip',
@@ -117,9 +99,18 @@ const MagicScriptTag = () => {
         ? '${COLORS.ttText.light}'
         : '${COLORS.ttText.dark}'
     );
+
     root.style.setProperty(
-      '--color-placeholder',
-      '${COLORS.placeholder}'
+      '--color-group',
+      colorMode === 'light'
+        ? '${COLORS.group.light}'
+        : '${COLORS.group.dark}'
+    );
+    root.style.setProperty(
+      '--color-category',
+      colorMode === 'light'
+        ? '${COLORS.category.light}'
+        : '${COLORS.category.dark}'
     );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()

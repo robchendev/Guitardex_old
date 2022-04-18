@@ -27,7 +27,7 @@ export const globalStyle = css`
     margin-bottom: 0.6em;
   }
   h1 {
-    font-size: 30px;
+    font-size: 1.8em;
     display: flex;
     justify-content: center;
     margin-bottom: 1em;
