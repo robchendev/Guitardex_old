@@ -17,7 +17,7 @@ export const COLORS = {
   },
   bg3: {
     light: '#CBD5E1',
-    dark: '#52525B',
+    dark: '#737373',
   },
   bgAlpha: {
     light: 'rgba(255,255,255,.4)',
@@ -65,13 +65,16 @@ export const COLORS = {
   diffHard: '#E11D48',
   group: {
     light: '#7C3AED',
-    dark: '#8B5CF6',
+    dark: '#7C3AED',
   },
   category: {
-    light: '#64748B',
-    dark: '#64748B',
+    light: '#CBD5E1',
+    dark: '#52525B',
   },
-  placeholder: '#9CA3AF',
+  placeholder: {
+    light: '#6B7280',
+    dark: '#9CA3AF',
+  }
 };
 
 export const COLOR_MODE_KEY = 'color-mode';

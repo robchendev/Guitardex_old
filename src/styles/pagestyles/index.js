@@ -57,7 +57,6 @@ export const EmptyList = styled.div`
 export const EmptyListEntries = styled.div`
   background-color: var(--color-bg, ${COLORS.bg.light}) !important;
   transition: 0.3s ease margin;
-  
   border-radius: ${v.borderRadius};
   user-select: none;
   position: relative;
@@ -71,20 +70,24 @@ export const InputCounterContainer = styled.div`
 `
 export const InputCounter = styled.span`
   position: absolute;
-  bottom: -1.25em;
+  top: 0;
   right: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   visibility: hidden;
-  color: ${COLORS.placeholder};
+  color: var(--color-placeholder, ${COLORS.placeholder.light});
+`
+export const MobileReminder = styled.span`
+  visibility: hidden;
 `
 export const SaveNameInput = styled.div`
   input {
     border: none;
     border-bottom: 2px solid transparent;
     text-align: center;
-    //padding: ${v.mdSpacing};
     font-family: inherit;
     letter-spacing: inherit;
-    padding-bottom: 0.1em;
     font-size: 1.8em;
     font-weight: 500;
     width: 100%;
@@ -92,24 +95,29 @@ export const SaveNameInput = styled.div`
     color: inherit;
     background: transparent;
     ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
-      color: var(--color-text, ${COLORS.text.light});
+      color: ${COLORS.text.placeholder};
       opacity: 1;
     }
-    :hover, :focus {
-      border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+    :focus, :placeholder-shown {
+      background-color: var(--color-bg, ${COLORS.bg.light});
+    }
+    :placeholder-shown {
+      border-radius: ${v.borderRadius};
     }
     :focus {
       & ~ ${InputCounterContainer} ${InputCounter} {
         visibility: visible;
       }
-      ::placeholder, :-ms-input-placeholder, ::-ms-input-placeholder {
-        color: transparent;
-        opacity: 1;
+      & ~ ${InputCounterContainer} ${InputCounter} ${MobileReminder} {
+        ${maxq[1]} {
+          visibility: visible;
+        }
       }
+      border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
+      border-radius: ${v.borderRadius} ${v.borderRadius} 0 0;
     }
   }
-  display: flex;
-  margin-bottom: calc(1.8em - 2px - 0.1em);
+  margin-bottom: calc(1.8em - 2px);
 `
 export const InputBox = styled.input`
 
@@ -129,7 +137,7 @@ export const ExportSave = styled.div`
     outline: none;
     border: none;
     background: transparent;
-    color: ${COLORS.placeholder};
+    color: var(--color-placeholder, ${COLORS.placeholder.light});
     ::-webkit-scrollbar {
       display: none;
     }
@@ -207,7 +215,7 @@ export const DragIconContainer = styled.div`
   position: absolute;
   transition: 0.3s ease opacity;
   margin-top: 0.3em;
-  color: ${COLORS.placeholder};
+  color: var(--color-placeholder, ${COLORS.placeholder.light});
   font-size: 1.7em;
   margin-left: -0.25em;
   pointer-events: none;

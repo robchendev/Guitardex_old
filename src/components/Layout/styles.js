@@ -4,9 +4,11 @@ import { COLORS } from "../../styles/globalstyles/theme"
 
 export const SLayout = styled.div`
   display: flex;
+  
 `
 export const SContainer = styled.div`
   width: 90%;
+  
   justify-content: center;
   max-width: 1100px;
   margin: 0 auto;
@@ -17,7 +19,7 @@ export const SidebarRelative = styled.div`
 `
 export const SidebarContainer = styled.div`
   position: fixed;
-  top: 2em;
+  top: 4em;
   max-width: 1100px;
   width: 100%;
   pointer-events: none;
@@ -32,7 +34,7 @@ export const MainContainer = styled.div`
   }
 `
 export const SMain = styled.main`  
-  padding: 2em;
+  padding: 4em 2em 2em 2em;
   ${maxq[1]} {
     padding: 0;
     margin-top: 5%;
