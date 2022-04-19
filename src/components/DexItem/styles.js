@@ -5,7 +5,7 @@ import { COLORS } from '../../styles/globalstyles/theme';
 export const DexResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
-  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
+  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} calc(${v.smSpacing} * 1.5 + 1px) ${v.mdSpacing};
   position: relative;
   transition: 0.3s ease margin;
 `
@@ -42,7 +42,7 @@ export const MetaInfo = styled.div`
     margin-bottom: 0.1em;
   }
   p {
-    color: ${COLORS.placeholder};
+    color: var(--color-placeholder, ${COLORS.placeholder.light});
     text-transform: capitalize;
   }
 `

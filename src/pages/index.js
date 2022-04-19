@@ -6,22 +6,21 @@ import { HiOutlineTrash } from 'react-icons/hi'
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd"
 import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
-import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer, InputCounterInner, MobileReminder } from "../styles/pagestyles/index"
+import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer, MobileReminder } from "../styles/pagestyles/index"
 import { Link } from 'gatsby';
 
 const Saved = () => {
-  function handleEnterKey(event) {
+  const handleEnterKey = (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       event.target.blur();
     }
   }
-  function handleBackButton(event) {
-    event.preventDefault();
-    event.target.blur();
+  const shortenSaveName = (saveNameToShorten) => {
+    const newSaveName = saveNameToShorten.substring(0,24)
+    document.getElementById("saveName").value = newSaveName
+    return newSaveName
   }
-
-
   const hasDupes = (array) => (new Set(array)).size !== array.length
   let savedObj = {
     "n": "",
@@ -166,6 +165,7 @@ const Saved = () => {
   const [saved, setSaved] = useState(savedObj)
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
+    if(saved.n.length > 24) saved.n = shortenSaveName(saved.n)
     document.getElementById("exportURL").value = "https://gdex.cc/?" + encode(saved)
     document.getElementById("inputLimit").innerHTML = saved.n.length
   }, [saved])
@@ -177,7 +177,7 @@ const Saved = () => {
           autoComplete="off" 
           id="saveName" 
           type="text" 
-          placeholder="Edit Name..." 
+          placeholder="Untitled" 
           maxLength="24" 
           onInput={handleNameChange} 
           value={saved.n} 

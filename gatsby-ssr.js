@@ -99,7 +99,6 @@ const MagicScriptTag = () => {
         ? '${COLORS.ttText.light}'
         : '${COLORS.ttText.dark}'
     );
-
     root.style.setProperty(
       '--color-group',
       colorMode === 'light'
@@ -111,6 +110,12 @@ const MagicScriptTag = () => {
       colorMode === 'light'
         ? '${COLORS.category.light}'
         : '${COLORS.category.dark}'
+    );
+    root.style.setProperty(
+      '--color-placeholder',
+      colorMode === 'light'
+        ? '${COLORS.placeholder.light}'
+        : '${COLORS.placeholder.dark}'
     );
     root.style.setProperty('--initial-color-mode', colorMode);
   })()

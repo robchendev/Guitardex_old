@@ -9,7 +9,7 @@ export const ResultLink = styled(Link)`
 export const ResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});
   border-radius: ${v.borderRadius};
-  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing};
+  padding: calc(${v.smSpacing} * 1.5) ${v.mdSpacing} calc(${v.smSpacing} * 1.5 + 1px) ${v.mdSpacing};
   margin: 0 0 5px 0;
   position: relative;
   transition: 0.3s ease margin;
@@ -42,7 +42,7 @@ export const Title = styled.h4`
   margin-bottom: 0.1em;
 `
 export const Category = styled.p`
-  color: ${COLORS.placeholder};
+  color: var(--color-placeholder, ${COLORS.placeholder.light});
   text-transform: capitalize;
 `
 export const SaveContainer = styled.div`
