@@ -84,7 +84,7 @@ export const MobileReminder = styled.span`
 export const SaveNameInput = styled.div`
   input {
     border: none;
-    border-bottom: 2px solid transparent;
+    margin-bottom: 2px;
     text-align: center;
     font-family: inherit;
     letter-spacing: inherit;
@@ -113,6 +113,7 @@ export const SaveNameInput = styled.div`
           visibility: visible;
         }
       }
+      margin-bottom: 0px;
       border-bottom: 2px solid var(--color-bg3, ${COLORS.bg3.light});
       border-radius: ${v.borderRadius} ${v.borderRadius} 0 0;
     }
