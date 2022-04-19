@@ -24,6 +24,7 @@ export const SidebarContainer = styled.div`
   pointer-events: none;
   ${maxq[1]} {
     display: none;
+    top: 2em;
   }
 `
 export const MainContainer = styled.div`

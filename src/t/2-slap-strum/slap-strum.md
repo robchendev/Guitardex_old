@@ -2,7 +2,7 @@
 id: 2
 g: t
 group: technique
-title: Slap Strum
+title: Thumb Slap Strum
 difficulty: medium
 demo: https://youtu.be/dQw4w9WgXcQ
 description:
@@ -13,7 +13,7 @@ prereqs: [
     }
 ]
 category: percussion
-slug: slap-strum
+slug: thumb-slap-strum
 exercises:
 artists: 
 tags: [thumb, slap, strum]

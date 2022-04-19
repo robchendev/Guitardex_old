@@ -2,7 +2,7 @@
 id: 4
 g: t
 group: technique
-title: Slap Pluck
+title: Thumb Slap Pluck
 difficulty: hard
 demo: 
 description:
@@ -13,7 +13,7 @@ prereqs: [
     }
 ]
 category: percussion
-slug: slap-pluck
+slug: thumb-slap-pluck
 exercises:
 artists: 
 tags: [thumb, slap, pluck]

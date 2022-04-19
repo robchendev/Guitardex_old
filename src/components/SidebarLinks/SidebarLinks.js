@@ -16,7 +16,7 @@ export const InternalLinks = ({label, icon, link, isActive}) => {
 export const ExternalLinks = ({label, icon, link}) => {
   return (
     <SLinkContainer key={label}>
-      <SLinkA href={link}>
+      <SLinkA href={link} target="_blank">
         <SLinkIcon>{icon}</SLinkIcon>
         <span>{label}</span>
       </SLinkA>
