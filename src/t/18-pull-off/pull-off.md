@@ -1,19 +1,16 @@
 ---
-id: 12
+id: 18
 g: t
 group: technique
-title: Palm Mute
+title: Pull-Off
 difficulty: easy
 demo: 
 description:
 prereqs: 
-category: 
-slug: palm-mute
+category: basics
+slug: pull-off
 exercises:
 artists: 
-tags: [palm, mute]
+tags: 
 ---
 
-### New Page
-
-stub

@@ -7,9 +7,6 @@ const About = () => {
   return (
     <Layout title="About">
       <h1>About</h1>
-      <h3>Development Notes</h3>
-      <p>View the change log, future plans, and known issues <Link to="/dev">here</Link>.</p>
-      <br />
       <h3>Why I Am Developing This Website</h3>
       <p>
         Fingerstyle is a young style of guitar rising in popularity. Due to its infancy in

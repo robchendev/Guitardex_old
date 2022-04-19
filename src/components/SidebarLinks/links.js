@@ -1,5 +1,5 @@
 import React from 'react'
-import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle, HiOutlineDatabase } from "react-icons/hi"
+import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle, HiOutlineDatabase, HiOutlineCurrencyDollar } from "react-icons/hi"
 import changeLogData from "../../assets/development/change-log-data.json"
 
 export const internalLinks = [
@@ -12,7 +12,12 @@ export const internalLinks = [
     label: "Techniques",
     icon: <HiOutlineViewGrid />,
     link: "/t"
-  }  
+  },  
+  {
+    label: "Help",
+    icon: <HiOutlineQuestionMarkCircle />,
+    link: "/help"
+  },
 ]
 export const devLinks = [
   {
@@ -24,19 +29,15 @@ export const devLinks = [
     label: `Updated: ${changeLogData.changelog[0].date}`,
     icon: <HiOutlineDatabase />,
     link: "/dev"
-  }
+  },
 ]
 export const externalLinks = [
   {
-    label: "Community",
-    icon: <HiOutlineChatAlt />,
-    link: "community",
+    label: "Donate",
+    icon: <HiOutlineCurrencyDollar />,
+    link: "https://www.paypal.com/donate/?hosted_button_id=DHGEUWW4VMUVG",
   },
 ]
 export const utilityLinks = [
-  {
-    label: "Help",
-    icon: <HiOutlineQuestionMarkCircle />,
-    link: "/help"
-  },
+  
 ]
