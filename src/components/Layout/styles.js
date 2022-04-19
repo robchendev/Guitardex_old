@@ -4,7 +4,6 @@ import { COLORS } from "../../styles/globalstyles/theme"
 
 export const SLayout = styled.div`
   display: flex;
-  
 `
 export const SContainer = styled.div`
   width: 90%;
