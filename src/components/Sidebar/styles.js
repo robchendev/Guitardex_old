@@ -32,7 +32,7 @@ export const SLinkContainer = styled.div`
   border-radius: ${v.borderRadius};
   margin: 6px 0;
   :hover {
-    box-shadow: inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light});
+    box-shadow: ${({ isActive }) => (!isActive ? `inset 0 0 0 1px var(--color-bg3, ${COLORS.bg3.light})` : `var(--color-primary, ${COLORS.primary.light})`)};
   }
 `
 export const SToggle = styled.div`

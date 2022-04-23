@@ -1,22 +1,18 @@
 ---
-id: 11
+id: 10
 g: t
 group: technique
 title: Tap Harmonic
-difficulty: medium
-demo: 
-description:
+category: harmonics
+difficulty: med
 prereqs: [
     {
         name: Artificial Harmonic,
-        slug: artificial-harmonic
+        id: 7
     }
 ]
-category: harmonics
-slug: tap-harmonic
+demo: 
 exercises:
-artists: 
-tags: [tap, harmonic]
 ---
 
 Video:

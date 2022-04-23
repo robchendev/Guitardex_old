@@ -7,7 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         nodes {
           frontmatter {
-            slug
+            id
           }
         }
       }
@@ -16,10 +16,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   data.allMarkdownRemark.nodes.forEach(node => {
     actions.createPage({
-      path: '/t/' + node.frontmatter.slug,
+      path: '/t/' + node.frontmatter.id,
       component: path.resolve('./src/templates/technique-details.js'),
       context: {
-        slug: node.frontmatter.slug,
+        id: node.frontmatter.id,
       },
     })
   })

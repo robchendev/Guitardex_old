@@ -20,7 +20,6 @@ const DexItem = ({ id }) => {
 								group
 								title
 								difficulty
-								slug
 								category
 							}
 						}
@@ -33,7 +32,7 @@ const DexItem = ({ id }) => {
 				)
 				return (
 					<Link to={
-						selection ? selection.frontmatter.g + '/' + selection.frontmatter.slug : `#`
+						selection && selection.frontmatter.g + '/' + selection.frontmatter.id
 					}>
 						<DexResultContainer>
 							<DexResultBlock>

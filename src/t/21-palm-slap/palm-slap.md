@@ -3,13 +3,9 @@ id: 21
 g: t
 group: technique
 title: Palm Slap
-difficulty: easy
-demo: 
-description:
-prereqs: 
 category: percussion
-slug: palm-slap
+difficulty: easy
+prereqs: 
+demo: 
 exercises:
-artists: 
-tags: 
 ---

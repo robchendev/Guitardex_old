@@ -18,3 +18,13 @@
   background-color: var(--color-tooltip);
   cursor: pointer;
 }
+.ttBigFont {
+  padding: 3px 6px 4px 6px !important;
+  background-color: var(--color-text) !important;
+  color: var(--color-ttText) !important;
+  opacity: 1 !important;
+  font-size: 1.5rem !important;
+  max-width: 13em !important;
+  text-align: center !important;
+  transition: none !important;
+}

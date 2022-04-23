@@ -5,7 +5,7 @@ import { COLORS } from '../../styles/globalstyles/theme'
 const DiffContainer = ({ difficulty }) => {
   let diffColor = COLORS.diffEasy
   let diffText = "easy"
-  if (difficulty === "medium") {
+  if (difficulty === "med") {
     diffColor = COLORS.diffMed
     diffText = "med"
   }

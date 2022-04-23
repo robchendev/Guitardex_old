@@ -26,12 +26,12 @@ function TechniqueDetails({ data }) {
           <PageHeader>
             <h1>{title}</h1>
             <PreRequisites>
-              Reqs:{" "}
+              Req:{" "}
               {prereqs ?
                 prereqs.map((prereq, index) => (
                   <span key={index}>
                     {index > 0 && ", "}
-                    <Link to={"/" + g + "/" + prereq.slug}>{prereq.name}</Link>
+                    <Link to={"/" + g + "/" + prereq.id}>{prereq.name}</Link>
                   </span>
                 ))
                 :
@@ -66,7 +66,7 @@ function TechniqueDetails({ data }) {
         <DarkBackground>
           <h4>Tabs</h4>
           {exercises ?
-            exercises.map(({ text, link, slce }) => (
+            exercises.map(({ text, link }) => (
               <React.Fragment key={text}>
                 <ExerciseLinks>
                   <li><span>{text}:{" "}<a href={link}>PDF</a></span></li>
@@ -91,8 +91,8 @@ function TechniqueDetails({ data }) {
 }
 
 export const query = graphql`
-  query TechniquesOne($slug: String) {
-    allInfo: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+  query TechniquesOne($id: Int) {
+    allInfo: markdownRemark(frontmatter: {id: {eq: $id}}) {
       html
       frontmatter {
         id
@@ -104,7 +104,7 @@ export const query = graphql`
         demo
         prereqs {
           name
-          slug
+          id
         }
         exercises {
           link

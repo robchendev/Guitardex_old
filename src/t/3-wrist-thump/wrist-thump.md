@@ -3,15 +3,17 @@ id: 3
 g: t
 group: technique
 title: Wrist Thump
-difficulty: medium
-demo: 
-description:
-prereqs:
 category: percussion
-slug: wrist-thump
-exercises:
-artists: 
-tags: [wrist, thump, hit, kick]
+difficulty: med
+prereqs:
+demo: 
+exercises: [
+  {
+    text: This page,
+    link: google.com,
+    slce: google.com
+  }
+]
 ---
 
 Video: 

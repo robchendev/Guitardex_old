@@ -1,22 +1,18 @@
 ---
-id: 10
+id: 11
 g: t
 group: technique
 title: Slap Harmonic
-difficulty: medium
-demo: 
-description:
+category: harmonics
+difficulty: med
 prereqs: [
     {
         name: Tap Harmonic,
-        slug: tap-harmonic
+        id: 10
     }
 ]
-category: harmonics
-slug: slap-harmonic
+demo: 
 exercises:
-artists: 
-tags: [slap, harmonic]
 ---
 Video:
 - 3<15> slap harmonic from the front
@@ -39,3 +35,11 @@ For your reference. The parentheses () show the intervals of the harmonic note w
 - 1/4 = <5> <24> (2 Octaves)
 - 1/5 = <4> <9> <16> <28> (2 Octaves + 3rd)
 - 1/6 = <3.2> <30> (2 Octaves + 5th)
+
+### FAQ
+
+#### Should my slapping finger be parallel to the frets?
+
+The finger you use to slap harmonic with only has to be parallel to the strings if you are aiming to slap all 5 or 6 strings. In most cases, you'd be slapping 3. While slapping 3 strings, choosing to be parallel would give your notes slightly more clarity. However, it will also require your hand to travel more distance towards the slapping location. 
+
+As a rule of thumb, only do this if you have the time to move your hand to the slapping location and back before the next note. Otherwise, it's okay to not be parallel to the frets.

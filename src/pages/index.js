@@ -171,7 +171,7 @@ const Saved = () => {
   }, [saved])
   
   return (
-    <Layout title="My Guitardex">
+    <Layout title="Guitardex">
       <SaveNameInput>
         <input
           autoComplete="off" 
