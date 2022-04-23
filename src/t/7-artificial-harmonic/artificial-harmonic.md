@@ -3,20 +3,16 @@ id: 7
 g: t
 group: technique
 title: Artificial Harmonic
+category: harmonics
 difficulty: easy
-demo: 
-description:
 prereqs: [
     {
         name: Natural Harmonic,
-        slug: natural-harmonic
+        id: 6
     }
 ]
-category: harmonics
-slug: artificial-harmonic
+demo: 
 exercises:
-artists: 
-tags: [artificial, pinch, harmonic]
 ---
 
 Video:

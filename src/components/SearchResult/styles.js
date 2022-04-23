@@ -39,11 +39,18 @@ export const Title = styled.h4`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.2em;
 `
 export const Category = styled.p`
   color: var(--color-placeholder, ${COLORS.placeholder.light});
   text-transform: capitalize;
+`
+export const Reqs = styled.p`
+  color: var(--color-placeholder, ${COLORS.placeholder.light});
+  margin-bottom: 0 !important;
+`
+export const ReqList = styled.span`
+  color: var(--color-text, ${COLORS.text.light});
 `
 export const SaveContainer = styled.div`
   position: absolute;

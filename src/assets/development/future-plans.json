@@ -1,5 +1,5 @@
 {
     "plans": [
-        "Right now, there is no way to filter the techniques library other than searching matching titles, categories, and tags (that are hidden from user view). As the library get bigger, more ways to filter and sort the library items should be added."
+        "Right now, there is no way to filter the techniques library other than searching matching titles, difficulties or categories. There is not current way to combine terms (eg. 'easy percussion'). As the library get bigger, more ways to filter and sort the library items should be added."
     ]
 }

@@ -3,15 +3,11 @@ id: 6
 g: t
 group: technique
 title: Natural Harmonic
-difficulty: easy
-demo: 
-description:
-prereqs: 
 category: harmonics
-slug: natural-harmonic
+difficulty: easy
+prereqs: 
+demo: 
 exercises:
-artists: 
-tags: [natural, harmonic]
 ---
 
 Video:

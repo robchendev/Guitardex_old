@@ -3,25 +3,21 @@ id: 2
 g: t
 group: technique
 title: Thumb Slap Strum
-difficulty: medium
-demo: https://youtu.be/dQw4w9WgXcQ
-description:
-prereqs: [
-    {
-        name: Thumb Slap,
-        slug: thumb-slap
-    }
-]
 category: percussion
-slug: thumb-slap-strum
+difficulty: med
+prereqs: [
+  {
+    name: Thumb Slap,
+    id: 1
+  }
+]
+demo: https://youtu.be/dQw4w9WgXcQ
 exercises:
-artists: 
-tags: [thumb, slap, strum]
 ---
 
 Video: 
-- slap strum 4 strings no thumbpick
-- slap strum 1 string no thumbpick
+- slap strum 4 strings no thumbpick (fast and slow)
+- slap strum 1 string no thumbpick (fast and slow)
 - remake the videos with thumbpick later
 
 The slap strum is an expansion if the thumb slap technique by doing a quick strum with your fingers at the same time as a thumb slap. This technique is performed by extending or "flicking" your index and/or middle fingers while simultaneously slapping the lower string(s) with your thumb. 
@@ -38,4 +34,4 @@ The slap strum becomes more complicated when you only want to play notes on cert
 
 In order to target the strings you need, you will need to control your finger movements to prevent hitting the wrong strings. You can also deaden the strings you're not playing by <span class="tt" data-tip="stopping the strings from ringing">muting</span> them, which is usually a lot easier.
 
-For a method that doesn't require muting strings, consider using a [Slap Pluck](slap-pluck).
+For a method that doesn't require muting strings, consider using a [Slap Pluck](4).

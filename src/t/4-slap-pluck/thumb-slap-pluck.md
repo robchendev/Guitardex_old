@@ -3,20 +3,16 @@ id: 4
 g: t
 group: technique
 title: Thumb Slap Pluck
+category: percussion
 difficulty: hard
-demo: 
-description:
 prereqs: [
     {
         name: Thumb Slap,
-        slug: thumb-slap
+        id: 1
     }
 ]
-category: percussion
-slug: thumb-slap-pluck
+demo: 
 exercises:
-artists: 
-tags: [thumb, slap, pluck]
 ---
 
 Video:

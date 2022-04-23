@@ -25,7 +25,7 @@ const About = () => {
       <br />
       <h3>How Learners Can Use This Website</h3>
       <p>
-        As this website's technique tutorials will be presented without a curriculum, learners are free to choose whatever techniques they wish to learn as long as they first learn the pre-requisite techniques that are mentioned at the top of each individual technique page. They can then share their own Guitardexes with their peers to easily show them what they are learning, or collaborate together to improve.
+        As this website's technique tutorials will be presented without a curriculum, learners are free to choose whatever techniques they wish to learn as long as they first learn the prerequisite techniques that are mentioned at the top of each individual technique page. They can then share their own Guitardexes with their peers to easily show them what they are learning, or collaborate together to improve.
       </p>
       <br />
       <h3>How Professional Musicians Can Use This Website</h3>
@@ -60,7 +60,9 @@ const About = () => {
         <CustomUL>
           <li><p><a href="https://www.youtube.com/RobertChen/">Robert Chen</a> - Project Lead, Development, and Content Creation</p></li>
           <li><p><a href="https://www.davidjameszecchel.com/">David James Zecchel</a> - Content Writing & Editing</p></li>
+          
           <li><p><a href="https://github.com/biryaniq">Bryan Quan</a> - Concepts & Quality Assurance</p></li>
+          <li><p><a href="https://github.com/">Weijun Syu</a> - Quality Assurance & Branding</p></li>
           <li><p><a href="https://www.youtube.com/c/EddievanderMeer">Eddie van der Meer</a> - Content Advising</p></li>
           <li><p><a href="https://www.youtube.com/channel/UCv5lp4CKs7tdTdJwTknjrpA">Bob Ma</a> - Content Advising</p></li>
         </CustomUL>

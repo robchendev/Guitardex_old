@@ -3,15 +3,11 @@ id: 1
 g: t
 group: technique
 title: Thumb Slap
-difficulty: easy
-demo: 
-description:
-prereqs:
 category: percussion
-slug: thumb-slap
+difficulty: easy
+prereqs:
+demo: 
 exercises:
-artists: 
-tags: [thumb, slap]
 ---
 
 Video: 

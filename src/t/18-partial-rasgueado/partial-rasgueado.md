@@ -1,15 +1,16 @@
 ---
-id: 22
+id: 18
 g: t
 group: technique
-title: Palm Mute
-category: articulation
+title: Partial Rasgueado
+category: 
 difficulty: easy
 prereqs: 
 demo: 
 exercises:
 ---
 
-### New Page
+Video:
+- E Rasgueado
 
-stub
+A rasgueado 
