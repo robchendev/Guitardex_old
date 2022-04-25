@@ -21,7 +21,7 @@
         {
             "v": "0.7.1",
             "title": "Technique Continuation",
-            "date": "Apr 18",
+            "date": "Apr 24",
             "year": "2022",
             "new": [
                 "Technique pages now have a 'Continue learning...' section at the bottom of the page that links techniques that have the current page's technique as a pre-requisite. Other pre-requisites of the linked technique are also listed as required.",
@@ -31,7 +31,7 @@
         {
             "v": "0.6.2",
             "title": "Color Scheme Overhaul",
-            "date": "Apr 24",
+            "date": "Apr 18",
             "year": "2022",
             "new": [
                 "Techniques search page and Guitardex now shows color coded difficulty markers.",
