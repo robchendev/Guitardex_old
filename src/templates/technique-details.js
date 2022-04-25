@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { EmbedContainer, HeadingContainer, PageHeader, PreRequisites, ExerciseLinks, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer } from "./technique-styling"
+import { EmbedContainer, HeadingContainer, PageHeader, PreRequisites, ExerciseLinks, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer, ContinueLearning } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save/Save';
 import ReactTooltip from 'react-tooltip';
@@ -19,6 +19,15 @@ function TechniqueDetails({ data }) {
   const {
     id, g, group, title, category, difficulty, demo, exercises, prereqs
   } = data.allInfo.frontmatter;
+  const postReqData = data.getPostReqs;
+  const allPostReqs = postReqData.nodes.filter( //returns array
+    node => (
+      node.frontmatter.prereqs?.find( //returns one element
+        prereq => prereq.id === id
+      ) 
+    )
+  ) 
+  console.log(allPostReqs)
   return (
     <Layout title={title}>
       <EntireWrapper>
@@ -76,6 +85,26 @@ function TechniqueDetails({ data }) {
             :
             <p>There are no tabs.</p>
           }
+          <ContinueLearning>
+            <h4>Continue learning...</h4>
+            {allPostReqs.length !== 0 ? 
+              <ul>
+                {allPostReqs &&
+                  allPostReqs.map(({ frontmatter }) => (
+                    <React.Fragment key={frontmatter.id}>
+                      <li><Link to={`/${g}/${frontmatter.id}`}>{frontmatter.title}</Link>
+                      {frontmatter.prereqs.map((prereq) => (
+                        prereq.id !== id && 
+                          <span> (Req: <Link to={`/${g}/${prereq.id}`}>{prereq.name}</Link>)</span>
+                      ))}</li>
+                    </React.Fragment>
+                  )) 
+                }
+              </ul>
+              :
+              <p>There is no continuation to this technique.</p>
+            }
+          </ContinueLearning>
         </DarkBackground>
         <ReactTooltip
           className="ttEdit"
@@ -113,6 +142,22 @@ export const query = graphql`
         }
       }
     }
+    getPostReqs: allMarkdownRemark {
+      nodes {
+        frontmatter {
+          prereqs {
+            name
+            id
+          }
+          id
+          g
+          title
+          difficulty
+          category
+        }
+      }
+    }
+
   }
 `
 

@@ -38,6 +38,7 @@ const Layout = (props) => {
       <Global styles={globalStyle} />
       <Helmet>
         <title>{props.title}</title>
+        <meta name="description" content="Guitardex is a free, non-profit fingerstyle tutorial platform that aims to provide educational resources to fingerstyle guitarists." />
       </Helmet>
       <MobileHeader />
       <SLayout>

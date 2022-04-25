@@ -18,6 +18,9 @@ export const Search = styled.div`
     border: none;
     background: transparent;
     color: var(--color-text, ${COLORS.text.light});
+    ::placeholder {
+      color: var(--color-placeholder, ${COLORS.placeholder.light});
+    }
   }
 `
 export const SearchIcon = styled.button`
