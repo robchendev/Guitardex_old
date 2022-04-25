@@ -84,6 +84,19 @@ export const DarkBackground = styled.div`
     margin: 0;
   }
 `
+export const ContinueLearning = styled.div`
+  margin-top: 1.5em;
+  ul {
+    margin-left: 1em;
+  }
+  li:not(:last-child) {
+    margin-bottom: 5px;
+    line-height: 1.5em;
+  }
+  p {
+    line-height: 1.5em;
+  }
+`
 export const Explanation = styled.div`
   padding: 1.5em 0;
   border-radius: calc(${v.borderRadius} * 2);

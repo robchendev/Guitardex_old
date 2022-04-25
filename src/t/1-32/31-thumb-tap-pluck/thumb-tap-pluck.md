@@ -1,0 +1,40 @@
+---
+id: 31
+g: t
+group: technique
+title: Thumb Tap Pluck
+category: percussion
+difficulty: med
+prereqs: [
+  {
+    name: Thumb Slap Pluck,
+    id: 4
+  },
+  {
+    name: Thumb Tap,
+    id: 29
+  }
+]
+demo: 
+exercises:
+---
+
+Video:
+- Thumb tap pluck with side
+- Thumb tap pluck with nail
+
+### Notation
+
+![Thumb Tap Pluck]()
+
+There is no notation for the thumb tap pluck that is commonly agreed upon. It can be notated by a symbol directly above or below the set of notes, that would be explained either next to the symbol or at the end of the sheet music.
+
+### Explanation
+
+The thumb tap pluck uses the same motion of a thumb slap pluck, but instead of hitting the string, either the side of the thumb or the thumb nail hits the guitar's <span class="tt" data-tip="the guitar's top, where the soundhole is located">soundboard</span>. 
+
+The motion can be more awkward than the thumb slap strum as it requires you to open your palm more and gives you less control over what strings you're hitting.
+
+#### Changing the sound of the thumb tap pluck
+
+Just like the thumb tap, the sound of the tap can change depending on if you use your thumb nail, the side of your thumb, or a combination of both.

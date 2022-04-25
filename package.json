@@ -1,9 +1,9 @@
 {
-  "name": "fingerstyle-archive",
+  "name": "guitardex",
   "version": "1.0.0",
   "private": true,
-  "description": "Fingerstyle Archive",
-  "author": "chendumpling99",
+  "description": "Guitardex",
+  "author": "Robert Chen",
   "keywords": [
     "gatsby"
   ],

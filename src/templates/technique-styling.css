@@ -1,5 +1,4 @@
-.tabImg {
-  
+.tabImg { 
   filter: var(--color-tabimg) ;
   margin-bottom: 1.1em;
 }

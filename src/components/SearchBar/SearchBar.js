@@ -8,7 +8,7 @@ const SearchBar = ({ placeholder, data }) => {
   const handleFilter = (event) => {
     const searchWord = event.target.value.toLowerCase()
     const newFilter = data.filter((value) => (
-      value.frontmatter.title?.toLowerCase().includes(searchWord) ||
+      value.frontmatter.title?.toLowerCase().replace(/-/g, ' ').includes(searchWord.replace(/-/g, ' ')) ||
       value.frontmatter.category?.toLowerCase().includes(searchWord) ||
       value.frontmatter.difficulty?.toLowerCase().includes(searchWord)
     ))
@@ -20,7 +20,12 @@ const SearchBar = ({ placeholder, data }) => {
         <SearchIcon>
           <FiSearch />
         </SearchIcon>
-        <input placeholder={placeholder} type="text" onChange={handleFilter} />
+        <input 
+          placeholder={placeholder} 
+          type="text" 
+          onChange={handleFilter}
+          autoComplete="off" 
+        />
       </Search>
       {filteredData.length === 0 && 
         <p>Sorry, either this search algorithm isn't good enough yet, or we have no records of this technique. If the latter is true, you can <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">request</a> us to make a page about the technique you're looking for.</p>
