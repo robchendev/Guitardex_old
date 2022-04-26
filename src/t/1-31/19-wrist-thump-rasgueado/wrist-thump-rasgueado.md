@@ -32,5 +32,5 @@ Video:
 
 Combining the wrist thump and rasgueado techniques, you can put more emphasis on a downbeat.
 
-In the wrist thump rasgueado, you perform the ring and middle fingers strums of the rasgueado as you normally wpuld, transitioning into a wrist thump strum with your index finger on the downbeat.
+In the wrist thump rasgueado, you do the ring and middle fingers strums of the rasgueado as you normally wpuld, transitioning into a wrist thump strum with your index finger on the downbeat.
 

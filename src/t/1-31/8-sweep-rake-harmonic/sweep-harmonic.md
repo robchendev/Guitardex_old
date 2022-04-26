@@ -41,6 +41,8 @@ You can control how loud the sweep harmonic is by relaxing and tensing your ring
 
 #### Chord sweep harmonic
 
-Doing the sweep harmonic on chord shapes can be significantly more difficult than doing the sweep harmonic on open or barred strings, since you need to properly strum every harmonic note in the chord shape. The difficulty gets harder the more complex the chord shape is, and the faster you perform it.
+Doing the sweep harmonic on chord shapes can be significantly more difficult than doing the sweep harmonic on open or barred strings, since you need to properly strum every harmonic note in the chord shape. The difficulty gets harder the more complex the chord shape is, and the faster you do it.
+
+A popular way to sweep harmonic without worrying about being absolutely accurate is by strumming the harmonics in more of a straight line. This method makes the technique easier at the consequence of some sacrificing the harmonics' clarity.
 
 The finger positioning of the sweep harmonic strum is the same as the open sweep harmonic strum. Instead of simply strumming down, your hand also needs to move to the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> the index needs to hover over to produce the individual harmonics. 

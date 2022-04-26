@@ -23,13 +23,13 @@ The left hand slap is commonly notated with one or more Xs with a number above, 
 
 The left hand slap is a bass guitar technique that has been adapted into fingerstyle. The slap sound comes from the guitar string coming in contact with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> itself.
 
-To perform a left hand slap, straighten out your slapping finger while holding the guitar neck and swing the fingertip down to the <span class="tt" data-tip="the string with the lowest pitch, or at the bottom of the tab">lowest string</span>. As long as you do not need other strings to continue ringing, you can also let your swinging finger come into contact with them.
+To do a left hand slap, straighten out your slapping finger while holding the guitar neck and swing the fingertip down to the <span class="tt" data-tip="the string with the lowest pitch, or at the bottom of the tab">lowest string</span>. As long as you do not need other strings to continue ringing, you can also let your swinging finger come into contact with them.
 
 Your wrist should not move to assist with the swing. The swing should pivot from the knuckle connecting each finger to the palm.
 
 #### How to practice the left hand slap
 
-The following makes performing the left hand slap easier:
+The following makes doing the left hand slap easier:
 
 - Play the left hand slap on a higher fret such as the 7th fret.
 - Practice with the ring finger first. The middle is more difficult to do a left hand slap with, and the index is the most difficult.

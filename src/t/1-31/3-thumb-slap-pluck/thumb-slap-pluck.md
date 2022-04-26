@@ -30,7 +30,7 @@ The slap strum is most commonly notated as an "X" below a set of notes, where th
 
 The slap pluck is a combination of your regular picking technique with a thumb slap, used to target specific strings. 
 
-This technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be performed by the same hand.
+This technique will be counterintuitive to those who are used to the slap strum technique, as it requires two opposite movements to be done by the same hand.
 
 #### Slap pluck (with twist)
 

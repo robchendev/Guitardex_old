@@ -4,7 +4,7 @@ export const COLORS = {
     dark: '#E7E5E4',
   },
   bg: {
-    light: '#E2E8F0',
+    light: '#E7EDF3',
     dark: '#1e1e1e',
   },
   primary: {

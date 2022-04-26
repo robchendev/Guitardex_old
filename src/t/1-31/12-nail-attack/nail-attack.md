@@ -27,7 +27,7 @@ Video:
 The nail attack has many different ways of being notated. Common ways include:
 
 - Downstroke icon with "NA" written above
-- One or two Xs on the middle strings
+- One or two Xs on the middle strings (nail attack mute, see section 5 on this page)
 - X directly above a note
 
 In some countries, this technique is referred to as the "Attack Mute", or "AM". If you see that instead of "NA", it most likely means this same nail attack technique.
@@ -50,7 +50,7 @@ Since this technique has no prerequisites but has multiple steps to learn, it wi
 
 #### 1. The flicking motion
 
-Push your middle and ring finger into the base of your thumb (medical term is "Thenar Eminence") and flick outwards, straigtening your fingers.
+Push your middle and ring finger into the base of your thumb (medical term is "Thenar Eminence") and flick outwards, straigtening your fingers. Some find it easier to only pushing the middle finger into the thumb's base and flicking it.
 
 Now attempt the same motion without first pushing the fingers into the base of your thumb and the releasing. It is normal to have less power in the flicking motion than before.
 
@@ -66,7 +66,7 @@ Now transfer this same motion of flicking the piece of paper to flicking the gui
 
 As soon as the back of the fingernails make contact with the string, bounce them back towards the palm of your hand again to prepare for the next nail attack. Your goal is to get a percussive sound out of it. It is also normal for the strings to ring after flicking them, as long as you didn't do a strum.
 
-For now, your hand should not be moving much when first attempting this technique. Once you can perform the technique properly with minimal hand movement, you can add more motion to it from your wrist and arm, which will be discussed in step 5 on this page.
+For now, your hand should not be moving much when first attempting this technique. Once you can do the technique properly with minimal hand movement, you can add more motion to it from your wrist and arm, which will be discussed in step 5 on this page.
 
 #### 4. Nail Attack
 
@@ -78,7 +78,7 @@ This motion gives you more control over the nail attack, and makes it easier to 
 
 #### 5. Nail Attack Mute
 
-If you don't want any other strings to ring as a result of a nail attack,  A nail attack mute is the nail attack, but instead of bouncing your fingers back after flicking the strings, the fingers remain on the strings briefly to mute them and stop them from ringing. This allows for the nail attack to prevent other strings from unintentionally ringing.
+If you don't want any other strings to ring as a result of a nail attack, do a nail attack mute. Instead of bouncing your fingers back after flicking the strings, the fingers remain on the strings briefly to mute them and stop them from ringing. This allows for the nail attack to prevent other strings from unintentionally ringing.
 
 Your nails should stop and remain on the strings the instant it hits the strings and produces the percussive sound.
 
@@ -86,4 +86,4 @@ Your nails should stop and remain on the strings the instant it hits the strings
 
 #### Should my pinky be anchored below the soundhole?
 
-Performing a nail attack is more difficult if you anchor your pink below the soundhole throughout the entire movement. Instead of anchoring it all the time, briefly lift the pinky off the guitar's <span class="tt" data-tip="the guitar's top, where the soundhole is located">soundboard</span> when you use your wrist to move your fingers away from the guitar, and place it back down during the nail attack itself. This adds a subtle effect of your pinky hitting the guitar's soundboard.
+doing a nail attack is more difficult if you anchor your pink below the soundhole throughout the entire movement. Instead of anchoring it all the time, briefly lift the pinky off the guitar's <span class="tt" data-tip="the guitar's top, where the soundhole is located">soundboard</span> when you use your wrist to move your fingers away from the guitar, and place it back down during the nail attack itself. This adds a subtle effect of your pinky hitting the guitar's soundboard.

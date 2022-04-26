@@ -33,15 +33,15 @@ The bridge thump is commonly notated as a B above the notation and/or tab. If th
 
 The bridge thump is used in place of a wrist thump when your hand is in the palm muting position at the guitar's <span class="tt" data-tip="the wooden piece at the end of the strings next to where you pick">bridge</span>. 
 
-To perform a bridge thump, start from the palm muting position and briefly move your hand away from the guitar, then hit the bridge by quickly moving your hand back down to palm muting position. Like any percussive technique, control the power behind the hit to not make the thump sound too loud or break the guitar.
+To do a bridge thump, start from the palm muting position and briefly move your hand away from the guitar, then hit the bridge by quickly moving your hand back down to palm muting position. Like any percussive technique, control the power behind the hit to not make the thump sound too loud or break the guitar.
 
 Taking off your hand from the guitar will result in the palm muted strings ringing more clearly for a brief period of time, but as long as you palm muted during the pick of your last played note before the bridge thump, then the difference won't be noticeable.
 
-When performing the bridge thump and pick at the same time, the palm muted notes should be muted while every other note should ring normally. 
+When doing the bridge thump and pick at the same time, the palm muted notes should be muted while every other note should ring normally. 
 
 #### Bridge thump without muting strings
 
-To not mute any strings, simply move your hand to the right and off the strings while still performing the same thump motion.
+To not mute any strings, simply move your hand to the right and off the strings while still doing the same thump motion.
 
 #### picking a bass note while doing a bridge thump
 

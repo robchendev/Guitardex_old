@@ -23,7 +23,7 @@ The wrist thump is commonly notated as an O above the notation and/or tab.
 
 ### Explanation
 
-The thump sound, contrary to it's own name, comes from the fleshy part of the palm directly above your wrist coming in contact with the guitar's body above the soundhole. This sound is similar to a kick drum, commonly used on every beat or on beats 1 and 3 in modern music.
+The thump sound, contrary to it's own name, does not come from the wrist coming in contact with the guitar's body. It comes from the fleshy part of the palm directly above your wrist coming in contact with the guitar's body above the soundhole. This sound is similar to a kick drum, commonly used on every beat or on beats 1 and 3 in modern music.
 
 The thumping motion is done by arching your hand back at the wrist to dig your lower palm into the guitar's body. It's alright to use some strength from your arm to improve the power of this motion, but like all percussive techniques, make sure it's not too loud.
 

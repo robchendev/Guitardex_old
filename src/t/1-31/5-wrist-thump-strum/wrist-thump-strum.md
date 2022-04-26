@@ -27,6 +27,6 @@ The wrist thump strum is commonly notated as a group of notes with a strum arrow
 
 ### Explanation
 
-The wrist thump portion of this technique is performed the same way. To add a strum, curl your middle and ring fingers into your palm and at the same time you do a wrist thump, strum the back of your fingernails across the strings by opening up your palm.
+The wrist thump portion of this technique is done the same way. To add a strum, curl your middle and ring fingers into your palm and at the same time you do a wrist thump, strum the back of your fingernails across the strings by opening up your palm.
 
 Do not extend your strumming fingers in this movement. Your palm should open up just enough during the wrist thump so that your fingers strum across the strings, and no more than that.
