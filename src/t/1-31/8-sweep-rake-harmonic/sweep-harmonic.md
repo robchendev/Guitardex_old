@@ -16,16 +16,16 @@ exercises:
 ---
 
 Video: 
-- 0<12> open sweep harmonic (front)
 - 0<12> open sweep harmonic (side)  
-- G chord sweep harmonic (front)
 - G chord sweep harmonic (side)
 
 ### Notation
 
-![Sweep Harmonic]()
+<div class="tabImg">
+  <img src="sweep-harmonic.jpg" />
+</div>
 
-The sweep harmonic is notated with several artificial harmonics and a strum arrow or wave-like line (usually used to notate a finger roll).
+The sweep harmonic is notated with several artificial harmonics and a strum arrow.
 
 ### Explanation
 

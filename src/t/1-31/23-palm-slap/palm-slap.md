@@ -12,7 +12,9 @@ exercises:
 
 ### Notation
 
-![Palm Slap]()
+<div class="tabImg">
+  <img src="palm-slap.jpg" />
+</div>
 
 The palm slap is commonly notated as either multiple Xs covering the majority of the strings in a tab, or one giant X cover all the strings.
 

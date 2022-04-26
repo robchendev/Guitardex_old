@@ -4,7 +4,7 @@ export const COLORS = {
     dark: '#E7E5E4',
   },
   bg: {
-    light: '#EEF3F7',
+    light: '#E2E8F0',
     dark: '#1e1e1e',
   },
   primary: {
@@ -12,7 +12,7 @@ export const COLORS = {
     dark: '#7C3AED',
   },
   bg2: {
-    light: 'rgb(255,255,255)',
+    light: '#FAFAFA',
     dark: '#363636',
   },
   bg3: {
@@ -32,7 +32,7 @@ export const COLORS = {
     dark: 'rgb(45,45,45)',
   },
   tabimg: {
-    light: 'brightness(1.04)',
+    light: 'brightness(1.02)',
     dark: 'invert(0.831) contrast(110%) brightness(130%)',
   },
   toggleName: {

@@ -1,5 +1,5 @@
 ---
-id: 31
+id: 30
 g: t
 group: technique
 title: Thumb Tap Strum
@@ -8,7 +8,7 @@ difficulty: med
 prereqs: [
   {
     name: Thumb Slap Strum,
-    id: 1
+    id: 2
   },
   {
     name: Thumb Tap,
@@ -25,7 +25,9 @@ Video:
 
 ### Notation
 
-![Thumb Tap Strum]()
+<div class="tabImg">
+  <img src="thumb-tap-strum.jpg" />
+</div>
 
 ### Explanation
 

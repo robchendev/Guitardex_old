@@ -12,7 +12,9 @@ exercises:
 
 ### Notations 
 
-![Finger Roll]()
+<div class="tabImg">
+  <img src="finger-roll.jpg" />
+</div>
 
 The finger roll is notated as a group of notes with a wave-like line next to it. Sometimes this wave-like line is notated with an arrow indicating the string order to perform the finger roll in. If you don't see an arrow, perform the technique in the usual order, from thumb to ring.
 

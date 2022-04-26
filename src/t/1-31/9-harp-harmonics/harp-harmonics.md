@@ -20,7 +20,9 @@ Video:
 
 ### Notation
 
-![Harp Harmonics]()
+<div class="tabImg">
+  <img src="harp-harmonics.jpg" />
+</div>
 
 Harp harmonics are notated as an alternation between artificial harmonics and normally picked notes to produce notes like a harp would.
 

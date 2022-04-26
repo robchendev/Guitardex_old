@@ -17,7 +17,7 @@ const extractVideoURL = (demo) => {
 function TechniqueDetails({ data }) {
   const { html } = data.allInfo;
   const {
-    id, g, group, title, category, difficulty, demo, exercises, prereqs
+    id, g, group, title, category, difficulty, demo, prereqs
   } = data.allInfo.frontmatter;
   const postReqData = data.getPostReqs;
   const allPostReqs = postReqData.nodes.filter( //returns array
@@ -73,7 +73,7 @@ function TechniqueDetails({ data }) {
           }
         </Explanation>
         <DarkBackground>
-          <h4>Tabs</h4>
+          {/* <h4>Tabs</h4>
           {exercises ?
             exercises.map(({ text, link }) => (
               <React.Fragment key={text}>
@@ -83,8 +83,8 @@ function TechniqueDetails({ data }) {
               </React.Fragment>
             ))
             :
-            <p>There are no tabs.</p>
-          }
+            <p>There are no tabs yet.</p>
+          } */}
           <ContinueLearning>
             <h4>Continue learning...</h4>
             {allPostReqs.length !== 0 ? 
@@ -134,11 +134,6 @@ export const query = graphql`
         prereqs {
           name
           id
-        }
-        exercises {
-          link
-          text
-          slce
         }
       }
     }

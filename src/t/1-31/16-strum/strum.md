@@ -23,7 +23,9 @@ Video:
 
 ### Notation
 
-![Strum]()
+<div class="tabImg">
+  <img src="strum.jpg" />
+</div>
 
 A strum is notated with an arrow next to a group of notes indicating the strum direction.  
 

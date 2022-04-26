@@ -4,7 +4,7 @@ g: t
 group: technique
 title: Alternative Thumb Picking
 category: articulation
-difficulty: hard
+difficulty: med
 prereqs: 
 demo: 
 exercises:
@@ -19,7 +19,9 @@ Video:
 
 ### Notation
 
-![Alternative Thumb Picking]()
+<div class="tabImg">
+  <img src="alternative-thumb-picking.jpg" />
+</div>
 
 There is no common way to notate alternatively thumb picked strings. Some sheet music with this technique will not notate it at all, while some may choose to show the direction of the pick on every note.
 

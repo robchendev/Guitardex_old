@@ -15,7 +15,9 @@ Video:
 
 ### Notation
 
-![Rasgeuado]()
+<div class="tabImg">
+  <img src="rasgueado.jpg" />
+</div>
 
 The rasgueado is commonly notated as 3 downward strums that are rhythmically close to each other and ridiculous to play using only downward strums. Sometimes, 'Rasg' is written above the notes. 
 

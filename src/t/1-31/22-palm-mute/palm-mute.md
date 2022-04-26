@@ -15,7 +15,9 @@ Video
 
 ### Notation
 
-![Palm Mute]()
+<div class="tabImg">
+  <img src="palm-mute.jpg" />
+</div>
 
 The palm mute is commonly notated as with PM directly above the string to be palm muted. If the palm mute extends to multiple notes in a row with a dashed line, all those notes are to be palm muted.
 

@@ -17,7 +17,9 @@ Video:
 
 ### Notation
 
-![Wrist Thump]()
+<div class="tabImg">
+  <img src="wrist-thump.jpg" />
+</div>
 
 The wrist thump is commonly notated as an O above the notation and/or tab.
 

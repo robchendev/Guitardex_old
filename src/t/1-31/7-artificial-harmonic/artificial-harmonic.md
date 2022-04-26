@@ -21,9 +21,13 @@ Video:
 
 ### Notation
 
-![Artificial Harmonic with 3<22> <7> <0> 0]()
+<div class="tabImg">
+  <img src="artificial-harmonic.jpg" />
+</div>
 
 The artificial harmonic has many ways to be notated, and can be confusing. However, A.H. is commonly written above the harmonic to differentiate it from a natural harmonic. You will only see one of these styles used in one music sheet.
+
+For example:
 
 - 3<22> - left hand presses on fret 3; right hand touches and picks fret 22
 - <19> with A.H. above - right hand touches and picks fret 7

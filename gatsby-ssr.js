@@ -11,7 +11,7 @@ const MagicScriptTag = () => {
       if (hasPersistedPreference) {
         return persistedColorPreference;
       }
-      return 'light';
+      return 'dark';
     }
     const colorMode = getInitialColorMode();
     const root = document.documentElement;

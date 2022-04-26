@@ -28,9 +28,11 @@ Video:
 
 ### Notation
 
-![Slam Strum]()
+<div class="tabImg">
+  <img src="slam-strum.jpg" />
+</div>
 
-The slam strum is notated with a strum beside a set of notes, an O to notate the wrist thump, and an S to notate the bass slap.
+The slam strum is notated with a strum beside a set of notes, an O to notate the wrist thump, and an S to notate the bass slap. If no strum is present but a bass note, O, and S is shown, then it is a bass slam, shown in step 2 below.
 
 The lowest string out of the set of notes is to be played by the thumb as a bass slap combined with a thumb tap, while the rest of the notes are to be played by the strum.
 
@@ -63,9 +65,9 @@ To make it more convenient to learn the next section, instead of doing a thumb s
 
 To add a bass slap to the slam, add an upwards motion to your thumb during the slap to ensure that the thumb continues to move upwards and away from the string after slapping it. This space between the thumb and string allows for the bass note to ring immediately after.
 
-Doing the bass slam on the <span class="tt" data-tip="the second lowest pitched string">5th string</span> allows for the thumb to come in contact with and be stopped by the <span class="tt" data-tip="the lowest pitched string">6th string</span>. The slap sound should primarily come from the 5th string coming in contact with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> immediately before it rings out as the bass note. Stopping the upwards motion on the 6th string can also produce the slap sound and can be used to ampilfy the slap sound if needed. 
+Doing the bass slam on the <span class="tt" data-tip="the second lowest pitched string">5th string</span> allows for the thumb to come in contact with the <span class="tt" data-tip="the lowest pitched string">6th string</span> to get a percussive sound. 
 
-Doing a bass slam on the 6th string is different from doing the bass slam on the 5th string. Since there isn't a <span class="tt" data-tip="the lower pitched string">lower string</span> directly next to the 6th string for the thumb to stop on top of, the thumb needs to slap the 6th string itself using the same upwards motion as slapping the 5th string as described earlier, and finish by stopping the upwards motion on it's own.
+Doing a bass slam on the 6th string is different from doing the bass slam on the 5th string. Since there isn't a <span class="tt" data-tip="the lower pitched string">lower string</span> directly next to the 6th string for the thumb to slap, so the thumb needs to slap the 6th string itself using the same upwards motion as slapping the 5th string as described earlier, and finish by stopping the upwards motion on it's own.
 
 #### 3. Slam Strum
 

@@ -15,7 +15,9 @@ Video:
 
 ### Notation
 
-![Left Hand Slap]()
+<div class="tabImg">
+  <img src="left-hand-slap.jpg" />
+</div>
 
 The left hand slap is commonly notated with one or more Xs with a number above, indicating the finger used on the right hand. 1 means index, 2 means middle, and 3 means ring.
 

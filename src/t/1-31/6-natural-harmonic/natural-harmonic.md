@@ -16,7 +16,9 @@ Video:
 
 ### Notation
 
-![Natural Harmonic]()
+<div class="tabImg">
+  <img src="natural-harmonic.jpg" />
+</div>
 
 The natural harmonic is notated in chevron brackets <>, sometimes with N.H. written above it.
 
