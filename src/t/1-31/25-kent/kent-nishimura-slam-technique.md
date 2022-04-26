@@ -26,8 +26,6 @@ Video:
 - bass slam 
 - slam strum
 
-### Notation
-
 <div class="tabImg">
   <img src="slam-strum.jpg" />
 </div>

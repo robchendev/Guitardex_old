@@ -13,8 +13,6 @@ exercises:
 Video
 - Palm mute lower string only, do arpeggio
 
-### Notation
-
 <div class="tabImg">
   <img src="palm-mute.jpg" />
 </div>

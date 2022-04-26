@@ -20,8 +20,6 @@ Video:
 - 2. Flicking a piece of paper
 - 3. Flicking your guitar strings
 
-### Notation
-
 <div class="tabImg">
   <img src="nail-attack.jpg" />
 </div>
@@ -72,7 +70,7 @@ For now, your hand should not be moving much when first attempting this techniqu
 
 #### 4. Nail Attack
 
-Once you have transferred the flicking motion from the table to the guitar strings, you can add a wrist movement to the flick. Limit this movement to only move closer and away from the strings. 
+Once you have transferred the flicking motion from the piece of paper in step 2 to the guitar strings, you can add a wrist movement to the flick. Limit this movement to only move closer and away from the strings. 
 
 The nail attack is the percussive sound resulting from the combined motion of your middle and ring fingernails hitting the strings while your wrist moving towards and away from your strings.
 

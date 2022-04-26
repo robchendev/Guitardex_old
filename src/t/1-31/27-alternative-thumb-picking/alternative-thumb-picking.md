@@ -17,8 +17,6 @@ Video:
 - Alternative thumb picking while picking on up beats
 - Alternative thumb picking while picking on down and up
 
-### Notation
-
 <div class="tabImg">
   <img src="alternative-thumb-picking.jpg" />
 </div>

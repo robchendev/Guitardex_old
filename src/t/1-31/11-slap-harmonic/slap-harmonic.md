@@ -18,8 +18,6 @@ Video:
 - 3<15> slap harmonic from the front
 - 3<15> slap harmonic from the side
 
-### Notation
-
 <div class="tabImg">
   <img src="slap-harmonic.jpg" />
 </div>

@@ -15,8 +15,6 @@ Video:
 - wrist thump with bass pick
 - wrist thump with melody pick
 
-### Notation
-
 <div class="tabImg">
   <img src="wrist-thump.jpg" />
 </div>

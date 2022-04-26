@@ -14,8 +14,6 @@ Video:
 - natural harmonic from the front
 - natural harmonic from the side
 
-### Notation
-
 <div class="tabImg">
   <img src="natural-harmonic.jpg" />
 </div>

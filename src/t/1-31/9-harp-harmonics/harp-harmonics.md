@@ -18,8 +18,6 @@ exercises:
 Video:
 - E chord harp harmonics
 
-### Notation
-
 <div class="tabImg">
   <img src="harp-harmonics.jpg" />
 </div>

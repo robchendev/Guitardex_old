@@ -13,8 +13,6 @@ exercises:
 Video:
 - E Rasgueado
 
-### Notation
-
 <div class="tabImg">
   <img src="rasgueado.jpg" />
 </div>

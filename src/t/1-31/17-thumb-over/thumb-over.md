@@ -14,8 +14,6 @@ Video:
 - F chord standard Thumbover
 - F chord drop D Double thumbover the part from omake pfadlib
 
-### Notation
-
 <div class="tabImg">
   <img src="thumb-over.jpg" />
 </div>

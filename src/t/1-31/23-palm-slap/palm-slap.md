@@ -10,8 +10,6 @@ demo:
 exercises:
 ---
 
-### Notation
-
 <div class="tabImg">
   <img src="palm-slap.jpg" />
 </div>

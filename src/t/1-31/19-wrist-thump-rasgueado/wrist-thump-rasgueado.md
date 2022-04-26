@@ -19,8 +19,6 @@ demo:
 exercises:
 ---
 
-### Notation
-
 <div class="tabImg">
   <img src="wrist-thump-rasgueado.jpg" />
 </div>

@@ -23,8 +23,6 @@ Video:
 - nail attack strum (above)
 - nail attack strum (side)
 
-### Notation
-
 ![Nail Attack Strum]()
 
 Like the nail attack, the nail attack strum has many different ways of being notated. Common ways include:
