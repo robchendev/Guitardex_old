@@ -21,7 +21,9 @@ Video:
 
 ### Notation
 
-![Thumb Tap]()
+<div class="tabImg">
+  <img src="thumb-tap.jpg" />
+</div>
 
 There is no notation for the thumb tap that is commonly agreed upon. It can be notated by a symbol directly above the tab that would be explained either next to the symbol or at the end of the sheet music.
 

@@ -22,14 +22,15 @@ Video:
 
 ### Notation
 
-![Nail Attack]()
+<div class="tabImg">
+  <img src="nail-attack.jpg" />
+</div>
 
 The nail attack has many different ways of being notated. Common ways include:
 
 - Downstroke icon with "NA" written above
 - One or two Xs on the middle strings
 - X directly above a note
-- X directly below a note
 
 In some countries, this technique is referred to as the "Attack Mute", or "AM". If you see that instead of "NA", it most likely means this same nail attack technique.
 

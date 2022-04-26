@@ -21,7 +21,9 @@ Video:
 
 ### Notation
 
-![Bridge Thump Strum]()
+<div class="tabImg">
+  <img src="bridge-thump-strum.jpg" />
+</div>
 
 The bridge thump is commonly notated as a group of notes with a strum arrow and a B above the notation and/or tab. If the notation and/or tab shows an O above a segment that is palm muted, assume it is a bridge thump.
 

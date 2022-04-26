@@ -21,7 +21,9 @@ exercises:
 
 ### Notation
 
-![Wrist Thump Rasgueado]()
+<div class="tabImg">
+  <img src="wrist-thump-rasgueado.jpg" />
+</div>
 
 Like a rasgueado, the wrist thump rasgueado is commonly notated as 3 downward strums that are rhythmically close to each other and ridiculous to play using only downward strums. An O for the wrist thump is also included above the final strum by the index finger.
 

@@ -85,7 +85,7 @@ export const DarkBackground = styled.div`
   }
 `
 export const ContinueLearning = styled.div`
-  margin-top: 1.5em;
+  //margin-top: 1.5em;
   ul {
     margin-left: 1em;
   }
@@ -96,6 +96,7 @@ export const ContinueLearning = styled.div`
   p {
     line-height: 1.5em;
   }
+  padding-bottom: 0.1em;
 `
 export const Explanation = styled.div`
   padding: 1.5em 0;

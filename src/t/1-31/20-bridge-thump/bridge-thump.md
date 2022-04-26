@@ -8,7 +8,7 @@ difficulty: med
 prereqs: [
   {
     name: Wrist Thump,
-    id: 3
+    id: 4
   },
   {
     name: Palm Mute,
@@ -25,7 +25,9 @@ Video:
 
 ### Notation
 
-![Bridge Thump]()
+<div class="tabImg">
+  <img src="bridge-thump.jpg" />
+</div>
 
 The bridge thump is commonly notated as a B above the notation and/or tab. If the notation and/or tab shows an O above a segment that is palm muted, assume it is a bridge thump.
 

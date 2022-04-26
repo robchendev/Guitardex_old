@@ -20,7 +20,9 @@ Video:
 
 ### Notation
 
-![Slap Harmonic with 3<22>]()
+<div class="tabImg">
+  <img src="slap-harmonic.jpg" />
+</div>
 
 The slap harmonic is notated with multiple tap harmonics together, with T.H. commonly written above the harmonic. 
 

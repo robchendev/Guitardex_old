@@ -21,9 +21,13 @@ Video:
 
 ### Notation
 
-![Tap Harmonic with 3<22> <7> <0> 0]()
+<div class="tabImg">
+  <img src="tap-harmonic.jpg" />
+</div>
 
 Similar to an artificial harmonic, the tap harmonic has many ways to be notated, with T.H. instead of A.H. being commonly written above the harmonic.
+
+For example:
 
 - 3<22> with T.H. above - left hand presses on fret 3; right hand flicks fret 22
 - <19> with T.H. above - right hand flicks fret 19

@@ -31,7 +31,6 @@ Like the nail attack, the nail attack strum has many different ways of being not
 
 - Strum arrow with "NA" written above
 - X directly above a group of notes
-- X directly below a group of notes
 
 In some countries, this technique is referred to as the "Attack Mute", or "AM". If you see that instead of "NA", it most likely means this same nail attack technique.
 

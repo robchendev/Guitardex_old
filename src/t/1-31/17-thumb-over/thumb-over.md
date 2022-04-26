@@ -16,7 +16,9 @@ Video:
 
 ### Notation
 
-![Thumb-Over]()
+<div class="tabImg">
+  <img src="thumb-over.jpg" />
+</div>
 
 There is no special way to notate a thumb-over. You can use the thumb-over whenever you only need to play the <span class="tt" data-tip="the string with the lowest pitch, or at the bottom of the tab">lowest string</span> of a chord that is normally barred, such as the altered F major as shown in the tab. The thumb-over can hold down the F note bass <span class="tt" data-tip="the E string with the lowest pitch, or at the bottom of the tab">low E string</span> with the thumb and use the remaining fingers to hold down the rest of the chord while letting the <span class="tt" data-tip="the E string with the highest pitch, or at the top of the tab">high E string</span> ring open.
 

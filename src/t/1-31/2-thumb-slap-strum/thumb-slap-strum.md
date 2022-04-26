@@ -15,14 +15,11 @@ demo: https://youtu.be/dQw4w9WgXcQ
 exercises:
 ---
 
-Video: 
-- slap strum 4 strings no thumbpick (fast and slow)
-- slap strum 1 string no thumbpick (fast and slow)
-- remake the videos with thumbpick later
-
 ### Notation
 
-![Thumb Slap Strum]()
+<div class="tabImg">
+  <img src="thumb-slap-strum.jpg" />
+</div>
 
 The slap strum is most commonly notated as an "X" below a set of notes, where the X indicates the thumb slap and the notes indicate the strum. Sometimes, there will also be a strum arrow indicating the strum.
 

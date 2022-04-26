@@ -17,7 +17,9 @@ Video:
 
 ### Notation
 
-![Thumb Slap]()
+<div class="tabImg">
+  <img src="thumb-slap.jpg" />
+</div>
 
 The thumb slap is commonly notated as an X on the string you're supposed to slap. Sometimes, it is notated with multiple Xs to slap multiple strings at once. You can do this by angling the thumb down during the slap.
 

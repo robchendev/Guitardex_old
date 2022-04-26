@@ -19,7 +19,9 @@ Video:
 
 ### Notation
 
-![Mute Plant]()
+<div class="tabImg">
+  <img src="mute-plant.jpg" />
+</div>
 
 There is no special way to notate a mute. Look at the rhythmic portion of the sheet music (usually above the tab) for a <span class="tt" data-class="ttBigFont" data-tip="𝄻 𝄼 𝄽 𝄿 𝄾">rest symbol</span>. That is when you should mute the string(s). 
 

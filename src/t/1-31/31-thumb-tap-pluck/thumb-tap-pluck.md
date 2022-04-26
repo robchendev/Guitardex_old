@@ -1,5 +1,5 @@
 ---
-id: 30
+id: 31
 g: t
 group: technique
 title: Thumb Tap Pluck
@@ -8,7 +8,7 @@ difficulty: med
 prereqs: [
   {
     name: Thumb Slap Pluck,
-    id: 4
+    id: 3
   },
   {
     name: Thumb Tap,
@@ -25,7 +25,9 @@ Video:
 
 ### Notation
 
-![Thumb Tap Pluck]()
+<div class="tabImg">
+  <img src="thumb-tap-pluck.jpg" />
+</div>
 
 There is no notation for the thumb tap pluck that is commonly agreed upon. It can be notated by a symbol directly above or below the set of notes, that would be explained either next to the symbol or at the end of the sheet music.
 

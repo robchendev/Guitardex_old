@@ -22,7 +22,9 @@ Video:
 
 ### Notation
 
-![Thumb Slap Pluck]()
+<div class="tabImg">
+  <img src="thumb-slap-pluck.jpg" />
+</div>
 
 The slap strum is most commonly notated as an "X" below a set of notes, where the X indicates the thumb slap and the notes indicate the strings to pick.
 
