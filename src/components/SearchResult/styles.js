@@ -5,6 +5,13 @@ import { Link } from "gatsby"
 
 export const ResultLink = styled(Link)`
   color: var(--color-text, ${COLORS.text.light}) !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `
 export const ResultBlock = styled.div`
   background: var(--color-bg, ${COLORS.bg.light});

@@ -11,14 +11,14 @@ exercises:
 ---
 
 Video: 
-- nail attack (above)
 - nail attack (side)
-- nail attack pinky anchor (above)
 - nail attack pinky anchor (side)
-- nail attack mute (above)
 - nail attack mute (side)
-- nail attack mute pinky anchor (above)
 - nail attack mute pinky anchor (side)
+- 1. the flicking motion (thenar eminence)
+- 1. the flicking motion (without windup)
+- 2. Flicking a piece of paper
+- 3. Flicking your guitar strings
 
 ### Notation
 
@@ -47,39 +47,29 @@ This is because like any technique, you need to build up muscle memory. This cas
 
 This guide aims to make the process easier by building muscle memory through motions your hands are likely already accustomed to. Everyone learns differently and this technique can take you up one month to learn and get used to, so don't feel discouraged from a lack of noticeable progress.
 
-Since this technique has no prerequisites but has multiple steps to learn, it will be separated into 5 sections.
+Since this technique has no prerequisites but has multiple steps to learn, it will be separated into 5 sections. Refer to the video for the demonstration of each section.
 
 #### 1. The flicking motion
 
 Push your middle and ring finger into the base of your thumb (medical term is "Thenar Eminence") and flick outwards, straigtening your fingers.
 
-![Thenar Eminence Flick]()
-
 Now attempt the same motion without first pushing the fingers into the base of your thumb and the releasing. It is normal to have less power in the flicking motion than before.
 
-![Flick]()
+#### 2. Flicking a piece of paper
 
-#### 2. Flicking a solid object
+Try doing the same flicking motion(s) described above, but on a piece of paper instead. Instead of following through by straightening your fingers, make your fingers bounce back once your fingernails make contact with the paper. your wrist and arm should remain in the same position and not assist your fingers with this flick.
 
-Try doing the same flicking motion(s) described above, but on a solid object such as a table. Instead of following through by straightening your fingers, stop once your fingernails make contact with the table.  
-
-![Table Flick]()
-
-Make sure the only part of your fingers coming in contact with the table are the back of your fingernails. Don't flick too hard to the point where your nails hurt.
+The flick on the piece of paper should sound like a gunshot. Do this as a check to ensure you have the flicking motion correct before moving on the next step. Make sure the only part of your fingers coming in contact with the piece of paper are the back of your fingernails.
 
 #### 3. Flicking your guitar strings
 
-Now transfer this same motion of flicking your table to flicking the strings of the guitar. It's important to remember that the basic nail attack is not a strum.
+Now transfer this same motion of flicking the piece of paper to flicking the guitar strings. It's important to remember that the basic nail attack is not a strum, so like the previous step, you should not be using your wrist and arm to assist you with the flick.
 
-As soon as the back of the fingernails make contact with the string, they bounce back towards the palm of your hand again to prepare for the next nail attack. Your goal is to get a percussive sound out of it. It is also normal for the strings to ring after flicking them, as long as you didn't do a strum.
-
-![String Flick]()
+As soon as the back of the fingernails make contact with the string, bounce them back towards the palm of your hand again to prepare for the next nail attack. Your goal is to get a percussive sound out of it. It is also normal for the strings to ring after flicking them, as long as you didn't do a strum.
 
 For now, your hand should not be moving much when first attempting this technique. Once you can perform the technique properly with minimal hand movement, you can add more motion to it from your wrist and arm, which will be discussed in step 5 on this page.
 
 #### 4. Nail Attack
-
-Refer to the video for demonstrations from this point on.
 
 Once you have transferred the flicking motion from the table to the guitar strings, you can add a wrist movement to the flick. Limit this movement to only move closer and away from the strings. 
 
