@@ -26,6 +26,6 @@ Since the soundhole strum is very rarely used outside of Eddie van der Meer's ar
 
 ### Explanation
 
-The soundhole strum is a percussive technique used by Eddie van der Meer.
+The soundhole strum is a percussive technique used by guitarist Eddie van der Meer.
 
 To perform a soundhole strum, do a strum and at the end of the strum, hit the back of your fingernail on the edge of the guitar's soundhole.
