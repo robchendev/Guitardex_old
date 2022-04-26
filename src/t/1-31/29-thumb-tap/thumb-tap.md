@@ -1,5 +1,5 @@
 ---
-id: 30
+id: 29
 g: t
 group: technique
 title: Thumb Tap

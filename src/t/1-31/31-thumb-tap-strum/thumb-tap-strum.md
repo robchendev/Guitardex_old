@@ -1,5 +1,5 @@
 ---
-id: 32
+id: 31
 g: t
 group: technique
 title: Thumb Tap Strum

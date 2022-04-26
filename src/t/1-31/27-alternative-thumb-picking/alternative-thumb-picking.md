@@ -1,5 +1,5 @@
 ---
-id: 28
+id: 27
 g: t
 group: technique
 title: Alternative Thumb Picking
