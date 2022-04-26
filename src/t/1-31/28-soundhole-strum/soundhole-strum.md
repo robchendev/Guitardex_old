@@ -1,5 +1,5 @@
 ---
-id: 29
+id: 28
 g: t
 group: technique
 title: Soundhole Strum

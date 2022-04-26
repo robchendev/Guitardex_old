@@ -1,5 +1,5 @@
 ---
-id: 31
+id: 30
 g: t
 group: technique
 title: Thumb Tap Pluck
