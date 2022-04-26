@@ -1,5 +1,5 @@
 ---
-id: 4
+id: 3
 g: t
 group: technique
 title: Thumb Slap Pluck
