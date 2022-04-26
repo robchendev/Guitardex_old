@@ -15,8 +15,6 @@ Video:
 - slap multiple strings no thumbpick
 - remake the videos with thumbpick later
 
-### Notation
-
 <div class="tabImg">
   <img src="thumb-slap.jpg" />
 </div>

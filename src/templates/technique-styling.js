@@ -123,5 +123,5 @@ export const Explanation = styled.div`
   }
 `
 export const VideoContainer = styled.div`
-  margin-bottom: 0.5em;
+  margin-bottom: 0;
 `

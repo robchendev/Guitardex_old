@@ -27,7 +27,7 @@ There is no common way to notate alternatively thumb picked strings. Some sheet 
 
 ### Explanation
 
-The alternative thumb picking technique is used instead of regular picking to keep a group of notes sounding similar in tone, or to play <span class="tt" data-tip="the strinsg with the lower pitches, or at the bottom of the tab">lower strings</span> repeatedly while giving the other fingers convenient access to the others.
+The alternative thumb picking technique is used instead of regular picking to keep a group of notes sounding similar in tone, or to play <span class="tt" data-tip="the strings with the lower pitches, or at the bottom of the tab">lower strings</span> repeatedly while giving the other fingers convenient access to the others.
 
 To pick alternatively with the thumb, pick down with the underside of the thumb nail as you normally would, and pick upwards with the back of the thumbnail. Only pick upwards far enough for your thumb to be be below the string directly above the picked string.
 

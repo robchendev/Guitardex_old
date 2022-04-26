@@ -15,8 +15,6 @@ demo: https://youtu.be/dQw4w9WgXcQ
 exercises:
 ---
 
-### Notation
-
 <div class="tabImg">
   <img src="thumb-slap-strum.jpg" />
 </div>

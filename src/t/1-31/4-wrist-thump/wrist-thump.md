@@ -1,5 +1,5 @@
 ---
-id: 3
+id: 4
 g: t
 group: technique
 title: Wrist Thump
