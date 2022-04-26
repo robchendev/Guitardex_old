@@ -19,8 +19,6 @@ Video:
 - Thumb tap with side
 - Thumb tap with nail
 
-### Notation
-
 <div class="tabImg">
   <img src="thumb-tap.jpg" />
 </div>

@@ -19,8 +19,6 @@ Video:
 - 3<15> tap harmonic from the front
 - 3<15> tap harmonic from the side
 
-### Notation
-
 <div class="tabImg">
   <img src="tap-harmonic.jpg" />
 </div>

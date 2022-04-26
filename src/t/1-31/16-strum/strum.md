@@ -21,8 +21,6 @@ Video:
 - index down, thumb up
 - index down, thumb up (but holding together)
 
-### Notation
-
 <div class="tabImg">
   <img src="strum.jpg" />
 </div>

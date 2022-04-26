@@ -13,8 +13,6 @@ exercises:
 Video:
 - Left hand slap
 
-### Notation
-
 <div class="tabImg">
   <img src="left-hand-slap.jpg" />
 </div>

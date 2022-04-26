@@ -23,8 +23,6 @@ Video:
 - Bridge thump
 - Bridge thump with picking before and after
 
-### Notation
-
 <div class="tabImg">
   <img src="bridge-thump.jpg" />
 </div>

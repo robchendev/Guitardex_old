@@ -19,8 +19,6 @@ Video:
 - 0<12> open sweep harmonic (side)  
 - G chord sweep harmonic (side)
 
-### Notation
-
 <div class="tabImg">
   <img src="sweep-harmonic.jpg" />
 </div>

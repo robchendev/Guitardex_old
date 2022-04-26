@@ -19,8 +19,6 @@ Video:
 - Bridge thump strum
 - Bridge thump strum with picking before and after
 
-### Notation
-
 <div class="tabImg">
   <img src="bridge-thump-strum.jpg" />
 </div>

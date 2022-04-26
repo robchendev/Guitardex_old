@@ -18,8 +18,6 @@ exercises:
 Video:
 - E chord soundhole strum
 
-### Notation
-
 <div class="tabImg">
   <img src="soundhole-strum.jpg" />
 </div>

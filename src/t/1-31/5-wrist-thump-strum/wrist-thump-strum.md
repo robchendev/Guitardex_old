@@ -19,8 +19,6 @@ Video:
 - Strum motion without wrist thump
 - Wrist thump strum
 
-### Notation
-
 <div class="tabImg">
   <img src="wrist-thump-strum.jpg" />
 </div>

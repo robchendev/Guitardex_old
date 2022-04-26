@@ -20,8 +20,6 @@ Video:
 - Slap pluck (twist)
 - remake the videos with thumbpick later
 
-### Notation
-
 <div class="tabImg">
   <img src="thumb-slap-pluck.jpg" />
 </div>

@@ -19,8 +19,6 @@ Video:
 - 3<15> artificial harmonic from the front
 - 3<15> artificial harmonic from the side
 
-### Notation
-
 <div class="tabImg">
   <img src="artificial-harmonic.jpg" />
 </div>

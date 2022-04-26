@@ -10,8 +10,6 @@ demo:
 exercises:
 ---
 
-### Notations 
-
 <div class="tabImg">
   <img src="finger-roll.jpg" />
 </div>

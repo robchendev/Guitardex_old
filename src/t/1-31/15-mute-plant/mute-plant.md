@@ -17,8 +17,6 @@ Video:
 - play one note and plant
 - play 4 notes and plant
 
-### Notation
-
 <div class="tabImg">
   <img src="mute-plant.jpg" />
 </div>

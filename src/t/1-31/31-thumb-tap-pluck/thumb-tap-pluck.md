@@ -23,8 +23,6 @@ Video:
 - Thumb tap pluck with side
 - Thumb tap pluck with nail
 
-### Notation
-
 <div class="tabImg">
   <img src="thumb-tap-pluck.jpg" />
 </div>
