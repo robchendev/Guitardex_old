@@ -23,7 +23,9 @@ Video:
 - nail attack strum (above)
 - nail attack strum (side)
 
-![Nail Attack Strum]()
+<div class="tabImg">
+  <img src="nail-attack-strum.jpg" />
+</div>
 
 Like the nail attack, the nail attack strum has many different ways of being notated. Common ways include:
 

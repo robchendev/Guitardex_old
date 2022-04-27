@@ -68,3 +68,8 @@ export const LinkedSiteIcon = styled.div`
     font-size: 28px;
   }
 `
+export const CookieWarning = styled.p`
+  padding: ${v.mdSpacing};
+  display: flex;
+  justify-content: center;
+`
