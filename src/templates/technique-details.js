@@ -35,7 +35,7 @@ function TechniqueDetails({ data }) {
           <PageHeader>
             <h1>{title}</h1>
             <PreRequisites>
-              Req:{" "}
+              Required:{" "}
               {prereqs ?
                 prereqs.map((prereq, index) => (
                   <span key={index}>
@@ -95,7 +95,7 @@ function TechniqueDetails({ data }) {
                       <li><Link to={`/${g}/${frontmatter.id}`}>{frontmatter.title}</Link>
                       {frontmatter.prereqs.map((prereq) => (
                         prereq.id !== id && 
-                          <span> (Req: <Link to={`/${g}/${prereq.id}`}>{prereq.name}</Link>)</span>
+                          <span> (Required: <Link to={`/${g}/${prereq.id}`}>{prereq.name}</Link>)</span>
                       ))}</li>
                     </React.Fragment>
                   )) 

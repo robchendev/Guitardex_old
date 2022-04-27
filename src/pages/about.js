@@ -1,74 +1,190 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import { Link } from "gatsby"
-import { CustomUL } from "../styles/pagestyles/about"
+import { CustomUL, IconLink, InfoContainer, LinkContainer, LinkedSiteIcon, LinksBackground, ProfilePicture, ProfilePictureContainer, TeamContainer } from "../styles/pagestyles/about"
+
+import { FaYoutube, FaGithub, FaSpotify, FaGlobe } from "react-icons/fa"
+
+import robertChen from "../assets/team-members/robert-chen.jpg"
+import davidZecchel from "../assets/team-members/david-james-zecchel.jpg"
+import bobMa from "../assets/team-members/bob-ma.jpg"
+import eddieVanDerMeer from "../assets/team-members/eddie-van-der-meer.jpg"
+import weijunSyu from "../assets/team-members/weijun-syu.jpg"
+//import bryanQuan from "../assets/team-members/bryan-quan.jpg"
 
 const About = () => {
   return (
     <Layout title="About">
       <h1>About</h1>
-      <h3>Why I Am Developing This Website</h3>
+      <h3>Why I Made Guitardex</h3>
       <p>
         Fingerstyle is a young style of guitar rising in popularity. Due to its infancy in
         history, it is not an officially recognized style of guitar by most music
         conservatories and is not documented heavily on. As a consequence, many avid
-        learners of the style teach themselves without mentors and peers, causing them to
-        develop incomplete foundations.
+        learners of the style teach themselves without guidance.
       </p>
       <p>
-        To help solve this problem, I am developing this website to act as a centralized source of fingerstyle information. As someone who had experienced the severe lack of freely accessible resources while growing my own skills to become a decent fingerstyle guitarist, I want this site to help alleviate the troubles that future guitarists may run into.
+        My name is Robert Chen, and I created this web app to provide easy and free access to fingerstyle tutorials and information. As someone who had experienced the lack of freely accessible resources while growing my own skills as a fingerstyle guitarist, I want this site to help alleviate the troubles that future guitarists may run into.
       </p><br />
-      <h3>How Teachers Can Use This Website</h3>
+      <h3>Is Guitardex Free?</h3>
       <p>
-        This website's contents will be built without a specific educational curriculum in mind. However, any teacher can tailor their own curriculums for their students and share it using the Guitardex's sharing feature.
+        Guitardex is and will remain completely free. If you want to help support my work and help pay for Guitardex's server costs, please consider <a href="https://www.paypal.com/donate/?hosted_button_id=DHGEUWW4VMUVG">donating</a>.
+      </p><br />
+      <h3>How It Works</h3>
+      <p>
+        Guitardex does not have a curriculum but any user can be used to make one through the usage of it's saving and sharing functionality. For example, a Guitardex shared by a musician to give their fans direct access to the specific tutorials necessary for them to learn in order to play their songs.
+      </p>
+      <p>
+        See the <Link to="/t">Help</Link> page for more details on how to add and share your Guitardex, or try using this pre-made Guitardex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">Common Techniques</Link>.
+      </p>
+      <p>
+        At the top of each technique tutorial links the required techniques, if any, that the user must know before learning it and at the bottom is a list of the techniques that requires the current technique, again if any.
       </p>
       <br />
-      <h3>How Learners Can Use This Website</h3>
+      <h3>Future Development</h3>
       <p>
-        As this website's technique tutorials will be presented without a curriculum, learners are free to choose whatever techniques they wish to learn as long as they first learn the prerequisite techniques that are mentioned at the top of each individual technique page. They can then share their own Guitardexes with their peers to easily show them what they are learning, or collaborate together to improve.
+        Guitardex is a regularly updating project that aims to have more than just fingerstyle techniques. It is programmed to save items from any 'library' within the web app. Currently, <Link to="/t">Techniques</Link> is the only library. Future libraries can include information such as audio mixing and equipment.
+      </p>
+      <p>
+        When I am able, I will be making improvements to this web app's functionality, UI, and content. You can view the changelog on the <Link to="/dev">Development</Link> page.
       </p>
       <br />
-      <h3>How Professional Musicians Can Use This Website</h3>
+      <h3>Guitardex Team</h3>
       <p>
-        A professional musician who sells tabs can use this site's main feature, Guitardex, to build a list of techniques necessary for to play the song they're selling. This will make it easier for both the professional musician and the learner as the musician would not need to be burdened with making a tutorial for the song and a learner would not need to scour different pages of the internet to learn all the techniques for one song.
+        I have outsourced help from friends who excel in fields necessary to make this project as serviceable as possible. These are the people who have worked on this project:
       </p>
-      <br />
-      <h3>How Much This Website Will Cost</h3>
-      <p>
-        This website will be <strong>completely free</strong>. Making this website's contents paid goes against the entire reason this website is being made in the first place. There won't be any of that "free trial for 7 days" crap. I'm intending for this site to be fully self-sufficient through donations and/or sponsors. Yes, there may be ads from possible sponsors, but I'll make sure they're not intrusive nor obnoxiously shoved in your face.
-      </p><br />
-      <h3>How You Can Help</h3>
-      <p>
-        Fill out <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">this survey</a>. I'm not 100% sure what the average aspiring fingerstyle guitarist wants to learn, so having a set of opinions from the fingerstyle community would greatly help the development of this site.
-      </p><br />
-      <h3>Fingerstyle Central Community</h3>
-      <p>
-        Join our <a href="https://forms.gle/aSyb5cGpMMyVXTFN6">Discord Server</a>!
-      </p><br />
-      <h3>About Me</h3>
-      <p>
-        My name is Robert Chen, I am a fingerstyle guitarist and fingerstyle transcriber from Canada and I'm the lead developer for this project.  If you're interested in my music, I've included my YouTube and Spotify links below.
-      </p>
-      <p>
-        <a href="https://github.com/chendumpling/">GitHub</a> - <a href="https://www.youtube.com/c/RobertChen/">YouTube</a> - <a href="https://open.spotify.com/artist/4JQzZTSBYflrvsi3fiPJmZ">Spotify</a>
-      </p><br />
-      <h3>About the Team</h3>
-      <p>
-        I have outsourced help from some friends who excel in fields necessary to make this project as serviceable as possible. Including my own name, these are the wonderful people who have helped me on this project:
-      </p>
-      <p>
-        <CustomUL>
-          <li><p><a href="https://www.youtube.com/RobertChen/">Robert Chen</a> - Project Lead, Development, and Content Creation</p></li>
-          <li><p><a href="https://www.davidjameszecchel.com/">David James Zecchel</a> - Content Writing & Editing</p></li>
-          
-          <li><p><a href="https://github.com/biryaniq">Bryan Quan</a> - Concepts & Quality Assurance</p></li>
-          <li><p><a href="https://github.com/">Weijun Syu</a> - Quality Assurance & Branding</p></li>
-          <li><p><a href="https://www.youtube.com/c/EddievanderMeer">Eddie van der Meer</a> - Content Advising</p></li>
-          <li><p><a href="https://www.youtube.com/channel/UCv5lp4CKs7tdTdJwTknjrpA">Bob Ma</a> - Content Advising</p></li>
-        </CustomUL>
-      </p>
+      {teamMembers.map(teamMember => (
+        <TeamContainer>
+          <ProfilePictureContainer>
+            <ProfilePicture src={teamMember.image} alt={teamMember.name} />
+          </ProfilePictureContainer>
+          <InfoContainer>
+            <h4>{teamMember.name}</h4>
+            <p>{teamMember.roles.map(role => role).join(", ")}</p>
+            <LinksBackground>
+              {teamMember.links.map(link => (
+                  <LinkContainer>
+                    <IconLink href={link.url}>
+                      <LinkedSiteIcon>{link.icon}</LinkedSiteIcon>
+                    </IconLink>  
+                  </LinkContainer>
+              ))}
+            </LinksBackground>
+          </InfoContainer>
+        </TeamContainer>
+      ))}
+      
     </Layout>
   )
 }
 
 export default About
+
+const teamMembers = [
+  {
+    name: "Robert Chen",
+    image: robertChen,
+    roles: [
+      "Project Lead", "Developer", "Content Creator", "Content Writer"
+    ],
+    links: [
+      {
+        icon: <FaGithub />,
+        url: "https://github.com/chendumpling"
+      },
+      {
+        icon: <FaYoutube />,
+        url: "https://youtube.com/RobertChen"
+      },
+      {
+        icon: <FaSpotify />,
+        url: "https://open.spotify.com/artist/4JQzZTSBYflrvsi3fiPJmZ"
+      },
+      {
+        icon: <FaGlobe />,
+        url: "https://robertchenyt.com/"
+      }
+    ]
+  },
+  {
+    name: "David James Zecchel",
+    image: davidZecchel,
+    roles: [
+      "Content Writer", "Content Editor"
+    ],
+    links: [
+      {
+        icon: <FaGlobe />,
+        url: "https://davidjameszecchel.com/"
+      }
+    ]
+  },
+  {
+    name: "Bob Ma",
+    image: bobMa,
+    roles: [
+      "Content Advisor"
+    ],
+    links: [
+      {
+        icon: <FaYoutube />,
+        url: "https://youtube.com/oBobma/"
+      },
+      {
+        icon: <FaSpotify />,
+        url: "https://open.spotify.com/artist/0AzJ9NCXlRf3dVbSBqU24i"
+      },
+    ]
+  },
+  {
+    name: "Eddie van der Meer",
+    image: eddieVanDerMeer,
+    roles: [
+      "Content Advisor"
+    ],
+    links: [
+      {
+        icon: <FaYoutube />,
+        url: "https://www.youtube.com/user/eddie2754/"
+      },
+      {
+        icon: <FaSpotify />,
+        url: "https://open.spotify.com/artist/08WRjJPbPqSEOkFuc99ymW"
+      },
+      {
+        icon: <FaGlobe />,
+        url: "https://eddievdmeer.com/"
+      }
+    ]
+  },
+  {
+    name: "WeiJun Syu",
+    image: weijunSyu,
+    roles: [
+      "Software Consultant"
+    ],
+    links: [
+      {
+        icon: <FaGithub />,
+        url: "https://github.com/weijunsyu"
+      },
+      {
+        icon: <FaGlobe />,
+        url: "https://weijunsyu.com/"
+      }
+    ]
+  },
+  {
+    name: "Bryan Quan",
+    image: weijunSyu,
+    roles: [
+      "Quality Assurance"
+    ],
+    links: [
+      {
+        icon: <FaGithub />,
+        url: "https://github.com/biryaniq"
+      }
+    ]
+  },
+]
