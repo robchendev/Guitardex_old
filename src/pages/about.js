@@ -24,7 +24,7 @@ const About = () => {
         learners of the style teach themselves without guidance.
       </p>
       <p>
-        My name is Robert Chen, and I created this web app to provide easy and free access to fingerstyle tutorials and information. As someone who had experienced the lack of freely accessible resources while growing my own skills as a fingerstyle guitarist, I want this site to help alleviate the troubles that future guitarists may run into.
+        My name is Robert Chen, and I created this web app ("Guitardex", "Guitar Index", "Gdex") to provide easy and free access to fingerstyle tutorials and information. As someone who had experienced the lack of freely accessible resources while growing my own skills as a fingerstyle guitarist, I want this site to give guitarists a convenient access to fingerstyle information.
       </p><br />
       <h3>Is Guitardex Free?</h3>
       <p>
@@ -32,10 +32,10 @@ const About = () => {
       </p><br />
       <h3>How It Works</h3>
       <p>
-        Guitardex does not have a curriculum but any user can be used to make one through the usage of it's saving and sharing functionality. For example, a Guitardex shared by a musician to give their fans direct access to the specific tutorials necessary for them to learn in order to play their songs.
+        Guitardex does not have a curriculum but any user can make one through the usage of it's saving and sharing functionality. For example, a Guitardex shared by a musician to give their fans direct access to the specific tutorials necessary for them to learn in order to play their songs.
       </p>
       <p>
-        See the <Link to="/t">Help</Link> page for more details on how to add and share your Guitardex, or try using this pre-made Guitardex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">Common Techniques</Link>.
+        See the <Link to="/help">Help</Link> page for more details on how to add and share your Guitardex, or try using this pre-made Guitardex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">Common Techniques</Link>.
       </p>
       <p>
         At the top of each technique tutorial links the required techniques, if any, that the user must know before learning it and at the bottom is a list of the techniques that requires the current technique, again if any.
