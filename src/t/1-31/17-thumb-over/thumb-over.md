@@ -22,6 +22,6 @@ There is no special way to notate a thumb-over. You can use the thumb-over whene
 
 ### Explanation
 
-A thumb-over can be used in place of another finger to hold down the <span class="tt" data-tip="the string with the lowest pitch, or at the bottom of the tab">lowest string</span> or lowest 2 strings to give the other fingers more freedom to be placed elsewhere.
+A thumb-over can be used in place of another finger to hold down the <span class="tt" data-tip="the string with the lowest pitch, or at the bottom of the tab">lowest string</span> to give the other fingers more freedom to be placed elsewhere. A thumb-over can be used to fret the lowest 2 strings as well, but is rarely used as there is usually a better way to fret those notes.
 
-To make a thumb-over position more comfortable, move your wrist higher to give your thumb more space to perform a thumb-over with. This may make it less comfortable if you're pressing down on the other strings with your other fingers, so find a balance that works for you.
+To make a thumb-over position more comfortable, move your wrist higher to give your thumb more space to do a thumb-over with. This may make it less comfortable if you're pressing down on the other strings with your other fingers, so find a balance that works for you.

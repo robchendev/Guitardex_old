@@ -23,7 +23,7 @@ The slap strum is most commonly notated as an "X" below a set of notes, where th
 
 ### Explanation
 
-The slap strum is an expansion if the thumb slap technique by doing a quick strum with your fingers at the same time as a thumb slap. This technique is performed by extending or "flicking" your index and/or middle fingers while simultaneously slapping the lower string(s) with your thumb. 
+The slap strum is an expansion if the thumb slap technique by doing a quick strum with your fingers at the same time as a thumb slap. This technique is doed by extending or "flicking" your index and/or middle fingers while simultaneously slapping the lower string(s) with your thumb. 
 
 In order for the slap strum to be done correctly, the strum must be done quickly enough so that it sounds like the slap happens at the same time. If the strum takes too long, then it will not sound right.
 

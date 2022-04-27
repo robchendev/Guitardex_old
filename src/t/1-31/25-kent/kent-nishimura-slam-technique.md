@@ -69,7 +69,7 @@ Doing a bass slam on the 6th string is different from doing the bass slam on the
 
 #### 3. Slam Strum
 
-The bass slam portion of this technique is performed the same way. To add a strum, curl your middle and ring fingers into your palm and at the same time you do a wrist thump, strum the back of your fingernails across the strings.
+The bass slam portion of this technique is done the same way. To add a strum, curl your middle and ring fingers into your palm and at the same time you do a wrist thump, strum the back of your fingernails across the strings.
 
 Since your thumb needs to stay in the same position to do a bass slam, instead of using your middle and ring fingers to strum like a wrist thump strum, you can use your index, middle, or ring finger only. It easier to strum <span class="tt" data-tip="the lower pitched strings">lower strings</span> using the index, <span class="tt" data-tip="the higher pitched strings">higher strings</span> using the ring, and strings in between using the middle.
 

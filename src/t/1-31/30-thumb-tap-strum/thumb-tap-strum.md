@@ -27,9 +27,7 @@ Video:
   <img src="thumb-tap-strum.jpg" />
 </div>
 
-### Explanation
-
-There is no notation for the thumb tap strum that is commonly agreed upon. The thumb tap strum can be notated with a symbol direction above or below a set of note, that would be explained either next to the symbol or at the end of the sheet music. Sometimes, there will also be a strum arrow indicating the strum.
+There is no notation for the thumb tap strum that is commonly agreed upon. The thumb tap strum can be notated with a symbol direction above or below a set of note, that would be explained either next to the symbol or at the end of the sheet music. There will also be a strum arrow indicating the strum.
 
 ### Explanation
 

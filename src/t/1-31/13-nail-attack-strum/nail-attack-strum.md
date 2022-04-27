@@ -23,7 +23,9 @@ Video:
 - nail attack strum (above)
 - nail attack strum (side)
 
-![Nail Attack Strum]()
+<div class="tabImg">
+  <img src="nail-attack-strum.jpg" />
+</div>
 
 Like the nail attack, the nail attack strum has many different ways of being notated. Common ways include:
 
@@ -40,4 +42,4 @@ Once your nail attack has achieved the percussive sound consistently, you can pa
 
 By adding the strum to the technique, your fingers no longer bounce back and instead extend further. Your wrist can move up and down like you would in a normal strum too. 
 
-This strum is very fast as you'll be performing the flicking motion of the nail attack as you strum downwards. Your arm can move up and down to assist with the strum. You only need to extend your fingers enough so that they strum all the intended strings. You should still hear the nail attack sound while performing this motion.
+This strum is very fast as you'll be doing the flicking motion of the nail attack as you strum downwards. Your arm can move up and down to assist with the strum. You only need to extend your fingers enough so that they strum all the intended strings. You should still hear the nail attack sound while doing this motion.

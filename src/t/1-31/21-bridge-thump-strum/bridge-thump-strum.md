@@ -27,8 +27,8 @@ The bridge thump is commonly notated as a group of notes with a strum arrow and 
 
 ### Explanation
 
-The bridge thump portion of this technique is performed the same way. To add a strum, curl your middle and ring fingers into your palm and at the same time you do a bridge thump, strum the back of your fingernails across the strings. 
+The bridge thump portion of this technique is done the same way. To add a strum, curl your middle and ring fingers into your palm and at the same time you do a bridge thump, strum the back of your fingernails across the strings. 
 
 Do not extend your strumming fingers in this movement. Your palm should open up just enough during the wrist thump so that your fingers strum across the strings, and no more than that.
 
-When performing the bridge thump and strum at the same time, the palm muted notes should remain muted while every other note should ring normally.
+When doing the bridge thump and strum at the same time, the palm muted notes should remain muted while every other note should ring normally.

@@ -8,6 +8,7 @@ import DexItem from "../components/DexItem/DexItem"
 import { MdDragIndicator } from 'react-icons/md'
 import { TrashContainer, Trash, TrashIcon, DexList, EmptyList, EmptyListEntries, SaveNameInput, ExportSave, DeleteAllContainer, DeleteAll, HelpLinkDiv, SavedDexItem, DragIconContainer, MoveableContainer, EmptyListEntryContainer, InputCounter, InputCounterContainer, MobileReminder } from "../styles/pagestyles/index"
 import { Link } from 'gatsby';
+import { CookieWarning } from "../styles/pagestyles/about"
 
 const Saved = () => {
   const handleEnterKey = (event) => {
@@ -259,9 +260,14 @@ const Saved = () => {
         <input id="exportURL" defaultValue={"https://gdex.cc/?" + encode(saved)} disabled></input>
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
-      <DeleteAllContainer>
-        <DeleteAll onClick={clearSave}>Delete Dex</DeleteAll>
-      </DeleteAllContainer>
+      {saved.e.length !== 0 &&
+      <div>
+        <DeleteAllContainer>
+          <DeleteAll onClick={clearSave}>Delete Dex</DeleteAll>
+        </DeleteAllContainer>
+        <CookieWarning>Deleting your browser cookies will also delete your Guitardex.</CookieWarning>
+      </div>
+      }
     </Layout>
   )
 }

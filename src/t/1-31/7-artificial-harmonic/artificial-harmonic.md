@@ -49,6 +49,6 @@ For your reference. The parentheses () show the intervals of the harmonic note w
 
 ### FAQ
 
-#### How do I play <24> if my guitar doesn't have enough frets?
+#### How do I play 0<24> if my guitar doesn't have enough frets?
 
 The harmonic note you get depends solely on the integer divisors of the string. Your frets themselves aren't involved in the production of the harmonic note, they are just conveniently right below the most common harmonic frets so they're used as guides on where to put your finger. This is also why harmonics such as <3.2> exist. 

@@ -33,7 +33,7 @@ For example:
 
 ### Explanation
 
-A tap harmonic is played by quickly flicking a right finger at a single string at any fret that can be played with an artificial harmonic. 
+A tap harmonic is played by quickly flicking a right finger towards the fretboard at a single string at any fret that can be played with an artificial harmonic. 
 
 It is easier to produce a note by flicking the string down to make contact with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> itself, but it also produces a 'click' sound.
 
