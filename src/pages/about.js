@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import { Link } from "gatsby"
-import { CustomUL, IconLink, InfoContainer, LinkContainer, LinkedSiteIcon, LinksBackground, ProfilePicture, ProfilePictureContainer, TeamContainer } from "../styles/pagestyles/about"
+import { IconLink, InfoContainer, LinkContainer, LinkedSiteIcon, LinksBackground, ProfilePicture, ProfilePictureContainer, TeamContainer } from "../styles/pagestyles/about"
 
 import { FaYoutube, FaGithub, FaSpotify, FaGlobe } from "react-icons/fa"
 

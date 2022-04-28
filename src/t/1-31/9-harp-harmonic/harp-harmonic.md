@@ -2,7 +2,7 @@
 id: 9
 g: t
 group: technique
-title: Harp Harmonics
+title: Harp Harmonic
 category: harmonics
 difficulty: med
 prereqs: [
@@ -19,7 +19,7 @@ Video:
 - E chord harp harmonics
 
 <div class="tabImg">
-  <img src="harp-harmonics.jpg" />
+  <img src="harp-harmonic.jpg" />
 </div>
 
 Harp harmonics are notated as an alternation between artificial harmonics and normally picked notes to produce notes like a harp would.

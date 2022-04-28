@@ -19,6 +19,16 @@
             ]
         },
         {
+            "v": "0.8.1",
+            "title": "Videos and Notation",
+            "date": "Apr 27",
+            "year": "2022",
+            "new": [
+                "Added techniques' notation content for the public release with IDs 1-32.",
+                "Added techniques' video content for the public release with IDs 1-32."
+            ]
+        },
+        {
             "v": "0.7.1",
             "title": "Technique Continuation",
             "date": "Apr 24",

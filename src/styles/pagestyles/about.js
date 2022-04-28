@@ -4,13 +4,6 @@ import { Link } from "gatsby"
 import { css } from "@emotion/react"
 import { COLORS } from "../globalstyles/theme"
 
-export const CustomUL = styled.ul`
-  li {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-  }
-`
 export const TeamContainer = styled.div`
   display: flex;
   align-items: center;

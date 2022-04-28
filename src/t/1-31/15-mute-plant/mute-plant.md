@@ -29,7 +29,7 @@ A mute (left hand) or plant (right hand) is a technique used to stop a string or
 
 #### Mute (left hand)
 
-Place any left finger on the string without pressing down to the frets to stop it from ringing. 
+Place any left finger on the string without pressing down to the frets to stop it from ringing. If a finger is already pressing down on the string, remove pressure from the strings, without removing your finger from the string completely.
 
 #### Plant (right hand)
 

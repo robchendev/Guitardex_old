@@ -17,7 +17,7 @@ Video:
   <img src="left-hand-slap.jpg" />
 </div>
 
-The left hand slap is commonly notated with one or more Xs with a number above, indicating the finger used on the right hand. 1 means index, 2 means middle, and 3 means ring.
+The left hand slap is commonly notated with one or more Xs with a number above, indicating the finger used on the right hand. 1 means index, 2 means middle, and 3 means ring. Using the middle finger for this technique is rare as it is the most difficult.
 
 ### Explanation
 
@@ -32,7 +32,7 @@ Your wrist should not move to assist with the swing. The swing should pivot from
 The following makes doing the left hand slap easier:
 
 - Play the left hand slap on a higher fret such as the 7th fret.
-- Practice with the ring finger first. The middle is more difficult to do a left hand slap with, and the index is the most difficult.
+- Practice with the ring finger first. Then index is more difficult to do a left hand slap with, and the middle is the most difficult.
 
 As you get more comfortable practicing this technique using the above, slowly make approach frets closer to the 1st fret and use your index and middle fingers instead of the ring.
 
