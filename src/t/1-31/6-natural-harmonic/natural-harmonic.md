@@ -10,15 +10,11 @@ demo:
 exercises:
 ---
 
-Video:
-- natural harmonic from the front
-- natural harmonic from the side
-
 <div class="tabImg">
   <img src="natural-harmonic.jpg" />
 </div>
 
-The natural harmonic is notated in chevron brackets <>, sometimes with N.H. written above it.
+The natural harmonic is notated in chevron brackets <>, sometimes with N.H. written above it. If the N.H. extends to multiple notes in a row with a dashed line, all those notes are natural harmonics.
 
 ### Explanation
 
@@ -28,7 +24,7 @@ This technique is used to get chime-like <span class="tt" data-tip="the note's s
 
 #### Common Harmonic Frets
 
-Theoretically, there is a harmonic at the integer divisors of the string length. When playing guitar, you will commonly see up to 1/4, and sometimes see 1/5 and 1/6. Smaller divisors are very rarely used. The parentheses () show the intervals of the harmonic note when compared to the open string.
+Theoretically, there is a harmonic at the <span class="tt" data-tip="fractions where the denominator is a whole number (1, 2, 3...)">integer divisors</span> of the string length. When playing guitar, you will commonly see up to 1/4, and sometimes see 1/5 and 1/6. Smaller divisors are very rarely used. The parentheses () show the <span class="tt" data-tip="distance in pitch between two notes">intervals</span> of the harmonic note when compared to the open string.
 
 - 1/2 = <12> (Octave)
 - 1/3 = <7> <19> (Octave + 5th)
@@ -42,7 +38,7 @@ The smaller string divisor you play a harmonic on, the less audible it will be.
 
 Taking the finger off the string the moment you pick it can improve note clarity.
 
-While getting a clean harmonic sound should not be an issue when picking in your usual position, picking near the bridge will improve the clarity.
+While getting a clean harmonic sound should not be an issue when picking in your usual position, picking near the <span class="tt" data-tip="the wooden piece at the end of the strings next to where you pick">bridge</span> will improve the clarity.
 
 ### FAQ
 

@@ -10,14 +10,11 @@ demo:
 exercises:
 ---
 
-Video:
-- Stretchy G chord standard Thumbover
-
 <div class="tabImg">
   <img src="thumb-under.jpg" />
 </div>
 
-There is no special way to notate a thumb-under. You can use the thumb-under whenever you need to press down on two frets that are too far away from another fret further up the fretboard.
+There is no special way to notate a thumb-under. You can use the thumb-under whenever you need to press down on a fret that is too far away from another fret further up the fretboard.
 
 ### Explanation
 

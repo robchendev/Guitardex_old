@@ -14,25 +14,22 @@ prereqs: [
 demo: 
 exercises:
 ---
-Video:
-- 3<15> slap harmonic from the front
-- 3<15> slap harmonic from the side
 
 <div class="tabImg">
   <img src="slap-harmonic.jpg" />
 </div>
 
-The slap harmonic is notated with multiple tap harmonics together, with T.H. commonly written above the harmonic. 
+The slap harmonic is notated with multiple tap harmonics together, with T.H. commonly written above the harmonic.
 
 ### Explanation
 
 A slap harmonic is multiple tap harmonics played together by flicking multiple strings simultaneously with the index or middle finger - whichever is more comfortable.
 
-Like a tap harmonic, your finger does not follow through with the strings to push it down to the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> and after flicking them, and must immediately bounce back to not mute the strings as it returns to it's original position. 
+Like a tap harmonic, your finger does not follow through with the strings to push it down to the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> and after flicking them, and must immediately bounce back to not <span class="tt" data-tip="stop the strings from ringing">mute</span> the strings as it returns to it's original position. 
 
 #### Common Harmonic Frets
 
-For your reference. The parentheses () show the intervals of the harmonic note when compared to the open string or the fretted note.
+For your reference. The parentheses () show the <span class="tt" data-tip="distance in pitch between two notes">intervals</span> of the harmonic note when compared to the open string or the fretted note.
 
 - 1/2 = <12> (Octave)
 - 1/3 = <7> <19> (Octave + 5th)

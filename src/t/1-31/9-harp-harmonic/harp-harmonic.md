@@ -15,9 +15,6 @@ demo:
 exercises:
 ---
 
-Video:
-- E chord harp harmonics
-
 <div class="tabImg">
   <img src="harp-harmonic.jpg" />
 </div>
@@ -26,7 +23,7 @@ Harp harmonics are notated as an alternation between artificial harmonics and no
 
 ### Explanation
 
-The concept behind harp harmonics are easy to understand, but getting to the level of executing it consistently without accidentally <span class="tt" data-tip="stopping the strings from ringing">muting</span> other strings can take time.
+The concept behind harp harmonics are easy to understand, but getting to the level of doing it consistently without accidentally <span class="tt" data-tip="stopping the strings from ringing">muting</span> other strings can take time.
 
 Harp harmonics refers to the alteranation between picking an artificial harmonic and picking normally picked notes.
 

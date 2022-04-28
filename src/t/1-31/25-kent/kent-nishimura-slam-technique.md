@@ -19,18 +19,11 @@ demo:
 exercises:
 ---
 
-<strong>Hi Kent, what do you call this technique? I think "Slam Strum" is a fitting name, but I don't want to name a technique someone else created. Let me know.</strong>
-
-Video: 
-- slam 
-- bass slam 
-- slam strum
-
 <div class="tabImg">
   <img src="slam-strum.jpg" />
 </div>
 
-The slam strum is notated with a strum beside a set of notes, an O to notate the wrist thump, and an S to notate the bass slap. If no strum is present but a bass note, O, and S is shown, then it is a bass slam, shown in step 2 below.
+The slam strum is notated with a strum beside a set of notes, an O to notate the wrist thump, and an S to notate the bass slap. If no strum is present but a bass note, O, and S is shown, then it is a bass slam, shown in step 2 below. If no strum nor bass note is present but an O and S is shown, then it is a slam.
 
 The lowest string out of the set of notes is to be played by the thumb as a bass slap combined with a thumb tap, while the rest of the notes are to be played by the strum.
 
@@ -42,7 +35,7 @@ Unlike the wrist thump strum where every string is strummed with a similar amoun
 
 ### Learning the Slam Strum
 
-since the technique can be done in a large variety of different positions, the slap strum is difficult to do consistently and requires a lot of practice. The following can affect the difficulty of the slam strum.
+since the technique can be done in a large variety of different positions, the slam strum is difficult to do consistently and requires a lot of practice. The following can affect the difficulty of this technique:
 
 - Distance between the slapped bass and strummed strings
 - Which string the slapped bass is on
@@ -73,4 +66,4 @@ The bass slam portion of this technique is done the same way. To add a strum, cu
 
 Since your thumb needs to stay in the same position to do a bass slam, instead of using your middle and ring fingers to strum like a wrist thump strum, you can use your index, middle, or ring finger only. It easier to strum <span class="tt" data-tip="the lower pitched strings">lower strings</span> using the index, <span class="tt" data-tip="the higher pitched strings">higher strings</span> using the ring, and strings in between using the middle.
 
-Do not extend your strumming fingers in this movement. Your palm should open up just enough during the bass slam so that your fingers strum across the strings, and no more than that.
+Do not overextend your strumming fingers in this movement. Your palm should open up just enough during the bass slam so that your fingers strum across the strings.

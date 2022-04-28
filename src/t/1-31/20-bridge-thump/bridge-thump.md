@@ -19,10 +19,6 @@ demo:
 exercises:
 ---
 
-Video:
-- Bridge thump
-- Bridge thump with picking before and after
-
 <div class="tabImg">
   <img src="bridge-thump.jpg" />
 </div>
@@ -41,11 +37,11 @@ When doing the bridge thump and pick at the same time, the palm muted notes shou
 
 #### Bridge thump without muting strings
 
-To not mute any strings, simply move your hand to the right and off the strings while still doing the same thump motion.
+To not <span class="tt" data-tip="stop the strings from ringing">mute</span> any strings with the right hand, simply move your hand to the right and off the strings while still doing the same thump motion.
 
 #### picking a bass note while doing a bridge thump
 
-Like the wrist thump, place your thumb on the string you intend to pick and apply pressure as if you're about the pick. When you do the bridge thump, move your thumb away from the string. Pay attention to make sure you pick and bridge thump at the same time, as it is very easy to mistakingly first bridge thump then pick.
+Like the wrist thump, place your thumb on the string you intend to pick and apply pressure as if you're about the pick. When you do the bridge thump, move your thumb away from the string. Pay attention to make sure you pick and bridge thump at the same time, as it is easy to mistakenly first bridge thump then pick.
 
 #### picking other notes while doing a bridge thump
 

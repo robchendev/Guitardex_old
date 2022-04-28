@@ -19,10 +19,6 @@ demo:
 exercises:
 ---
 
-Video: 
-- nail attack strum (above)
-- nail attack strum (side)
-
 <div class="tabImg">
   <img src="nail-attack-strum.jpg" />
 </div>

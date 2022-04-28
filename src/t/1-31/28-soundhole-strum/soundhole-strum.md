@@ -15,9 +15,6 @@ demo:
 exercises:
 ---
 
-Video:
-- E chord soundhole strum
-
 <div class="tabImg">
   <img src="soundhole-strum.jpg" />
 </div>
