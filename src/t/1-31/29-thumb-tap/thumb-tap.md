@@ -15,10 +15,6 @@ demo:
 exercises:
 ---
 
-Video:
-- Thumb tap with side
-- Thumb tap with nail
-
 <div class="tabImg">
   <img src="thumb-tap.jpg" />
 </div>

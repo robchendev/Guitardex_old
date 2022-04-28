@@ -15,19 +15,15 @@ demo:
 exercises:
 ---
 
-Video:
-- 3<15> tap harmonic from the front
-- 3<15> tap harmonic from the side
-
 <div class="tabImg">
   <img src="tap-harmonic.jpg" />
 </div>
 
-Similar to an artificial harmonic, the tap harmonic has many ways to be notated, with T.H. instead of A.H. being commonly written above the harmonic.
+Similar to an artificial harmonic, the tap harmonic has many ways to be notated, with T.H. instead of A.H. being commonly written above the harmonic. If the T.H. extends to multiple notes in a row with a dashed line, all those notes are tap harmonics.
 
 For example:
 
-- 3<22> with T.H. above - left hand presses on fret 3; right hand flicks fret 22
+- 1<20> with T.H. above - left hand presses on fret 1; right hand flicks fret 19
 - <19> with T.H. above - right hand flicks fret 19
 - <0> or 0 with T.H. above - right hand flicks fret 12
 
@@ -37,11 +33,11 @@ A tap harmonic is played by quickly flicking a right finger towards the fretboar
 
 It is easier to produce a note by flicking the string down to make contact with the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> itself, but it also produces a 'click' sound.
 
-Your finger does not follow through with the string to push it down to the fret wire and after flicking it, and must immediately bounce back to not mute the string as it returns to it's original position. 
+Your finger does not follow through with the string to push it down to the fret wire and after flicking it, and must immediately bounce back to not <span class="tt" data-tip="stop the strings from ringing">mute</span> the string as it returns to it's original position. 
 
 #### Common Harmonic Frets
 
-For your reference. The parentheses () show the intervals of the harmonic note when compared to the open string or the fretted note.
+For your reference. The parentheses () show the <span class="tt" data-tip="distance in pitch between two notes">intervals</span> of the harmonic note when compared to the open string or the fretted note.
 
 - 1/2 = <12> (Octave)
 - 1/3 = <7> <19> (Octave + 5th)

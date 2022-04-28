@@ -10,11 +10,6 @@ demo:
 exercises:
 ---
 
-Video: 
-- slap one string no thumbpick
-- slap multiple strings no thumbpick
-- remake the videos with thumbpick later
-
 <div class="tabImg">
   <img src="thumb-slap.jpg" />
 </div>

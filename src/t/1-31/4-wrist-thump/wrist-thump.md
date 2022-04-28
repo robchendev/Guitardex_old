@@ -10,11 +10,6 @@ demo:
 exercises: 
 ---
 
-Video: 
-- wrist thump
-- wrist thump with bass pick
-- wrist thump with melody pick
-
 <div class="tabImg">
   <img src="wrist-thump.jpg" />
 </div>
@@ -29,7 +24,7 @@ The thumping motion is done by arching your hand back at the wrist to dig your l
 
 #### picking a bass note while doing a wrist thump
 
-Place your thumb on the string you intend to pick and apply pressure as if you're about to pick. When you do the wrist thump, move your thumb away from the string. Pay attention to make sure you pick and wrist thump at the same time, as it is very easy to mistakingly first wrist thump then pick.
+Place your thumb on the string you intend to pick and apply pressure as if you're about to pick. When you do the wrist thump, move your thumb away from the string. Pay attention to make sure you pick and wrist thump at the same time, as it is to mistakenly first wrist thump then pick.
 
 #### picking other notes while doing a wrist thump
 
@@ -41,12 +36,12 @@ Place your finger(s) on the strings you intend to pick. When you do the wrist th
 
 A wrist thump's sound can be different for many reasons which are not easily changed:
 
-- Your guitar's top/soundboard material
+- Your guitar's <span class="tt" data-tip="the guitar's top, where the soundhole is located">soundboard</span> material
 - Your guitar's body shape
 - The body fat around your palm
 - The <span class="tt" data-tip="post processing / editing of an audio track">mixing</span> of the audio recording
 
-Don't worry about it too much, the differences in the wrist thump sound is not important when the main purpose of it is to contribute to the rhythmic feel of your playing.
+Don't worry about the sound differences, the wrist thump sound is not important when the main purpose of it is to contribute to the rhythmic feel of your playing.
 
 #### Why does my wrist hurt?
 

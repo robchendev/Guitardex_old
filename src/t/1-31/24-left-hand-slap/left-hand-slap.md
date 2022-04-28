@@ -4,14 +4,11 @@ g: t
 group: technique
 title: Left Hand Slap
 category: Percussion
-difficulty: medium
+difficulty: easy
 prereqs: 
 demo: 
 exercises:
 ---
-
-Video:
-- Left hand slap
 
 <div class="tabImg">
   <img src="left-hand-slap.jpg" />

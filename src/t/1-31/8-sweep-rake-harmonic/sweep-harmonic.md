@@ -15,15 +15,11 @@ demo:
 exercises:
 ---
 
-Video: 
-- 0<12> open sweep harmonic (side)  
-- G chord sweep harmonic (side)
-
 <div class="tabImg">
   <img src="sweep-harmonic.jpg" />
 </div>
 
-The sweep harmonic is notated with several artificial harmonics and a strum arrow.
+The sweep harmonic is notated with a set of artificial harmonics and a strum arrow.
 
 ### Explanation
 
@@ -43,6 +39,6 @@ You can control how loud the sweep harmonic is by relaxing and tensing your ring
 
 Doing the sweep harmonic on chord shapes can be significantly more difficult than doing the sweep harmonic on open or barred strings, since you need to properly strum every harmonic note in the chord shape. The difficulty gets harder the more complex the chord shape is, and the faster you do it.
 
-A popular way to sweep harmonic without worrying about being absolutely accurate is by strumming the harmonics in more of a straight line. This method makes the technique easier at the consequence of some sacrificing the harmonics' clarity.
+A popular way to sweep harmonic without worrying about being absolutely accurate is by strumming the harmonics in more of a straight line. This method makes the technique easier at the cost of the harmonics' clarity.
 
 The finger positioning of the sweep harmonic strum is the same as the open sweep harmonic strum. Instead of simply strumming down, your hand also needs to move to the <span class="tt" data-tip="the metal strips on your fretboard">fret wire</span> the index needs to hover over to produce the individual harmonics. 

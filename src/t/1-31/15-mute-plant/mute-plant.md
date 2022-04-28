@@ -10,13 +10,6 @@ demo:
 exercises:
 ---
 
-Video:
-- play one note and mute with finger
-- play one note and mute with whole left hand
-- play 4 notes and mute
-- play one note and plant
-- play 4 notes and plant
-
 <div class="tabImg">
   <img src="mute-plant.jpg" />
 </div>

@@ -32,8 +32,8 @@ export const COLORS = {
     dark: 'rgb(45,45,45)',
   },
   tabimg: {
-    light: 'brightness(1.02)',
-    dark: 'invert(0.831) contrast(110%) brightness(130%)',
+    light: 'brightness(1.017)',
+    dark: 'invert(0.822) contrast(105%) brightness(115%)',
   },
   toggleName: {
     light: '"Dark Theme"',
