@@ -1,29 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `Fingerstyle Central`,
-    description: `Fingerstyle Information`,
-    copyright: `Copyright 2022 Fingerstyle Central`,
-    siteUrl: `https://www.fingerstylecentral.com`
+    title: `Guitardex`,
+    description: `Guitardex is a free, non-profit fingerstyle tutorial website that provides educational resources to fingerstyle guitarists.`,
+    copyright: `Copyright 2022 Guitardex`,
+    siteUrl: `https://guitardex.com`
   },
   plugins: ["gatsby-remark-embed-video", `gatsby-plugin-netlify`, "gatsby-plugin-emotion",
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-        icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `GatsbyJS`,
+    //     short_name: `GatsbyJS`,
+    //     start_url: `/`,
+    //     background_color: `#f7f0eb`,
+    //     theme_color: `#a2466c`,
+    //     display: `standalone`,
+    //     //icon: `src/assets/images/icon.png`, // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
           `Fredoka\:400,500,700`,
-          `Helvetica\:400,500,700`,
         ],
         display: 'swap'
       }
