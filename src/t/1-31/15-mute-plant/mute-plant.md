@@ -6,7 +6,7 @@ title: Mute / Plant
 category: basics
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/7AVrYjgTM9w
 exercises:
 ---
 

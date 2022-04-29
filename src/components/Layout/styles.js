@@ -34,7 +34,7 @@ export const MainContainer = styled.div`
   }
 `
 export const SMain = styled.main`  
-  padding: 4em 2em 2em 2em;
+  padding: 4em 2em;
   ${maxq[1]} {
     padding: 0;
     margin-top: 5%;

@@ -6,7 +6,7 @@ title: Natural Harmonic
 category: harmonics
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/uUTCfahTViY
 exercises:
 ---
 

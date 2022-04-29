@@ -1,5 +1,5 @@
 import React from 'react'
-import { HiOutlineChatAlt, HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle, HiOutlineDatabase, HiOutlineCurrencyDollar } from "react-icons/hi"
+import { HiOutlineUserGroup, HiOutlineHome, HiOutlineViewGrid, HiOutlineQuestionMarkCircle, HiOutlineDatabase, HiOutlineCurrencyDollar } from "react-icons/hi"
 import changeLogData from "../../assets/development/change-log-data.json"
 
 export const internalLinks = [

@@ -6,7 +6,7 @@ title: Strum
 category: basics
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/2BR0DWkBmks
 exercises:
 ---
 

@@ -1,21 +1,22 @@
 {
     "changelog": [
+        
+        {
+            "v": "0.9.1",
+            "title": "Beta Launch",
+            "date": "Apr 29",
+            "year": "2022",
+            "new": [
+                "Guitardex is launched to a select group of volunteer testers of the end-users."
+            ]
+        },
         {
             "v": "1.0.0",
-            "title": "Official Launch",
+            "title": "(Will be moved up) Official Launch",
             "date": "TBA",
             "year": "2022",
             "new": [
                 "Guitardex is launched to the public."
-            ]
-        },
-        {
-            "v": "0.9.1",
-            "title": "Closed Beta Launch",
-            "date": "TBA",
-            "year": "2022",
-            "new": [
-                "Guitardex is launched to a select group of volunteer testers of the end-users: Learners, Teachers, and Professional Musicians."
             ]
         },
         {
@@ -24,8 +25,9 @@
             "date": "Apr 27",
             "year": "2022",
             "new": [
-                "Added techniques' notation content for the public release with IDs 1-32.",
-                "Added techniques' video content for the public release with IDs 1-32."
+                "Proofread written and notation content to be consistent with the video content.",
+                "Added techniques' notation content for the public release with IDs 1-31.",
+                "Added techniques' video content for the public release with IDs 1-31."
             ]
         },
         {

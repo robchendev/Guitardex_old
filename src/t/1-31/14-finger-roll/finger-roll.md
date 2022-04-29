@@ -6,7 +6,7 @@ title: Finger Roll
 category: basics
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/uNm1ijvWJFA
 exercises:
 ---
 

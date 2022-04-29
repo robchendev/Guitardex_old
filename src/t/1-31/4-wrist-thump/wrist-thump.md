@@ -6,7 +6,7 @@ title: Wrist Thump
 category: percussion
 difficulty: med
 prereqs:
-demo: 
+demo: https://youtu.be/L4x-1_IRc0c
 exercises: 
 ---
 
