@@ -38,8 +38,6 @@ const Layout = (props) => {
       <Global styles={globalStyle} />
       <Helmet>
         <title>{props.title}</title>
-        <link rel="icon" type="../../assets/images/favicon-32x32.png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="../../assets/images/favicon-16x16.png" sizes="16x16" href="/favicon-16x16.png" />
         <meta property="title" content={props.title} />
         <meta property="og:title" content={props.title} />
         <meta property="og:type" content="website" />
