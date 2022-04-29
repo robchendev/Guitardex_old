@@ -1,7 +1,7 @@
 {
     "issues": [
         "If the user already has a Guitardex save file in their browser's localStorage, the starter save file will be loaded before the the browser updates to the new save.",
-        "If the user already has a Guitardex save file in their browser's localStorage, and has accessed the site via a direct short link, (gdex.cc/?...), the starter save file will be loaded before the browser prompt for overwriting the previous save opens.",
+        "If the user already has a Guitardex save file in their browser's localStorage, and has accessed the site via a direct link, (guitardex.com/?...), the starter save file will be loaded before the browser prompt for overwriting the previous save opens.",
         "Samsung Galaxy mobile browser forces dark mode and ruins the design's colors.",
         "On Firefox, dragging a Guitardex item to the generated link textbox will cause the item to become stuck onto the mouse and requires a click for it to come off."
     ]

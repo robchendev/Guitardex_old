@@ -41,7 +41,7 @@ const Help = () => {
       <br />
       <h4>View Someone Else's Guitardex</h4>
       <CustomOL>
-        <li>Go to the link someone else sent you (ex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">gdex.cc/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12</Link>)</li>
+        <li>Go to the link someone else sent you (ex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">guitardex.com/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12</Link>)</li>
         <li>Click OK if prompted</li>
       </CustomOL>
       <br />
