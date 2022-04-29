@@ -2,7 +2,7 @@
 id: 25
 g: t
 group: technique
-title: (Needs Name) Kent Nishimura Slam Technique
+title: Slam Strum
 category: percussion
 difficulty: hard
 prereqs: [
