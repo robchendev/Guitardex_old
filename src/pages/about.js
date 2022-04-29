@@ -140,27 +140,27 @@ const teamMembers = [
       },
     ]
   },
-  {
-    name: "Eddie van der Meer",
-    image: eddieVanDerMeer,
-    roles: [
-      "Content Advisor"
-    ],
-    links: [
-      {
-        icon: <FaYoutube />,
-        url: "https://www.youtube.com/user/eddie2754/"
-      },
-      {
-        icon: <FaSpotify />,
-        url: "https://open.spotify.com/artist/08WRjJPbPqSEOkFuc99ymW"
-      },
-      {
-        icon: <FaGlobe />,
-        url: "https://eddievdmeer.com/"
-      }
-    ]
-  },
+  // {
+  //   name: "Eddie van der Meer",
+  //   image: eddieVanDerMeer,
+  //   roles: [
+  //     "Content Advisor"
+  //   ],
+  //   links: [
+  //     {
+  //       icon: <FaYoutube />,
+  //       url: "https://www.youtube.com/user/eddie2754/"
+  //     },
+  //     {
+  //       icon: <FaSpotify />,
+  //       url: "https://open.spotify.com/artist/08WRjJPbPqSEOkFuc99ymW"
+  //     },
+  //     {
+  //       icon: <FaGlobe />,
+  //       url: "https://eddievdmeer.com/"
+  //     }
+  //   ]
+  // },
   {
     name: "WeiJun Syu",
     image: weijunSyu,

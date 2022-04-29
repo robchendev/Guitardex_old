@@ -22,11 +22,11 @@ The thump sound, contrary to it's own name, does not come from the wrist coming 
 
 The thumping motion is done by arching your hand back at the wrist to dig your lower palm into the guitar's body. It's alright to use some strength from your arm to improve the power of this motion, but like all percussive techniques, make sure it's not too loud.
 
-#### picking a bass note while doing a wrist thump
+#### Picking a bass note while doing a wrist thump
 
 Place your thumb on the string you intend to pick and apply pressure as if you're about to pick. When you do the wrist thump, move your thumb away from the string. Pay attention to make sure you pick and wrist thump at the same time, as it is to mistakenly first wrist thump then pick.
 
-#### picking other notes while doing a wrist thump
+#### Picking other notes while doing a wrist thump
 
 Place your finger(s) on the strings you intend to pick. When you do the wrist thump, pull your fingers towards your palm. This motion, combined with your wrist arching back, will pull the fingers away from the string and pick them like any other pick.
 

@@ -29,7 +29,7 @@ The lowest string out of the set of notes is to be played by the thumb as a bass
 
 ### Explanation
 
-The slam strum is a unique percussive technique by guitarist Kent Nishimura that combines the bass slap, thumb slap, and wrist thump strum into one technique.
+The slam strum is a unique percussive technique by master guitarist Kent Nishimura that combines the bass slap, thumb slap, and wrist thump strum into one technique.
 
 Unlike the wrist thump strum where every string is strummed with a similar amount of power, the slam strum allows for a more distinctive, powerful bass to be played while also adding the sound of the thumb slap, wrist thump, and optionally, the strum. 
 
