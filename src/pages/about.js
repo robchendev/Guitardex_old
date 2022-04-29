@@ -39,7 +39,7 @@ const About = () => {
         Guitardex does not have a curriculum but any user can make one through the usage of it's saving and sharing functionality. For example, a Guitardex shared by a musician gives their fans direct access to the specific tutorials necessary for them to learn in order to play their songs.
       </p>
       <p>
-        See the <Link to="/help">Help</Link> page for more details on how to add and share your Guitardex, or try using this pre-made Guitardex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">Common Techniques</Link>.
+        See the <Link to="/help">Help</Link> page for more details on how to add and share your Guitardex, or try using this pre-made Guitardex: <Link to="/?Common-Techniques_16.14.22.17.1.2.4.5.6.7.10.11.12">Common Techniques</Link>.
       </p>
       <p>
         At the top of each technique tutorial links the required techniques, if any, that the user must know before learning it and at the bottom is a list of the techniques that requires the current technique, again if any.
