@@ -178,7 +178,7 @@ const Saved = () => {
           autoComplete="off" 
           id="saveName" 
           type="text" 
-          placeholder="Add name..." 
+          placeholder="Click to add name..." 
           maxLength="24" 
           onInput={handleNameChange} 
           value={saved.n} 

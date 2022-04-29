@@ -10,7 +10,7 @@ import davidZecchel from "../assets/team-members/david-james-zecchel.jpg"
 import bobMa from "../assets/team-members/bob-ma.jpg"
 import eddieVanDerMeer from "../assets/team-members/eddie-van-der-meer.jpg"
 import weijunSyu from "../assets/team-members/weijun-syu.jpg"
-//import bryanQuan from "../assets/team-members/bryan-quan.jpg"
+import bryanQuan from "../assets/team-members/bryan-quan.jpg"
 
 const About = () => {
   return (
@@ -30,9 +30,13 @@ const About = () => {
       <p>
         Guitardex is and will remain completely free. If you want to help support my work and help pay for Guitardex's server costs, please consider <a href="https://www.paypal.com/donate/?hosted_button_id=DHGEUWW4VMUVG">donating</a>.
       </p><br />
+      <h3>Fingerstyle Community</h3>
+      <p>
+        Join our <a href="https://discord.gg/Khh9gN59fk">Discord</a> server!
+      </p><br />
       <h3>How It Works</h3>
       <p>
-        Guitardex does not have a curriculum but any user can make one through the usage of it's saving and sharing functionality. For example, a Guitardex shared by a musician to give their fans direct access to the specific tutorials necessary for them to learn in order to play their songs.
+        Guitardex does not have a curriculum but any user can make one through the usage of it's saving and sharing functionality. For example, a Guitardex shared by a musician gives their fans direct access to the specific tutorials necessary for them to learn in order to play their songs.
       </p>
       <p>
         See the <Link to="/help">Help</Link> page for more details on how to add and share your Guitardex, or try using this pre-made Guitardex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">Common Techniques</Link>.
@@ -176,7 +180,7 @@ const teamMembers = [
   },
   {
     name: "Bryan Quan",
-    image: weijunSyu,
+    image: bryanQuan,
     roles: [
       "Quality Assurance"
     ],

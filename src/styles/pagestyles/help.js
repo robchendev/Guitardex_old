@@ -5,6 +5,7 @@ const sharedTraits = css`
   margin-left: 1em;
   li {
     margin: 3px 0;
+    line-height: 1.4em;
   }
 `
 

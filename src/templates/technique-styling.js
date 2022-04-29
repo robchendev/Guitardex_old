@@ -91,7 +91,7 @@ export const ContinueLearning = styled.div`
   }
   li:not(:last-child) {
     margin-bottom: 5px;
-    line-height: 1.5em;
+    line-height: 1.4em;
   }
   p {
     line-height: 1.5em;
@@ -109,7 +109,7 @@ export const Explanation = styled.div`
     margin-bottom: 1em;
     li {
       margin: 5px 0;
-      line-height: 1.5em;
+      line-height: 1.4em;
     }
     ${maxq[1]} {
       margin-left: 1em;

@@ -1,18 +1,19 @@
 import styled from "@emotion/styled"
 import { v, maxq } from "../globalstyles/variables"
-import { Link } from "gatsby"
-import { css } from "@emotion/react"
 import { COLORS } from "../globalstyles/theme"
 
 export const TeamContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: ${v.lgSpacing};
+  ${maxq[1]} {
+    align-items: start;
+  }
 `
 export const ProfilePictureContainer = styled.div`
   width: 8em;
   ${maxq[1]} {
-    display: none;
+    width: 5em;
   }
 `
 export const ProfilePicture = styled.img`
@@ -23,7 +24,7 @@ export const ProfilePicture = styled.img`
 export const InfoContainer = styled.div`
   padding: 0 0 0 ${v.lgSpacing};
   ${maxq[1]} {
-    padding: 0;
+    padding: 0 0 0 calc(${v.smSpacing} * 1.5);
   }
   flex: 1;
   h4 {
@@ -41,6 +42,9 @@ export const LinksBackground = styled.div`
   :not(:last-child) {
     margin-bottom: ${v.smSpacing};
   }  
+  ${maxq[1]} {
+    padding: ${v.smSpacing};
+  }
 `
 
 export const LinkContainer = styled.span`

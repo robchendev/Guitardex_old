@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql, Link, StaticQuery } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout/Layout';
 import "./technique-styling.css"
-import { EmbedContainer, HeadingContainer, PageHeader, PreRequisites, ExerciseLinks, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer, ContinueLearning } from "./technique-styling"
+import { EmbedContainer, HeadingContainer, PageHeader, PreRequisites, EntireWrapper, SaveContainer, Explanation, DarkBackground, VideoContainer, ContinueLearning } from "./technique-styling"
 import { LiteYoutubeEmbed } from 'react-lite-yt-embed';
 import Save from '../components/Save/Save';
 import ReactTooltip from 'react-tooltip';
@@ -27,6 +27,7 @@ function TechniqueDetails({ data }) {
       ) 
     )
   ) 
+  const demoID = extractVideoURL(demo)
   console.log(allPostReqs)
   return (
     <Layout title={title}>
@@ -61,7 +62,14 @@ function TechniqueDetails({ data }) {
         <VideoContainer>
           {demo &&
             <EmbedContainer>
-              <LiteYoutubeEmbed id={extractVideoURL(demo)} isMobile={true} mute={false} />
+              <LiteYoutubeEmbed 
+                id={demoID}
+                isMobile={true} 
+                mute={false} 
+                desktopResolution='maxresdefault'
+                mobileResolution='maxresdefault'
+                params={{rel: "0"}}
+              />
             </EmbedContainer>
           }
         </VideoContainer>

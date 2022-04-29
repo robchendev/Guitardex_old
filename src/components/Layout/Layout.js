@@ -38,9 +38,14 @@ const Layout = (props) => {
       <Global styles={globalStyle} />
       <Helmet>
         <title>{props.title}</title>
-        <meta name="description" content="Guitardex is a free, non-profit fingerstyle tutorial website that provides educational resources to fingerstyle guitarists." />
         <link rel="icon" type="../../assets/images/favicon-32x32.png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="../../assets/images/favicon-16x16.png" sizes="16x16" href="/favicon-16x16.png" />
+        <meta property="title" content={props.title} />
+        <meta property="og:title" content={props.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Guitardex is a free, non-profit fingerstyle tutorial website that provides educational resources to fingerstyle guitarists." />
+        <meta property="og:url" content="https://guitardex.com" />
+        <meta property="og:image" content="../../assets/images/LogoSm.png" />
       </Helmet>
       <MobileHeader />
       <SLayout>

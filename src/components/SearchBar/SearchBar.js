@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FiSearch } from 'react-icons/fi'
+import { HiSearch } from 'react-icons/hi'
 import { Search, SearchIcon } from './styles'
 import SearchResult from '../SearchResult/SearchResult'
 
@@ -18,7 +18,7 @@ const SearchBar = ({ placeholder, data }) => {
     <div>
       <Search>
         <SearchIcon>
-          <FiSearch />
+          <HiSearch />
         </SearchIcon>
         <input 
           placeholder={placeholder} 

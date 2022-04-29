@@ -6,7 +6,7 @@ title: Thumb Slap
 category: percussion
 difficulty: easy
 prereqs:
-demo: 
+demo: https://youtu.be/uLGajwU3eEU
 exercises:
 ---
 

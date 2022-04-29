@@ -7,6 +7,13 @@ const Help = () => {
   return (
     <Layout title="Help">
       <h1>Help</h1>
+      <h4>Reading Technique Pages</h4>
+      <CustomUL>
+        <li>Some techniques expected you to know a 'Required' technique linked at the top of the page. Do not start a technique without knowing them.</li> 
+        <li>Technique's numbers do not represent the order you should learn them in.</li> 
+        <li>If you're left-handed, treat every "right" instruction as "left".</li>
+      </CustomUL>
+      <br />
       <h4>Add/Remove Techniques to Your Guitardex</h4>
       <CustomOL>
         <li>Go to the <Link to="/t">Techniques</Link> library</li>
@@ -34,7 +41,7 @@ const Help = () => {
       <br />
       <h4>View Someone Else's Guitardex</h4>
       <CustomOL>
-        <li>Go to the link someone else sent you (ex: <a href="https://gdex.cc/?Common-Techniques~12.1.3.2.5.6">gdex.cc/?Common-Techniques~12.1.3.2.5.6</a>)</li>
+        <li>Go to the link someone else sent you (ex: <Link to="/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12">gdex.cc/?Common-Techniques~16.14.22.17.1.2.4.5.6.7.10.11.12</Link>)</li>
         <li>Click OK if prompted</li>
       </CustomOL>
       <br />

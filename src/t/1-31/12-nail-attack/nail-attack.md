@@ -6,7 +6,7 @@ title: Nail Attack
 category: percussion
 difficulty: hard
 prereqs: 
-demo: 
+demo: https://youtu.be/f1wsGFIrAV8
 exercises:
 ---
 
@@ -40,9 +40,9 @@ Since this technique has no prerequisites but has multiple steps to learn, it wi
 
 #### 1. The flicking motion
 
-Push your middle and ring finger into the base of your thumb (medical term is "Thenar Eminence") and flick outwards, straightening your fingers. Some find it easier to only push the middle finger into the thumb's base and flicking it.
+Push your middle and ring finger into the thumb base (medical term is "Thenar Eminence") and flick outwards, straightening your fingers. Some find it easier to only push the middle finger into the thumb's base and flicking it.
 
-Now attempt the same motion without first pushing the fingers into the base of your thumb and the releasing. It is normal to have less power in the flicking motion than before.
+Now attempt the same motion without the assistance of your thumb base. It is normal to have less power in the flicking motion than before.
 
 #### 2. Flicking a piece of paper
 
