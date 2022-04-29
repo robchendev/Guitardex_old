@@ -263,7 +263,7 @@ const Saved = () => {
       {saved.e.length !== 0 &&
       <div>
         <DeleteAllContainer>
-          <DeleteAll onClick={clearSave}>Delete Dex</DeleteAll>
+          <DeleteAll onClick={clearSave}>Delete All</DeleteAll>
         </DeleteAllContainer>
         <CookieWarning>Deleting your browser cookies will also delete your Guitardex.</CookieWarning>
       </div>
