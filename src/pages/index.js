@@ -53,7 +53,7 @@ const Saved = () => {
   }
   const location = useLocation().pathname
   const handleNameChange = (e) => {
-    const newName = e.target.value.replace(/[-=~']/g, '')    
+    const newName = e.target.value.replace(/[-=~_%']/g, '')    
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -68,13 +68,13 @@ const Saved = () => {
   const encode = (objectToEncode) => {
     const encodedItems = objectToEncode.e.join('.')
     if (objectToEncode.n === "") return encodedItems
-    return objectToEncode.n.replace(/\s/g, '-') + '~' + encodedItems
+    return objectToEncode.n.replace(/\s/g, '-') + '_' + encodedItems
   }
   const decode = (stringToDecode) => {
     let decoded = []
     let result = { "n": "", "e": [] }
-    if (stringToDecode.includes("~")) {
-      decoded = stringToDecode.split("~")
+    if (stringToDecode.includes("_")) {
+      decoded = stringToDecode.split("_")
     } else { // Only Second half
       decoded = [stringToDecode]
     }
@@ -224,32 +224,35 @@ const Saved = () => {
           {(provided) => (
             <DexList {...provided.droppableProps} ref={provided.innerRef}>
               {saved.e?.map((id, index) => {
-                return (
-                  <Draggable key={id} draggableId={id.toString()} index={index}>
-                    {(provided) => (
-                      <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                        <DragIconContainer>
-                            <MdDragIndicator />
-                          </DragIconContainer> 
-                        <MoveableContainer>
-                          <SavedDexItem>
-                            <DexItem id={id} />
-                            <TrashContainer>
-                              <Trash onClick={(e) => {
-                                clearItem(id)
-                                e.preventDefault()
-                              }}> 
-                                <TrashIcon>
-                                  <HiOutlineTrash />
-                                </TrashIcon>
-                              </Trash>
-                            </TrashContainer>
-                          </SavedDexItem>
-                        </MoveableContainer>
-                      </li>
-                    )}
-                  </Draggable>
-                )
+                if (id !== null) {
+                  return (
+                    <Draggable key={id} draggableId={id.toString()} index={index}>
+                      {(provided) => (
+                        <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                          <DragIconContainer>
+                              <MdDragIndicator />
+                            </DragIconContainer> 
+                          <MoveableContainer>
+                            <SavedDexItem>
+                              <DexItem id={id} />
+                              <TrashContainer>
+                                <Trash onClick={(e) => {
+                                  clearItem(id)
+                                  e.preventDefault()
+                                }}> 
+                                  <TrashIcon>
+                                    <HiOutlineTrash />
+                                  </TrashIcon>
+                                </Trash>
+                              </TrashContainer>
+                            </SavedDexItem>
+                          </MoveableContainer>
+                        </li>
+                      )}
+                    </Draggable>
+                    
+                  )
+                }
               })}
               {provided.placeholder}
             </DexList>
