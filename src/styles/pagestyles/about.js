@@ -69,4 +69,5 @@ export const CookieWarning = styled.p`
   padding: ${v.mdSpacing};
   display: flex;
   justify-content: center;
+  text-align: center;
 `

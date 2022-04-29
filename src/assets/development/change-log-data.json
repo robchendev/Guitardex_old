@@ -1,22 +1,13 @@
 {
     "changelog": [
-        
+
         {
             "v": "0.9.1",
-            "title": "Beta Launch",
+            "title": "Testing Launch",
             "date": "Apr 29",
             "year": "2022",
             "new": [
                 "Guitardex is launched to a select group of volunteer testers of the end-users."
-            ]
-        },
-        {
-            "v": "1.0.0",
-            "title": "(Will be moved up) Official Launch",
-            "date": "TBA",
-            "year": "2022",
-            "new": [
-                "Guitardex is launched to the public."
             ]
         },
         {
