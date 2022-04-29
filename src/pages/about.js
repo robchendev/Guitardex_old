@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/Layout/Layout"
 import { Link } from "gatsby"
 import { IconLink, InfoContainer, LinkContainer, LinkedSiteIcon, LinksBackground, ProfilePicture, ProfilePictureContainer, TeamContainer } from "../styles/pagestyles/about"
+import { EmbedContainer } from "../templates/technique-styling"
+import { LiteYoutubeEmbed } from "react-lite-yt-embed"
 
 import { FaYoutube, FaGithub, FaSpotify, FaGlobe } from "react-icons/fa"
 
@@ -12,10 +14,22 @@ import eddieVanDerMeer from "../assets/team-members/eddie-van-der-meer.jpg"
 import weijunSyu from "../assets/team-members/weijun-syu.jpg"
 import bryanQuan from "../assets/team-members/bryan-quan.jpg"
 
+
 const About = () => {
   return (
     <Layout title="About">
       <h1>About</h1>
+      <EmbedContainer>
+        <LiteYoutubeEmbed 
+          id="ef2ZcJt0EaU"
+          isMobile={true} 
+          mute={false} 
+          desktopResolution='maxresdefault'
+          mobileResolution='maxresdefault'
+          params={{rel: "0"}}
+        />
+      </EmbedContainer>
+      <br /><br />
       <h3>Why I Made Guitardex</h3>
       <p>
         Fingerstyle is a young style of guitar rising in popularity. Due to its infancy in
