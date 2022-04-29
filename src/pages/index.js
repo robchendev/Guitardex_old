@@ -28,7 +28,7 @@ const Saved = () => {
     "e": []
   }
   const exportURL = () => {
-    navigator.clipboard.writeText("https://guitardex.com/?"
+    navigator.clipboard.writeText("https://gdex.cc/?"
       + encode(JSON.parse(localStorage.getItem(SAVE_KEY))))
     document.getElementById("copyURLButton").innerHTML = "Copied!"
     setTimeout(() => {
@@ -167,7 +167,7 @@ const Saved = () => {
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
     if(saved.n.length > 24) saved.n = shortenSaveName(saved.n)
-    document.getElementById("exportURL").value = "https://guitardex.com/?" + encode(saved)
+    document.getElementById("exportURL").value = "https://gdex.cc/?" + encode(saved)
     document.getElementById("inputLimit").innerHTML = saved.n.length
   }, [saved])
   
@@ -260,7 +260,7 @@ const Saved = () => {
         </Droppable>
       </DragDropContext>
       <ExportSave>
-        <input id="exportURL" defaultValue={"https://guitardex.com/?" + encode(saved)} disabled></input>
+        <input id="exportURL" defaultValue={"https://gdex.cc/?" + encode(saved)} disabled></input>
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
       {saved.e.length !== 0 &&
