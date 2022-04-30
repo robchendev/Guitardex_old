@@ -5,7 +5,10 @@ import { CustomOL, CustomUL } from "../styles/pagestyles/help"
 
 const Help = () => {
   return (
-    <Layout title="Help">
+    <Layout
+      title="Help"
+      description={`Learn how to add techniques to, edit, and share your Guitardex.`}
+    >
       <h1>Help</h1>
       <h4>Reading Technique Pages</h4>
       <CustomUL>
@@ -34,6 +37,7 @@ const Help = () => {
       </CustomOL>
       <br />
       <h4>Share Your Guitardex</h4>
+      <li>Note: Guitardexes are saved onto each user's browser, an edit made on one will not affect the other.</li>
       <CustomOL>
         <li>Go to your <Link to="/">Guitardex</Link></li>
         <li>Copy your generated share URL and paste it wherever you want</li>

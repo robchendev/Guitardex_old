@@ -38,12 +38,18 @@ const Layout = (props) => {
       <Global styles={globalStyle} />
       <Helmet>
         <title>{props.title}</title>
-        <meta property="title" content={props.title} />
-        <meta property="og:title" content={props.title} />
+        <meta name="description" content={props.description} />
+        <meta property="og:url" content="https://guitardex.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Guitardex is a free, non-profit fingerstyle tutorial website that provides educational resources to fingerstyle guitarists." />
-        <meta property="og:url" content="https://guitardex.com" />
+        <meta property="og:title" content={props.title} />
+        <meta property="og:description" content={props.description} />
         <meta property="og:image" content="../../assets/images/LogoSm.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="guitardex.com" />
+        <meta property="twitter:url" content="https://guitardex.com/" />
+        <meta name="twitter:title" content={props.title} />
+        <meta name="twitter:description" content={props.description} />
+        <meta name="twitter:image" content="../../assets/images/LogoSm.png" />
       </Helmet>
       <MobileHeader />
       <SLayout>

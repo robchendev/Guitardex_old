@@ -18,7 +18,7 @@ const Saved = () => {
     }
   }
   const shortenSaveName = (saveNameToShorten) => {
-    const newSaveName = saveNameToShorten.substring(0,24)
+    const newSaveName = saveNameToShorten.substring(0, 24)
     document.getElementById("saveName").value = newSaveName
     return newSaveName
   }
@@ -53,7 +53,7 @@ const Saved = () => {
   }
   const location = useLocation().pathname
   const handleNameChange = (e) => {
-    const newName = e.target.value.replace(/[-=~_%']/g, '')    
+    const newName = e.target.value.replace(/[-=~_%']/g, '')
     let newSaved = { "n": newName, "e": saved.e }
     setSaved(newSaved)
   }
@@ -166,22 +166,25 @@ const Saved = () => {
   const [saved, setSaved] = useState(savedObj)
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(saved))
-    if(saved.n.length > 24) saved.n = shortenSaveName(saved.n)
+    if (saved.n.length > 24) saved.n = shortenSaveName(saved.n)
     document.getElementById("exportURL").value = "https://gdex.cc/?" + encode(saved)
     document.getElementById("inputLimit").innerHTML = saved.n.length
   }, [saved])
-  
+
   return (
-    <Layout title="Guitardex">
+    <Layout
+      title="Guitardex"
+      description={`Guitardex is a free, non-profit fingerstyle tutorial website that provides educational resources to fingerstyle guitarists.`}
+    >
       <SaveNameInput>
         <input
-          autoComplete="off" 
-          id="saveName" 
-          type="text" 
-          placeholder="Click to add name..." 
-          maxLength="24" 
-          onInput={handleNameChange} 
-          value={saved.n} 
+          autoComplete="off"
+          id="saveName"
+          type="text"
+          placeholder="Click to add name..."
+          maxLength="24"
+          onInput={handleNameChange}
+          value={saved.n}
           onKeyUp={handleEnterKey}
         />
         <InputCounterContainer>
@@ -194,7 +197,7 @@ const Saved = () => {
           </InputCounter>
         </InputCounterContainer>
       </SaveNameInput>
-      
+
       {saved.e.length === 0 &&
         <EmptyList>
           <Link to='t'>
@@ -230,8 +233,8 @@ const Saved = () => {
                       {(provided) => (
                         <li id={id.toString()} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                           <DragIconContainer>
-                              <MdDragIndicator />
-                            </DragIconContainer> 
+                            <MdDragIndicator />
+                          </DragIconContainer>
                           <MoveableContainer>
                             <SavedDexItem>
                               <DexItem id={id} />
@@ -239,7 +242,7 @@ const Saved = () => {
                                 <Trash onClick={(e) => {
                                   clearItem(id)
                                   e.preventDefault()
-                                }}> 
+                                }}>
                                   <TrashIcon>
                                     <HiOutlineTrash />
                                   </TrashIcon>
@@ -250,9 +253,10 @@ const Saved = () => {
                         </li>
                       )}
                     </Draggable>
-                    
+
                   )
                 }
+                return <></>
               })}
               {provided.placeholder}
             </DexList>
@@ -264,12 +268,12 @@ const Saved = () => {
         <button id="copyURLButton" onClick={exportURL}>Copy Link</button>
       </ExportSave>
       {saved.e.length !== 0 &&
-      <div>
-        <DeleteAllContainer>
-          <DeleteAll onClick={clearSave}>Delete All</DeleteAll>
-        </DeleteAllContainer>
-        <CookieWarning>Deleting your browser cookies will also delete your Guitardex.</CookieWarning>
-      </div>
+        <div>
+          <DeleteAllContainer>
+            <DeleteAll onClick={clearSave}>Delete All</DeleteAll>
+          </DeleteAllContainer>
+          <CookieWarning>Deleting your browser cookies will also delete your Guitardex.</CookieWarning>
+        </div>
       }
     </Layout>
   )

@@ -17,16 +17,19 @@ import bryanQuan from "../assets/team-members/bryan-quan.jpg"
 
 const About = () => {
   return (
-    <Layout title="About">
+    <Layout
+      title="About"
+      description={`This web app ("Guitardex", "Guitar Index", "Gdex") was created to provide easy and free access to fingerstyle tutorials and information.`}
+    >
       <h1>About</h1>
       <EmbedContainer>
-        <LiteYoutubeEmbed 
+        <LiteYoutubeEmbed
           id="ef2ZcJt0EaU"
-          isMobile={true} 
-          mute={false} 
+          isMobile={true}
+          mute={false}
           desktopResolution='maxresdefault'
           mobileResolution='maxresdefault'
-          params={{rel: "0"}}
+          params={{ rel: "0" }}
         />
       </EmbedContainer>
       <br /><br />
@@ -81,17 +84,17 @@ const About = () => {
             <p>{teamMember.roles.map(role => role).join(", ")}</p>
             <LinksBackground>
               {teamMember.links.map(link => (
-                  <LinkContainer>
-                    <IconLink href={link.url}>
-                      <LinkedSiteIcon>{link.icon}</LinkedSiteIcon>
-                    </IconLink>  
-                  </LinkContainer>
+                <LinkContainer>
+                  <IconLink href={link.url}>
+                    <LinkedSiteIcon>{link.icon}</LinkedSiteIcon>
+                  </IconLink>
+                </LinkContainer>
               ))}
             </LinksBackground>
           </InfoContainer>
         </TeamContainer>
       ))}
-      
+
     </Layout>
   )
 }

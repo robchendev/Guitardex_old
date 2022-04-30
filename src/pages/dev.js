@@ -7,14 +7,17 @@ import { LogRender, ItemList, PlansIssuesRender } from "../styles/pagestyles/dev
 
 const Dev = () => {
 	return (
-		<Layout title="Development">
+		<Layout
+			title="Development"
+			description={`View development notes and patch notes.`}
+		>
 			<h1>Development</h1>
 			{plansData.plans.length !== 0 &&
 				<PlansIssuesRender>
 					<h2>Future Plans</h2>
 					<ItemList>
 						{plansData.plans.map(plan => (
-								<li>{plan}</li>
+							<li>{plan}</li>
 						))}
 					</ItemList>
 				</PlansIssuesRender>
@@ -23,9 +26,9 @@ const Dev = () => {
 				<PlansIssuesRender>
 					<h2>Known Issues</h2>
 					<ItemList>
-							{issuesData.issues.map(plan => (
-								<li>{plan}</li>
-							))}
+						{issuesData.issues.map(plan => (
+							<li>{plan}</li>
+						))}
 					</ItemList>
 				</PlansIssuesRender>
 			}
@@ -42,5 +45,5 @@ const Dev = () => {
 		</Layout>
 	)
 }
- 
+
 export default Dev

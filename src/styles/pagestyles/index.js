@@ -89,6 +89,10 @@ export const SaveNameInput = styled.div`
     font-family: inherit;
     letter-spacing: inherit;
     font-size: 1.8em;
+    ${maxq[1]} {
+      font-size: 1.5em;
+      letter-spacing: 0;
+    }
     font-weight: 500;
     width: 100%;
     outline: none;

@@ -9,13 +9,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Guitardex`,
+        short_name: `gdex`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
         icon: `src/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        theme_color_in_head: false,
       },
     },
     {
