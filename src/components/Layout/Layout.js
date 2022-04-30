@@ -7,6 +7,7 @@ import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../style
 import { Global } from '@emotion/react'
 import MobileHeader from "../MobileHeader/MobileHeader"
 
+// https://www.joshwcomeau.com/react/dark-mode/
 export const ThemeContext = React.createContext()
 const Layout = (props) => {
   const [colorMode, rawSetColorMode] = React.useState(undefined);
