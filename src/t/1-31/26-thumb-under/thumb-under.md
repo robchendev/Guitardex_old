@@ -6,7 +6,7 @@ title: Thumb-Under
 category: utility
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/eUwoiV_PEhM
 exercises:
 ---
 

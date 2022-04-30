@@ -6,7 +6,7 @@ title: Palm Mute
 category: articulation
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/XOYN8wYVdHc
 exercises:
 ---
 

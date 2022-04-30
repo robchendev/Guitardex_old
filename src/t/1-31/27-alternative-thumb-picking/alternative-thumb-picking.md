@@ -6,7 +6,7 @@ title: Alternative Thumb Picking
 category: articulation
 difficulty: med
 prereqs: 
-demo: 
+demo: https://youtu.be/HGtmN7seQXw
 exercises:
 ---
 

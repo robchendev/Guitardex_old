@@ -6,7 +6,7 @@ title: Rasgueado
 category: basics
 difficulty: med
 prereqs: 
-demo: 
+demo: https://youtu.be/rwj5GrSVQL4
 exercises:
 ---
 

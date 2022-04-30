@@ -6,7 +6,7 @@ title: Palm Slap
 category: percussion
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/baKK0MI0aOY
 exercises:
 ---
 

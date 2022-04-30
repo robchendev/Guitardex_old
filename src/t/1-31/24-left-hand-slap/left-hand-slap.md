@@ -6,7 +6,7 @@ title: Left Hand Slap
 category: Percussion
 difficulty: easy
 prereqs: 
-demo: 
+demo: https://youtu.be/XfWcgr6kIPE
 exercises:
 ---
 
