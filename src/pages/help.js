@@ -9,8 +9,8 @@ const Help = () => {
       <h1>Help</h1>
       <h4>Reading Technique Pages</h4>
       <CustomUL>
-        <li>Some techniques expected you to know a 'Required' technique linked at the top of the page. Do not start a technique without knowing them.</li> 
-        <li>Technique ID numbers do not represent the order you should learn them in.</li> 
+        <li>Some techniques expected you to know a 'Required' technique linked at the top of the page. Do not start a technique without knowing them.</li>
+        <li>Technique ID numbers do not represent the order you should learn them in.</li>
         <li>If you're left-handed, treat every "right" instruction as "left".</li>
       </CustomUL>
       <br />
@@ -48,9 +48,9 @@ const Help = () => {
       <h4>Delete/Reset Your Guitardex</h4>
       <CustomOL>
         <li>Go to your <Link to="/">Guitardex</Link></li>
-        <li>Click 'Delete Dex'</li>
+        <li>Click 'Delete All'</li>
       </CustomOL>
-    </Layout> 
+    </Layout>
   )
 }
 
