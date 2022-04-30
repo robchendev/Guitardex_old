@@ -90,7 +90,7 @@ export const SaveNameInput = styled.div`
     letter-spacing: inherit;
     font-size: 1.8em;
     ${maxq[1]} {
-      font-size: 1.5em;
+      font-size: 1.4em;
       letter-spacing: 0;
     }
     font-weight: 500;

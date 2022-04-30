@@ -21,9 +21,7 @@ export const globalStyle = css`
     font-size: 1rem;
   }
   h1,h2,h3,h4,h5,h6,strong {
-
     font-weight: 500;
-
     margin-bottom: 0.6em;
   }
   h1 {
@@ -31,23 +29,27 @@ export const globalStyle = css`
     display: flex;
     justify-content: center;
     margin-bottom: 1em;
+    ${maxq[1]} {
+      font-size: 1.4em;
+      letter-spacing: 0;
+    }
   }
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
     ${maxq[1]} {
-      font-size: 1.4rem;
+      font-size: 1.3em;
     }
   }
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     ${maxq[1]} {
-      font-size: 1.25rem;
+      font-size: 1.2em;
     }
   }
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     ${maxq[1]} {
-      font-size: 1.1rem;
+      font-size: 1.1em;
     }
   }
   p {
