@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { maxq } from "../../styles/globalstyles/variables"
+import { maxq, minq } from "../../styles/globalstyles/variables"
 import { COLORS } from "../../styles/globalstyles/theme"
 
 export const SLayout = styled.div`
@@ -46,5 +46,16 @@ export const SMain = styled.main`
   a:hover {
     color: var(--color-linkHover, ${COLORS.linkHover.light});
     background-color: var(--color-link, ${COLORS.link.light});
+  }
+`
+export const MobileSidebarRelative = styled.div`
+  margin-top: -0.2em;
+  width: 100%;
+  position: fixed;
+  touch-action: none;
+  display: none;
+  height: 100%;
+  ${minq[1]} {
+    visibility: hidden;
   }
 `

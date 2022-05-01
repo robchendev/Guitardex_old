@@ -1,11 +1,12 @@
 import React from "react"
 import Sidebar from "../Sidebar/Sidebar"
-import { MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain } from "./styles"
+import { MainContainer, SContainer, SidebarContainer, SidebarRelative, SLayout, SMain, MobileSidebarRelative } from "./styles"
 import { Helmet } from "react-helmet"
 import { globalStyle } from "../../styles/globalstyles/globalStyles"
 import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme'
 import { Global } from '@emotion/react'
 import MobileHeader from "../MobileHeader/MobileHeader"
+import MobileSidebar from "../MobileSidebar/MobileSidebar"
 
 // https://www.joshwcomeau.com/react/dark-mode/
 export const ThemeContext = React.createContext()
@@ -64,6 +65,9 @@ const Layout = (props) => {
             <SMain>{props.children}</SMain>
           </MainContainer>
         </SContainer>
+        <MobileSidebarRelative id='mobilenav'>
+          <MobileSidebar />
+        </MobileSidebarRelative>
       </SLayout>
     </ThemeContext.Provider>
   )

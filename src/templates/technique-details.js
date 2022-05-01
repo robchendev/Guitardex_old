@@ -24,11 +24,10 @@ function TechniqueDetails({ data }) {
     node => (
       node.frontmatter.prereqs?.find( //returns one element
         prereq => prereq.id === id
-      ) 
+      )
     )
-  ) 
+  )
   const demoID = extractVideoURL(demo)
-  console.log(allPostReqs)
   return (
     <Layout title={title}>
       <EntireWrapper>
@@ -62,13 +61,13 @@ function TechniqueDetails({ data }) {
         <VideoContainer>
           {demo &&
             <EmbedContainer>
-              <LiteYoutubeEmbed 
+              <LiteYoutubeEmbed
                 id={demoID}
-                isMobile={true} 
-                mute={false} 
+                isMobile={true}
+                mute={false}
                 desktopResolution='maxresdefault'
                 mobileResolution='maxresdefault'
-                params={{rel: "0"}}
+                params={{ rel: "0" }}
               />
             </EmbedContainer>
           }
@@ -95,18 +94,18 @@ function TechniqueDetails({ data }) {
           } */}
           <ContinueLearning>
             <h4>Continue learning...</h4>
-            {allPostReqs.length !== 0 ? 
+            {allPostReqs.length !== 0 ?
               <ul>
                 {allPostReqs &&
                   allPostReqs.map(({ frontmatter }) => (
                     <React.Fragment key={frontmatter.id}>
                       <li><Link to={`/${g}/${frontmatter.id}`}>{frontmatter.title}</Link>
-                      {frontmatter.prereqs.map((prereq) => (
-                        prereq.id !== id && 
+                        {frontmatter.prereqs.map((prereq) => (
+                          prereq.id !== id &&
                           <span> (Required: <Link to={`/${g}/${prereq.id}`}>{prereq.name}</Link>)</span>
-                      ))}</li>
+                        ))}</li>
                     </React.Fragment>
-                  )) 
+                  ))
                 }
               </ul>
               :

@@ -3,14 +3,13 @@ import { COLORS } from "../globalstyles/theme"
 
 export const LogRender = styled.div`
   h4 {
-    margin-top: 0.3em;
     margin-bottom: 0;
   }
   p {
     color: var(--color-text, ${COLORS.text.light});
     opacity: 0.9;
   }
-  margin-bottom: 1em;
+  margin-bottom: 1.25em;
   :not(:last-child) {
     border-bottom: 1px solid var(--color-bg3, ${COLORS.bg3.light});
   }

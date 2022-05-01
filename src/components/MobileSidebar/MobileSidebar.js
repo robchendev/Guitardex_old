@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router";
 import { COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../../styles/globalstyles/theme';
 import { InternalLinks, ExternalLinks } from '../SidebarLinks/SidebarLinks'
 import { internalLinks, devLinks, externalLinks, utilityLinks } from '../SidebarLinks/links'
-import { SSidebar, SDivider, SLinkContainer, SToggle, SToggleLabel, SunContainer, MoonContainer } from './styles'
+import { MSidebar, MDivider, MLinkContainer, MToggle, MToggleLabel, SunContainer, MoonContainer } from './styles'
 
 
 const Sidebar = () => {
@@ -18,7 +18,7 @@ const Sidebar = () => {
     }
   })
   return (
-    <SSidebar>
+    <MSidebar>
       {internalLinks.map(({ label, icon, link }) => (
         <InternalLinks
           key={label}
@@ -29,7 +29,7 @@ const Sidebar = () => {
         />
       ))}
 
-      <SDivider />
+      <MDivider />
       {devLinks.map(({ label, icon, link }) => (
         <InternalLinks
           key={label}
@@ -39,7 +39,7 @@ const Sidebar = () => {
           isActive={parentLocation === link}
         />
       ))}
-      <SDivider />
+      <MDivider />
       {externalLinks.map(({ label, icon, link }) => (
         <ExternalLinks key={label} label={label} icon={icon} link={link} />
       ))}
@@ -52,8 +52,8 @@ const Sidebar = () => {
           isActive={parentLocation === link}
         />
       ))}
-      <SLinkContainer key={colorMode === "light" ? 'Dark Theme' : 'Light Theme'}>
-        <SToggle
+      <MLinkContainer key={colorMode === "light" ? 'Dark Theme' : 'Light Theme'}>
+        <MToggle
           onClick={
             () => {
               setColorMode(colorMode === "light" ? 'dark' : 'light');
@@ -65,10 +65,10 @@ const Sidebar = () => {
         >
           <MoonContainer><FiMoon /></MoonContainer>
           <SunContainer><FiSun /></SunContainer>
-          <SToggleLabel></SToggleLabel>
-        </SToggle>
-      </SLinkContainer>
-    </SSidebar>
+          <MToggleLabel></MToggleLabel>
+        </MToggle>
+      </MLinkContainer>
+    </MSidebar>
   )
 }
 

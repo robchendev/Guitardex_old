@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { FiMenu, FiXCircle } from 'react-icons/fi'
+import { FiMenu, FiX } from 'react-icons/fi'
 import { MHeaderRelative, MHeader, MobileContainer, Logo, MobileHeaderLink, MenuIcon } from './styles'
- 
+
 const MobileHeader = () => {
 	const [menuActive, setMenuActive] = useState(false)
 	const showSidebar = () => {
-		if (document.getElementById('sidenav').style.display === 'block') {
-			document.getElementById('sidenav').style.display = 'none'
+		if (document.getElementById('mobilenav').style.display === 'block') {
+			document.getElementById('mobilenav').style.display = 'none'
 			setMenuActive(false)
 		} else {
-			document.getElementById('sidenav').style.display = 'block'
+			document.getElementById('mobilenav').style.display = 'block'
 			setMenuActive(true)
 		}
 	}
@@ -23,7 +23,7 @@ const MobileHeader = () => {
 						</MobileHeaderLink>
 					</Logo>
 					<MenuIcon onClick={() => showSidebar()}>
-						{menuActive ? <FiXCircle /> : <FiMenu />}
+						{menuActive ? <FiX /> : <FiMenu />}
 					</MenuIcon>
 				</MobileContainer>
 			</MHeader>

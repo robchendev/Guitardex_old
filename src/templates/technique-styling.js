@@ -15,7 +15,7 @@ export const HeadingContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   h1 {
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin-top: -0.2em;
     margin-bottom: 0.1em;
     justify-content: start;
