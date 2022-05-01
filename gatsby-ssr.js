@@ -1,55 +1,128 @@
-import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '/src/styles/globalstyles/theme';
-
-function setColorsByTheme() {
-  const mql = window.matchMedia('(prefers-color-scheme: dark)');
-  const prefersDarkFromMQ = mql.matches;
-  const persistedPreference = localStorage.getItem(COLOR_MODE_KEY)
-  let colorMode = 'light';
-  const hasUsedToggle = typeof persistedPreference === 'string';
-  if (hasUsedToggle) {
-    colorMode = persistedPreference;
-  } else {
-    colorMode = prefersDarkFromMQ ? 'dark' : 'light';
-  }
-  let root = document.documentElement;
-  root.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode);
-  Object.entries(COLORS).forEach(([name, colorByTheme]) => {
-    const cssVarName = `--color-${name}`;
-    root.style.setProperty(cssVarName, colorByTheme[colorMode]);
-  });
-}
+import { COLORS } from '/src/styles/globalstyles/theme';
 
 const MagicScriptTag = () => {
-  const boundFn = String(setColorsByTheme)
+
+  // localstorage isnt changing with each new page, only on hard refresh
+  const codeToRunOnClient = `
+  (function() {
+    function getInitialColorMode() {
+      const persistedColorPreference = window.localStorage.getItem('color-mode');
+      const hasPersistedPreference = typeof persistedColorPreference === 'string';
+      if (hasPersistedPreference) {
+        return persistedColorPreference;
+      }
+      return 'dark';
+    }
+    const colorMode = getInitialColorMode();
+    const root = document.documentElement;
+    root.style.setProperty(
+      '--color-text',
+      colorMode === 'light'
+        ? '${COLORS.text.light}'
+        : '${COLORS.text.dark}'
+    );
+    root.style.setProperty(
+      '--color-bg',
+      colorMode === 'light'
+        ? '${COLORS.bg.light}'
+        : '${COLORS.bg.dark}'
+    );
+    root.style.setProperty(
+      '--color-bg2',
+      colorMode === 'light'
+        ? '${COLORS.bg2.light}'
+        : '${COLORS.bg2.dark}'
+    );
+    root.style.setProperty(
+      '--color-bg3',
+      colorMode === 'light'
+        ? '${COLORS.bg3.light}'
+        : '${COLORS.bg3.dark}'
+    );
+    root.style.setProperty(
+      '--color-primary',
+      colorMode === 'light'
+        ? '${COLORS.primary.light}'
+        : '${COLORS.primary.dark}'
+    );
+    root.style.setProperty(
+      '--color-tabimg',
+      colorMode === 'light'
+        ? '${COLORS.tabimg.light}'
+        : '${COLORS.tabimg.dark}'
+    );
+    root.style.setProperty(
+      '--color-link',
+      colorMode === 'light'
+        ? '${COLORS.link.light}'
+        : '${COLORS.link.dark}'
+    );
+    root.style.setProperty(
+      '--color-linkHover',
+      colorMode === 'light'
+        ? '${COLORS.linkHover.light}'
+        : '${COLORS.linkHover.dark}'
+    );
+    root.style.setProperty(
+      '--color-toggleName',
+      colorMode === 'light'
+        ? '${COLORS.toggleName.light}'
+        : '${COLORS.toggleName.dark}'
+    );
+    root.style.setProperty(
+      '--color-moonIcon',
+      colorMode === 'light'
+        ? '${COLORS.moonIcon.light}'
+        : '${COLORS.moonIcon.dark}'
+    );
+    root.style.setProperty(
+      '--color-sunIcon',
+      colorMode === 'light'
+        ? '${COLORS.sunIcon.light}'
+        : '${COLORS.sunIcon.dark}'
+    );
+    root.style.setProperty(
+      '--color-checkMarkColor',
+      colorMode === 'light'
+        ? '${COLORS.checkMarkColor.light}'
+        : '${COLORS.checkMarkColor.dark}'
+    );
+    root.style.setProperty(
+      '--color-tooltip',
+      colorMode === 'light'
+        ? '${COLORS.tooltip.light}'
+        : '${COLORS.tooltip.dark}'
+    );
+    root.style.setProperty(
+      '--color-ttText',
+      colorMode === 'light'
+        ? '${COLORS.ttText.light}'
+        : '${COLORS.ttText.dark}'
+    );
+    root.style.setProperty(
+      '--color-group',
+      colorMode === 'light'
+        ? '${COLORS.group.light}'
+        : '${COLORS.group.dark}'
+    );
+    root.style.setProperty(
+      '--color-category',
+      colorMode === 'light'
+        ? '${COLORS.category.light}'
+        : '${COLORS.category.dark}'
+    );
+    root.style.setProperty(
+      '--color-placeholder',
+      colorMode === 'light'
+        ? '${COLORS.placeholder.light}'
+        : '${COLORS.placeholder.dark}'
+    );
+    root.style.setProperty('--initial-color-mode', colorMode);
+  })()
+`;
   // eslint-disable-next-line react/no-danger
-  return <script dangerouslySetInnerHTML={{ __html: boundFn }} />;
+  return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
-
-/**
- * If the user has JS disabled, the injected script will never fire!
- * This means that they won't have any colors set, everything will be default
- * black and white.
- * We can solve for this by injecting a `<style>` tag into the head of the
- * document, which sets default values for all of our colors.
- * Only light mode will be available for users with JS disabled.
- */
-const FallbackStyles = () => {
-  // Create a string holding each CSS variable:
-  /*
-    `--color-text: black;
-    --color-background: white;`
-  */
-  const cssVariableString = Object.entries(COLORS).reduce(
-    (acc, [name, colorByTheme]) => {
-      return `${acc}\n--color-${name}: ${colorByTheme.light};`;
-    },
-    ''
-  );
-  const wrappedInSelector = `html { ${cssVariableString} }`;
-  return <style>{wrappedInSelector}</style>;
-};
-
-export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles />);
+export const onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents(<MagicScriptTag />);
 };
