@@ -72,7 +72,7 @@ const About = () => {
       <br />
       <h3>Guitardex Team</h3>
       <p>
-        All of the development work was done by myself, but I could not have made this project as serviceable as it is without the help of these people:
+        I have outsourced help from friends who excel in fields necessary to make this project as serviceable as possible. These are the people who have worked on this project:
       </p>
       {teamMembers.map(teamMember => (
         <TeamContainer>
