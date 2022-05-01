@@ -1,9 +1,6 @@
 import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '/src/styles/globalstyles/theme';
 
 function setColorsByTheme() {
-  const colors = '🌈';
-  const colorModeKey = '🔑';
-  const colorModeCssProp = '⚡️';
   const mql = window.matchMedia('(prefers-color-scheme: dark)');
   const prefersDarkFromMQ = mql.matches;
   const persistedPreference = localStorage.getItem(COLOR_MODE_KEY)
@@ -15,8 +12,8 @@ function setColorsByTheme() {
     colorMode = prefersDarkFromMQ ? 'dark' : 'light';
   }
   let root = document.documentElement;
-  root.style.setProperty(colorModeCssProp, colorMode);
-  Object.entries(colors).forEach(([name, colorByTheme]) => {
+  root.style.setProperty(INITIAL_COLOR_MODE_CSS_PROP, colorMode);
+  Object.entries(COLORS).forEach(([name, colorByTheme]) => {
     const cssVarName = `--color-${name}`;
     root.style.setProperty(cssVarName, colorByTheme[colorMode]);
   });
@@ -24,11 +21,6 @@ function setColorsByTheme() {
 
 const MagicScriptTag = () => {
   const boundFn = String(setColorsByTheme)
-    .replace("'🌈'", JSON.stringify(COLORS))
-    .replace('🔑', COLOR_MODE_KEY)
-    .replace('⚡️', INITIAL_COLOR_MODE_CSS_PROP);
-
-
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: boundFn }} />;
 };
@@ -47,16 +39,13 @@ const FallbackStyles = () => {
     `--color-text: black;
     --color-background: white;`
   */
-
   const cssVariableString = Object.entries(COLORS).reduce(
     (acc, [name, colorByTheme]) => {
       return `${acc}\n--color-${name}: ${colorByTheme.light};`;
     },
     ''
   );
-
   const wrappedInSelector = `html { ${cssVariableString} }`;
-
   return <style>{wrappedInSelector}</style>;
 };
 
