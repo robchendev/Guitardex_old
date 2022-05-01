@@ -12,7 +12,7 @@ const Help = () => {
       <h1>Help</h1>
       <h4>Reading Technique Pages</h4>
       <CustomUL>
-        <li>Some techniques expected you to know a 'Required' technique linked at the top of the page. Do not start a technique without knowing them.</li>
+        <li>If there are any 'Required' techniques linked at the top of a page, learn them first.</li>
         <li>Technique ID numbers do not represent the order you should learn them in.</li>
         <li>If you're left-handed, treat every "right" instruction as "left".</li>
       </CustomUL>
@@ -37,10 +37,9 @@ const Help = () => {
       </CustomOL>
       <br />
       <h4>Share Your Guitardex</h4>
-      <li>Note: Guitardexes are saved onto each user's browser, an edit made on one will not affect the other.</li>
       <CustomOL>
         <li>Go to your <Link to="/">Guitardex</Link></li>
-        <li>Copy your generated share URL and paste it wherever you want</li>
+        <li>Copy your generated share URL and paste it wherever you want (Note: An edit made on a shared Guitardex will not affect your Guitardex)</li>
       </CustomOL>
       <br />
       <h4>View Someone Else's Guitardex</h4>
