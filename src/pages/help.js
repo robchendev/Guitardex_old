@@ -37,10 +37,9 @@ const Help = () => {
       </CustomOL>
       <br />
       <h4>Share Your Guitardex</h4>
-      <li>Note: Guitardexes are saved onto each user's browser, an edit made on one will not affect the other.</li>
       <CustomOL>
         <li>Go to your <Link to="/">Guitardex</Link></li>
-        <li>Copy your generated share URL and paste it wherever you want</li>
+        <li>Copy your generated share URL and paste it wherever you want (Note: An edit made on a shared Guitardex will not affect your Guitardex)</li>
       </CustomOL>
       <br />
       <h4>View Someone Else's Guitardex</h4>
