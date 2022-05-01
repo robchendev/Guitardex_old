@@ -15,13 +15,11 @@ const MagicScriptTag = () => {
     }
     const colorMode = getInitialColorMode();
     const root = document.documentElement;
-    root.style.setProperty(colorModeCssProp, colorMode);
-
-  Object.entries(colors).forEach(([name, colorByTheme]) => {
-    const cssVarName = '--color-' + name;
-
-    root.style.setProperty(cssVarName, colorByTheme[colorMode]);
-  });
+    Object.entries(COLORS).forEach(([name, colorByTheme]) => {
+      
+      root.style.setProperty('--color' + name, colorByTheme[colorMode]);
+    });
+    root.style.setProperty('--initial-color-mode', colorMode);
   })()
 `;
   // eslint-disable-next-line react/no-danger
