@@ -3,7 +3,7 @@ import { COLORS } from "../globalstyles/theme"
 
 export const LogRender = styled.div`
   h4 {
-    margin-top: 0.2em;
+    margin-top: 0.3em;
     margin-bottom: 0;
   }
   p {
