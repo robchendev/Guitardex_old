@@ -12,7 +12,7 @@ const Help = () => {
       <h1>Help</h1>
       <h4>Reading Technique Pages</h4>
       <CustomUL>
-        <li>Do not start learning a technique without knowing the 'Required' technique(s) linked at the top of the page. If there isn't a required technique, you can start it without any worries.</li>
+        <li>If there are any 'Required' techniques linked at the top of a page, learn them first.</li>
         <li>Technique ID numbers do not represent the order you should learn them in.</li>
         <li>If you're left-handed, treat every "right" instruction as "left".</li>
       </CustomUL>
