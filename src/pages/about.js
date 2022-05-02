@@ -111,7 +111,7 @@ const teamMembers = [
     links: [
       {
         icon: <FaGithub />,
-        url: "https://github.com/chendumpling"
+        url: "https://github.com/robchendev"
       },
       {
         icon: <FaYoutube />,
