@@ -1,6 +1,7 @@
 {
     "plans": [
         "Right now, there is no way to filter the techniques library other than searching matching titles, difficulties or categories. There is not current way to combine terms (eg. 'easy percussion'). As the library get bigger, more ways to filter and sort the library items should be added.",
-        "Make a checker to ignore new Guitardexes when the new Guitardex is exactly the same as the one currently saved to the user's browser."
+        "Make a checker to ignore new Guitardexes when the new Guitardex is exactly the same as the one currently saved to the user's browser.",
+        "Add a recursive pre-req search to display how many prereqs should show on the technique before the difficulty display. (Ex: Natural Harmonic -> Artificial -> Tap -> Slap, so Slap Harmonic will have 3 pre-req requirements displayed."
     ]
 }
