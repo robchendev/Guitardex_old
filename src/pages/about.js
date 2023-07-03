@@ -33,7 +33,7 @@ const About = () => {
         />
       </EmbedContainer>
       <br /><br />
-      <h3>Why I Made Guitardex</h3>
+      <h3>Why Guitardex Was Made</h3>
       <p>
         Fingerstyle is a young style of guitar rising in popularity. Due to its infancy in
         history, it is not an officially recognized style of guitar by most music
@@ -42,6 +42,9 @@ const About = () => {
       </p>
       <p>
         My name is Robert Chen, and I created this web app ("Guitardex", "Guitar Index", "Gdex") to provide easy and free access to fingerstyle tutorials and information. As someone who had experienced the lack of freely accessible resources while growing my own skills as a fingerstyle guitarist, I want this site to give guitarists a convenient access to fingerstyle information.
+      </p>
+      <p>
+        Brought to you by members of the University of Victoria's Guitar Club and Fingerstyle Central, Guitardex aims to provide concise tutorials to elevate any learner's fingerstyle skills to the next level.
       </p><br />
       <h3>Is Guitardex Free?</h3>
       <p>
@@ -64,7 +67,7 @@ const About = () => {
       <br />
       <h3>Future Development</h3>
       <p>
-        Guitardex is a regularly updating project that aims to have more than just fingerstyle techniques. It is programmed to save items from any 'library' within the web app. Currently, <Link to="/t">Techniques</Link> is the only library. Future libraries can include information such as audio mixing and equipment.
+        Guitardex aims to have more than just fingerstyle techniques in the future. It is programmed to save items from any 'library' within the web app. Currently, <Link to="/t">Techniques</Link> is the only library. Future libraries can include information such as audio mixing and equipment.
       </p>
       <p>
         When I am able, I will be making improvements to this web app's functionality, UI, and content. You can view the changelog on the <Link to="/dev">Development</Link> page.
@@ -106,7 +109,7 @@ const teamMembers = [
     name: "Robert Chen",
     image: robertChen,
     roles: [
-      "Project Lead", "Developer", "Content Creator", "Content Writer"
+      "Developer", "Content Creator", "Content Writer"
     ],
     links: [
       {
@@ -124,19 +127,6 @@ const teamMembers = [
       {
         icon: <FaGlobe />,
         url: "https://robertchenyt.com/"
-      }
-    ]
-  },
-  {
-    name: "David James Zecchel",
-    image: davidZecchel,
-    roles: [
-      "Content Writer", "Content Editor"
-    ],
-    links: [
-      {
-        icon: <FaGlobe />,
-        url: "https://davidjameszecchel.com/"
       }
     ]
   },

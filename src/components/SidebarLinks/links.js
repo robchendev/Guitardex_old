@@ -32,11 +32,11 @@ export const devLinks = [
   },
 ]
 export const externalLinks = [
-  {
-    label: "Donate",
-    icon: <HiOutlineCurrencyDollar />,
-    link: "https://www.paypal.com/donate/?hosted_button_id=DHGEUWW4VMUVG",
-  },
+//   {
+//     label: "Donate",
+//     icon: <HiOutlineCurrencyDollar />,
+//     link: "https://www.paypal.com/donate/?hosted_button_id=DHGEUWW4VMUVG",
+//   },
 ]
 export const utilityLinks = [
   
